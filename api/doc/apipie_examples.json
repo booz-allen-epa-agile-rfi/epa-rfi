@@ -1,0 +1,175 @@
+{
+  "drugs#create": [
+    {
+      "verb": "POST",
+      "path": "/api/v1/drugs",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": {
+	  	"drug": {
+	  		"effective_time": "20130925",
+	  		"substance_name": "LEVOTHYROXINE",
+	  		"generic_name": "LEVOTHYROXINE SODIUM",
+	  		"lowercase_name": "synthroid",
+	  		"brand_name": "Synthroid",
+	  		"manufacturer_name": "Dispensing Solutions, Inc.",
+	  		"object": {
+	  			"effective_time": "20130925",
+	  			"drug_interactions": ["Drug Interactions Many drugs affect ..."],
+	  			"geriatric_use": ["Geriatric Use Because of the increased prevalence of cardiovascular disease among the elderly, levothyroxine therapy should not be initiated at the full replacement dose (see WARNINGS, PRECAUTIONS , and DOSAGE AND ADMINISTRATION )."],
+	  			"precautions": ["PRECAUTIONS General Levothyroxine has a narrow therapeutic index..."],
+	  			"description": ["DESCRIPTION SYNTHROID (levothyroxine sodium tablets, USP) contain ..."],
+	  			"general_precautions": ["General Levothyroxine has a narrow therapeutic index...."],
+	  			"clinical_pharmacology_table": ["Table 1. Pharmacokinetic Parameters of Thyroid Hormones..."],
+	  			"indications_and_usage": ["INDICATIONS AND USAGE Levothyroxine sodium is used for the following indications..."],
+	  			"set_id": "00eea4aa-f08e-419a-827a-56e40e93f05f",
+	  			"id": "c12f402b-f00b-466d-a6ea-862f00f81ec7",
+	  			"description_table": ["FD&amp;C Yellow No. 6 Aluminum Lake..."],
+	  			"dosage_and_administration_table": ["Table 3. Levothyroxine Sodium Dosing Guidelines for Pediatric Hypothyroidism..."],
+	  			"pediatric_use": ["Pediatric Use General The goal of treatment in pediatric patients ..."],
+	  			"precautions_table": ["Table 2. Drug-Thyroidal Axis Interactions..."],
+	  			"contraindications": ["CONTRAINDICATIONS Levothyroxine is contraindicated in patients with untreated subclinical..."],
+	  			"drug_interactions_table": ["Table 2. Drug-Thyroidal Axis Interactions..."],
+	  			"warnings": ["WARNINGS Boxed Warning WARNING: Thyroid hormones, including SYNTHROID, either alone or with other therapeutic agents..."],
+	  			"pregnancy": ["Pregnancy Category A Studies in women taking levothyroxine sodium during pregnancy have not shown ..."],
+	  			"nursing_mothers": ["Nursing Mothers Although thyroid hormones are excreted only minimally in human milk, caution should be exercised when SYNTHROID is administered to a nursing woman. However, adequate replacement doses of levothyroxine are generally needed to maintain normal lactation."],
+	  			"spl_product_data_elements": ["Synthroid Levothyroxine Sodium LEVOTHYROXINE LEVOTHYROXINE ACACIA LACTOSE MONOHYDRATE MAGNESIUM STEARATE POVIDONE TALC FD&C BLUE NO. 2 SYNTHROID;150"],
+	  			"boxed_warning": ["Boxed Warning WARNING: Thyroid hormones, including SYNTHROID, either alone or with other therapeutic ..."],
+	  			"drug_and_or_laboratory_test_interactions": ["Drug-Laboratory Test Interactions Changes in TBG concentration must be considered when ..."],
+	  			"openfda": {
+	  				"product_ndc": ["66336-591"],
+	  				"nui": ["N0000007632", "N0000175945"],
+	  				"package_ndc": ["66336-591-30"],
+	  				"generic_name": ["LEVOTHYROXINE SODIUM"],
+	  				"spl_set_id": ["00eea4aa-f08e-419a-827a-56e40e93f05f"],
+	  				"pharm_class_cs": ["Thyroxine [Chemical/Ingredient]"],
+	  				"brand_name": ["Synthroid"],
+	  				"original_packager_product_ndc": ["0074-7069"],
+	  				"manufacturer_name": ["Dispensing Solutions, Inc."],
+	  				"unii": ["Q51BO43MG4"],
+	  				"rxcui": ["966225", "966201"],
+	  				"spl_id": ["c12f402b-f00b-466d-a6ea-862f00f81ec7"],
+	  				"substance_name": ["LEVOTHYROXINE"],
+	  				"product_type": ["HUMAN PRESCRIPTION DRUG"],
+	  				"route": ["ORAL"],
+	  				"application_number": ["NDA021402"],
+	  				"pharm_class_epc": ["l-Thyroxine [EPC]"]
+	  			},
+	  			"version": "2",
+	  			"dosage_and_administration": ["DOSAGE AND ADMINISTRATION General Principles The goal of replacement therapy is ..."],
+	  			"adverse_reactions": ["ADVERSE REACTIONS Adverse reactions associated with levothyroxine therapy are ..."],
+	  			"@epoch": 1.416451272131902E9,
+	  			"how_supplied_table": ["<table width=\"100%\" ID=\"How_Supplied_table\">...<\/table>"],
+	  			"how_supplied": ["HOW SUPPLIED SYNTHROID (levothyroxine sodium tablets, USP) are round, color coded,.."],
+	  			"laboratory_tests": ["Laboratory Tests General The diagnosis of hypothyroidism is confirmed by measuring TSH ..."],
+	  			"information_for_patients": ["Information for Patients Patients should be informed of the following information ..."],
+	  			"package_label_principal_display_panel": ["PACKAGE LABEL.PRINCIPAL DISPLAY PANEL NDC 66336-0591-XX"],
+	  			"clinical_pharmacology": ["CLINICAL PHARMACOLOGY Thyroid hormone synthesis and secretion is regulated by the ..."],
+	  			"carcinogenesis_and_mutagenesis_and_impairment_of_fertility": ["Carcinogenesis, Mutagenesis, and Impairment of Fertility Animal ..."],
+	  			"overdosage": ["Overdosage The signs and symptoms of overdosage are those of hyperthyroidism (see ..."]
+	  		}
+	  	}
+      },
+      "response_data": {
+
+
+
+		  	"drug": {
+		  		"information_for_patients": ["Information for Patients Patients should be informed of the ..."],
+		  		"dosage_and_administration_table": ["Table 3. Levothyroxine Sodium Dosing Guidelines for Pediatric Hypothyroidism..."],
+		  		"indications_and_usage": ["INDICATIONS AND USAGE Levothyroxine sodium is used for the following indications..."],
+		  		"contraindications": ["CONTRAINDICATIONS Levothyroxine is contraindicated in patients with untreated subclinical ..."],
+		  		"how_supplied": ["HOW SUPPLIED SYNTHROID (levothyroxine sodium tablets, USP) are round, color coded..."],
+		  		"description_table": ["Inactive_Ingredients_table..."],
+		  		"dosage_and_administration": ["DOSAGE AND ADMINISTRATION General Principles The goal of replacement therapy ..."],
+		  		"version": "2",
+		  		"id": "c12f402b-f00b-466d-a6ea-862f00f81ec7",
+		  		"package_label_principal_display_panel": ["PACKAGE LABEL.PRINCIPAL DISPLAY PANEL NDC 66336-0591-XX"],
+		  		"@epoch": 1416451272.131902,
+		  		"description": ["DESCRIPTION SYNTHROID (levothyroxine sodium tablets, USP) contain synthetic ..."],
+		  		"pediatric_use": ["Pediatric Use General The goal of treatment in pediatric patients with hypothyroidism is to ..."],
+		  		"precautions_table": ["Table 2. Drug-Thyroidal Axis Interactions..."],
+		  		"openfda": {
+		  			"unii": ["Q51BO43MG4"],
+		  			"spl_id": ["c12f402b-f00b-466d-a6ea-862f00f81ec7"],
+		  			"product_ndc": ["66336-591"],
+		  			"substance_name": ["LEVOTHYROXINE"],
+		  			"rxcui": ["966225", "966201"],
+		  			"spl_set_id": ["00eea4aa-f08e-419a-827a-56e40e93f05f"],
+		  			"original_packager_product_ndc": ["0074-7069"],
+		  			"product_type": ["HUMAN PRESCRIPTION DRUG"],
+		  			"pharm_class_cs": ["Thyroxine [Chemical/Ingredient]"],
+		  			"manufacturer_name": ["Dispensing Solutions, Inc."],
+		  			"brand_name": ["Synthroid"],
+		  			"route": ["ORAL"],
+		  			"nui": ["N0000007632", "N0000175945"],
+		  			"package_ndc": ["66336-591-30"],
+		  			"pharm_class_epc": ["l-Thyroxine [EPC]"],
+		  			"generic_name": ["LEVOTHYROXINE SODIUM"],
+		  			"application_number": ["NDA021402"]
+		  		},
+		  		"spl_product_data_elements": ["Synthroid Levothyroxine Sodium LEVOTHYROXINE LEVOTHYROXINE ACACIA LACTOSE MONOHYDRATE MAGNESIUM STEARATE POVIDONE TALC FD\u0026C BLUE NO. 2 SYNTHROID;150"],
+		  		"warnings": ["WARNINGS Boxed Warning WARNING: Thyroid hormones, including SYNTHROID, either ..."],
+		  		"set_id": "00eea4aa-f08e-419a-827a-56e40e93f05f",
+		  		"geriatric_use": ["Geriatric Use Because of the increased prevalence of cardiovascular disease among the elderly, levothyroxine therapy should not be initiated at the full replacement dose (see WARNINGS, PRECAUTIONS , and DOSAGE AND ADMINISTRATION )."],
+		  		"adverse_reactions": ["ADVERSE REACTIONS Adverse reactions associated with levothyroxine ..."],
+		  		"overdosage": ["Overdosage The signs and symptoms of overdosage are those of hyperthyroidism ..."],
+		  		"general_precautions": ["General Levothyroxine has a narrow therapeutic index..."],
+		  		"drug_interactions": ["Drug Interactions Many drugs affect thyroid hormone pharmacokinetics and ..."],
+		  		"drug_interactions_table": ["Table 2. Drug-Thyroidal Axis Interactions..."],
+		  		"carcinogenesis_and_mutagenesis_and_impairment_of_fertility": ["Carcinogenesis, Mutagenesis, and Impairment of Fertility ..."],
+		  		"effective_time": "20130925",
+		  		"pregnancy": ["Pregnancy Category A Studies in women taking levothyroxine sodium during pregnancy have ..."],
+		  		"drug_and_or_laboratory_test_interactions": ["Drug-Laboratory Test Interactions Changes in TBG ...."],
+		  		"precautions": ["PRECAUTIONS General Levothyroxine has a narrow therapeutic index. Regardless ..."],
+		  		"nursing_mothers": ["Nursing Mothers Although thyroid hormones are excreted only minimally in human milk..."],
+		  		"laboratory_tests": ["Laboratory Tests General The diagnosis of hypothyroidism is confirmed by measuring ... "],
+		  		"boxed_warning": ["Boxed Warning WARNING: Thyroid hormones, including SYNTHROID, either ..."],
+		  		"clinical_pharmacology": ["CLINICAL PHARMACOLOGY Thyroid hormone synthesis and secretion is regulated ..."],
+		  		"clinical_pharmacology_table": ["Table 1. Pharmacokinetic Parameters of Thyroid Hormones ..."],
+		  		"how_supplied_table": ["How_Supplied_table..."],
+		  		"effects": ["nausea", "fatigue", "headache", "pain", "vomiting", "arthralgia", "anxiety", "insomnia", "rash", "chest pain", "pruritus", "hypertension", "abdominal pain", "palpitations", "tremor", "myocardial infarction", "flushing", "hypothyroidism", "urticaria", "diabetes mellitus", "nervousness", "drug interaction", "coronary artery disease", "breast cancer", "tachycardia", "oedema", "irritability", "cardiac arrest", "arrhythmia", "wheezing", "hyperthyroidism", "surgery", "inflammation", "increased appetite", "obesity", "cardiovascular disorder", "hepatitis", "angioedema", "cyst", "autoimmune thyroiditis", "pregnancy", "aspiration", "adrenal insufficiency", "atrial septal defect"],
+		  		"reported_effects": []
+		  	},
+		  	"effects": {
+		  		"yes_answers": {},
+		  		"no_answers": {},
+		  		"effects": ["nausea", "fatigue", "headache", "pain", "vomiting", "arthralgia", "anxiety", "insomnia", "rash", "chest pain", "pruritus", "hypertension", "abdominal pain", "palpitations", "tremor", "myocardial infarction", "flushing", "hypothyroidism", "urticaria", "diabetes mellitus", "nervousness", "drug interaction", "coronary artery disease", "breast cancer", "tachycardia", "oedema", "irritability", "cardiac arrest", "arrhythmia", "wheezing", "hyperthyroidism", "surgery", "inflammation", "increased appetite", "obesity", "cardiovascular disorder", "hepatitis", "angioedema", "cyst", "autoimmune thyroiditis", "pregnancy", "aspiration", "adrenal insufficiency", "atrial septal defect"]
+		  	}
+      },
+      "code": "200",
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
+	
+	"effects#create": [
+    {
+      "verb": "POST",
+      "path": "/api/v1/effects",
+      "versions": [
+        "1.0"
+      ],
+	  "query": null,
+      "request_data": {
+		  "drug_name": "Synthroid",
+		  "effect": "abdominal pain",
+		  "response": true
+      },
+      "response_data": {
+	  	"id": 1,
+	  	"name": "abdominal pain",
+	  	"drug_id": null,
+	  	"created_at": "2015-07-05T18:53:23.906Z",
+	  	"updated_at": "2015-07-05T18:53:23.906Z",
+	  	"response": true,
+	  	"drug_name": "Synthroid"
+      },
+      "code": "200",
+      "show_in_doc": 1,
+      "recorded": true
+  	}
+	]
+}
