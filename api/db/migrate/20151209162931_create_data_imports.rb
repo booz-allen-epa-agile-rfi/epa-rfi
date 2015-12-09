@@ -1,6 +1,7 @@
 class CreateDataImports < ActiveRecord::Migration
   def change
     create_table :data_imports do |t|
+      t.string :old_id
       t.string :cas_number
       t.string :reporting_year
       t.string :trifid
@@ -68,7 +69,6 @@ class CreateDataImports < ActiveRecord::Migration
       t.string :acute
       t.string :intermediate
       t.string :chronic
-
       t.timestamps null: false
     end
   end
