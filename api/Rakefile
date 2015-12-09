@@ -4,3 +4,25 @@
 require File.expand_path('../config/application', __FILE__)
 
 Rails.application.load_tasks
+
+require 'csv'
+namespace :db do
+  task :load => :environment do
+    # ACCEPTS A MAX ROW COUNT SPECIFIED AS 'rake db:load count=n'
+    max_rows = -1
+    max_rows =  ARGV[1].split('=')[1].to_i unless ARGV[1].nil?
+    DataImport.destroy_all
+    p "Starting to read file at #{Time.now.getutc}"
+    csv_text = File.read('../data/data.csv').encode!('UTF-8', 'iso-8859-1', invalid: :replace)
+    csv = CSV.parse(csv_text, :headers => true)
+    p "Finished reading file at #{Time.now.getutc}"
+    row_count = 0
+    p "Creating records at #{Time.now.getutc}"
+    csv.each do |row|
+      DataImport.create!(row.to_hash)
+      row_count += 1
+      break if (row_count == max_rows)
+    end
+    p "Finished creating #{row_count} records at #{Time.now.getutc}"
+  end
+end
