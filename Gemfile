@@ -1,0 +1,52 @@
+source 'https://rubygems.org'
+
+ruby '2.2.3'
+
+# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'rails', '4.2.5'
+
+gem 'rails-api'
+
+# Use puma as the app server
+gem 'puma'
+
+# Use postgresql as the database for Active Record
+gem 'pg', '~> 0.18.2'
+gem 'pg_search', '~> 0.7.8'
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
+
+# .Env gem Gem
+gem 'dotenv-rails'
+
+gem 'rest-client'
+gem 'acts-as-taggable-on'
+
+# Documentation
+gem 'apipie-rails', '~> 0.2.6'
+
+# CORS
+gem 'rack-cors'
+
+# Use ActiveModel has_secure_password
+# gem 'bcrypt', '~> 3.1.7'
+
+# Tests
+group :development, :test do
+  gem 'spring'
+  gem 'rubocop'
+  gem 'brakeman'
+  gem 'rubocop-checkstyle_formatter'
+  gem 'rspec-rails', '~> 3.0'
+  gem 'database_cleaner', '~> 1.4.1'
+  gem 'factory_girl_rails', '~> 4.0'
+  gem 'shoulda-matchers'
+  gem 'pry'
+  gem 'pry-rails'
+  gem 'awesome_print'
+  gem 'selenium-webdriver'
+  # gem 'poltergeist', require: 'capybara/poltergeist'
+  # gem 'web-console', '~> 2.0.0'
+  # gem 'capybara-angular', '0.1.0'
+  # gem 'launchy'
+  gem 'foreman'
+end
