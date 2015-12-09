@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :data_imports, except: [:new, :edit]
+  # resources :data_imports, except: [:new, :edit]
 
   # get 'effects/create'
 

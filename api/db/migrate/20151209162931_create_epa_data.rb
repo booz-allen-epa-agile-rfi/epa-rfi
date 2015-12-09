@@ -1,7 +1,11 @@
-class CreateDataImports < ActiveRecord::Migration
+class CreateEpaData < ActiveRecord::Migration
   def change
+<<<<<<< Updated upstream:api/db/migrate/20151209162931_create_data_imports.rb
     create_table :data_imports do |t|
       t.string :old_id
+=======
+    create_table :epa_data do |t|
+>>>>>>> Stashed changes:api/db/migrate/20151209162931_create_epa_data.rb
       t.string :cas_number
       t.string :reporting_year
       t.string :trifid
