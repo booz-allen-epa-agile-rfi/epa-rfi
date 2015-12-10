@@ -35,7 +35,7 @@ Day 2 - Minimum Viable Product
 - Sprint 3 (8 hours)
 - The goal for this day was to end with a demonstrable slice of the application's functionality, connecting the user to the valuable data and visulizations
 
-Day 3/Release 1 (Day 3)
+Day 3 - Release 1 (Day 3)
 - Sprint 4 (8 hours)
 
 
@@ -53,10 +53,8 @@ User stories are archived on our wiki here - https://github.com/booz-allen-epa-a
 
 **Team Velocity and User Stories Completed**
 
-Velocity chart
 ![Velocity](https://docs.google.com/spreadsheets/d/1AAqKoaxrRT1NDnyU7He5MAi4QXazMylVXrlxZimznBI/pubchart?oid=1374894241&format=image)
 
-Forecast-vs-Delivered chart
 ![Forecast-vs-Delivered](https://docs.google.com/spreadsheets/d/1AAqKoaxrRT1NDnyU7He5MAi4QXazMylVXrlxZimznBI/pubchart?oid=1410313000&format=image)
 
 ##Agile Practices Used
