@@ -1,0 +1,85 @@
+#map {
+  height: 650px;
+}
+
+.info-text {
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-weight: 200;
+}
+
+.title-margin {
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.nav-right-padding {
+    padding-right: 25px;
+}
+
+.nav-inner-padding {
+    padding-right: 35px;
+}
+
+.form-control {
+    width: 90% !important;
+}
+
+.sm-margin-left {
+    margin-left: 10px;
+}
+
+.margin-right {
+    margin-right: 20px;
+}
+
+.well {
+    margin-top: 10px;
+}
+
+.btn-r {
+    float: right;
+}
+
+.btn-black {
+    background-color: black;
+    color: white;
+}
+
+.btn-oval {
+    padding: 4px 26px !important;
+    border-radius: 20px !important;
+}
+
+.btn-col-3 {
+    padding-right: 140px !important;
+    margin: 5px 0px 12px !important;
+    margin-left: -15px !important;
+    border-radius: 0px !important;
+}
+
+.btn-drop {
+    padding-right: 120px;
+}
+
+.caret {
+    position: absolute;
+    left: 90%;
+    top: 45%;
+}
+
+.margin-top {
+    margin-top: 14px;
+}
+
+.sm-label {
+    font-size: 10px;
+}
+
+.no-pad-l {
+    padding-left: 0px;
+}
+
+.pad-l {
+    padding-left: -10px;
+}
