@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(version: 20151209162931) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "data_imports", force: :cascade do |t|
-    t.string   "old_id"
+  create_table "epa_records", force: :cascade do |t|
+    t.integer  "old_id"
     t.string   "cas_number"
     t.string   "reporting_year"
     t.string   "trifid"
