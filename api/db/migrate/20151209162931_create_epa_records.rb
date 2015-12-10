@@ -1,7 +1,7 @@
-class CreateDataImports < ActiveRecord::Migration
+class CreateEpaRecords < ActiveRecord::Migration
   def change
-    create_table :data_imports do |t|
-      t.string :old_id
+    create_table :epa_records do |t|
+      t.integer :old_id
       t.string :cas_number
       t.string :reporting_year
       t.string :trifid
