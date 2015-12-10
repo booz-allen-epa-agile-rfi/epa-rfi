@@ -10,10 +10,10 @@
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
 
-# Although this is not needed for an api-only application, rails4 
-# requires secret_key_base or secret_token to be defined, otherwise an 
+# Although this is not needed for an api-only application, rails4
+# requires secret_key_base or secret_token to be defined, otherwise an
 # error is raised.
 # Using secret_token for rails3 compatibility. Change to secret_key_base
 # to avoid deprecation warning.
 # Can be safely removed in a rails3 api-only application.
-Skeleton::Application.config.secret_token = 'ffe6ac8a78cae205020ecfc59845697162706deed09927eb6c122bdaaa1bb123bf535a2af2b500e293549801b2b13b5ee5e026832b41cb315502636eab69c56c'
+EpaRfi::Application.config.secret_token = 'ffe6ac8a78cae205020ecfc59845697162706deed09927eb6c122bdaaa1bb123bf535a2af2b500e293549801b2b13b5ee5e026832b41cb315502636eab69c56c'
