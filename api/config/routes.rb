@@ -1,17 +1,12 @@
 Rails.application.routes.draw do
-  # resources :data_imports, except: [:new, :edit]
 
-  # get 'effects/create'
+  get 'states', to: 'epa_records#states'
+  get 'chemicals', to: 'epa_records#chemicals'
+  get 'zip_codes', to: 'epa_records#zip_codes'
 
-  # get 'drugs_controller/create'
+  # JUST WANT TO QUERY THIS DATA - DO NOT WANT TO APPLY OTHER CRUD TO IT
+  resources :epa_records, except: [:new, :edit, :update, :destroy]
 
-  # Documentation
+  # Documentation - TODO: FIX THIS
   apipie
-
-  scope '/api/v1', except: [:new, :edit], defaults: { format: :json } do
-    # resources :drugs, only: [:show, :create]
-    # resources :effects, only: [:create]
-    # resources :leaders, only: [:index, :create]
-    # get 'leaders/latest', to: 'leaders#latest'
-  end
 end
