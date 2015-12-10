@@ -69,7 +69,6 @@ class CreateEpaRecords < ActiveRecord::Migration
       t.string :acute
       t.string :intermediate
       t.string :chronic
-      t.timestamps null: false
     end
   end
 end
