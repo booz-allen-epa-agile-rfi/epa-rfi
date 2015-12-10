@@ -20,6 +20,18 @@ class EpaRecordsController < ApplicationController
     render json: epa_records
   end
 
+  def counties
+    render json: epa_records
+  end
+
+  def county_totals
+    render json: epa_records
+  end
+
+  def state_counties
+    render json: epa_records
+  end
+
   # INTENTIONALLY LEAVING OUT CREATE, UPDATE AND DESTROY SINCE WE ARE WORKING OFF STATIC DATA
 
   private
@@ -39,6 +51,12 @@ class EpaRecordsController < ApplicationController
         EpaRecord.chemicals
       when 'zip_codes'
         EpaRecord.zip_codes
+      when 'counties'
+        EpaRecord.counties
+      when 'county_totals'
+        EpaRecord.county_totals
+      when 'state_counties'
+        EpaRecord.state_counties(params[:state])
       else
         EpaRecord.all
       end
