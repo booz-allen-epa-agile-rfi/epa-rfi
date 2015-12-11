@@ -13,7 +13,7 @@ RUN npm install -g grunt-cli
 RUN npm install -g grunt
 
 RUN apt-get install -y ruby-dev
-RUN gem install compass
+RUN gem install --no-ri --no-rdoc compass
 RUN ln -s /usr/bin/nodejs /usr/bin/node
 #RUN mkdir /usr/src/app/client
 COPY bower.json /usr/src/app/client/
