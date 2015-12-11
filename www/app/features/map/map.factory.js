@@ -4,14 +4,12 @@
 
   /** @ngInject */
   function MapFactory($resource) {
-    console.log('map factory ran');
     var Map = {};
     init(); 
 
     return Map;
 
     function init() {
-      debugger;
       Map.tileLayers = initMapTiles() || {};
       Map.dataLayers = initData() || {};
       Map.map = initMap() || {};
@@ -85,8 +83,8 @@
             console.log('air quality data loaded');
             this.eachLayer(function(marker){
               marker.setIcon(new L.Icon({       // sets the marker icon
-                iconUrl: './leaf-red.png',
-                iconSize: [25, 25]
+                iconUrl: 'assets/Pin_1.png',
+                iconSize: [20, 25]
               }));
 
               marker.bindPopup("<b>"+ marker.feature.properties['FACILITY.NAME'] +"</b><br />" + marker.feature.properties['FACILITY.CITY']);

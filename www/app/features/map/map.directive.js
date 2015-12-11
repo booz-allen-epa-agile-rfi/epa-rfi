@@ -29,7 +29,6 @@
       vm.activate = activate;
 
       function activate() {
-        console.log('wtf');
       }
     }
   }
