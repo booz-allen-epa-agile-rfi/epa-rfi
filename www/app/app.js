@@ -27,25 +27,9 @@ angular
         templateUrl: 'features/main/main.html',
         controller: 'MainCtrl'
       })
-      .when('/about', {
-        templateUrl: 'features/routeView/routeView.html'
-      })
-      .when('/chart', {
-        templateUrl: 'features/chart/chart.html',
-        controller: 'ChartCtrl'
-      })
-      .when('/labelEffects', {
-        templateUrl: 'features/labelEffects/labelEffects.html',
-        controller: 'LabelEffectsCtrl'
-      })
-      .when('/about', {
-        templateUrl: 'features/about/about.html'
-      })
-      .when('/leader', {
-        templateUrl: 'features/leaderBoard/leaderBoard.html',
-        controller: 'LeaderBoardCtrl'
-      })
-
+      // .when('/about', {
+      //   templateUrl: 'features/routeView/routeView.html'
+      // })
       .otherwise({
         redirectTo: '/'
       });

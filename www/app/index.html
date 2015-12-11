@@ -2,6 +2,7 @@
 <html>
 <head>
   <title></title>
+  <base href="/">
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   <!-- build:css(.) styles/vendor.css -->
   <!-- bower:css -->
@@ -19,7 +20,7 @@
   <link rel="stylesheet" type="text/css" href="styles/style.css">
 
 </head>
-<body>
+<body ng-app="gapFront">
 <nav class="navbar">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -32,167 +33,7 @@
   </div>
 </nav>
 
-<!-- Main jumbotron for a primary marketing message or call to action -->
-<div class="jumbotron">
-  <div class="container text-center">
-    <h2 class="title-margin">How it Works</h2>
-    <div class="jumbotron-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-    <p><a class="btn btn-white jumbotron-btn-text btn-lg" href="#" role="button">How it Works</a></p>
-  </div>
-</div> <!-- /jumbotron -->
-
-
-<div class="container">
-  <!-- Search by Zip Code or County -->
-  <div class="form-group">
-    <label for="searchInput">Search by Zip Code or County</label>
-    <input type="text" class="col-md-9 form-control" id="searchInput" placeholder="Enter Zip Code or County">
-    <button class="btn btn-blue col-md-1 btn-r" href="#" role="button">Search</button>
-  </div>
-
-  <!-- Recent Searches -->
-  <div class="well well-lg col-md-12">
-    <p class="col-md-10">Recent Search Results</p>
-    <div class="col-md-10">
-      <button class="btn btn-oval btn-black sm-margin-left" href="#" role="button">56301</button>
-      <button class="btn btn-oval btn-black sm-margin-left" href="#" role="button">94109</button>
-      <button class="btn btn-oval btn-black sm-margin-left" href="#" role="button">22306</button>
-      <button class="btn btn-oval btn-black sm-margin-left" href="#" role="button">27765</button>
-      <button class="btn btn-oval btn-black sm-margin-left" href="#" role="button">46578</button>
-      <button class="btn btn-oval btn-black sm-margin-left" href="#" role="button">11233</button>
-      <button class="btn btn-oval btn-black sm-margin-left" href="#" role="button">90667</button>
-      <button class="btn btn-oval btn-black sm-margin-left" href="#" role="button">61038</button>
-    </div>
-  </div>
-
-
-  <!-- Map toggle titles-->
-  <div class="col-md-3">Map   <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></div>
-  <div class="col-md-9">Time Range   <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></div>
-
-
-  <!-- Map toggle and range-->
-  <div class="col-md-12 full-width">
-    <div class="col-md-3 btn-group">
-      <button type="button" class="btn btn-default dropdown-toggle btn-col-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Counties <span class="caret"></span>
-      </button>
-      <ul class="dropdown-menu">
-        <li><a href="#">Action</a></li>
-        <li><a href="#">Another action</a></li>
-        <li><a href="#">Something else here</a></li>
-      </ul>
-    </div>
-    <div class="col-md-8"></div>
-    <button class="btn btn-blue btn-r btn-refresh" href="#" role="button">Refresh Map</button>
-  </div>
-
-  <hr>
-
-  <!-- Map -->
-  <div id="map" class="col-md-9"></div>
-
-  <!-- County Information Column -->
-  <div class="col-md-3 no-pad-r">
-    <div class="list-group">
-      <div class="list-group-item">
-        <h4 class="list-group-item-heading">Orange County, CA</h4>
-        <p class="list-group-item-text">Toggle Results
-          <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
-        </p>
-        <div class="btn-group">
-          <button type="button" class="btn btn-default dropdown-toggle margin-top btn-drop" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Health Effects <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div href="#" class="list-group-item">
-        <h5 class="list-group-item-heading">Body Weight</h5>
-        <p class="list-group-item-text margin-top">
-          Associated Chemicals: 17
-          <span class="btn-r"><a data-toggle="collapse" data-target="#demo"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a></span>
-        <div id="demo" class="collapse in">
-          <p>Chemical 1 (5)<br>
-            Chemical 2 (1)<br>
-            Chemical 3 (7)<br>
-            Chemical 4 (3)<br>
-            Chemical 5 (13)<br>
-            Chemical 6 (2)<br>
-            Chemical 7 (9)<br>
-            Chemical 8 (6)<br>
-            Chemical 9 (2)<br>
-            Chemical 10 (1)
-          </p>
-        </div>
-        </p>
-        <p>
-          Associated Facilities: 5
-        </p>
-        <form>
-          <div class="col-md-3"><input type="radio" value="air" checked></div>
-          <div class="col-md-3"><input type="radio" value="underground"></div>
-          <div class="col-md-3"><input type="radio" value="ground"></div>
-          <div class="col-md-3"><input type="radio" value="water"></div>
-        </form>
-        <div class="col-md-12 sm-label">
-          <div class="col-md-2 text-left no-pad-l">Air</div>
-          <div class="col-md-4 text-left no-pad-l">Underground</div>
-          <div class="col-md-3 text-center">Ground</div>
-          <div class="col-md-3 text-center">Water</div>
-        </div>
-        <p><a class="btn btn-success margin-top" href="#" role="button">View Details</a></p>
-      </div>
-      <div href="#" class="list-group-item">
-        <h5 class="list-group-item-heading">Cardiovascular</h5>
-        <p class="list-group-item-text margin-top">
-          Associated Chemicals: 28
-          Associated Facilities: 12
-        </p>
-        <form>
-          <div class="col-md-3"><input type="radio" value="air" checked></div>
-          <div class="col-md-3"><input type="radio" value="underground"></div>
-          <div class="col-md-3"><input type="radio" value="ground"></div>
-          <div class="col-md-3"><input type="radio" value="water"></div>
-        </form>
-        <div class="col-md-12 sm-label">
-          <div class="col-md-2 text-left no-pad-l">Air</div>
-          <div class="col-md-4 text-left no-pad-l">Underground</div>
-          <div class="col-md-3 text-center">Ground</div>
-          <div class="col-md-3 text-center">Water</div>
-        </div>
-        <p><a class="btn btn-success margin-top" href="#" role="button">View Details</a></p>
-      </div>
-
-      <div href="#" class="list-group-item">
-        <h5 class="list-group-item-heading">Dermal</h5>
-        <p class="list-group-item-text margin-top">
-          Associated Chemicals: 4
-          Associated Facilities: 19
-        </p>
-        <form>
-          <div class="col-md-3"><input type="radio" value="air" checked></div>
-          <div class="col-md-3"><input type="radio" value="underground"></div>
-          <div class="col-md-3"><input type="radio" value="ground"></div>
-          <div class="col-md-3"><input type="radio" value="water"></div>
-        </form>
-        <div class="col-md-12 sm-label">
-          <div class="col-md-2 text-left no-pad-l">Air</div>
-          <div class="col-md-4 text-left no-pad-l">Underground</div>
-          <div class="col-md-3 text-center">Ground</div>
-          <div class="col-md-3 text-center">Water</div>
-        </div>
-        <p><a class="btn btn-success margin-top" href="#" role="button">View Details</a></p>
-      </div>
-
-    </div>
-  </div> <!-- /column -->
-</div> <!-- /container -->
+<div ng-view></div>
 
 <footer class="footer">
   <div class="container">
@@ -228,7 +69,8 @@
 <script src="app.js"></script>
 <script src="features/map/mockData/counties.js"></script>
 <script src="features/map/map.factory.js"></script>
-<script src="features/map/mapData.factory.js"></script>
+<script src="features/map/map.directive.js"></script>
+<script src="features/main/main.js"></script>
 <!-- endbuild -->
 
 <!-- Include all compiled plugins (below), or include individual files as needed -->

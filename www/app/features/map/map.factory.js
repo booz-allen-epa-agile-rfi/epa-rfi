@@ -1,19 +1,16 @@
 (function() {
-  'use strict';
-
   angular.module('gapFront')
     .factory('Map', MapFactory);
 
   /** @ngInject */
-  function MapFactory($resource, MapData) {
-    deugger;
+  function MapFactory($resource) {
+    console.log('map factory ran');
     var Map = {};
-    init();
+    init(); 
 
     return Map;
 
     function init() {
-      debugger;
       Map.tileLayers = initMapTiles() || {};
       Map.map = initMap(Map.tileLayers) || {};
       Map.dataLayers = initData() || {};
@@ -35,24 +32,24 @@
 
         var overlayMaps = {
           'Counties': Map.dataLayers.county,
-          'Air Quality': Map.datalayers.air
+          'Air Quality': Map.dataLayers.air
         }
       }
     }
 
-    function initMapTiles(mapTiles) {
+    function initMapTiles() {
       var tileURL = 'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6IjZjNmRjNzk3ZmE2MTcwOTEwMGY0MzU3YjUzOWFmNWZhIn0.Y8bhBaUMqFiPrDRW9hieoQ';
       var attribution = 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
           '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
           'Imagery © <a href="http://mapbox.com">Mapbox</a>'
 
       return { 
-        grayScale: L.tileLayer(tileUrl, {
+        grayScale: L.tileLayer(tileURL, {
           maxZoom: 18,
           attribution: attribution,
           id: 'mapbox.light'
         }),
-        streets: L.tileLayer(tileUrl, {
+        streets: L.tileLayer(tileURL, {
           maxZoom: 18,
           attribution: attribution,
           id: 'mapbox.streets'
@@ -81,7 +78,7 @@
       // Private
 
       function initAirLayer() {
-        return omnivore.csv('./mockData/data1r_randomized2.csv')           // Air Quality Data
+        return omnivore.csv('features/map/mockData/data1r_randomized2.csv')           // Air Quality Data
           .on('ready', function(layer) {
             console.log('air quality data loaded');
             this.eachLayer(function(marker){
@@ -147,6 +144,30 @@
             }
           }
         });
+
+        // Private
+
+        function getColor(d) {
+            return d > 10000 ? '#800026' :
+                   d > 5000  ? '#BD0026' :
+                   d > 2000 ? '#E31A1C' :
+                   d > 1000  ? '#FC4E2A' :
+                   d > 500   ? '#FD8D3C' :
+                   d > 200   ? '#FEB24C' :
+                   d > 10   ? '#FED976' :
+                              '#FFEDA0';
+        }
+
+        function style(feature) {
+            return {
+                fillColor: getColor(feature.properties.CENSUSAREA),
+                weight: 2,
+                opacity: 1,
+                color: 'white',
+                dashArray: '3',
+                fillOpacity: 0.7
+            };
+        }
       }
     }
   }
