@@ -1,6 +1,5 @@
 /* GLOBAL STYLES
 -------------------------------------------------- */
-
 #map {
   height: 650px;
 }
@@ -25,21 +24,17 @@
   color: white;
 }
 
-
-
 /* FORMS, INPUTS, & LABELS */
 /*-------------------------------------------------- */
 .form-control {
   width: 90% !important;
 }
-
 .sm-label {
   font-size: 10px;
 }
 
 /* NAVBAR */
 /*-------------------------------------------------- */
-
 .navbar {
   margin-bottom: 10px;
   margin-top: 10px;
@@ -81,14 +76,18 @@
 
 /* BUTTONS */
 /*-------------------------------------------------- */
-
-
 .btn-r {
   float: right;
 }
 .btn-black {
   background-color: black;
   color: white;
+}
+.btn-white {
+  background-color: white;
+  color: #0071bc;
+  font-weight: 800;
+  font-size: 14px;
 }
 .btn-oval {
   padding: 4px 26px !important;
