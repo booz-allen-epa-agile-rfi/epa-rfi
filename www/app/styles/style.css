@@ -45,7 +45,7 @@
 }
 .well {
   margin-top: 10px;
-
+}
 .no-pad-l {
   padding-left: 0px;
 }
@@ -55,6 +55,8 @@
 
 /* BUTTONS */
 /*-------------------------------------------------- */
+
+
 .btn-r {
   float: right;
 }
