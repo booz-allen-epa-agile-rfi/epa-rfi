@@ -57,7 +57,7 @@ User stories are archived on our wiki here - https://github.com/booz-allen-epa-a
 
 ![Forecast-vs-Delivered](https://docs.google.com/spreadsheets/d/1AAqKoaxrRT1NDnyU7He5MAi4QXazMylVXrlxZimznBI/pubchart?oid=1410313000&format=image)
 
-##Agile Practices Used
+## Agile Practices Used
 1. Ideation/visioning session
 1. Pair programming and peer review
 1. Kanban board (using Waffle.io)
@@ -90,7 +90,7 @@ User stories are archived on our wiki here - https://github.com/booz-allen-epa-a
 
 
 ### Day 1 plans
-## Sprint 1 Plan
+#### Sprint 1 Plan
 - Create process document checklist (1)
 - Determine domain name (1)
 - Mockup landing page (2)
@@ -105,7 +105,7 @@ User stories are archived on our wiki here - https://github.com/booz-allen-epa-a
 
 15 pts forecast, 15 pts delivered
 
-## Sprint 2 Plan
+#### Sprint 2 Plan
 - Prototype Map Layers/Zoom (2)
 - Strip reusable codebase to something cleaner (2)
 - Meet to decide on Day-1 API endpoints/design (2)
@@ -120,28 +120,52 @@ User stories are archived on our wiki here - https://github.com/booz-allen-epa-a
 - Determine visualizations based on data (1)
 - Wireframe for the map (2)
 - Hold meeting between design and frontend (1)
-- Have jenkins build on each commit (2) --> Not delivered
+- Have jenkins build on each commit (2) --> Not complete in this sprint
 
 23 pts forecast, 21 pts delivered
 
 
 
 ### Day 2 plans
-## Sprint 3 Plan
+#### Sprint 3 Plan
 - Wireframe interior pages (1)
+- Update user scenarios (1)
+- Update license documentation (1)
 - Data architecture meeting/review (1)
-- Write README.md file (2)
 - Wireframe for About Team page (1)
 - Edit landing page for UX changes for filter (2)
-- Write Agile Software evidence (2) 
 - Design additional API endpoints (2)
-- Initial tie of frontend to API (2)
-- Integrate maps into Angular (2)
-- Create About Team page (1)
 - Start writing TDD evidence page (1)
 - Review data with market team (2)
 - Discuss Test-First strategy (1)
+- Initial tie of frontend to API (2) --> Not complete in this sprint
+- Integrate maps into Angular (2) --> Not complete in this sprint
+- Create About Team page (1) --> Not complete in this sprint
+- Write Agile Software evidence (2) --> Not complete in this sprint
+- Write README.md file (2) --> Not complete in this sprint
+- Collect Day 2 documentation artifacts (1) --> Not complete in this sprint
+
+23 pts forecast, 14 pts delivered
+
+
 
 ### Day 3 plans
-## Sprint 4 Plan
+#### Sprint 4 Plan
+- Tie frontend to API (2) --> Finish from last sprint
+- Integrate maps into Angular (2) --> Finish from last sprint
+- Create About Team page (1) --> Finish from last sprint
+- Write Agile Software evidence (2) --> Finish from last sprint
+- Write README.md file (2) --> Finish from last sprint
+- Collect Day 2 documentation artifacts (1) --> Finish from last sprint
+- Updated developer screenshots for documentation (1)
+- Update pivot/persevere documentation (1)
+- Create copy for GUI mockups (1)
+- Review personas with market team (1)
+- Incorporate mockups into frontend code (2)
+- Get two filters working on map (3)
+- Write user-centered design evidence page (2)
+- Deploy frontend to AWS (3)
+- Show backend testing (2)
+- Show frontend testing (2)
 
+28 pts forecast, 
