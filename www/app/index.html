@@ -1,206 +1,214 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="author" href="humans.txt" />
-    <title>TREEVIEW</title>
-    <base href="/">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- build:css(.) styles/vendor.css -->
-    <!-- bower:css -->
-    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
-    <link rel="stylesheet" href="bower_components/angular-motion/dist/angular-motion.css" />
-    <link rel="stylesheet" href="bower_components/angular-rangeslider/angular.rangeSlider.css" />
-    <link rel="stylesheet" href="bower_components/nvd3/build/nv.d3.css" />
-    <!-- endbower -->
-    <!-- endbuild -->
-    <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
-    <!-- endbuild -->
-
-    <link rel="stylesheet" href="styles/style.css">
+  <title></title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+  <link rel="stylesheet" type="text/css" href="styles/style.css">
 
 </head>
 <body>
-  <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#">
-          [ EPA LOGO ]
-          <!--<img alt="Brand" src="...">-->
-        </a>
-      </div>
-      <p class="navbar-text navbar-right">
-        <a href="#" class="navbar-link nav-inner-padding">Facilities</a>
-        <a href="#" class="navbar-link nav-inner-padding">Chemicals</a>
-        <a href="#" class="navbar-link nav-inner-padding">Health effects</a>
-      </p>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+        [ EPA LOGO ]
+        <!--<img alt="Brand" src="...">-->
+      </a>
     </div>
-  </nav>
+    <p class="navbar-text navbar-right">
+      <a href="#" class="navbar-link nav-inner-padding">Facilities</a>
+      <a href="#" class="navbar-link nav-inner-padding">Chemicals</a>
+      <a href="#" class="navbar-link nav-inner-padding">Health effects</a>
+    </p>
+  </div>
+</nav>
 
-  <!-- Main jumbotron for a primary marketing message or call to action -->
-  <div class="jumbotron">
-    <div class="container text-center">
-      <h2 class="title-margin">How it Works</h2>
-      <div class="info-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-      <p><a class="btn btn-primary btn-lg" href="#" role="button">How it Works &raquo;</a></p>
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+  <div class="container text-center">
+    <h2 class="title-margin">How it Works</h2>
+    <div class="info-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+    <p><a class="btn btn-primary btn-lg" href="#" role="button">How it Works &raquo;</a></p>
+  </div>
+</div> <!-- /jumbotron -->
+
+
+<div class="container">
+  <!-- Search by Zip Code or County -->
+  <div class="form-group">
+    <label for="searchInput">Search by Zip Code or County</label>
+    <input type="text" class="col-md-9 form-control" id="searchInput" placeholder="Enter Zip Code or County">
+    <a class="btn btn-black col-md-1 btn-r" href="#" role="button">Search</a>
+  </div>
+
+  <!-- Recent Searches -->
+  <div class="well well-lg col-md-12">
+    <p class="col-md-10">Recent Search Results</p>
+    <div class="col-md-10">
+      <a class="btn btn-oval btn-black sm-margin-left" href="#" role="button">56301</a>
+      <a class="btn btn-oval btn-black sm-margin-left" href="#" role="button">94109</a>
+      <a class="btn btn-oval btn-black sm-margin-left" href="#" role="button">22306</a>
+      <a class="btn btn-oval btn-black sm-margin-left" href="#" role="button">27765</a>
+      <a class="btn btn-oval btn-black sm-margin-left" href="#" role="button">46578</a>
+      <a class="btn btn-oval btn-black sm-margin-left" href="#" role="button">11233</a>
+      <a class="btn btn-oval btn-black sm-margin-left" href="#" role="button">90667</a>
+      <a class="btn btn-oval btn-black sm-margin-left" href="#" role="button">61038</a>
     </div>
-  </div> <!-- /jumbotron -->
+  </div>
 
 
-  <div class="container">
-    <!-- Search by Zip Code or County -->
-    <div class="form-group">
-      <label for="searchInput">Search by Zip Code or County</label>
-      <input type="text" class="col-md-9 form-control" id="searchInput" placeholder="Enter Zip Code or County">
-      <a class="btn col-md-1 btn-xl" href="#" role="button">Search</a>
+  <!-- Map toggle titles-->
+  <div class="col-md-3">Map   <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></div>
+  <div class="col-md-9">Time Range   <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></div>
+
+
+  <!-- Map toggle and range-->
+  <div class="col-md-12">
+    <div class="col-md-3 btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle btn-col-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Counties <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li>
+        <li><a href="#">Something else here</a></li>
+      </ul>
     </div>
-
-    <!-- Recent Searches -->
-    <div class="well well-lg col-md-12">
-      <p class="col-md-10">Recent Search Results</p>
-      <div class="col-md-10">
-        <a class="btn btn-oval btn-black sm-margin-left" href="#" role="button">56301</a>
-        <a class="btn btn-oval btn-black sm-margin-left" href="#" role="button">94109</a>
-        <a class="btn btn-oval btn-black sm-margin-left" href="#" role="button">22306</a>
-        <a class="btn btn-oval btn-black sm-margin-left" href="#" role="button">27765</a>
-        <a class="btn btn-oval btn-black sm-margin-left" href="#" role="button">46578</a>
-        <a class="btn btn-oval btn-black sm-margin-left" href="#" role="button">11233</a>
-        <a class="btn btn-oval btn-black sm-margin-left" href="#" role="button">90667</a>
-        <a class="btn btn-oval btn-black sm-margin-left" href="#" role="button">61038</a>
-      </div>
+    <div class="col-md-8"></div>
+    <div class="col-md-1">
+      <a class="btn btn-black btn-r btn-refresh" href="#" role="button">Refresh Map</a>
     </div>
-
-
-    <!-- Map toggle titles-->
-    <div class="col-md-3">Map   <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></div>
-    <div class="col-md-9">Time Range   <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></div>
-
-
-    <!-- Map toggle and range-->
-    <div class="col-md-12">
-      <div class="col-md-3 btn-group">
-        <button type="button" class="btn btn-default dropdown-toggle btn-col-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Counties <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu">
-          <li><a href="#">Action</a></li>
-          <li><a href="#">Another action</a></li>
-          <li><a href="#">Something else here</a></li>
-        </ul>
-      </div>
-      <div class="col-md-8"></div>
-      <div class="col-md-1">
-        <a class="btn btn-black btn-r btn-refresh" href="#" role="button">Refresh Map</a>
-      </div>
-    </div>
-
-    <hr>
-
-    <!-- Map -->
-    <div id="map" class="col-md-9"></div>
-
-    <!-- County Information Column -->
-    <div class="col-md-3">
-      <div class="list-group">
-        <div class="list-group-item">
-          <h4 class="list-group-item-heading">Orange County, CA</h4>
-          <p class="list-group-item-text">Toggle Results
-            <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
-          </p>
-          <div class="btn-group">
-            <button type="button" class="btn btn-default dropdown-toggle margin-top btn-drop" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Health Effects <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-            </ul>
-          </div>
-        </div>
-        <div href="#" class="list-group-item">
-          <h5 class="list-group-item-heading">Body Weight</h5>
-          <p class="list-group-item-text margin-top">
-            Associated Chemicals: 17
-            Associated Facilities: 5
-          </p>
-          <form>
-            <div class="col-md-3"><input type="radio" value="air" checked></div>
-            <div class="col-md-3"><input type="radio" value="underground"></div>
-            <div class="col-md-3"><input type="radio" value="ground"></div>
-            <div class="col-md-3"><input type="radio" value="water"></div>
-          </form>
-          <div class="col-md-12 sm-label">
-            <div class="col-md-2 text-left no-pad-l">Air</div>
-            <div class="col-md-4 text-left no-pad-l">Underground</div>
-            <div class="col-md-3 text-center">Ground</div>
-            <div class="col-md-3 text-center">Water</div>
-          </div>
-          <p><a class="btn btn-success margin-top" href="#" role="button">View Details</a></p>
-        </div>
-        <div href="#" class="list-group-item">
-          <h5 class="list-group-item-heading">Cardiovascular</h5>
-          <p class="list-group-item-text margin-top">
-            Associated Chemicals: 28
-            Associated Facilities: 12
-          </p>
-          <form>
-            <div class="col-md-3"><input type="radio" value="air" checked></div>
-            <div class="col-md-3"><input type="radio" value="underground"></div>
-            <div class="col-md-3"><input type="radio" value="ground"></div>
-            <div class="col-md-3"><input type="radio" value="water"></div>
-          </form>
-          <div class="col-md-12 sm-label">
-            <div class="col-md-2 text-left no-pad-l">Air</div>
-            <div class="col-md-4 text-left no-pad-l">Underground</div>
-            <div class="col-md-3 text-center">Ground</div>
-            <div class="col-md-3 text-center">Water</div>
-          </div>
-
-          <p><a class="btn btn-success margin-top" href="#" role="button">View Details</a></p>
-        </div>
-        <div href="#" class="list-group-item">
-          <h5 class="list-group-item-heading">Dermal</h5>
-          <p class="list-group-item-text margin-top">
-            Associated Chemicals: 4
-            Associated Facilities: 19
-          </p>
-          <form>
-            <div class="col-md-3"><input type="radio" value="air" checked></div>
-            <div class="col-md-3"><input type="radio" value="underground"></div>
-            <div class="col-md-3"><input type="radio" value="ground"></div>
-            <div class="col-md-3"><input type="radio" value="water"></div>
-          </form>
-          <div class="col-md-12 sm-label">
-            <div class="col-md-2 text-left no-pad-l">Air</div>
-            <div class="col-md-4 text-left no-pad-l">Underground</div>
-            <div class="col-md-3 text-center">Ground</div>
-            <div class="col-md-3 text-center">Water</div>
-          </div>
-          <p><a class="btn btn-success margin-top" href="#" role="button">View Details</a></p>
-        </div>
-      </div>
-    </div> <!-- /column -->
-  </div> <!-- /container -->
+  </div>
 
   <hr>
 
-  <!-- Latest compiled and minified JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="dependencies/bootstrap.min.js"></script>
-  <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-  <script src="features/map/counties.js"></script>
-  <script src="features/map/leaflet.js"></script>
+  <!-- Map -->
+  <div id="map" class="col-md-9"></div>
+
+  <!-- County Information Column -->
+  <div class="col-md-3">
+    <div class="list-group">
+      <div class="list-group-item">
+        <h4 class="list-group-item-heading">Orange County, CA</h4>
+        <p class="list-group-item-text">Toggle Results
+          <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+        </p>
+        <div class="btn-group">
+          <button type="button" class="btn btn-default dropdown-toggle margin-top btn-drop" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Health Effects <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div href="#" class="list-group-item">
+        <h5 class="list-group-item-heading">Body Weight</h5>
+        <p class="list-group-item-text margin-top">
+          Associated Chemicals: 17
+          <span class="btn-r"><a data-toggle="collapse" data-target="#demo"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a></span>
+        <div id="demo" class="collapse in">
+          <p>Chemical 1 (5)<br>
+            Chemical 2 (1)<br>
+            Chemical 3 (7)<br>
+            Chemical 4 (3)<br>
+            Chemical 5 (13)<br>
+            Chemical 6 (2)<br>
+            Chemical 7 (9)<br>
+            Chemical 8 (6)<br>
+            Chemical 9 (2)<br>
+            Chemical 10 (1)
+          </p>
+        </div>
+        </p>
+        <p>
+          Associated Facilities: 5
+        </p>
+        <form>
+          <div class="col-md-3"><input type="radio" value="air" checked></div>
+          <div class="col-md-3"><input type="radio" value="underground"></div>
+          <div class="col-md-3"><input type="radio" value="ground"></div>
+          <div class="col-md-3"><input type="radio" value="water"></div>
+        </form>
+        <div class="col-md-12 sm-label">
+          <div class="col-md-2 text-left no-pad-l">Air</div>
+          <div class="col-md-4 text-left no-pad-l">Underground</div>
+          <div class="col-md-3 text-center">Ground</div>
+          <div class="col-md-3 text-center">Water</div>
+        </div>
+        <p><a class="btn btn-success margin-top" href="#" role="button">View Details</a></p>
+      </div>
+      <div href="#" class="list-group-item">
+        <h5 class="list-group-item-heading">Cardiovascular</h5>
+        <p class="list-group-item-text margin-top">
+          Associated Chemicals: 28
+          Associated Facilities: 12
+        </p>
+        <form>
+          <div class="col-md-3"><input type="radio" value="air" checked></div>
+          <div class="col-md-3"><input type="radio" value="underground"></div>
+          <div class="col-md-3"><input type="radio" value="ground"></div>
+          <div class="col-md-3"><input type="radio" value="water"></div>
+        </form>
+        <div class="col-md-12 sm-label">
+          <div class="col-md-2 text-left no-pad-l">Air</div>
+          <div class="col-md-4 text-left no-pad-l">Underground</div>
+          <div class="col-md-3 text-center">Ground</div>
+          <div class="col-md-3 text-center">Water</div>
+        </div>
+        <p><a class="btn btn-success margin-top" href="#" role="button">View Details</a></p>
+      </div>
+
+      <div href="#" class="list-group-item">
+        <h5 class="list-group-item-heading">Dermal</h5>
+        <p class="list-group-item-text margin-top">
+          Associated Chemicals: 4
+          Associated Facilities: 19
+        </p>
+        <form>
+          <div class="col-md-3"><input type="radio" value="air" checked></div>
+          <div class="col-md-3"><input type="radio" value="underground"></div>
+          <div class="col-md-3"><input type="radio" value="ground"></div>
+          <div class="col-md-3"><input type="radio" value="water"></div>
+        </form>
+        <div class="col-md-12 sm-label">
+          <div class="col-md-2 text-left no-pad-l">Air</div>
+          <div class="col-md-4 text-left no-pad-l">Underground</div>
+          <div class="col-md-3 text-center">Ground</div>
+          <div class="col-md-3 text-center">Water</div>
+        </div>
+        <p><a class="btn btn-success margin-top" href="#" role="button">View Details</a></p>
+      </div>
+
+    </div>
+  </div> <!-- /column -->
+</div> <!-- /container -->
+
+<footer class="footer">
+  <div class="container">
+    <p>Booz Allen Hamilton 2015</p>
+  </div>
+</footer>
+
+
+<script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+<script src="js/counties.js"></script>
+<script src="js/leaflet.js"></script>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="dependencies/bootstrap.min.js"></script>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
 </body>
-
 </html>
