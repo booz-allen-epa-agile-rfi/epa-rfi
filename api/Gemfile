@@ -13,7 +13,7 @@ gem 'puma'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18.2'
 gem 'pg_search', '~> 0.7.8'
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
+gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
 # .Env gem Gem
 gem 'dotenv-rails'
