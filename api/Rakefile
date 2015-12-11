@@ -5,7 +5,6 @@ require File.expand_path('../config/application', __FILE__)
 
 Rails.application.load_tasks
 
-require 'csv'
 namespace :db do
   namespace :schema do
     task :load => :environment do
@@ -17,6 +16,18 @@ namespace :db do
 
         ActiveRecord::Base.connection.execute("COPY epa_records (id, cas_number, reporting_year, trifid, facility_name, facility_city, facility_county, facility_state, facility_zip_code, primary_naics_code, latitude, longitude, parent_company_name, chemical_name, classification, unit_of_measure, produce_the_chemical, import_the_chemical, on_site_use, sale_or_distribution, as_a_byproduct, as_a_manufactured_impurity, as_a_reactant, as_a_formulation_component, as_an_article_component, repackaging, as_a_process_impurity, as_a_chemical_processing_aid, as_a_manufacturing_aid, ancillary_or_other_use, total_air_emissions, total_underground_injection, total_on_site_land_releases, total_transferred_off_site_to_disposal, document_control_number, total_surface_water_discharge, transfers_to_potws_metals_and_metal_compounds, naics_2, naics_3, chemical, cercla_chemicals, haps, metals_and_metal_compounds, pbt_chemicals, priority_chemicals, osha_chemicals, other_health_effects, body_weight, cardiovascular, dermal, developmental, endocrine, gastrointestinal, hematological, hepatic, immunological, metabolic, musculoskeletal, neurological, ocular, other_systemic, renal, reproductive, respiratory, human_health_effects_information_not_identified, acute, intermediate, chronic) FROM '#{file1}';") if File.exists? file1
         ActiveRecord::Base.connection.execute("COPY epa_records (id, cas_number, reporting_year, trifid, facility_name, facility_city, facility_county, facility_state, facility_zip_code, primary_naics_code, latitude, longitude, parent_company_name, chemical_name, classification, unit_of_measure, produce_the_chemical, import_the_chemical, on_site_use, sale_or_distribution, as_a_byproduct, as_a_manufactured_impurity, as_a_reactant, as_a_formulation_component, as_an_article_component, repackaging, as_a_process_impurity, as_a_chemical_processing_aid, as_a_manufacturing_aid, ancillary_or_other_use, total_air_emissions, total_underground_injection, total_on_site_land_releases, total_transferred_off_site_to_disposal, document_control_number, total_surface_water_discharge, transfers_to_potws_metals_and_metal_compounds, naics_2, naics_3, chemical, cercla_chemicals, haps, metals_and_metal_compounds, pbt_chemicals, priority_chemicals, osha_chemicals, other_health_effects, body_weight, cardiovascular, dermal, developmental, endocrine, gastrointestinal, hematological, hepatic, immunological, metabolic, musculoskeletal, neurological, ocular, other_systemic, renal, reproductive, respiratory, human_health_effects_information_not_identified, acute, intermediate, chronic) FROM '#{file2}';") if File.exists? file2
+
+        states = "#{Rails.root}/dbdata/states.txt"
+
+        ActiveRecord::Base.connection.execute("COPY states (id, state_name, abbreviation) FROM '#{states}';") if File.exists? states
+
+        counties = "#{Rails.root}/dbdata/counties.txt"
+
+        ActiveRecord::Base.connection.execute("COPY counties (id, state_id, county_name) FROM '#{counties}';") if File.exists? counties
+
+        geo_json = "#{Rails.root}/dbdata/geo_json.txt"
+
+        ActiveRecord::Base.connection.execute("COPY geo_json (state_id, county_id, geo_object) FROM '#{geo_json}';") if File.exists? geo_json
       end
     end
   end
