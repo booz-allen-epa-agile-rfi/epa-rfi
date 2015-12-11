@@ -11,58 +11,60 @@
     return Map;
 
     function init() {
+      debugger;
       Map.tileLayers = initMapTiles() || {};
-      Map.map = initMap(Map.tileLayers) || {};
       Map.dataLayers = initData() || {};
-      Map.controls = initControls() || {};
+      Map.map = initMap() || {};
+
+      addToMap(Map.map);
     }
 
     // Private
 
-    function initControls() {
-      return {
-        layers: initLayerControl()        // Create the layer control
+    function addToMap(mapInstance) {
+      var baseMaps = {
+        'Grayscale': Map.tileLayers.grayScale,
+        'Streets': Map.tileLayers.streets
       }
 
-      function initLayerControl() {
-        var baseMaps = {
-          'Grayscale': Map.tileLayers.grayScale,
-          'Streets': Map.tileLayers.streets
-        }
-
-        var overlayMaps = {
-          'Counties': Map.dataLayers.county,
-          'Air Quality': Map.dataLayers.air
-        }
+      var overlayMaps = {
+        'Counties': Map.dataLayers.county,
+        'Air Quality': Map.dataLayers.air
       }
+
+      L.control.layers(baseMaps, overlayMaps).addTo(mapInstance);
+      Map.tileLayers.grayScale.addTo(mapInstance);
+      Map.dataLayers.county.addTo(mapInstance);
     }
 
     function initMapTiles() {
+      var mapTiles = {};
+
       var tileURL = 'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6IjZjNmRjNzk3ZmE2MTcwOTEwMGY0MzU3YjUzOWFmNWZhIn0.Y8bhBaUMqFiPrDRW9hieoQ';
       var attribution = 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
           '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
           'Imagery © <a href="http://mapbox.com">Mapbox</a>'
 
-      return { 
-        grayScale: L.tileLayer(tileURL, {
-          maxZoom: 18,
-          attribution: attribution,
-          id: 'mapbox.light'
-        }),
-        streets: L.tileLayer(tileURL, {
-          maxZoom: 18,
-          attribution: attribution,
-          id: 'mapbox.streets'
-        })
+      mapTiles.grayScale = L.tileLayer(tileURL, {
+        maxZoom: 18,
+        attribution: attribution,
+        id: 'mapbox.light'
+      });
 
-      }
+      mapTiles.streets = L.tileLayer(tileURL, {
+        maxZoom: 18,
+        attribution: attribution,
+        id: 'mapbox.streets'
+      });
+
+      return mapTiles;
     }
 
     function initMap(tileLayers) {
       return L.map('map' , {
         center: [30.3669563, -97.7926704],
         zoom: 5,
-        layers: [tileLayers.grayScale, tileLayers.streets]
+        layers: [Map.tileLayers.grayScale, Map.dataLayers.county]      // Renders the stuff
       });
     }
 
@@ -135,17 +137,13 @@
               if (!L.Browser.ie && !L.Browser.opera) {
                   layer.bringToFront();
               }
-              info.update(layer.feature.properties);
             }
 
             function resetHighlight(e) {
               countyLayer.resetStyle(e.target);
-              info.update();
             }
           }
         });
-
-        // Private
 
         function getColor(d) {
             return d > 10000 ? '#800026' :
