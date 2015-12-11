@@ -7,11 +7,14 @@ class CreateEpaRecords < ActiveRecord::Migration
       t.string :facility_name
       t.string :facility_city
       t.string :facility_county
+      t.integer :county_id, index: true
       t.string :facility_state
+      t.integer :state_id, index: true
       t.string :facility_zip_code
       t.string :primary_naics_code
       t.string :latitude
       t.string :longitude
+      t.integer :geo_json_id, index: true
       t.string :parent_company_name
       t.string :chemical_name
       t.string :classification

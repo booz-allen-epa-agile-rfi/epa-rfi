@@ -23,11 +23,24 @@ namespace :db do
 
         counties = "#{Rails.root}/dbdata/counties.txt"
 
-        ActiveRecord::Base.connection.execute("COPY counties (id, state_id, county_name) FROM '#{counties}';") if File.exists? counties
+        ActiveRecord::Base.connection.execute("COPY counties (county_id, state_id, county_name, coordinates) FROM '#{counties}';") if File.exists? counties
 
         geo_json = "#{Rails.root}/dbdata/geo_json.txt"
 
         ActiveRecord::Base.connection.execute("COPY geo_json (state_id, county_id, geo_object) FROM '#{geo_json}';") if File.exists? geo_json
+
+        ActiveRecord::Base.connection.execute('CREATE EXTENSION unaccent')
+        ActiveRecord::Base.connection.execute('UPDATE epa_records SET state_id = t1.id FROM (SELECT id, abbreviation FROM states) AS t1 WHERE facility_state = t1.abbreviation')
+        ActiveRecord::Base.connection.execute("UPDATE epa_records SET facility_county = 'MIAMI-DADE' WHERE facility_county = 'DADE' AND state_id = 12")
+        ActiveRecord::Base.connection.execute("UPDATE epa_records t0
+                                                SET county_id = t1.county_id
+                                                FROM (
+                                                  SELECT county_id, state_id, county_name
+                                                  FROM counties
+                                                ) AS t1
+                                                WHERE
+                                                  replace(replace(facility_county, ' ', ''), '(CITY)', '') = unaccent(replace(replace(replace(UPPER(t1.county_name), ' ', ''), '.', ''), '''', '')) AND t0.state_id = t1.state_id")
+        ActiveRecord::Base.connection.execute('UPDATE epa_records t0 SET geo_json_id = t1.id FROM (SELECT id, state_id, county_id FROM geo_json) AS t1 WHERE t0.state_id = t1.state_id AND t0.county_id = t1.county_id')
       end
     end
   end

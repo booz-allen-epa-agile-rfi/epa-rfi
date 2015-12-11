@@ -1,4 +1,8 @@
 class EpaRecord < ActiveRecord::Base
+  has_many :states
+  has_many :counties
+  has_many :geo_json
+
   # Scopes
   scope :states, -> { select('facility_state').distinct.map do |x| x.facility_state end }
   scope :chemicals, -> { select('chemical_name').distinct.map do |x| x.chemical_name end }
