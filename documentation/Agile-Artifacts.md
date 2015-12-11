@@ -1,4 +1,3 @@
-
 ![agile_process_v1](https://cloud.githubusercontent.com/assets/12210910/8392521/1186de50-1cb3-11e5-8be1-594f4bc00538.png)
 
 **Our Agile Process**
@@ -24,20 +23,20 @@ Day 1 (Wed) was characterized with two sprints, of 3 hours each, each ending in 
 In Day 2 (Thurs), the team decided that planning a single sprint for the day would be a more effective strategy, with numerous cross-team synchronizations and meetings occurring 
 within.
 
-Day 3 (Fri) began with a full-team demo of current progress, and opportunity for feedback, then a further retrospective, to continue to hone the way we work.
-We then planned the day's work and planned for a review and retrospective at the end of the day.
+Day 3 (Fri) began with a full-team demo of current progress, and opportunity for feedback on the product, then a further retrospective to hone the way we work.
+We then planned the day's work and planned for a review and retrospective at the end of the day (4pm Eastern).
 
 Day 1
 - Sprint 1 (3 hours)
 - Sprint 2 (3 hours)
 
-Day 2 - Minimum Viable Product
+Day 2
 - Sprint 3 (8 hours)
 - The goal for this day was to end with a demonstrable slice of the application's functionality, connecting the user to the valuable data and visulizations
 
 Day 3 - Release 1 (Day 3)
 - Sprint 4 (8 hours)
-
+- The goal was to target the full-stack app, running in the production environment, with real data shown through the front-end 
 
 As we executed, we followed a simple pattern: 
  1. Release Planning - Plan each day as a release
@@ -45,9 +44,10 @@ As we executed, we followed a simple pattern:
  1. Sprint Demonstration - Demo each Sprint's output, receiving feedback from the team and interested parties
  1. Retrospective - Conduct a retrospective after each release, to adapt our work for the next release
 
-Work was captured as user stories (expressing a need and value), and broken down into technical tasks. 
-We estimated each task and captured the planned user stories for each sprint. 
-We also captured the velocity for each sprint and used that as input into our next sprints. 
+To guide where we going, the team built user stories and user personas early on, to demonstrate the value proposition of the application.
+
+Work items that supported those stories were captured and tracked. We estimated each task and captured the planned tasks for each sprint. 
+We also captured the velocity for each sprint and used that as input into planning our next sprints. 
 
 User stories are archived on our wiki here - https://github.com/booz-allen-epa-agile-rfi/epa-rfi/wiki/User-Stories
 
@@ -81,17 +81,67 @@ User stories are archived on our wiki here - https://github.com/booz-allen-epa-a
 1. Personas
 1. Product Owner
 1. Roadmaps
-1. Agile estimation (story points), whole-team estimation 
+1. Agile estimation (story points)
+1. Whole-team, planning poker estimation 
 
 ### Sprint 0 Activities
-// TODO
-
-### Team collaboration
-// TODO
+- Hold a team kickoff (1)
+- Hold an initial vision/data exploration session (1)
 
 
 ### Day 1 plans
+## Sprint 1 Plan
+- Create process document checklist (1)
+- Determine domain name (1)
+- Mockup landing page (2)
+- Wireframe for user interface (1)
+- Choose library for map (1)
+- Create user scenarios (1)
+- Determine how to host data on AWS (1)
+- Port reusable code to repository (2)
+- Start Jenkins setup (2)
+- Choose frontend technologies (1)
+- Configure AWS environment (2)
+
+15 pts forecast, 15 pts delivered
+
+## Sprint 2 Plan
+- Prototype Map Layers/Zoom (2)
+- Strip reusable codebase to something cleaner (2)
+- Meet to decide on Day-1 API endpoints/design (2)
+- Initial landing page done on frontend (2) 
+- Data loaded into database (1)
+- Initial whole-API design (2)
+- Decide on filters for map (1)
+- Refactor social media user scenario (1)
+- Design initial personas (1)
+- Finalize user scenarios (1)
+- Present branding/identity options (2)
+- Determine visualizations based on data (1)
+- Wireframe for the map (2)
+- Hold meeting between design and frontend (1)
+- Have jenkins build on each commit (2) --> Not delivered
+
+23 pts forecast, 21 pts delivered
+
+
 
 ### Day 2 plans
+## Sprint 3 Plan
+- Wireframe interior pages (1)
+- Data architecture meeting/review (1)
+- Write README.md file (2)
+- Wireframe for About Team page (1)
+- Edit landing page for UX changes for filter (2)
+- Write Agile Software evidence (2) 
+- Design additional API endpoints (2)
+- Initial tie of frontend to API (2)
+- Integrate maps into Angular (2)
+- Create About Team page (1)
+- Start writing TDD evidence page (1)
+- Review data with market team (2)
+- Discuss Test-First strategy (1)
 
 ### Day 3 plans
+## Sprint 4 Plan
+
