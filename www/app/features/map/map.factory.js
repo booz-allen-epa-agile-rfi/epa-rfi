@@ -80,7 +80,6 @@
       function initAirLayer() {
         return omnivore.csv('features/map/mockData/data1r_randomized2.csv')           // Air Quality Data
           .on('ready', function(layer) {
-            console.log('air quality data loaded');
             this.eachLayer(function(marker){
               marker.setIcon(new L.Icon({       // sets the marker icon
                 iconUrl: 'assets/Pin_1.png',
