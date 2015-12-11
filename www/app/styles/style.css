@@ -3,11 +3,6 @@
 #map {
   height: 650px;
 }
-.info-text {
-  font-size: 18px;
-  margin-bottom: 15px;
-  font-weight: 200;
-}
 .title-margin {
   margin-top: 50px;
   margin-bottom: 20px;
@@ -23,6 +18,22 @@
   background-repeat: no-repeat;
   color: white;
 }
+
+.jumbotron .container {
+  max-width: 800px !important;
+}
+
+.jumbotron-text {
+  font-size: 16px;
+  margin-bottom: 15px;
+  font-weight: 200;
+}
+
+.jumbotron-btn-text {
+  font-weight: 800;
+  font-size: 14px;
+}
+
 
 /* FORMS, INPUTS, & LABELS */
 /*-------------------------------------------------- */
@@ -70,10 +81,16 @@
 .no-pad-l {
   padding-left: 0px;
 }
+.no-pad-r {
+  padding-right: 0px;
+}
 .pad-l {
   padding-left: -10px;
 }
-
+.full-width {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
 /* BUTTONS */
 /*-------------------------------------------------- */
 .btn-r {
@@ -86,8 +103,11 @@
 .btn-white {
   background-color: white;
   color: #0071bc;
-  font-weight: 800;
-  font-size: 14px;
+}
+.btn-blue {
+  background-color: #0071bc;
+  color: white;
+  border-radius: 0px;
 }
 .btn-oval {
   padding: 4px 26px !important;
