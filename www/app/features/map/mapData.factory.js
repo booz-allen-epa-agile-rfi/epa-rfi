@@ -6,7 +6,7 @@
 
   /** @ngInject */
   function MapDataFactory($resource) {
-    var MapData = $resource('http://localhost:3000/api/v1/staff/:id', {id: '@id'}, {});
+    var MapData = $resource('', {}, {});
 
     return MapData;
   }
