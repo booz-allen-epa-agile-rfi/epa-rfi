@@ -28,7 +28,6 @@ module.exports = function(config) {
       'bower_components/angular-sanitize/angular-sanitize.js',
       'bower_components/angular-touch/angular-touch.js',
       'bower_components/ui-router/release/angular-ui-router.js',
-      'bower_components/d3/d3.js',
       'bower_components/lodash/lodash.js',
       'bower_components/restangular/dist/restangular.js',
       'bower_components/angular-strap/dist/angular-strap.js',
@@ -38,7 +37,7 @@ module.exports = function(config) {
       'bower_components/angular-bootstrap-checkbox/angular-bootstrap-checkbox.js',
       'bower_components/angular-rangeslider/angular.rangeSlider.js',
       'bower_components/jquery-highlight/jquery.highlight.js',
-      'bower_components/nvd3/build/nv.d3.js',
+      'bower_components/leaflet/dist/leaflet-src.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/**/*.js',
