@@ -1,9 +1,12 @@
 (function() {
   angular.module('gapFront')
-    .factory('Map', MapFactory);
+    .factory('Map', MapFactory)
+    .constant('API_TOKEN', {
+      MAPBOX: 'pk.eyJ1IjoiYmFodm9reiIsImEiOiJjaWkyNWllNnYwMGtpc3drcTFvdHV4NGs5In0.tXMxAmwb2f4JG12ELI6C3w'
+    })
 
   /** @ngInject */
-  function MapFactory($resource) {
+  function MapFactory($resource, API_TOKEN) {
     var Map = {};
     init(); 
 
@@ -38,7 +41,7 @@
     function initMapTiles() {
       var mapTiles = {};
 
-      var tileURL = 'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=' + MAPBOX_API_TOKEN;
+      var tileURL = 'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=' + API_TOKEN.MAPBOX
       var attribution = 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
           '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
           'Imagery © <a href="http://mapbox.com">Mapbox</a>'

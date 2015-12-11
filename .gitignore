@@ -19,6 +19,3 @@
 /tmp
 /.idea/*
 /label-craft/.idea/*
-
-# Api Token
-/www/apitoken.js
