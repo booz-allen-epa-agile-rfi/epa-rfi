@@ -1,18 +1,39 @@
 /* GLOBAL STYLES
 -------------------------------------------------- */
-
 #map {
   height: 650px;
-}
-.info-text {
-  font-size: 18px;
-  margin-bottom: 15px;
-  font-weight: 200;
 }
 .title-margin {
   margin-top: 50px;
   margin-bottom: 20px;
 }
+
+/* JUMBOTRON */
+/*-------------------------------------------------- */
+.jumbotron {
+  margin-bottom: 30px;
+  background-image: url(../images/bg.png);
+  background-position: 0% 35%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+.jumbotron .container {
+  max-width: 800px !important;
+}
+
+.jumbotron-text {
+  font-size: 16px;
+  margin-bottom: 15px;
+  font-weight: 200;
+}
+
+.jumbotron-btn-text {
+  font-weight: 800;
+  font-size: 14px;
+}
+
 
 /* FORMS, INPUTS, & LABELS */
 /*-------------------------------------------------- */
@@ -25,11 +46,22 @@
 
 /* NAVBAR */
 /*-------------------------------------------------- */
+.navbar {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
 .nav-right-padding {
   padding-right: 25px;
 }
 .nav-inner-padding {
   padding-right: 35px;
+}
+.navbar-brand {
+  width: 200px;
+  height: 46px;
+  padding: 0px;
+  vertical-align: middle;
+  margin-left: 5px !important;
 }
 
 /* MARGINS & PADDINGS */
@@ -49,20 +81,33 @@
 .no-pad-l {
   padding-left: 0px;
 }
+.no-pad-r {
+  padding-right: 0px;
+}
 .pad-l {
   padding-left: -10px;
 }
-
+.full-width {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
 /* BUTTONS */
 /*-------------------------------------------------- */
-
-
 .btn-r {
   float: right;
 }
 .btn-black {
   background-color: black;
   color: white;
+}
+.btn-white {
+  background-color: white;
+  color: #0071bc;
+}
+.btn-blue {
+  background-color: #0071bc;
+  color: white;
+  border-radius: 0px;
 }
 .btn-oval {
   padding: 4px 26px !important;
