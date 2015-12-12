@@ -8,7 +8,7 @@
 </div> <!-- /jumbotron -->
 
 
-<div class="container">
+<div class="container-fluid">
   <!-- Search by Zip Code or County -->
   <div class="form-group">
     <label for="searchInput">Search by Zip Code or County</label>
@@ -33,34 +33,80 @@
 
 
   <!-- Map toggle titles-->
-  <div class="col-md-3">Map   <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></div>
-  <div class="col-md-9">Time Range   <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></div>
-
+  <div class="pad-bottom">
+    <div class="col-md-2 no-pad-l margin-bottom">Map Type   <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></div>
+    <div class="col-md-2 margin-bottom">Time Range   <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></div>
+    <div class="col-md-3 margin-bottom">County Onsite Release Types   <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></div>
+    <div class="col-md-5 margin-bottom">Share My Map   <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></div>
+  </div>
 
   <!-- Map toggle and range-->
-  <div class="col-md-12 full-width">
-    <div class="col-md-3 btn-group">
-      <button type="button" class="btn btn-default dropdown-toggle btn-col-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <div>
+    <div class="col-md-2 btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle btn-maptype" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Counties <span class="caret"></span>
       </button>
       <ul class="dropdown-menu">
-        <li><a href="#">Action</a></li>
-        <li><a href="#">Another action</a></li>
-        <li><a href="#">Something else here</a></li>
+        <li><a href="#">Air Quality</a></li>
       </ul>
     </div>
-    <div class="col-md-8"></div>
-    <button class="btn btn-blue btn-r btn-refresh" href="#" role="button">Refresh Map</button>
-  </div>
 
-  <hr>
+    <div class="col-md-2">
+      <div class="ngrs-range-slider ng-isolate-scope ngrs-horizontal" range-slider="" min="0" max="100" model-min="least" model-max="greatest" on-handle-up="searchDrugEvents()">
+        <div class="ngrs-runner">
+          <div class="ngrs-handle ngrs-handle-min" style="display: block; left: 0%;">
+            <i></i>
+          </div>
+          <div class="ngrs-handle ngrs-handle-max" style="display: block; left: 100%;">
+            <i></i>
+          </div>
+          <div class="ngrs-join" style="left: 0%; right: 0%;">
+          </div>
+        </div>
+        <div class="ngrs-value-runner">
+          <div class="ngrs-value ngrs-value-min" ng-show="showValues">
+            <!--<div class="ng-binding">2005</div>-->
+          </div>
+          <div class="ngrs-value ngrs-value-max" ng-show="showValues">
+            <!--<div class="ng-binding">2015</div>-->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="btn-group" data-toggle="buttons">
+        <label class="btn btn-primary active">
+          <input type="checkbox" autocomplete="off" checked> Total
+        </label>
+        <label class="btn btn-primary">
+          <input type="checkbox" autocomplete="off"> Land
+        </label>
+        <label class="btn btn-primary">
+          <input type="checkbox" autocomplete="off"> Air
+        </label>
+        <label class="btn btn-primary">
+          <input type="checkbox" autocomplete="off"> Water
+        </label>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <i class="fa fa-2x fa-link icon-margin"></i>
+      <i class="fa fa-2x fa-facebook-official icon-margin"></i>
+      <i class="fa fa-2x fa-twitter icon-margin"></i>
+    </div>
+    <div>
+      <button class="btn btn-blue col-md-1 btn-r" href="#" role="button">Refresh Map</button>
+    </div>
+  </div>
 
   <!-- Map -->
   <map></map>
 
   <!-- County Information Column -->
   <div class="col-md-3 no-pad-r">
-    <div class="list-group">
+    <div class="list-group no-marg-b">
       <div class="list-group-item">
         <h4 class="list-group-item-heading">Orange County, CA</h4>
         <p class="list-group-item-text">Toggle Results
@@ -71,91 +117,123 @@
             Health Effects <span class="caret"></span>
           </button>
           <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
+            <li><a href="#">Facilities</a></li>
+            <li><a href="#">Chemicals</a></li>
           </ul>
         </div>
       </div>
+      <div href="#" class="list-group-item pad-bottom">
+        <input type="radio" value="all-health-facilities" checked> All Health Effects
+        <hr>
+        <input type="radio" value="all-health-facilities" checked> Body Weight
 
-      <div href="#" class="list-group-item">
-        <h5 class="list-group-item-heading">Body Weight</h5>
-        <p class="list-group-item-text margin-top">
-          Associated Chemicals: 17
-          <span class="btn-r"><a data-toggle="collapse" data-target="#demo"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a></span>
-        <div id="demo" class="collapse in">
-          <p>Chemical 1 (5)<br>
-            Chemical 2 (1)<br>
-            Chemical 3 (7)<br>
-            Chemical 4 (3)<br>
-            Chemical 5 (13)<br>
-            Chemical 6 (2)<br>
-            Chemical 7 (9)<br>
-            Chemical 8 (6)<br>
-            Chemical 9 (2)<br>
-            Chemical 10 (1)
-          </p>
+        <div style="padding-bottom: 50px">
+          <form>
+            <div class="col-md-3"><input type="radio" value="air" checked></div>
+            <div class="col-md-3"><input type="radio" value="underground"></div>
+            <div class="col-md-3"><input type="radio" value="ground"></div>
+            <div class="col-md-3"><input type="radio" value="water"></div>
+          </form>
+          <div class="col-md-12 sm-label">
+            <div class="col-md-2 text-left no-pad-l">Air</div>
+            <div class="col-md-4 text-left no-pad-l">Underground</div>
+            <div class="col-md-3 text-center">Ground</div>
+            <div class="col-md-3 text-center">Water</div>
+          </div>
         </div>
+        <p class="well well-box darkgray">
+          Associated Chemicals: <span class="text-blue">10</span>
+            <span class="btn-r">
+              <a data-toggle="collapse" data-target="#collapseChemicals" aria-expanded="false" aria-controls="collapseChemicals">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+              </a>
+              <div class="collapse" id="collapseChemicals">
+                <div class="well pad-10">
+                  <p class="text-sm">Chemical 1 (5)<br>
+                    Chemical 2 (1)<br>
+                    Chemical 3 (7)<br>
+                    Chemical 4 (3)<br>
+                    Chemical 5 (13)<br>
+                    Chemical 6 (2)<br>
+                    Chemical 7 (9)<br>
+                    Chemical 8 (6)<br>
+                    Chemical 9 (2)<br>
+                    Chemical 10 (1)
+                  </p>
+                </div>
+              </div>
+            </span>
         </p>
-        <p>
-          Associated Facilities: 5
+        <p class="well well-box darkgray">
+          Associated Facilities: <span class="text-blue">5</span>
+            <span class="btn-r">
+              <a data-toggle="collapse" data-target="#collapseFacilities" aria-expanded="false" aria-controls="collapseFacilities">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+              </a>
+              <div class="collapse" id="collapseFacilities">
+                <div class="well">
+                  <p class="text-sm">Facility 1<br>
+                    Facility 2<br>
+                    Facility 3<br>
+                    Facility 4<br>
+                    Facility 5<br>
+                  </p>
+                </div>
+              </div>
+            </span>
         </p>
-        <form>
-          <div class="col-md-3"><input type="radio" value="air" checked></div>
-          <div class="col-md-3"><input type="radio" value="underground"></div>
-          <div class="col-md-3"><input type="radio" value="ground"></div>
-          <div class="col-md-3"><input type="radio" value="water"></div>
-        </form>
-        <div class="col-md-12 sm-label">
-          <div class="col-md-2 text-left no-pad-l">Air</div>
-          <div class="col-md-4 text-left no-pad-l">Underground</div>
-          <div class="col-md-3 text-center">Ground</div>
-          <div class="col-md-3 text-center">Water</div>
-        </div>
-        <p><a class="btn btn-success margin-top" href="#" role="button">View Details</a></p>
       </div>
-      <div href="#" class="list-group-item">
-        <h5 class="list-group-item-heading">Cardiovascular</h5>
-        <p class="list-group-item-text margin-top">
-          Associated Chemicals: 28
-          Associated Facilities: 12
-        </p>
-        <form>
-          <div class="col-md-3"><input type="radio" value="air" checked></div>
-          <div class="col-md-3"><input type="radio" value="underground"></div>
-          <div class="col-md-3"><input type="radio" value="ground"></div>
-          <div class="col-md-3"><input type="radio" value="water"></div>
-        </form>
-        <div class="col-md-12 sm-label">
-          <div class="col-md-2 text-left no-pad-l">Air</div>
-          <div class="col-md-4 text-left no-pad-l">Underground</div>
-          <div class="col-md-3 text-center">Ground</div>
-          <div class="col-md-3 text-center">Water</div>
-        </div>
-        <p><a class="btn btn-success margin-top" href="#" role="button">View Details</a></p>
-      </div>
-
-      <div href="#" class="list-group-item">
-        <h5 class="list-group-item-heading">Dermal</h5>
-        <p class="list-group-item-text margin-top">
-          Associated Chemicals: 4
-          Associated Facilities: 19
-        </p>
-        <form>
-          <div class="col-md-3"><input type="radio" value="air" checked></div>
-          <div class="col-md-3"><input type="radio" value="underground"></div>
-          <div class="col-md-3"><input type="radio" value="ground"></div>
-          <div class="col-md-3"><input type="radio" value="water"></div>
-        </form>
-        <div class="col-md-12 sm-label">
-          <div class="col-md-2 text-left no-pad-l">Air</div>
-          <div class="col-md-4 text-left no-pad-l">Underground</div>
-          <div class="col-md-3 text-center">Ground</div>
-          <div class="col-md-3 text-center">Water</div>
-        </div>
-        <p><a class="btn btn-success margin-top" href="#" role="button">View Details</a></p>
-      </div>
-
     </div>
+    <div href="#" class="list-group-item pad-bottom">
+      <input type="radio" value="all-health-facilities" checked> Dermal
+      <div style="padding-bottom: 50px">
+        <form>
+          <div class="col-md-3"><input type="radio" value="air" checked></div>
+          <div class="col-md-3"><input type="radio" value="underground"></div>
+          <div class="col-md-3"><input type="radio" value="ground"></div>
+          <div class="col-md-3"><input type="radio" value="water"></div>
+        </form>
+        <div class="col-md-12 sm-label">
+          <div class="col-md-2 text-left no-pad-l">Air</div>
+          <div class="col-md-4 text-left no-pad-l">Underground</div>
+          <div class="col-md-3 text-center">Ground</div>
+          <div class="col-md-3 text-center">Water</div>
+        </div>
+      </div>
+      <p class="well well-box darkgray">
+        Associated Chemicals: <span class="text-blue">4</span>
+            <span class="btn-r">
+              <a data-toggle="collapse" data-target="#collapseChemicals" aria-expanded="false" aria-controls="collapseChemicals">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+              </a>
+              <div class="collapse" id="collapseChemicals">
+                <div class="well pad-10">
+                  <p class="text-sm">Chemical 1 (5)<br>
+                    Chemical 2 (1)<br>
+                    Chemical 3 (7)<br>
+                    Chemical 4 (3)
+                  </p>
+                </div>
+              </div>
+            </span>
+      </p>
+      <p class="well well-box darkgray">
+        Associated Facilities: <span class="text-blue">2</span>
+            <span class="btn-r">
+              <a data-toggle="collapse" data-target="#collapseFacilities" aria-expanded="false" aria-controls="collapseFacilities">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+              </a>
+              <div class="collapse" id="collapseFacilities">
+                <div class="well">
+                  <p class="text-sm">Facility 1<br>
+                    Facility 2
+                  </p>
+                </div>
+              </div>
+            </span>
+      </p>
+    </div>
+  </div>
   </div> <!-- /column -->
+</div>
 </div> <!-- /container -->
