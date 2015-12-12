@@ -1,22 +1,22 @@
 class EpaRecord < ActiveRecord::Base
   has_many :states
-  has_many :counties
-  has_many :geo_json
+  # has_many :counties, through: :states
+  # has_many :geo_json, foreign_key: :geo_json_id
 
   # Scopes
-  scope :states, -> { select('facility_state').distinct.map do |x| x.facility_state end }
-  scope :chemicals, -> { select('chemical_name').distinct.map do |x| x.chemical_name end }
-  scope :counties, -> { select('facility_county').distinct.map do |x| x.facility_county end }
+  scope :states_list, -> { select('facility_state').distinct.references(:geo_json).map do |x| {state: x.facility_state} end }
+  scope :chemicals, -> { select('chemical_name').distinct.map do |x| {chemical: x.chemical_name} end }
+  scope :counties_list, -> { select('facility_county').distinct.map do |x| {county: x.facility_county} end }
 
   scope :zip_codes, -> {
     select('facility_zip_code').distinct.where('LENGTH(facility_zip_code) IN (?)', [5, 9]).map do |x|
-      x.facility_zip_code
+      {zip_code: x.facility_zip_code}
     end
   }
 
   scope :state_counties, -> (state) {
-    select('facility_county').where(facility_state: state).distinct.map do |x|
-      x.facility_county
+    select('facility_state, facility_county').where(facility_state: state).distinct.map do |x|
+      {state: x.facility_state, county: x.facility_county}
     end
   }
 

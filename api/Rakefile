@@ -19,28 +19,29 @@ namespace :db do
 
         states = "#{Rails.root}/dbdata/states.txt"
 
-        ActiveRecord::Base.connection.execute("COPY states (id, state_name, abbreviation) FROM '#{states}';") if File.exists? states
+        ActiveRecord::Base.connection.execute("COPY states (state_num_code, state_name, abbreviation) FROM '#{states}';") if File.exists? states
 
         counties = "#{Rails.root}/dbdata/counties.txt"
 
-        ActiveRecord::Base.connection.execute("COPY counties (county_id, state_id, county_name, coordinates) FROM '#{counties}';") if File.exists? counties
+        ActiveRecord::Base.connection.execute("COPY counties (county_num_code, state_num_code, county_name, coordinates) FROM '#{counties}';") if File.exists? counties
 
         geo_json = "#{Rails.root}/dbdata/geo_json.txt"
 
-        ActiveRecord::Base.connection.execute("COPY geo_json (state_id, county_id, geo_object) FROM '#{geo_json}';") if File.exists? geo_json
+        ActiveRecord::Base.connection.execute("COPY geo_json (state_num_code, county_num_code, geo_object) FROM '#{geo_json}';") if File.exists? geo_json
 
+        ActiveRecord::Base.connection.execute('UPDATE counties t0 SET geo_json_id = t1.id FROM (SELECT id, state_num_code, county_num_code FROM geo_json) AS t1 WHERE t0.state_num_code = t1.state_num_code AND t0.county_num_code = t1.county_num_code')
         ActiveRecord::Base.connection.execute('CREATE EXTENSION unaccent')
-        ActiveRecord::Base.connection.execute('UPDATE epa_records SET state_id = t1.id FROM (SELECT id, abbreviation FROM states) AS t1 WHERE facility_state = t1.abbreviation')
-        ActiveRecord::Base.connection.execute("UPDATE epa_records SET facility_county = 'MIAMI-DADE' WHERE facility_county = 'DADE' AND state_id = 12")
+        ActiveRecord::Base.connection.execute('UPDATE epa_records SET state_num_code = t1.state_num_code FROM (SELECT state_num_code, abbreviation FROM states) AS t1 WHERE facility_state = t1.abbreviation')
+        ActiveRecord::Base.connection.execute("UPDATE epa_records SET facility_county = 'MIAMI-DADE' WHERE facility_county = 'DADE' AND state_num_code = 12")
         ActiveRecord::Base.connection.execute("UPDATE epa_records t0
-                                                SET county_id = t1.county_id
+                                                SET county_num_code = t1.county_num_code
                                                 FROM (
-                                                  SELECT county_id, state_id, county_name
+                                                  SELECT county_num_code, state_num_code, county_name
                                                   FROM counties
                                                 ) AS t1
                                                 WHERE
-                                                  replace(replace(facility_county, ' ', ''), '(CITY)', '') = unaccent(replace(replace(replace(UPPER(t1.county_name), ' ', ''), '.', ''), '''', '')) AND t0.state_id = t1.state_id")
-        ActiveRecord::Base.connection.execute('UPDATE epa_records t0 SET geo_json_id = t1.id FROM (SELECT id, state_id, county_id FROM geo_json) AS t1 WHERE t0.state_id = t1.state_id AND t0.county_id = t1.county_id')
+                                                  replace(replace(facility_county, ' ', ''), '(CITY)', '') = unaccent(replace(replace(replace(UPPER(t1.county_name), ' ', ''), '.', ''), '''', '')) AND t0.state_num_code = t1.state_num_code")
+        ActiveRecord::Base.connection.execute('UPDATE epa_records t0 SET geo_json_id = t1.id FROM (SELECT id, state_num_code, county_num_code FROM geo_json) AS t1 WHERE t0.state_num_code = t1.state_num_code AND t0.county_num_code = t1.county_num_code')
       end
     end
   end

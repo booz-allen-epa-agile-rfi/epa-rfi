@@ -2,21 +2,21 @@ class CreateEpaRecords < ActiveRecord::Migration
   def change
     create_table :epa_records do |t|
       t.string :cas_number
-      t.string :reporting_year
+      t.string :reporting_year, index: true
       t.string :trifid
-      t.string :facility_name
-      t.string :facility_city
+      t.string :facility_name, index: true
+      t.string :facility_city, index: true
       t.string :facility_county
-      t.integer :county_id, index: true
+      t.integer :county_num_code, index: true
       t.string :facility_state
-      t.integer :state_id, index: true
-      t.string :facility_zip_code
+      t.integer :state_num_code, index: true
+      t.string :facility_zip_code, index: true
       t.string :primary_naics_code
-      t.string :latitude
-      t.string :longitude
-      t.integer :geo_json_id, index: true
+      t.string :latitude, index: true
+      t.string :longitude, index: true
+      t.references :geo_json, index: true
       t.string :parent_company_name
-      t.string :chemical_name
+      t.string :chemical_name, index: true
       t.string :classification
       t.string :unit_of_measure
       # YES OR NO QUESTIONS
@@ -75,5 +75,8 @@ class CreateEpaRecords < ActiveRecord::Migration
       t.string :intermediate, :limit => 3
       t.string :chronic, :limit => 3
     end
+
+    add_index :epa_records, [:county_num_code, :state_num_code], unique: true
+    add_index :epa_records, [:latitude, :longitude], unique: true
   end
 end

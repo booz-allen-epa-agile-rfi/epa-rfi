@@ -1,5 +1,3 @@
 class States < ActiveRecord::Base
-  has_many :epa_records
-  has_many :counties
-  has_many :geo_json
+  belongs_to :epa_record
 end

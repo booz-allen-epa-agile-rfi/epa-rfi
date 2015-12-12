@@ -17,15 +17,17 @@ ActiveRecord::Schema.define(version: 20151210232050) do
   enable_extension "plpgsql"
 
   create_table "counties", force: :cascade do |t|
-    t.integer "county_id",   null: false
-    t.integer "state_id",    null: false
-    t.string  "county_name", null: false
-    t.jsonb   "coordinates", null: false
+    t.integer "state_num_code",  null: false
+    t.integer "county_num_code", null: false
+    t.string  "county_name",     null: false
+    t.jsonb   "coordinates",     null: false
+    t.integer "geo_json_id"
   end
 
-  add_index "counties", ["county_id", "state_id"], name: "index_counties_on_county_id_and_state_id", unique: true, using: :btree
-  add_index "counties", ["county_id"], name: "index_counties_on_county_id", using: :btree
-  add_index "counties", ["state_id"], name: "index_counties_on_state_id", using: :btree
+  add_index "counties", ["county_num_code", "state_num_code"], name: "index_counties_on_county_num_code_and_state_num_code", unique: true, using: :btree
+  add_index "counties", ["county_num_code"], name: "index_counties_on_county_num_code", using: :btree
+  add_index "counties", ["geo_json_id"], name: "index_counties_on_geo_json_id", using: :btree
+  add_index "counties", ["state_num_code"], name: "index_counties_on_state_num_code", using: :btree
 
   create_table "epa_records", force: :cascade do |t|
     t.string  "cas_number"
@@ -34,9 +36,9 @@ ActiveRecord::Schema.define(version: 20151210232050) do
     t.string  "facility_name"
     t.string  "facility_city"
     t.string  "facility_county"
-    t.integer "county_id"
+    t.integer "county_num_code"
     t.string  "facility_state"
-    t.integer "state_id"
+    t.integer "state_num_code"
     t.string  "facility_zip_code"
     t.string  "primary_naics_code"
     t.string  "latitude"
@@ -100,22 +102,35 @@ ActiveRecord::Schema.define(version: 20151210232050) do
     t.string  "chronic",                                         limit: 3
   end
 
-  add_index "epa_records", ["county_id"], name: "index_epa_records_on_county_id", using: :btree
+  add_index "epa_records", ["chemical_name"], name: "index_epa_records_on_chemical_name", using: :btree
+  add_index "epa_records", ["county_num_code", "state_num_code"], name: "index_epa_records_on_county_num_code_and_state_num_code", unique: true, using: :btree
+  add_index "epa_records", ["county_num_code"], name: "index_epa_records_on_county_num_code", using: :btree
+  add_index "epa_records", ["facility_city"], name: "index_epa_records_on_facility_city", using: :btree
+  add_index "epa_records", ["facility_name"], name: "index_epa_records_on_facility_name", using: :btree
+  add_index "epa_records", ["facility_zip_code"], name: "index_epa_records_on_facility_zip_code", using: :btree
   add_index "epa_records", ["geo_json_id"], name: "index_epa_records_on_geo_json_id", using: :btree
-  add_index "epa_records", ["state_id"], name: "index_epa_records_on_state_id", using: :btree
+  add_index "epa_records", ["latitude", "longitude"], name: "index_epa_records_on_latitude_and_longitude", unique: true, using: :btree
+  add_index "epa_records", ["latitude"], name: "index_epa_records_on_latitude", using: :btree
+  add_index "epa_records", ["longitude"], name: "index_epa_records_on_longitude", using: :btree
+  add_index "epa_records", ["reporting_year"], name: "index_epa_records_on_reporting_year", using: :btree
+  add_index "epa_records", ["state_num_code"], name: "index_epa_records_on_state_num_code", using: :btree
 
   create_table "geo_json", force: :cascade do |t|
-    t.integer "state_id",   null: false
-    t.integer "county_id",  null: false
-    t.jsonb   "geo_object", null: false
+    t.integer "state_num_code",  null: false
+    t.integer "county_num_code", null: false
+    t.jsonb   "geo_object",      null: false
   end
 
-  add_index "geo_json", ["county_id"], name: "index_geo_json_on_county_id", using: :btree
-  add_index "geo_json", ["state_id"], name: "index_geo_json_on_state_id", using: :btree
+  add_index "geo_json", ["county_num_code", "state_num_code"], name: "index_geo_json_on_county_num_code_and_state_num_code", unique: true, using: :btree
+  add_index "geo_json", ["county_num_code"], name: "index_geo_json_on_county_num_code", using: :btree
+  add_index "geo_json", ["state_num_code"], name: "index_geo_json_on_state_num_code", using: :btree
 
   create_table "states", force: :cascade do |t|
-    t.string "state_name",             null: false
-    t.string "abbreviation", limit: 2, null: false
+    t.integer "state_num_code",           null: false
+    t.string  "state_name",               null: false
+    t.string  "abbreviation",   limit: 2, null: false
   end
+
+  add_index "states", ["state_num_code"], name: "index_states_on_state_num_code", using: :btree
 
 end
