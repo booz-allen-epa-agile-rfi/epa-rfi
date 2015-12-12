@@ -8,17 +8,13 @@
   /** @ngInject */
   function MapFactory($resource, API_TOKEN) {
     var Map = {};
-    init(); 
+    Map.tileLayers = initMapTiles();
+    Map.dataLayers = initData();
+    Map.map = initMap();
+
+    addToMap(Map.map);
 
     return Map;
-
-    function init() {
-      Map.tileLayers = initMapTiles() || {};
-      Map.dataLayers = initData() || {};
-      Map.map = initMap() || {};
-
-      addToMap(Map.map);
-    }
 
     // Private
 
@@ -64,7 +60,7 @@
     function initMap(tileLayers) {
       return L.map('map' , {
         center: [30.3669563, -97.7926704],
-        zoom: 4.5,
+        zoom: 4,
         layers: [Map.tileLayers.grayScale, Map.dataLayers.county]      // Renders the stuff
       });
     }
