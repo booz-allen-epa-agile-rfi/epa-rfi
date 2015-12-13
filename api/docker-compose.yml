@@ -1,7 +1,9 @@
 db:
-  image: postgres
+  image: 52.34.113.202:5000/devel_database
+  ports:
+    - "5432:5432"
 backend:
-  build: .
+  image: 52.34.113.202:5000/devel_backend
   ports:
     - "3000:3000"
   environment:

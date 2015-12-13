@@ -2,7 +2,7 @@ development: &default
   adapter: postgresql
   database: epa_rfi_development
   encoding: utf8
-  host: localhost
+  host: 172.17.0.2
   min_messages: warning
   pool: 2
   timeout: 5000

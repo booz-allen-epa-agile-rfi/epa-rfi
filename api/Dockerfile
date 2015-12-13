@@ -9,7 +9,7 @@ RUN apt-get update -y && \
   sqlite3 \
   --no-install-recommends && rm -rf /var/lib/apt/lists/* 
 
-RUN mkdir -p /usr/src/app
+RUN mkdir -p /usr/src/app/reports
 WORKDIR /usr/src/app
 
 COPY Gemfile /usr/src/app/

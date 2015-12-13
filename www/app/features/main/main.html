@@ -1,88 +1,161 @@
-<div class="landing" id="searchSplashScreen">
-    <div class="row m-b-xl">
-        <div class="main_logo_wrap col-md-6 col-md-offset-3 col-xs-10 col-xs-offset-1">
-            <img src="../assets/label_craft_logo.png" align="middle" class="img-responsive logoTitle" alt="Responsive image">
-            <h3>Check drug side effects. Improve drug labels.</h3>
-        </div>
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+  <div class="container text-center">
+    <h2 class="title-margin">How it Works</h2>
+    <div class="jumbotron-text">Ipsum lorem dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+    <p><a class="btn btn-white jumbotron-btn-text btn-lg" href="#" role="button">How it Works</a></p>
+  </div>
+</div> <!-- /jumbotron -->
+
+
+<div class="container">
+  <!-- Search by Zip Code or County -->
+  <div class="form-group">
+    <label for="searchInput">Search by Zip Code or County</label>
+    <input type="text" class="col-md-9 form-control" id="searchInput" placeholder="Enter Zip Code or County">
+    <button class="btn btn-blue col-md-1 btn-r" href="#" role="button">Search</button>
+  </div>
+
+  <!-- Recent Searches -->
+  <div class="well well-lg col-md-12">
+    <p class="col-md-10">Recent Search Results</p>
+    <div class="col-md-10">
+      <button class="btn btn-oval btn-black sm-margin-left" href="#" role="button">56301</button>
+      <button class="btn btn-oval btn-black sm-margin-left" href="#" role="button">94109</button>
+      <button class="btn btn-oval btn-black sm-margin-left" href="#" role="button">22306</button>
+      <button class="btn btn-oval btn-black sm-margin-left" href="#" role="button">27765</button>
+      <button class="btn btn-oval btn-black sm-margin-left" href="#" role="button">46578</button>
+      <button class="btn btn-oval btn-black sm-margin-left" href="#" role="button">11233</button>
+      <button class="btn btn-oval btn-black sm-margin-left" href="#" role="button">90667</button>
+      <button class="btn btn-oval btn-black sm-margin-left" href="#" role="button">61038</button>
     </div>
-    <div class="row">
-        <div class="steps col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
-            <div class='step_block_wrap col-md-4 col-xs-12'>
-                <div class='step_block-inner'>
-                    <div class='step-circle'>
-                        <p><strong>1</strong></p>
-                    </div>
-                    <p class='label-text'>Find a drug</p>
-                </div>
-            </div>
-            <div class='step_block_wrap col-md-4 col-xs-12'>
-                <div class='step_block-inner'>
-                    <div class='step-circle-gray'>
-                        <p><strong>2</strong></p>
-                    </div>
-                    <p class='label-text'>See reported side effects</p>
-                </div>
-            </div>
-            <div class='step_block_wrap col-md-4 col-xs-12'>
-                <div class='step_block-inner'>
-                    <div class='step-circle-gray'>
-                        <p><strong>3</strong></p>
-                    </div>
-                    <p class='label-text'>Improve drug labels</p>
-                </div>
-            </div>
-        </div>
+  </div>
+
+
+  <!-- Map toggle titles-->
+  <div class="col-md-3">Map   <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></div>
+  <div class="col-md-9">Time Range   <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></div>
+
+
+  <!-- Map toggle and range-->
+  <div class="col-md-12 full-width">
+    <div class="col-md-3 btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle btn-col-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Counties <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li>
+        <li><a href="#">Something else here</a></li>
+      </ul>
     </div>
-    <div class="row">
+    <div class="col-md-8"></div>
+    <button class="btn btn-blue btn-r btn-refresh" href="#" role="button">Refresh Map</button>
+  </div>
+
+  <hr>
+
+  <!-- Map -->
+  <map></map>
+
+  <!-- County Information Column -->
+  <div class="col-md-3 no-pad-r">
+    <div class="list-group">
+      <div class="list-group-item">
+        <h4 class="list-group-item-heading">Orange County, CA</h4>
+        <p class="list-group-item-text">Toggle Results
+          <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+        </p>
+        <div class="btn-group">
+          <button type="button" class="btn btn-default dropdown-toggle margin-top btn-drop" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Health Effects <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div href="#" class="list-group-item">
+        <h5 class="list-group-item-heading">Body Weight</h5>
+        <p class="list-group-item-text margin-top">
+          Associated Chemicals: 17
+          <span class="btn-r"><a data-toggle="collapse" data-target="#demo"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a></span>
+        <div id="demo" class="collapse in">
+          <p>Chemical 1 (5)<br>
+            Chemical 2 (1)<br>
+            Chemical 3 (7)<br>
+            Chemical 4 (3)<br>
+            Chemical 5 (13)<br>
+            Chemical 6 (2)<br>
+            Chemical 7 (9)<br>
+            Chemical 8 (6)<br>
+            Chemical 9 (2)<br>
+            Chemical 10 (1)
+          </p>
+        </div>
+        </p>
+        <p>
+          Associated Facilities: 5
+        </p>
         <form>
-            <div class="search_block input-group input-group-xs col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
-                <input type="text" class="form-control searchInput" ng-model="searchText" id="searchValue" placeholder="Search for a drug or…" ng-change="searchDrugs()">
-                <div class="input-group-btn">
-                    <button class="btn searchButton searchInput" type="button" ng-click="setSelectedDrug(drugs[0])"><i class="fa fa-search searchIcon"></i></button>
-                </div>
-            </div>
-            <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1" ng-show="drugs">
-                <div ng-class="!drugs.length==0?'dropdown clearfix open':'dropdown clearfix'">
-                    <ul class="dropdown-menu" style="width: 100%">
-                        <li ng-repeat="drug in drugs track by $index">
-                            <a ng-click="setSelectedDrug(drug)">{{drug.brand_name}}</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+          <div class="col-md-3"><input type="radio" value="air" checked></div>
+          <div class="col-md-3"><input type="radio" value="underground"></div>
+          <div class="col-md-3"><input type="radio" value="ground"></div>
+          <div class="col-md-3"><input type="radio" value="water"></div>
         </form>
-    </div>
-    <div class="row">
-        <div class="most_prescribed_drug col-md-12 col-md-offset-0 col-xs-10 col-xs-offset-1 m-t-md">
-            <div class="col-md-10 col-md-offset-2 col-xs-12 col-xs-offset-0">
-                <h6>…pick one of the top prescribed drugs in the U.S.</h6>
-            </div>
-            <div class="col-md-2 col-md-offset-2 col-xs-12 col-xs-offset-0 drug-block"><a ng-click="searchDrug('Synthroid')">Synthroid</a></div>
-            <div class="col-md-2 col-md-offset-0 col-xs-12 col-xs-offset-0 drug-block"><a ng-click="searchDrug('Crestor')">Crestor</a></div>
-            <div class="col-md-2 col-md-offset-0 col-xs-12 col-xs-offset-0 drug-block"><a ng-click="searchDrug('NEXIUM')">Nexium</a></div>
-            <div class="col-md-2 col-md-offset-0 col-xs-12 col-xs-offset-0 drug-block"><a ng-click="searchDrug('VENTOLIN HFA')">Ventolin HFA</a></div>
+        <div class="col-md-12 sm-label">
+          <div class="col-md-2 text-left no-pad-l">Air</div>
+          <div class="col-md-4 text-left no-pad-l">Underground</div>
+          <div class="col-md-3 text-center">Ground</div>
+          <div class="col-md-3 text-center">Water</div>
         </div>
-    </div>
-    <div class="row">
-        <div class="most_prescribed_drug col-md-12 col-md-offset-0 col-xs-10 col-xs-offset-1 m-t-md ">
-            <div class="col-md-2 col-md-offset-2 col-xs-12 col-xs-offset-0 drug-block"><a ng-click="searchDrug('ADVAIR DISKUS')">Advair Diskus</a></div>
-            <div class="col-md-2 col-md-offset-0 col-xs-12 col-xs-offset-0 drug-block"><a ng-click="searchDrug('Cymbalta')">Cymbalta</a></div>
-            <div class="col-md-2 col-md-offset-0 col-xs-12 col-xs-offset-0 drug-block"><a ng-click="searchDrug('Diovan')">Diovan</a></div>
-            <div class="col-md-2 col-md-offset-0 col-xs-12 col-xs-offset-0 drug-block"><a ng-click="searchDrug('Vyvanse')">Vyvanse</a></div>
+        <p><a class="btn btn-success margin-top" href="#" role="button">View Details</a></p>
+      </div>
+      <div href="#" class="list-group-item">
+        <h5 class="list-group-item-heading">Cardiovascular</h5>
+        <p class="list-group-item-text margin-top">
+          Associated Chemicals: 28
+          Associated Facilities: 12
+        </p>
+        <form>
+          <div class="col-md-3"><input type="radio" value="air" checked></div>
+          <div class="col-md-3"><input type="radio" value="underground"></div>
+          <div class="col-md-3"><input type="radio" value="ground"></div>
+          <div class="col-md-3"><input type="radio" value="water"></div>
+        </form>
+        <div class="col-md-12 sm-label">
+          <div class="col-md-2 text-left no-pad-l">Air</div>
+          <div class="col-md-4 text-left no-pad-l">Underground</div>
+          <div class="col-md-3 text-center">Ground</div>
+          <div class="col-md-3 text-center">Water</div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-4 col-md-offset-4 col-xs-10 col-xs-offset-1">
-            <div class="alert alert-danger" role="alert" ng-repeat="alert in alerts">
-                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> {{alert}}
-            </div>
+        <p><a class="btn btn-success margin-top" href="#" role="button">View Details</a></p>
+      </div>
+
+      <div href="#" class="list-group-item">
+        <h5 class="list-group-item-heading">Dermal</h5>
+        <p class="list-group-item-text margin-top">
+          Associated Chemicals: 4
+          Associated Facilities: 19
+        </p>
+        <form>
+          <div class="col-md-3"><input type="radio" value="air" checked></div>
+          <div class="col-md-3"><input type="radio" value="underground"></div>
+          <div class="col-md-3"><input type="radio" value="ground"></div>
+          <div class="col-md-3"><input type="radio" value="water"></div>
+        </form>
+        <div class="col-md-12 sm-label">
+          <div class="col-md-2 text-left no-pad-l">Air</div>
+          <div class="col-md-4 text-left no-pad-l">Underground</div>
+          <div class="col-md-3 text-center">Ground</div>
+          <div class="col-md-3 text-center">Water</div>
         </div>
-        <div class="row">
-            <div class="col-md-4 col-md-offset-4 col-xs-10 col-xs-offset-1">
-                <div class="alert alert-danger" role="alert" ng-repeat="alert in alerts">
-                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> {{alert}}
-                </div>
-            </div>
-        </div>
+        <p><a class="btn btn-success margin-top" href="#" role="button">View Details</a></p>
+      </div>
+
     </div>
-</div>
+  </div> <!-- /column -->
+</div> <!-- /container -->
