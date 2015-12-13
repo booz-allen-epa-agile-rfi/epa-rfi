@@ -44,14 +44,15 @@ class EpaRecordsController < ApplicationController
   def epa_records
     @_epa_records ||= begin
       case params['action']
-      when 'states'
-        EpaRecord.states
+      when 'states_list'
+        EpaRecord.states_list
       when 'chemicals'
         EpaRecord.chemicals
       when 'zip_codes'
         EpaRecord.zip_codes
-      when 'counties'
-        EpaRecord.counties
+      when 'counties_list'
+        # EpaRecord.counties_list
+        Counties.includes(:states).all
       when 'county_totals'
         EpaRecord.county_totals
       when 'state_counties'
@@ -73,6 +74,7 @@ class EpaRecordsController < ApplicationController
   end
 
   def geoJSONify(records)
+    ap records
     geoJSON = {type: "FeatureCollection", features: []}
     records.each do |r|
       geoJSON[:features] << {type: "Feature", properties: r, geometry: {type: "Polygon", coordinates: []}}

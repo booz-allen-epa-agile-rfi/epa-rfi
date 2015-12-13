@@ -1,12 +1,16 @@
 class EpaRecord < ActiveRecord::Base
-  has_many :states
-  # has_many :counties, through: :states
-  # has_many :geo_json, foreign_key: :geo_json_id
+  # has_many :states, class_name: 'States', foreign_key: :state_code, primary_key: :state_code
+  # has_many :counties, class_name: 'Counties', through: :states
+  # has_many :geo_json, through: :counties
 
   # Scopes
-  scope :states_list, -> { select('facility_state').distinct.references(:geo_json).map do |x| {state: x.facility_state} end }
-  scope :chemicals, -> { select('chemical_name').distinct.map do |x| {chemical: x.chemical_name} end }
-  scope :counties_list, -> { select('facility_county').distinct.map do |x| {county: x.facility_county} end }
+  scope :states_list, -> { select('states.state_code, facility_state, state_name').joins(:states).distinct.map do |x|
+      { state_code: x.state_code, state: x.facility_state, name: x.state_name }
+    end
+  }
+  scope :chemicals, -> { select('chemical_name').distinct.as_json }
+
+  scope :counties_list, -> { select('counties.county_code, facility_county').join(:counties).distinct.map do |x| {county: x.facility_county} end }
 
   scope :zip_codes, -> {
     select('facility_zip_code').distinct.where('LENGTH(facility_zip_code) IN (?)', [5, 9]).map do |x|

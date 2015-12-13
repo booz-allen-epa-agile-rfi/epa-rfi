@@ -1,3 +1,5 @@
 class States < ActiveRecord::Base
-  belongs_to :epa_record
+  self.primary_key = :state_code
+  # belongs_to :epa_record
+  # has_many :counties
 end

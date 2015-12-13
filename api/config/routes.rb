@@ -9,8 +9,10 @@ Rails.application.routes.draw do
   post 'search', to: 'epa_records#search'
 
   # JUST WANT TO QUERY THIS DATA - DO NOT WANT TO APPLY OTHER CRUD TO IT
-  resources :epa_records, except: [:new, :edit, :update, :destroy]
+  # resources :epa_records, except: [:new, :edit, :update, :destroy]
 
   # Documentation - TODO: FIX THIS
   apipie
+
+  root 'epa_records#index'
 end
