@@ -9,12 +9,10 @@ class CreateEpaRecords < ActiveRecord::Migration
       t.string :facility_county, limit: 23
       t.integer :county_code, index: true
       t.string :facility_state, limit: 2
-      t.integer :state_code, index: true
       t.integer :facility_zip_code, index: true
       t.string :primary_naics_code, limit: 6
       t.decimal :latitude, precision: 9, scale: 6, index: true
       t.decimal :longitude, precision: 9, scale: 6, index: true
-      t.integer :geo_json_id, index: true
       t.string :parent_company_name, limit: 60
       t.string :chemical_name, limit: 70, index: true
       t.string :classification, limit: 6
@@ -77,7 +75,6 @@ class CreateEpaRecords < ActiveRecord::Migration
       t.string :chronic, limit: 3
     end
 
-    add_index :epa_records, [:county_code, :state_code]
     add_index :epa_records, [:latitude, :longitude]
   end
 end
