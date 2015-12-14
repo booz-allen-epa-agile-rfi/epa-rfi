@@ -23,7 +23,7 @@
     }
 
     /** @ngInject */
-    function MapController(Map) {
+    function MapController(Map, MapData) {
       var vm = this;
 
       vm.activate = activate;
