@@ -193,3 +193,9 @@ User stories are archived on our wiki here - https://github.com/booz-allen-epa-a
 - README.md updates (1)
 
 18 pts forecast, 
+
+## Retrospectives
+The team used frequent retrospectives to inspect the way were working and refine our approach. 
+We took time to talk about what we did well, what we could improve, and to appreciate the efforts of our teammates.
+
+Retrospective output is captured on our wiki - https://github.com/booz-allen-epa-agile-rfi/epa-rfi/wiki/Retrospectives
