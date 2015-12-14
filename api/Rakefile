@@ -5,117 +5,27 @@ require File.expand_path('../config/application', __FILE__)
 
 Rails.application.load_tasks
 
+require 'csv'
 namespace :db do
   namespace :schema do
     task :load => :environment do
-      if ActiveRecord::Base.connection.table_exists? 'epa_records'
-        ActiveRecord::Base.connection.execute('ALTER TABLE epa_records DISABLE TRIGGER ALL')
-        ActiveRecord::Base.connection.execute('ALTER TABLE states DISABLE TRIGGER ALL')
-        ActiveRecord::Base.connection.execute('ALTER TABLE counties DISABLE TRIGGER ALL')
-        ActiveRecord::Base.connection.execute('ALTER TABLE geo_json DISABLE TRIGGER ALL')
-        ActiveRecord::Base.connection.execute('TRUNCATE epa_records, states, counties, geo_json RESTART IDENTITY')
-
-        file1 = "#{Rails.root}/dbdata/epa_records1.txt"
-        file2 = "#{Rails.root}/dbdata/epa_records2.txt"
-
-        ap 'Copying EPA data...'
-        ActiveRecord::Base.connection.execute("COPY epa_data (id, cas_number, reporting_year, trifid, facility_name, facility_city, facility_county, facility_state, facility_zip_code, primary_naics_code, latitude, longitude, parent_company_name, chemical_name, classification, unit_of_measure, produce_the_chemical, import_the_chemical, on_site_use, sale_or_distribution, as_a_byproduct, as_a_manufactured_impurity, as_a_reactant, as_a_formulation_component, as_an_article_component, repackaging, as_a_process_impurity, as_a_chemical_processing_aid, as_a_manufacturing_aid, ancillary_or_other_use, total_air_emissions, total_underground_injection, total_on_site_land_releases, total_transferred_off_site_to_disposal, document_control_number, total_surface_water_discharge, transfers_to_potws_metals_and_metal_compounds, naics_2, naics_3, chemical, cercla_chemicals, haps, metals_and_metal_compounds, pbt_chemicals, priority_chemicals, osha_chemicals, other_health_effects, body_weight, cardiovascular, dermal, developmental, endocrine, gastrointestinal, hematological, hepatic, immunological, metabolic, musculoskeletal, neurological, ocular, other_systemic, renal, reproductive, respiratory, human_health_effects_information_not_identified, acute, intermediate, chronic) FROM '#{file1}'") if File.exists? file1
-        ActiveRecord::Base.connection.execute("COPY epa_data (id, cas_number, reporting_year, trifid, facility_name, facility_city, facility_county, facility_state, facility_zip_code, primary_naics_code, latitude, longitude, parent_company_name, chemical_name, classification, unit_of_measure, produce_the_chemical, import_the_chemical, on_site_use, sale_or_distribution, as_a_byproduct, as_a_manufactured_impurity, as_a_reactant, as_a_formulation_component, as_an_article_component, repackaging, as_a_process_impurity, as_a_chemical_processing_aid, as_a_manufacturing_aid, ancillary_or_other_use, total_air_emissions, total_underground_injection, total_on_site_land_releases, total_transferred_off_site_to_disposal, document_control_number, total_surface_water_discharge, transfers_to_potws_metals_and_metal_compounds, naics_2, naics_3, chemical, cercla_chemicals, haps, metals_and_metal_compounds, pbt_chemicals, priority_chemicals, osha_chemicals, other_health_effects, body_weight, cardiovascular, dermal, developmental, endocrine, gastrointestinal, hematological, hepatic, immunological, metabolic, musculoskeletal, neurological, ocular, other_systemic, renal, reproductive, respiratory, human_health_effects_information_not_identified, acute, intermediate, chronic) FROM '#{file2}'") if File.exists? file2
-        ap 'EPA data copied successfully!'
-
-        ap 'Converting EPA data datatypes...'
-        ActiveRecord::Base.connection.execute('INSERT INTO epa_records (
-            cas_number, reporting_year, trifid, facility_name, facility_city, facility_county, facility_state,
-            facility_zip_code, primary_naics_code, latitude, longitude, parent_company_name, chemical_name,
-            classification, unit_of_measure, produce_the_chemical, import_the_chemical, on_site_use,
-            sale_or_distribution, as_a_byproduct, as_a_manufactured_impurity, as_a_reactant, as_a_formulation_component,
-            as_an_article_component, repackaging, as_a_process_impurity, as_a_chemical_processing_aid,
-            as_a_manufacturing_aid, ancillary_or_other_use, total_air_emissions,
-            total_underground_injection, total_on_site_land_releases, total_surface_water_discharge, total_pollutants,
-            total_transferred_off_site_to_disposal, transfers_to_potws_metals_and_metal_compounds, naics_2, naics_3,
-            chemical, cercla_chemicals, haps, metals_and_metal_compounds, pbt_chemicals, priority_chemicals,
-            osha_chemicals, other_health_effects, body_weight, cardiovascular, dermal, developmental, endocrine,
-            gastrointestinal, hematological, hepatic, immunological, metabolic, musculoskeletal, neurological, ocular,
-            other_systemic, renal, reproductive, respiratory, human_health_effects_information_not_identified, acute,
-            intermediate, chronic
-          ) (
-            SELECT
-              cas_number, reporting_year::integer, trifid, facility_name, facility_city, facility_county,
-              facility_state, facility_zip_code::integer, primary_naics_code,
-              (CASE WHEN latitude~E\'^\\\\d+\\\\.\\\\d+$\' THEN latitude::numeric(9, 6) ELSE 0 END) AS latitude,
-              (CASE WHEN longitude~E\'^\\\\d+\\\\.\\\\d+$\' THEN longitude::numeric(9, 6) ELSE 0 END) AS longitude,
-              parent_company_name, chemical_name, classification, unit_of_measure, produce_the_chemical,
-              import_the_chemical, on_site_use, sale_or_distribution, as_a_byproduct, as_a_manufactured_impurity,
-              as_a_reactant, as_a_formulation_component, as_an_article_component, repackaging, as_a_process_impurity,
-              as_a_chemical_processing_aid, as_a_manufacturing_aid, ancillary_or_other_use,
-              (CASE WHEN total_air_emissions~E\'^\\\\d+\\\\.\\\\d+$\' THEN total_air_emissions::numeric(30, 20) ELSE 0 END) as total_air_emissions,
-              (CASE WHEN total_underground_injection~E\'^\\\\d+\\\\.\\\\d+$\' THEN total_underground_injection::numeric(30, 20) ELSE 0 END) as total_underground_injection,
-              (CASE WHEN total_on_site_land_releases~E\'^\\\\d+\\\\.\\\\d+$\' THEN total_on_site_land_releases::numeric(30, 20) ELSE 0 END) as total_on_site_land_releases,
-              (CASE WHEN total_surface_water_discharge~E\'^\\\\d+\\\\.\\\\d+$\' THEN total_surface_water_discharge::numeric(30, 20) ELSE 0 END) as total_surface_water_discharge,
-              (
-                (CASE WHEN total_air_emissions~E\'^\\\\d+\\\\.\\\\d+$\' THEN total_air_emissions::numeric(30, 20) ELSE 0 END) +
-                (CASE WHEN total_underground_injection~E\'^\\\\d+\\\\.\\\\d+$\' THEN total_underground_injection::numeric(30, 20) ELSE 0 END) +
-                (CASE WHEN total_on_site_land_releases~E\'^\\\\d+\\\\.\\\\d+$\' THEN total_on_site_land_releases::numeric(30, 20) ELSE 0 END) +
-                (CASE WHEN total_surface_water_discharge~E\'^\\\\d+\\\\.\\\\d+$\' THEN total_surface_water_discharge::numeric(30, 20) ELSE 0 END)
-              ) AS total_pollutants, total_transferred_off_site_to_disposal::numeric(30, 20),
-              transfers_to_potws_metals_and_metal_compounds, naics_2, naics_3, chemical, cercla_chemicals, haps,
-              metals_and_metal_compounds, pbt_chemicals, priority_chemicals, osha_chemicals, other_health_effects,
-              body_weight, cardiovascular, dermal, developmental, endocrine, gastrointestinal, hematological, hepatic,
-              immunological, metabolic, musculoskeletal, neurological, ocular, other_systemic, renal, reproductive,
-              respiratory, human_health_effects_information_not_identified, acute, intermediate, chronic
-            FROM epa_data)')
-        ap 'EPA data datatypes converted successfully!'
-
-        states = "#{Rails.root}/dbdata/states.txt"
-
-        ap 'Copying states data...'
-        ActiveRecord::Base.connection.execute("COPY states (id, state_name, abbreviation) FROM '#{states}'") if File.exists? states
-        ap 'States data copied successfully!'
-
-        counties = "#{Rails.root}/dbdata/counties.txt"
-
-        ap 'Copying county data...'
-        ActiveRecord::Base.connection.execute("COPY temp_counties (county_code, state_code, county_name, coordinates) FROM '#{counties}'") if File.exists? counties
-        ap 'County data copied successfully!'
-
-        ap 'Converting county data...'
-        ActiveRecord::Base.connection.execute('INSERT INTO counties (state_id, county_code, county_name) (SELECT DISTINCT state_code, county_code, county_name FROM temp_counties)')
-        ap 'County data converted successfully!'
-
-        geo_json = "#{Rails.root}/dbdata/geo_json.txt"
-
-        ap 'Copying geoJSON data...'
-        ActiveRecord::Base.connection.execute("COPY geo_json (state_id, county_code, geo_object) FROM '#{geo_json}'") if File.exists? geo_json
-        ap 'geoJSON data copied successfully!'
-
-        ActiveRecord::Base.connection.execute('CREATE EXTENSION IF NOT EXISTS unaccent')
-
-        ap 'Adding state codes to EPA data...'
-        ActiveRecord::Base.connection.execute('UPDATE epa_records SET state_id = t1.id FROM (SELECT id, abbreviation FROM states) AS t1 WHERE facility_state = t1.abbreviation')
-        ap 'State codes added successfully!'
-
-        ActiveRecord::Base.connection.execute("UPDATE epa_records SET facility_county = 'MIAMI-DADE' WHERE facility_county = 'DADE' AND state_id = 12")
-
-        ap 'Adding county codes to EPA data...'
-        ActiveRecord::Base.connection.execute("UPDATE epa_records t0
-                                                SET county_code = t1.county_code
-                                                FROM (
-                                                  SELECT county_code, state_id, county_name
-                                                  FROM counties
-                                                ) AS t1
-                                                WHERE
-                                                  REPLACE(REPLACE(facility_county, ' ', ''), '(CITY)', '') = UNACCENT(REPLACE(REPLACE(REPLACE(REPLACE(UPPER(t1.county_name), ' ', ''), '.', ''), '''', ''), '(DISTRICT)', '')) AND t0.state_id = t1.state_id")
-        ap 'County codes added successfully!'
-
-        ap 'Adding geoJSON IDs to EPA data...'
-        ActiveRecord::Base.connection.execute('UPDATE epa_records t0 SET geo_json_id = t1.county_code FROM (SELECT state_id, county_code FROM geo_json) AS t1 WHERE t0.state_id = t1.state_id AND t0.county_code = t1.county_code')
-        ap 'geoJSON IDs added successfully!'
-
-        ActiveRecord::Base.connection.execute('ALTER TABLE epa_records ENABLE TRIGGER ALL')
-        ActiveRecord::Base.connection.execute('ALTER TABLE states ENABLE TRIGGER ALL')
-        ActiveRecord::Base.connection.execute('ALTER TABLE counties ENABLE TRIGGER ALL')
-        ActiveRecord::Base.connection.execute('ALTER TABLE geo_json ENABLE TRIGGER ALL')
+      # ACCEPTS A MAX ROW COUNT SPECIFIED AS 'rake db:load count=n'
+      max_rows = -1
+      max_rows =  ARGV[1].split('=')[1].to_i unless ARGV[1].nil?
+      EpaRecord.destroy_all
+      p "Starting to read file at #{Time.now.getutc}"
+      csv_text = File.read('../api/dbdata/simple_data.csv').encode!('UTF-8', 'iso-8859-1', invalid: :replace)
+      csv = CSV.parse(csv_text, :headers => true)
+      p "Finished reading file at #{Time.now.getutc}"
+      row_count = 0
+      p "Creating records at #{Time.now.getutc}"
+      # TODO: WE CAN INSERT THESE IN BATCHES TO MOVE MORE QUICKLY
+      csv.each do |row|
+        EpaRecord.create!(row.to_hash)
+        row_count += 1
+        break if (row_count == max_rows)
       end
+      p "Finished creating #{row_count} records at #{Time.now.getutc}"
     end
   end
 end

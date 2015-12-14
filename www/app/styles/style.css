@@ -1,15 +1,17 @@
 /* GLOBAL STYLES
 -------------------------------------------------- */
+
 #map {
   height: 650px;
 }
-.title-margin {
-  margin-top: 50px;
-  margin-bottom: 20px;
+
+.dropdown-menu {
+  z-index: 800;
 }
 
 /* JUMBOTRON */
 /*-------------------------------------------------- */
+
 .jumbotron {
   margin-bottom: 30px;
   background-image: url(../images/bg.png);
@@ -18,25 +20,22 @@
   background-repeat: no-repeat;
   color: white;
 }
-
 .jumbotron .container {
   max-width: 800px !important;
 }
-
 .jumbotron-text {
   font-size: 16px;
   margin-bottom: 15px;
   font-weight: 200;
 }
-
 .jumbotron-btn-text {
   font-weight: 800;
   font-size: 14px;
 }
 
-
 /* FORMS, INPUTS, & LABELS */
 /*-------------------------------------------------- */
+
 .form-control {
   width: 90% !important;
 }
@@ -46,6 +45,7 @@
 
 /* NAVBAR */
 /*-------------------------------------------------- */
+
 .navbar {
   margin-bottom: 10px;
   margin-top: 10px;
@@ -66,6 +66,11 @@
 
 /* MARGINS & PADDINGS */
 /*-------------------------------------------------- */
+
+.title-margin {
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
 .sm-margin-left {
   margin-left: 10px;
 }
@@ -73,7 +78,19 @@
   margin-right: 20px;
 }
 .margin-top {
-  margin-top: 14px;
+  margin-top: 15px;
+}
+.margin-bottom {
+  margin-bottom: 10px;
+}
+.pad-bottom {
+  padding-bottom: 15px;
+}
+.pad-bottom-lg {
+  padding-bottom: 50px;
+}
+.no-margin {
+  margin: 0px !important;
 }
 .well {
   margin-top: 10px;
@@ -84,15 +101,23 @@
 .no-pad-r {
   padding-right: 0px;
 }
+.no-marg-b {
+  margin-bottom: 0px;
+}
 .pad-l {
   padding-left: -10px;
+}
+.pad-10 {
+  padding: 10px;
 }
 .full-width {
   padding-left: 0px !important;
   padding-right: 0px !important;
 }
+
 /* BUTTONS */
 /*-------------------------------------------------- */
+
 .btn-r {
   float: right;
 }
@@ -113,7 +138,7 @@
   padding: 4px 26px !important;
   border-radius: 20px !important;
 }
-.btn-col-3 {
+.btn-maptype {
   padding-right: 140px !important;
   margin: 5px 0px 12px !important;
   margin-left: -15px !important;
@@ -127,3 +152,38 @@
   left: 90%;
   top: 45%;
 }
+
+/* TEXT */
+/*-------------------------------------------------- */
+
+.text-bold {
+  font-weight: 800;
+  font-size: 12px;
+}
+.text-sm {
+  font-size: 14px;
+}
+.text-blue {
+  color: #0071bc;
+}
+.icon-margin {
+  margin: 0 10px 0 0;
+}
+
+/* WELLS */
+/*-------------------------------------------------- */
+
+.well-box {
+  font-size: 14px;
+  border-radius: 0px;
+  padding: 5px 10px;
+  margin-bottom: 0px;
+}
+
+/* COLORS */
+
+.darkgray {
+  background-color: darkgray;
+}
+
+
