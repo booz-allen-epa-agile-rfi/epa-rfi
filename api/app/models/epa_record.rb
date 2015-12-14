@@ -1,30 +1,15 @@
 class EpaRecord < ActiveRecord::Base
-  has_many :states, class_name: 'States', foreign_key: :id
-  has_many :counties, class_name: 'Counties', through: :states
-  has_many :geo_json, through: :counties
-
   # Scopes
-  scope :states_list, -> { select('states.id, facility_state, state_name').joins(:states).distinct.map do |x|
-      { state_code: x.id, state: x.facility_state, name: x.state_name }
-    end
+  scope :states_list, -> { select('facility_state').distinct.to_hash
   }
-  scope :chemicals, -> { select('chemical_name').distinct.as_json }
+  scope :chemicals, -> { select('chemical_name').distinct.to_hash }
 
-  scope :counties_list, -> {
-    select('counties.county_code, facility_county').join(:counties).distinct.map do |x| {county: x.facility_county} end
-  }
+  scope :counties_list, -> { select('facility_county').distinct.to_hash }
 
-  scope :zip_codes, -> {
-    select('facility_zip_code').distinct.where('LENGTH(facility_zip_code::text) IN (?)', [5, 9]).map do |x|
-      {zip_code: x.facility_zip_code}
-    end
-  }
+  scope :zip_codes, -> { select('facility_zip_code').distinct.where('LENGTH(facility_zip_code::text) IN (?)', [5, 9]).to_hash }
 
   scope :state_counties, -> (state) {
-    select('facility_state, facility_county').where(facility_state: state).distinct.map do |x|
-      {state: x.facility_state, county: x.facility_county}
-    end
-  }
+    select('facility_state, facility_county').where(facility_state: state).distinct.to_hash }
 
   scope :county_totals, -> {
     subquery = select('facility_state, facility_county, COUNT(*), SUM(total_air_emissions) AS total_air_emissions,
