@@ -3,9 +3,12 @@
   <div class="container text-center">
     <h2 class="title-margin">How it Works</h2>
     <div class="jumbotron-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-    <p><a class="btn btn-white jumbotron-btn-text btn-lg" href="#" role="button">How it Works</a></p>
+    <p><a class="btn btn-white jumbotron-btn-text btn-lg" href="#" role="button">How it Works</a>
+    </p>
   </div>
 </div> <!-- /jumbotron -->
+
+
 
 
 <div class="container-fluid">
@@ -18,16 +21,16 @@
 
   <!-- Recent Searches -->
   <div class="well well-lg col-md-12">
-    <p class="col-md-10">Recent Search Results</p>
+    <p class="col-md-10">Search Counties with the Most Chemical Exposure</p>
     <div class="col-md-10">
-      <button class="btn btn-oval btn-black sm-margin-left" href="#" role="button">56301</button>
-      <button class="btn btn-oval btn-black sm-margin-left" href="#" role="button">94109</button>
-      <button class="btn btn-oval btn-black sm-margin-left" href="#" role="button">22306</button>
-      <button class="btn btn-oval btn-black sm-margin-left" href="#" role="button">27765</button>
-      <button class="btn btn-oval btn-black sm-margin-left" href="#" role="button">46578</button>
-      <button class="btn btn-oval btn-black sm-margin-left" href="#" role="button">11233</button>
-      <button class="btn btn-oval btn-black sm-margin-left" href="#" role="button">90667</button>
-      <button class="btn btn-oval btn-black sm-margin-left" href="#" role="button">61038</button>
+      <button class="btn btn-oval btn-black sm-margin-left" href="#" role="button">Norfolk</button>
+      <button class="btn btn-oval btn-black sm-margin-left" href="#" role="button">Hillsborough</button>
+      <button class="btn btn-oval btn-black sm-margin-left" href="#" role="button">Delaware</button>
+      <button class="btn btn-oval btn-black sm-margin-left" href="#" role="button">Los Angeles</button>
+      <button class="btn btn-oval btn-black sm-margin-left" href="#" role="button">Harris</button>
+      <button class="btn btn-oval btn-black sm-margin-left" href="#" role="button">Benewah</button>
+      <button class="btn btn-oval btn-black sm-margin-left" href="#" role="button">Travis</button>
+      <button class="btn btn-oval btn-black sm-margin-left" href="#" role="button">James</button>
     </div>
   </div>
 
@@ -44,15 +47,15 @@
   <div>
     <div class="col-md-2 btn-group">
       <button type="button" class="btn btn-default dropdown-toggle btn-maptype" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Counties <span class="caret"></span>
+        Street View <span class="caret"></span>
       </button>
       <ul class="dropdown-menu">
-        <li><a href="#">Air Quality</a></li>
+        <li><a href="#">Counties</a></li>
       </ul>
     </div>
 
     <div class="col-md-2">
-      <div class="ngrs-range-slider ng-isolate-scope ngrs-horizontal" range-slider="" min="0" max="100" model-min="least" model-max="greatest" on-handle-up="searchDrugEvents()">
+      <div class="ngrs-range-slider ng-isolate-scope ngrs-horizontal" range-slider="" min="2003" max="2014" model-min="least" model-max="greatest" on-handle-up="searchYears()">
         <div class="ngrs-runner">
           <div class="ngrs-handle ngrs-handle-min" style="display: block; left: 0%;">
             <i></i>
@@ -65,10 +68,10 @@
         </div>
         <div class="ngrs-value-runner">
           <div class="ngrs-value ngrs-value-min" ng-show="showValues">
-            <!--<div class="ng-binding">2005</div>-->
+            <div class="ng-binding">2003</div>
           </div>
           <div class="ngrs-value ngrs-value-max" ng-show="showValues">
-            <!--<div class="ng-binding">2015</div>-->
+            <div class="ng-binding">2014</div>
           </div>
         </div>
       </div>
