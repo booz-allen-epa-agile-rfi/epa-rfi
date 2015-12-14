@@ -1,13 +1,13 @@
 class CreateEpaRecords < ActiveRecord::Migration
   def change
     create_table :epa_records do |t|
+      t.integer :old_id
       t.string :cas_number, limit: 9
       t.integer :reporting_year, index: true
       t.string :trifid, limit: 15
       t.string :facility_name, limit: 62, index: true
       t.string :facility_city, limit: 25, index: true
       t.string :facility_county, limit: 23
-      t.integer :county_code, index: true
       t.string :facility_state, limit: 2
       t.integer :facility_zip_code, index: true
       t.string :primary_naics_code, limit: 6
@@ -37,9 +37,8 @@ class CreateEpaRecords < ActiveRecord::Migration
       t.integer :total_underground_injection
       t.integer :total_on_site_land_releases
       t.integer :total_transferred_off_site_to_disposal
-      t.integer :document_control_number, :int8, limit: 8
+      t.integer :document_control_number, limit: 8
       t.integer :total_surface_water_discharge
-      t.integer :total_pollutants
       t.string :transfers_to_potws_metals_and_metal_compounds, limit: 10
       t.string :naics_2, limit: 2
       t.string :naics_3, limit: 3
