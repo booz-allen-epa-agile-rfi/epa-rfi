@@ -79,7 +79,7 @@
     <div class="col-md-3">
       <div class="btn-group" data-toggle="buttons">
         <label class="btn btn-primary active">
-          <img src="../../images" alt="Smiley face">
+          <input type="checkbox" autocomplete="off" checked> Total
         </label>
         <label class="btn btn-primary">
           <input type="checkbox" autocomplete="off"> Land
@@ -107,8 +107,8 @@
   <map></map>
 
   <!-- County Information Column -->
-  <div class="col-md-3 no-pad-r">
-    <div class="list-group no-marg-b">
+  <div class="col-md-3 no-pad-r right-pane">
+    <div class="list-group no-margin-b right-content">
       <div class="list-group-item">
         <h4 class="list-group-item-heading">Orange County, CA</h4>
         <p class="list-group-item-text">Toggle Results
@@ -125,117 +125,134 @@
         </div>
       </div>
       <div href="#" class="list-group-item pad-bottom">
-        <input type="radio" value="all-health-facilities" checked> All Health Effects
+        <span class="xs-margin-right"><input type="radio" value="all-health-facilities" checked></span>All Health Effects
         <hr>
-        <input type="radio" value="all-health-facilities" checked> Body Weight
+        <span class="xs-margin-right"><input type="radio" value="all-health-facilities" checked></span>Body Weight
+        <div class="pad-icons">
+          <div class="col-md-3"><img src="../../../assets/epa-icons/Icon_Air.png" alt="Air"></div>
+          <div class="col-md-3"><img src="../../../assets/epa-icons/Icon_Ground.png" alt="Ground"></div>
+          <div class="col-md-3"><img src="../../../assets/epa-icons/Icon_Underground.png" alt="Underground"></div>
+          <div class="col-md-3"><img src="../../../assets/epa-icons/Icon_Water.png" alt="Water"></div>
+        </div>
+        <p class="well well-box darkgray">Associated Chemicals: <span class="text-blue">10</span>
+          <span class="btn-r">
+            <a data-toggle="collapse" data-target="#collapseChemicals" aria-expanded="false" aria-controls="collapseChemicals">
+              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            </a>
+            <div class="collapse" id="collapseChemicals">
+              <div class="well pad-10">
+                <p class="text-sm">Chemical 1 (5)<br>
+                  Chemical 2 (1)<br>
+                  Chemical 3 (7)<br>
+                  Chemical 4 (3)<br>
+                  Chemical 5 (13)<br>
+                  Chemical 6 (2)<br>
+                  Chemical 7 (9)<br>
+                  Chemical 8 (6)<br>
+                  Chemical 9 (2)<br>
+                  Chemical 10 (1)
+                </p>
+              </div>
+            </div>
+          </span>
+        </p>
+        <p class="well well-box darkgray">Associated Facilities: <span class="text-blue">5</span>
+          <span class="btn-r">
+            <a data-toggle="collapse" data-target="#collapseFacilities" aria-expanded="false" aria-controls="collapseFacilities">
+              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            </a>
+            <div class="collapse" id="collapseFacilities">
+              <div class="well pad-10">
+                <p class="text-sm">Facility 1<br>
+                  Facility 2<br>
+                  Facility 3<br>
+                  Facility 4<br>
+                  Facility 5<br>
+                </p>
+              </div>
+            </div>
+          </span>
+        </p>
+      </div>
+      <div href="#" class="list-group-item pad-bottom">
+        <span class="xs-margin-right"><input type="radio" value="all-health-facilities" checked></span>Dermal
+        <div class="pad-icons">
+          <div class="col-md-3"><img src="../../../assets/epa-icons/Icon_Air.png" alt="Air"></div>
+          <div class="col-md-3"><img src="../../../assets/epa-icons/Icon_Ground.png" alt="Ground"></div>
+          <div class="col-md-3"><img src="../../../assets/epa-icons/Icon_Underground.png" alt="Underground"></div>
+          <div class="col-md-3"><img src="../../../assets/epa-icons/Icon_Water.png" alt="Water"></div>
+        </div>
+        <p class="well well-box darkgray">Associated Chemicals: <span class="text-blue">4</span>
+          <span class="btn-r">
+            <a data-toggle="collapse" data-target="#collapseChemicals" aria-expanded="false" aria-controls="collapseChemicals">
+              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            </a>
+            <div class="collapse" id="collapseChemicals">
+              <div class="well pad-10">
+                <p class="text-sm">Chemical 1 (5)<br>
+                  Chemical 2 (1)<br>
+                  Chemical 3 (7)<br>
+                  Chemical 4 (3)
+                </p>
+              </div>
+            </div>
+          </span>
+        </p>
+        <p class="well well-box darkgray">Associated Facilities: <span class="text-blue">2</span>
+          <span class="btn-r">
+            <a data-toggle="collapse" data-target="#collapseFacilities" aria-expanded="false" aria-controls="collapseFacilities">
+              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            </a>
+            <div class="collapse" id="collapseFacilities">
+              <div class="well pad-10">
+                <p class="text-sm">Facility 1<br>
+                  Facility 2
+                </p>
+              </div>
+            </div>
+          </span>
+        </p>
+      </div>
+      <div href="#" class="list-group-item pad-bottom">
+        <span class="xs-margin-right"><input type="radio" value="all-health-facilities" checked></span>Example 3
+        <div class="pad-icons">
+          <div class="col-md-3"><img src="../../../assets/epa-icons/Icon_Air.png" alt="Air"></div>
+          <div class="col-md-3"><img src="../../../assets/epa-icons/Icon_Ground.png" alt="Ground"></div>
+          <div class="col-md-3"><img src="../../../assets/epa-icons/Icon_Underground.png" alt="Underground"></div>
+          <div class="col-md-3"><img src="../../../assets/epa-icons/Icon_Water.png" alt="Water"></div>
+        </div>
+        <p class="well well-box darkgray">Associated Chemicals: <span class="text-blue">4</span>
 
-        <div style="padding-bottom: 50px">
-          <form>
-            <div class="col-md-3"><input type="radio" value="air" checked></div>
-            <div class="col-md-3"><input type="radio" value="underground"></div>
-            <div class="col-md-3"><input type="radio" value="ground"></div>
-            <div class="col-md-3"><input type="radio" value="water"></div>
-          </form>
-          <div class="col-md-12 sm-label">
-            <div class="col-md-2 text-left no-pad-l">Air</div>
-            <div class="col-md-4 text-left no-pad-l">Underground</div>
-            <div class="col-md-3 text-center">Ground</div>
-            <div class="col-md-3 text-center">Water</div>
-          </div>
-        </div>
-        <p class="well well-box darkgray">
-          Associated Chemicals: <span class="text-blue">10</span>
-            <span class="btn-r">
-              <a data-toggle="collapse" data-target="#collapseChemicals" aria-expanded="false" aria-controls="collapseChemicals">
-                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-              </a>
-              <div class="collapse" id="collapseChemicals">
-                <div class="well pad-10">
-                  <p class="text-sm">Chemical 1 (5)<br>
-                    Chemical 2 (1)<br>
-                    Chemical 3 (7)<br>
-                    Chemical 4 (3)<br>
-                    Chemical 5 (13)<br>
-                    Chemical 6 (2)<br>
-                    Chemical 7 (9)<br>
-                    Chemical 8 (6)<br>
-                    Chemical 9 (2)<br>
-                    Chemical 10 (1)
-                  </p>
-                </div>
+          <span class="btn-r">
+            <a data-toggle="collapse" data-target="#collapseChemicals" aria-expanded="false" aria-controls="collapseChemicals">
+              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            </a>
+            <div class="collapse" id="collapseChemicals">
+              <div class="well pad-10">
+                <p class="text-sm">Chemical 1 (5)<br>
+                  Chemical 2 (1)<br>
+                  Chemical 3 (7)<br>
+                  Chemical 4 (3)
+                </p>
               </div>
-            </span>
+            </div>
+          </span>
         </p>
-        <p class="well well-box darkgray">
-          Associated Facilities: <span class="text-blue">5</span>
-            <span class="btn-r">
-              <a data-toggle="collapse" data-target="#collapseFacilities" aria-expanded="false" aria-controls="collapseFacilities">
-                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-              </a>
-              <div class="collapse" id="collapseFacilities">
-                <div class="well pad-10">
-                  <p class="text-sm">Facility 1<br>
-                    Facility 2<br>
-                    Facility 3<br>
-                    Facility 4<br>
-                    Facility 5<br>
-                  </p>
-                </div>
+        <p class="well well-box darkgray">Associated Facilities: <span class="text-blue">2</span>
+          <span class="btn-r">
+            <a data-toggle="collapse" data-target="#collapseFacilities" aria-expanded="false" aria-controls="collapseFacilities">
+              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            </a>
+            <div class="collapse" id="collapseFacilities">
+              <div class="well pad-10">
+                <p class="text-sm">Facility 1<br>
+                  Facility 2
+                </p>
               </div>
-            </span>
+            </div>
+          </span>
         </p>
       </div>
     </div>
-    <div href="#" class="list-group-item pad-bottom">
-      <input type="radio" value="all-health-facilities" checked> Dermal
-      <div style="padding-bottom: 50px">
-        <form>
-          <div class="col-md-3"><input type="radio" value="air" checked></div>
-          <div class="col-md-3"><input type="radio" value="underground"></div>
-          <div class="col-md-3"><input type="radio" value="ground"></div>
-          <div class="col-md-3"><input type="radio" value="water"></div>
-        </form>
-        <div class="col-md-12 sm-label">
-          <div class="col-md-2 text-left no-pad-l">Air</div>
-          <div class="col-md-4 text-left no-pad-l">Underground</div>
-          <div class="col-md-3 text-center">Ground</div>
-          <div class="col-md-3 text-center">Water</div>
-        </div>
-      </div>
-      <p class="well well-box darkgray">
-        Associated Chemicals: <span class="text-blue">4</span>
-            <span class="btn-r">
-              <a data-toggle="collapse" data-target="#collapseChemicals" aria-expanded="false" aria-controls="collapseChemicals">
-                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-              </a>
-              <div class="collapse" id="collapseChemicals">
-                <div class="well pad-10">
-                  <p class="text-sm">Chemical 1 (5)<br>
-                    Chemical 2 (1)<br>
-                    Chemical 3 (7)<br>
-                    Chemical 4 (3)
-                  </p>
-                </div>
-              </div>
-            </span>
-      </p>
-      <p class="well well-box darkgray">
-        Associated Facilities: <span class="text-blue">2</span>
-            <span class="btn-r">
-              <a data-toggle="collapse" data-target="#collapseFacilities" aria-expanded="false" aria-controls="collapseFacilities">
-                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-              </a>
-              <div class="collapse" id="collapseFacilities">
-                <div class="well pad-10">
-                  <p class="text-sm">Facility 1<br>
-                    Facility 2
-                  </p>
-                </div>
-              </div>
-            </span>
-      </p>
-    </div>
-  </div>
   </div> <!-- /column -->
-</div>
 </div> <!-- /container -->
