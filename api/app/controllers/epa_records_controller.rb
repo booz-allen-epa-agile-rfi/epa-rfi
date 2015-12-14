@@ -66,15 +66,10 @@ class EpaRecordsController < ApplicationController
   end
 
   def epa_params
-    ap 'epa_params'
-    ap params
     @_epa_params ||= params.require(:epa_record).permit(:id, :state_id, :county_id, :facility_city, :facility_zip_code, :latitude, :longitude, :chemical_name, :facility_name, :reporting_year)
-    ap @_epa_params
-    @_epa_params
   end
 
   def geoJSONify(records)
-    ap records
     geoJSON = {type: "FeatureCollection", features: []}
     records.each do |r|
       geoJSON[:features] << {type: "Feature", properties: r, geometry: {type: "Polygon", coordinates: []}}
