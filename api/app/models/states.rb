@@ -1,5 +1,5 @@
 class States < ActiveRecord::Base
-  has_many :epa_records
-  has_many :counties
-  has_many :geo_json
+  # self.primary_key = :state_code
+  belongs_to :epa_record, foreign_key: :state_id
+  has_many :counties, foreign_key: :county_code
 end
