@@ -11,17 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151210214409) do
+ActiveRecord::Schema.define(version: 20151209162932) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "counties", force: :cascade do |t|
-    t.integer "county_code", null: false
-    t.string  "county_name", null: false
-  end
-
-  add_index "counties", ["county_code"], name: "index_counties_on_county_code", using: :btree
 
   create_table "epa_records", force: :cascade do |t|
     t.integer "old_id"
@@ -102,10 +95,5 @@ ActiveRecord::Schema.define(version: 20151210214409) do
   add_index "epa_records", ["latitude"], name: "index_epa_records_on_latitude", using: :btree
   add_index "epa_records", ["longitude"], name: "index_epa_records_on_longitude", using: :btree
   add_index "epa_records", ["reporting_year"], name: "index_epa_records_on_reporting_year", using: :btree
-
-  create_table "states", force: :cascade do |t|
-    t.string "state_name",             null: false
-    t.string "abbreviation", limit: 2, null: false
-  end
 
 end
