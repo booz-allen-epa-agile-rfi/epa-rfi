@@ -86,6 +86,9 @@
 .margin-bottom {
   margin-bottom: 10px;
 }
+.lg-margin-bottom {
+  margin-bottom: 20px;
+}
 .pad-bottom {
   padding-bottom: 15px;
 }
@@ -176,6 +179,9 @@
 .icon-margin {
   margin: 0 10px 0 0;
 }
+.font-200 {
+  font-weight: 200;
+}
 
 /* WELLS */
 /*-------------------------------------------------- */
@@ -199,8 +205,26 @@
 
 .right-pane {
   height: 600px;
+  border: 1px solid darkgray;
 }
 .right-content {
   height: 600px;
   overflow: scroll;
+}
+
+/* "HOW IT WORKS" MODAL */
+/*-------------------------------------------------- */
+
+.modal-content {
+  background-color: white;
+}
+.modal-title,
+.modal-header,
+.modal-body {
+  background-color: white;
+  color: #205493;
+}
+.modal-header {
+  background-color: white;
+  color: #205493;
 }
