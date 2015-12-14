@@ -14,7 +14,8 @@ namespace :db do
       max_rows =  ARGV[1].split('=')[1].to_i unless ARGV[1].nil?
       EpaRecord.destroy_all
       p "Starting to read file at #{Time.now.getutc}"
-      file = File.exists? ? '../api/dbdata/simple_data.csv' : '/usr/src/app/dbdata/simple_data.csv'
+      file = '../api/dbdata/simple_data.csv'
+      file = File.exists? file ? file : '/usr/src/app/dbdata/simple_data.csv'
       csv_text = File.read(file).encode!('UTF-8', 'iso-8859-1', invalid: :replace)
       csv = CSV.parse(csv_text, :headers => true)
       p "Finished reading file at #{Time.now.getutc}"
