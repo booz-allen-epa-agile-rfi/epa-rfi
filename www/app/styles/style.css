@@ -74,6 +74,9 @@
 .sm-margin-left {
   margin-left: 10px;
 }
+.xs-margin-right {
+  margin-right: 10px
+}
 .margin-right {
   margin-right: 20px;
 }
@@ -101,7 +104,7 @@
 .no-pad-r {
   padding-right: 0px;
 }
-.no-marg-b {
+.no-margin-b {
   margin-bottom: 0px;
 }
 .pad-l {
@@ -113,6 +116,10 @@
 .full-width {
   padding-left: 0px !important;
   padding-right: 0px !important;
+}
+
+.pad-icons {
+  padding: 10px 0 20px 10px;
 }
 
 /* BUTTONS */
@@ -181,9 +188,19 @@
 }
 
 /* COLORS */
+/*-------------------------------------------------- */
 
 .darkgray {
   background-color: darkgray;
 }
 
+/* RIGHT INFORMATION COLUMN */
+/*-------------------------------------------------- */
 
+.right-pane {
+  height: 600px;
+}
+.right-content {
+  height: 600px;
+  overflow: scroll;
+}
