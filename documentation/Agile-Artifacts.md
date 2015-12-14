@@ -18,6 +18,7 @@ We also set up sufficient technology to keep us collaborating throughout the pro
 were gegraphically distributed. To aid in this, we kept up a Zoom video call throughout the development period, Slack for team messaging and sharing, and 
 task-tracking via Waffle.io/GitHub.
 
+**Basic  Schedule**
 Day 1 (Wed) was characterized with two sprints, of 3 hours each, each ending in a demo, as well as a retrospective for the end of the day.  
 
 In Day 2 (Thurs), the team decided that planning a single sprint for the day would be a more effective strategy, with numerous cross-team synchronizations and meetings occurring 
@@ -44,14 +45,17 @@ As we executed, we followed a simple pattern:
  1. Sprint Demonstration - Demo each Sprint's output, receiving feedback from the team and interested parties
  1. Retrospective - Conduct a retrospective after each release, to adapt our work for the next release
 
+**Tracking work**
 To guide where we going, the team built user stories and user personas early on, to demonstrate the value proposition of the application.
 
 Work items that supported those stories were captured and tracked. We estimated each task and captured the planned tasks for each sprint. 
-We also captured the velocity for each sprint and used that as input into planning our next sprints. 
+We also captured the velocity for each sprint and used that as input into planning our next sprints.
+
+We conducted whole-team planning-poker estimation using Slack, while on a Zoom call together, and tracked details and movement through Waffle.io/GitHub issues. 
 
 User stories are archived on our wiki here - https://github.com/booz-allen-epa-agile-rfi/epa-rfi/wiki/User-Stories
 
-**Team Velocity and User Stories Completed**
+**Team Velocity**
 
 ![Velocity](https://docs.google.com/spreadsheets/d/1AAqKoaxrRT1NDnyU7He5MAi4QXazMylVXrlxZimznBI/pubchart?oid=1374894241&format=image)
 
@@ -84,10 +88,11 @@ User stories are archived on our wiki here - https://github.com/booz-allen-epa-a
 1. Agile estimation (story points)
 1. Whole-team, planning poker estimation 
 
+***Plans***
+
 ### Sprint 0 Activities
 - Hold a team kickoff (1)
 - Hold an initial vision/data exploration session (1)
-
 
 ### Day 1 plans
 #### Sprint 1 Plan
@@ -123,7 +128,6 @@ User stories are archived on our wiki here - https://github.com/booz-allen-epa-a
 - Have jenkins build on each commit (2) --> Not complete in this sprint
 
 23 pts forecast, 21 pts delivered
-
 
 
 ### Day 2 plans
