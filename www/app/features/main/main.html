@@ -77,17 +77,17 @@
     </div>
 
     <div class="col-md-3">
-      <div class="btn-group" data-toggle="buttons">
-        <label class="btn btn-primary active">
+      <div class="btn-group" data-toggle="buttons" id="emission">
+        <label id="emission-total" class="btn btn-primary active">
           <input type="checkbox" autocomplete="off" checked> Total
         </label>
-        <label class="btn btn-primary">
+        <label id="emission-land" class="btn btn-primary">
           <input type="checkbox" autocomplete="off"> Land
         </label>
-        <label class="btn btn-primary">
+        <label id="emission-air" class="btn btn-primary">
           <input type="checkbox" autocomplete="off"> Air
         </label>
-        <label class="btn btn-primary">
+        <label id="emission-water" class="btn btn-primary">
           <input type="checkbox" autocomplete="off"> Water
         </label>
       </div>
@@ -99,7 +99,7 @@
       <i class="fa fa-2x fa-twitter icon-margin"></i>
     </div>
     <div>
-      <button class="btn btn-blue col-md-1 btn-r" href="#" role="button">Refresh Map</button>
+      <button class="btn btn-blue col-md-1 btn-r" href="#" ng-click="submitMapFilters()" role="button">Refresh Map</button>
     </div>
   </div>
 
