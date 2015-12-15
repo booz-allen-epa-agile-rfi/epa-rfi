@@ -42,11 +42,11 @@
 
         Map.dataLayers.geojson.addTo(Map.map);
 
-        if(queryParams.bounds && queryParams.bounds.length === 4) {
-          var sw = queryParams.bounds.slice(0,2);
-          var ne = queryParams.bounds.slice(2,4);
-          Map.map.fitBounds([sw,ne]);
-        }
+        // if(queryParams.bounds && queryParams.bounds.length === 4) {
+        //   var sw = queryParams.bounds.slice(0,2);
+        //   var ne = queryParams.bounds.slice(2,4);
+        //   Map.map.fitBounds([sw,ne]);
+        // }
       });
     }
 
