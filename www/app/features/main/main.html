@@ -3,12 +3,50 @@
   <div class="container text-center">
     <h2 class="title-margin">How it Works</h2>
     <div class="jumbotron-text">Ipsum lorem dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-    <p><a class="btn btn-white jumbotron-btn-text btn-lg" href="#" role="button">How it Works</a></p>
+    <p>
+      <button type="button" class="btn btn-white jumbotron-btn-text btn-lg" data-toggle="modal" data-target=".bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        How it Works
+      </button>
+      <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title text-left">How it Works</h4>
+            </div>
+            <div class="modal-body col-md-12">
+              <div class="col-md-4" style="height:300px; background: white">
+                <div class="text-center">
+                  <img src="../../../assets/epa-icons/Icon_Stp1.png" alt="Step1">
+                  <h2 class="lg-margin-bottom">Step One</h2>
+                  <h4 class="font-200">Enter a zip code or county to see chemical emissions in that area.</h4>
+                </div>
+              </div>
+              <div class="col-md-4" style="height:300px; background: white">
+                <div class="text-center">
+                  <img src="../../../assets/epa-icons/Icon_Stp2.png" alt="Step2">
+                  <h2 class="lg-margin-bottom">Step Two</h2>
+                  <h4 class="font-200">Filter your results by toggling between chemical types, health effects and facilities in the sidebar.</h4>
+                </div>
+              </div>
+              <div class="col-md-4" style="height:300px; background: white">
+                <div class="text-center">
+                  <img src="../../../assets/epa-icons/Icon_Stp3.png" alt="Step3">
+                  <h2 class="lg-margin-bottom">Step Three</h2>
+                  <h4 class="font-200">Share your experience by clicking the "Share" button!</h4>
+                </div>
+              </div>
+              <div class="col-md-12 text-center">
+                <h5 class="font-200">TREEVIEW helps you discover where chemical emissions are coming from in your local community using the latest information from the EPA's Toxic Release Inventory and Superfund Program.</h5>
+                <h5 class="font-200">This tool is designed to let you filter by chemical type, related health effects, which facility the chemicals are coming from, and many other filtering options to optimize your results.</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </p>
   </div>
 </div> <!-- /jumbotron -->
-
-
-
 
 <div class="container-fluid">
   <!-- Search by Zip Code or County -->
