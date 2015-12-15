@@ -82,7 +82,7 @@ https://github.com/booz-allen-epa-agile-rfi/epa-rfi/blob/master/documentation/Li
 
 We developed TREEVIEW with 14 modern, open source technologies most appropriate to implement the prototype.  The team utilized GitHub for distributed source control.  We leveraged the GitFlow model of propagating code from feature branches, to development, to release, and finally to production. The Docker tool suite allowed seamless containerization and configuration management of the front-end, back-end (API) and database applications.  We used Docker-engine to build Linux containers from custom Dockerfiles stored in our Git repository. We containerized all 3 tiers of our application stack. We wrote Dockerfiles using Docker’s recommended best practices to maximize the caching features of the Docker tool. This allows for quicker builds, which is important as the Docker image is rebuilt after every push.
 
-https://github.com/booz-allen-agile-delivery/ads-final/blob/development/documentation/DevOps-Process.md
+https://github.com/booz-allen-epa-agile-rfi/epa-rfi/blob/master/documentation/DevOps-Process.md
 
 - Front-End: Bootstrap, Angular.JS, Node.js, Karma, JS Hint, nvd3, Leaflet
 - Backend: Ruby, Rails, RSpec, Rubocop, Brakeman 
@@ -90,7 +90,7 @@ https://github.com/booz-allen-agile-delivery/ads-final/blob/development/document
 
 Our application stack:
 
-https://github.com/booz-allen-agile-delivery/ads-final/blob/development/documentation/Architecture-Diagrams.md
+https://github.com/booz-allen-epa-agile-rfi/epa-rfi/blob/master/documentation/Architecture-Diagrams.md
 
 **(g) Test Driven Development**
 
