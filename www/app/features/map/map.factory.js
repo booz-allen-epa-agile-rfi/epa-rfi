@@ -23,16 +23,21 @@
     // Private
 
     function update(queryParams) {
-      // debug
-      queryParams = {
-        reporting_year: [2014]
-      }
-
       Map.loaded = false;
       if(Map.dataLayers.geojson) Map.dataLayers.geojson.clearLayers();
 
       MapData.search.save(queryParams).$promise.then(function(result) {
-        Map.dataLayers.geojson = L.geoJson(result, {});
+        Map.dataLayers.geojson = L.geoJson(result, {
+          onEachFeature: function(feature, layer) {
+            var popUpHtml = '<b>Facility Name : ' + feature.properties['facility_name'] + "</b><br/>" +
+                        'Air Emissions : ' + feature.properties['total_air_emissions'].toLocaleString() + ' lbs<br />' +
+                        'On Site Land Releases : ' + feature.properties['total_on_site_land_releases'].toLocaleString() + ' lbs<br />' +
+                        'Underground Injection : ' + feature.properties['total_underground_injection'].toLocaleString() + ' lbs<br />' +
+                        'Surface Water Discharge : ' + feature.properties['total_surface_water_discharge'].toLocaleString() + ' lbs'
+
+            layer.bindPopup(popUpHtml);
+          }
+        });
         Map.loaded = true;
 
         Map.dataLayers.geojson.addTo(Map.map);
