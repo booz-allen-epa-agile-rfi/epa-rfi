@@ -31,7 +31,6 @@ function MainController($scope, $routeParams, $location, Map) {
       '&emissions=' + currentState.emissions.join('_') +
       '&reporting_year=' + currentState.reporting_year.join('_')
 
-    console.log(url);
     return url;
   }
 
