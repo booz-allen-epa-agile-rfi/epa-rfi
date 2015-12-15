@@ -64,7 +64,7 @@ function MainController($scope, $routeParams, $location, Map) {
     // var startYear = $('#start-year').value();
     // var endYear = $('#end-year').value();
     // var reporting_year = _.range(startYear, endYear+1);
-    var reporting_year = [];
+    var reporting_year = [2014];
 
     if(emissions.indexOf('Total') >= 0 || ['Land', 'Water', 'Air'].every(allOptionsChosen)){
       emissions = ['Total'];
