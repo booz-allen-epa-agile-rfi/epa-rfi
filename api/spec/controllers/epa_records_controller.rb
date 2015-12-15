@@ -10,5 +10,12 @@ describe EpaRecordsController do
       expect(response.content_type).to eq('application/json')
       expect(response).to have_http_status('404')
     end
+
+    it "returns a geoJSON object if the county is found" do
+      post :search, facility_county: 'Travis'
+
+      expect(response.content_type).to eq('application/json')
+      expect(response).to have_http_status(:ok)
+    end
   end
 end
