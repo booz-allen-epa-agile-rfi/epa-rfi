@@ -10,7 +10,7 @@
       restrict: 'AE',
       scope: {},
       link: link,
-      template: '<div id="map" class="col-md-9"></div>',
+      template: '<div id="map" class="col-md-9"><span ng-hide="vm.mapLoaded" us-spinner="{radius:30, width:8, length: 16}"></span></div>',
       controller: MapController,
       controllerAs: 'vm',
       bindToController: true
@@ -23,12 +23,16 @@
     }
 
     /** @ngInject */
-    function MapController(Map) {
+    function MapController($scope, Map, MapData) {
       var vm = this;
 
       vm.activate = activate;
 
       function activate() {
+        vm.mapLoaded = false;
+        $scope.$watch(function(){ return Map.map }, function(newValue) {
+          vm.mapLoaded = typeof newValue != 'undefined';
+        });
       }
     }
   }
