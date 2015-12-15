@@ -9,24 +9,24 @@ require 'csv'
 namespace :db do
   namespace :schema do
     task :load => :environment do
-      ActiveRecord::Base.connection.execute('TRUNCATE epa_data RESTART IDENTITY')
+      ActiveRecord::Base.connection.execute('TRUNCATE epa_records RESTART IDENTITY')
 
       files = []
       file1 = "#{Rails.root}/dbdata/epa_records_2013.txt"
       file2 = "#{Rails.root}/dbdata/epa_records_2014.txt"
 
-      file1 = '/usr/src/app//dbdata/epa_records_2013.txt' unless File.exists? file1
-      file2 = '/usr/src/app//dbdata/epa_records_2014.txt' unless File.exists? file2
+      file1 = '/usr/src/app/dbdata/epa_records_2013.txt' unless File.exists? file1
+      file2 = '/usr/src/app/dbdata/epa_records_2014.txt' unless File.exists? file2
 
       files << file1
       files << file2
 
       if Rails.env.production?
-        file3 = "#{Rails.root}/dbdata/epa_records1.txt"
-        file4 = "#{Rails.root}/dbdata/epa_records2.txt"
+        file3 = "#{Rails.root}/dbdata/epa_records_remaining1.txt"
+        file4 = "#{Rails.root}/dbdata/epa_records_remaining2.txt"
 
-        file3 = '/usr/src/app//dbdata/epa_records1.txt' unless File.exists? file3
-        file4 = '/usr/src/app//dbdata/epa_records2.txt' unless File.exists? file4
+        file3 = '/usr/src/app/dbdata/epa_records_remaining1.txt' unless File.exists? file3
+        file4 = '/usr/src/app/dbdata/epa_records_remaining2.txt' unless File.exists? file4
 
         files << file3
         files << file4
@@ -34,7 +34,7 @@ namespace :db do
 
       def copy_sql(file)
         sql = <<-SQL
-        COPY epa_data
+        COPY epa_records
         (
           old_id, cas_number, reporting_year, trifid, facility_name, facility_city, facility_county, facility_state,
           facility_zip_code, primary_naics_code, latitude, longitude, parent_company_name, chemical_name,
@@ -60,26 +60,6 @@ namespace :db do
         copy_sql(file)
       end
       puts 'EPA data copied successfully!'
-
-      # ACCEPTS A MAX ROW COUNT SPECIFIED AS 'rake db:load count=n'
-      # max_rows = -1
-      # max_rows =  ARGV[1].split('=')[1].to_i unless ARGV[1].nil?
-      # EpaRecord.destroy_all
-      # p "Starting to read file at #{Time.now.getutc}"
-      # file = '../api/dbdata/simple_data.csv'
-      # file = '/usr/src/app/dbdata/simple_data.csv' unless File.exists? file
-      # csv_text = File.read(file).encode!('UTF-8', 'iso-8859-1', invalid: :replace)
-      # csv = CSV.parse(csv_text, :headers => true)
-      # p "Finished reading file at #{Time.now.getutc}"
-      # row_count = 0
-      # p "Creating records at #{Time.now.getutc}"
-      # # TODO: WE CAN INSERT THESE IN BATCHES TO MOVE MORE QUICKLY
-      # csv.each do |row|
-      #   EpaRecord.create!(row.to_hash)
-      #   row_count += 1
-      #   break if (row_count == max_rows)
-      # end
-      # p "Finished creating #{row_count} records at #{Time.now.getutc}"
     end
   end
 end
