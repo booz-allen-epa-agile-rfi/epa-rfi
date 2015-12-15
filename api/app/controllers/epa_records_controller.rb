@@ -96,7 +96,7 @@ class EpaRecordsController < ApplicationController
   def geoJSONify(records)
     geoJSON = {type: "FeatureCollection", features: []}
     records.each do |r|
-      coords = [r.longitude.to_f, r.latitude.to_f]
+      coords = [r.longitude.to_f || 0, r.latitude.to_f || 0]
       geoJSON[:features] << {type: "Feature", properties: r, geometry: {
         type: 'Point',
         coordinates: coords
