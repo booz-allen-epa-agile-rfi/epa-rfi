@@ -12,24 +12,31 @@ angular.module('gapFront')
 
 /** @ngInject */
 function MainController($scope, $routeParams, $location, Map) {
-  $scope.state = $scope.state || {};
+  $scope.state = {
+    emissions: [],
+    reporting_year: [],
+    bounds: []
+  }
+
+  // Initialization 
 
   if(!_.isEmpty($routeParams)) initState();
-  $scope.shareUrl = generateShareUrl();
+  $scope.shareUrl = generateShareUrl($scope.state);
 
+
+  // On Submit of Filters
   $scope.submitMapFilters = function(e) {
     $scope.state = grabState();
     Map.update($scope.state);
-    $scope.shareUrl = generateShareUrl();
+    $scope.shareUrl = generateShareUrl($scope.state);
   }
 
   // Generate the current url map state
-  function generateShareUrl() {
-    var currentState = grabState();
+  function generateShareUrl(state) {
     var url = 'http://treeview.io:9000' + '/' +
-      '?bounds=' + currentState.bounds.join('_') +
-      '&emissions=' + currentState.emissions.join('_') +
-      '&reporting_year=' + currentState.reporting_year.join('_')
+      '?bounds=' + state.bounds.join('_') +
+      '&emissions=' + state.emissions.join('_') +
+      '&reporting_year=' + state.reporting_year.join('_')
 
     return url;
   }
@@ -54,16 +61,14 @@ function MainController($scope, $routeParams, $location, Map) {
   }
 
   // Grabs the state and returns it in an object format
-
   function grabState() {
     var emissions = $('#emission').find('.active').map(function(){
       return this.textContent.trim();
     }).get() || {};
 
-    // var startYear = $('#start-year').value();
-    // var endYear = $('#end-year').value();
-    // var reporting_year = _.range(startYear, endYear+1);
-    var reporting_year = [2014];
+    var startYear = $('#start-year').val();
+    var endYear = $('#end-year').val();
+    var reporting_year = _.range(parseInt(startYear), parseInt(endYear)+1);
 
     if(emissions.indexOf('Total') >= 0 || ['Land', 'Water', 'Air'].every(allOptionsChosen)){
       emissions = ['Total'];
@@ -76,8 +81,6 @@ function MainController($scope, $routeParams, $location, Map) {
       reporting_year: reporting_year,
       bounds: bounds
     }
-
-    // Private
 
     function allOptionsChosen(option) {
       return emissions.indexOf(option) >= 0;
