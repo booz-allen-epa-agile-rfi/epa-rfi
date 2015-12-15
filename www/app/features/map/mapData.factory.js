@@ -7,8 +7,7 @@
   /** @ngInject */
   function MapDataFactory($resource) {
     var MapData = {} 
-    MapData.county = $resource('http://52.10.159.127/county_totals', {});
-    MapData.search = $resource('http://localhost:3000/search', {});
+    MapData.search = $resource('http://dev.treeview.io:3000/search', {});
 
     return MapData;
   }
