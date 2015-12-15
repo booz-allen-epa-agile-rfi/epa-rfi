@@ -63,7 +63,7 @@ We developed TREEVIEW using an iterative approach where feedback informed subseq
 
 Our iterative agile process:
 
-https://github.com/booz-allen-agile-delivery/ads-final/blob/development/documentation/Agile-Artifacts.md
+https://github.com/booz-allen-epa-agile-rfi/epa-rfi/blob/master/documentation/Agile-Artifacts.md
 
 Our Team structure:
 
