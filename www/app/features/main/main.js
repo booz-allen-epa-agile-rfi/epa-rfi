@@ -20,27 +20,23 @@ function MainController($scope, $routeParams, $location, Map) {
   $scope.submitMapFilters = function(e) {
     $scope.state = grabState();
     Map.update($scope.state);
+    $scope.shareUrl = generateShareUrl();
   }
 
+  // Generate the current url map state
   function generateShareUrl() {
-    // return 'hello'
-    // var currentState = grabState();
+    var currentState = grabState();
+    var url = 'http://' + $location.host() + ':' + $location.port() + '/' +
+      '?bounds=' + currentState.bounds.join('_') +
+      '&emissions=' + currentState.emissions.join('_') +
+      '&reporting_year=' + currentState.reporting_year.join('_')
 
-    // $location.search('');
-    // $location.search('bounds', currentState.bounds.join('_'));
-    // $location.search('emissions', currentState.emissions.join('_'));
-    // $location.search('reporting_year', currentState.reporting_year.join('_'));
-
-    // var url = $location.absUrl();
-    // console.log(url);
-    // return url;
+    console.log(url);
+    return url;
   }
 
+  // Grab state data from url parameters and initialize map
   function initState() {
-    // Route Params ----------------------------
-    // reporting_year --> YR-START_YR-END (always 2)
-    // emissions --> ['Water', 'Air']
-    // bounds --> S-lat_S-long_N-lat_N-long
     if(isInRouteParams('reporting_year')) {
       var rawBounds = $routeParams.reporting_year.split('_').map(Number);
       $scope.state.reporting_year = _.range(rawBounds[0], rawBounds[1]+1);
