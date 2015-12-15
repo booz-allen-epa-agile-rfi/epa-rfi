@@ -30,8 +30,8 @@
 
       function activate() {
         vm.mapLoaded = false;
-        $scope.$watch(function(){ return Map.map }, function(newValue) {
-          vm.mapLoaded = typeof newValue != 'undefined';
+        $scope.$watch(function(){ return Map.loaded }, function(newValue) {
+          vm.mapLoaded = Map.loaded;
         });
       }
     }

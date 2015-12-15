@@ -7,6 +7,7 @@ RUN apt-get update -y && \
   mysql-client \
   postgresql-client \
   sqlite3 \
+  netcat \
   --no-install-recommends && rm -rf /var/lib/apt/lists/* 
 
 RUN mkdir -p /usr/src/app/reports

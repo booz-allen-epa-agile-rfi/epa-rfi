@@ -1,4 +1,6 @@
 class EpaRecordsController < ApplicationController
+  wrap_parameters false
+
   def index
     render json: geoJSONify(epa_records)
   end
@@ -58,7 +60,29 @@ class EpaRecordsController < ApplicationController
       when 'state_counties'
         EpaRecord.state_counties(params[:state])
       when 'search'
-        query_with EpaRecord.where(epa_params)
+        if params[:bounds].nil?
+          query_with EpaRecord.where(epa_params)
+        else
+          # QUERY WITH BOUNDS
+          bounds = params[:bounds]
+
+          # GET SOUTH WEST COORDINATE
+          sx = bounds.first.to_f
+          sy = bounds.second.to_f
+
+          # GET NORTH EAST COORDINATE
+          nx = bounds.third.to_f
+          ny = bounds.fourth.to_f
+
+          # RECTANGLE CONDITIONS
+          select_conditions = []
+          select_conditions << "longitude <= #{ny}"
+          select_conditions << "longitude >= #{sy}"
+          select_conditions << "latitude <= #{nx}"
+          select_conditions << "latitude >= #{sx}"
+          epa_params.delete('bounds')
+          query_with EpaRecord.where(epa_params).where(select_conditions.join(' and '))
+        end
       else
         EpaRecord.all
       end
@@ -72,7 +96,11 @@ class EpaRecordsController < ApplicationController
   def geoJSONify(records)
     geoJSON = {type: "FeatureCollection", features: []}
     records.each do |r|
-      geoJSON[:features] << {type: "Feature", properties: r }
+      coords = [r.longitude.to_f, r.latitude.to_f]
+      geoJSON[:features] << {type: "Feature", properties: r, geometry: {
+        type: 'Point',
+        coordinates: coords
+        } }
     end
     geoJSON
   end
