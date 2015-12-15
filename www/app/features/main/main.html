@@ -75,9 +75,9 @@
   <!-- Map toggle titles-->
   <div class="pad-bottom">
     <div class="col-md-2 no-pad-l margin-bottom">Map Type   <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></div>
-    <div class="col-md-2 margin-bottom">Time Range   <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></div>
+    <div class="col-md-3 margin-bottom">Time Range   <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></div>
     <div class="col-md-3 margin-bottom">County Onsite Release Types   <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></div>
-    <div class="col-md-5 margin-bottom">Share My Map   <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></div>
+    <div class="col-md-3 margin-bottom">Share My Map   <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></div>
   </div>
 
   <!-- Map toggle and Year Dropdowns-->
@@ -91,47 +91,41 @@
       </ul>
     </div>
 
-    <div class="col-md-2">
-      <div class="col-md-5">
-        <button type="button" id="start-year" class="btn btn-default dropdown-toggle btn-year" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Year <span class="caret caret-year"></span>
-        </button>
-        <ul class="dropdown-menu dropdown-mapyear">
-          <li><a href="#">2003</a></li>
-          <li><a href="#">2004</a></li>
-          <li><a href="#">2005</a></li>
-          <li><a href="#">2006</a></li>
-          <li><a href="#">2007</a></li>
-          <li><a href="#">2008</a></li>
-          <li><a href="#">2009</a></li>
-          <li><a href="#">2010</a></li>
-          <li><a href="#">2011</a></li>
-          <li><a href="#">2012</a></li>
-          <li><a href="#">2013</a></li>
-          <li><a href="#">2014</a></li>
-        </ul>
+    <div class="col-md-3">
+      <div class="col-md-5 no-pad-l no-pad-r">
+        <select class="form-control btn-year" id="start-year">
+          <option>2003</option>
+          <option>2004</option>
+          <option>2005</option>
+          <option>2006</option>
+          <option>2007</option>
+          <option>2008</option>
+          <option>2009</option>
+          <option>2010</option>
+          <option>2011</option>
+          <option>2012</option>
+          <option>2013</option>
+          <option>2014</option>
+        </select>
       </div>
 
-      <div class="col-md-2 text-center dropdown-text">to</div>
+      <span class="col-md-1 dropdown-text no-pad-l">to</span>
 
-      <div class="col-md-5 no-pad-l">
-        <button type="button" id="end-year" class="btn btn-default dropdown-toggle btn-year" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Year <span class="caret caret-year"></span>
-        </button>
-        <ul class="dropdown-menu">
-          <li><a href="#">2003</a></li>
-          <li><a href="#">2004</a></li>
-          <li><a href="#">2005</a></li>
-          <li><a href="#">2006</a></li>
-          <li><a href="#">2007</a></li>
-          <li><a href="#">2008</a></li>
-          <li><a href="#">2009</a></li>
-          <li><a href="#">2010</a></li>
-          <li><a href="#">2011</a></li>
-          <li><a href="#">2012</a></li>
-          <li><a href="#">2013</a></li>
-          <li><a href="#">2014</a></li>
-        </ul>
+      <div class="col-md-5 no-pad-l no-pad-r">
+        <select class="form-control btn-year" id="end-year">
+          <option>2003</option>
+          <option>2004</option>
+          <option>2005</option>
+          <option>2006</option>
+          <option>2007</option>
+          <option>2008</option>
+          <option>2009</option>
+          <option>2010</option>
+          <option>2011</option>
+          <option>2012</option>
+          <option>2013</option>
+          <option>2014</option>
+        </select>
       </div>
     </div>
 
@@ -152,16 +146,16 @@
       </div>
     </div>
 
-    <div class="col-md-4">
+    <div class="col-md-2">
       <i class="fa fa-2x fa-link icon-margin"></i>
       <a href="https://www.facebook.com/sharer/sharer.php?u={{ shareUrl }}">
         <i class="fa fa-2x fa-facebook-official icon-margin"></i>
       </a>
-      <a class="twitter-share-button" 
+      <a class="twitter-share-button"
         href="https://twitter.com/intent/tweet?url={{ shareUrl }}">
         <i class="fa fa-2x fa-twitter icon-margin"></i>
       </a>
-      
+
     </div>
     <div>
       <button class="btn btn-blue col-md-1 btn-r" href="#" ng-click="submitMapFilters()" role="button">Refresh Map</button>
