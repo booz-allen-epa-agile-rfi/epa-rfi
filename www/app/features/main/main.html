@@ -80,37 +80,58 @@
     <div class="col-md-5 margin-bottom">Share My Map   <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></div>
   </div>
 
-  <!-- Map toggle and range-->
+  <!-- Map toggle and Year Dropdowns-->
   <div>
     <div class="col-md-2 btn-group">
       <button type="button" class="btn btn-default dropdown-toggle btn-maptype" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Counties <span class="caret"></span>
+        Counties <span class="caret caret-maptype"></span>
       </button>
-      <ul class="dropdown-menu">
+      <ul class="dropdown-menu dropdown-maptype">
         <li><a href="#">Street View</a></li>
       </ul>
     </div>
 
     <div class="col-md-2">
-      <div class="ngrs-range-slider ng-isolate-scope ngrs-horizontal" range-slider="" min="2003" max="2014" model-min="least" model-max="greatest" on-handle-up="searchYears()">
-        <div class="ngrs-runner">
-          <div class="ngrs-handle ngrs-handle-min" style="display: block; left: 0%;">
-            <i></i>
-          </div>
-          <div class="ngrs-handle ngrs-handle-max" style="display: block; left: 100%;">
-            <i></i>
-          </div>
-          <div class="ngrs-join" style="left: 0%; right: 0%;">
-          </div>
-        </div>
-        <div class="ngrs-value-runner">
-          <div class="ngrs-value ngrs-value-min" ng-show="showValues">
-            <div class="ng-binding">2003</div>
-          </div>
-          <div class="ngrs-value ngrs-value-max" ng-show="showValues">
-            <div class="ng-binding">2014</div>
-          </div>
-        </div>
+      <div class="col-md-5">
+        <button type="button" id="start-year" class="btn btn-default dropdown-toggle btn-year" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Year <span class="caret caret-year"></span>
+        </button>
+        <ul class="dropdown-menu dropdown-mapyear">
+          <li><a href="#">2003</a></li>
+          <li><a href="#">2004</a></li>
+          <li><a href="#">2005</a></li>
+          <li><a href="#">2006</a></li>
+          <li><a href="#">2007</a></li>
+          <li><a href="#">2008</a></li>
+          <li><a href="#">2009</a></li>
+          <li><a href="#">2010</a></li>
+          <li><a href="#">2011</a></li>
+          <li><a href="#">2012</a></li>
+          <li><a href="#">2013</a></li>
+          <li><a href="#">2014</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-2 text-center dropdown-text">to</div>
+
+      <div class="col-md-5 no-pad-l">
+        <button type="button" id="end-year" class="btn btn-default dropdown-toggle btn-year" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Year <span class="caret caret-year"></span>
+        </button>
+        <ul class="dropdown-menu">
+          <li><a href="#">2003</a></li>
+          <li><a href="#">2004</a></li>
+          <li><a href="#">2005</a></li>
+          <li><a href="#">2006</a></li>
+          <li><a href="#">2007</a></li>
+          <li><a href="#">2008</a></li>
+          <li><a href="#">2009</a></li>
+          <li><a href="#">2010</a></li>
+          <li><a href="#">2011</a></li>
+          <li><a href="#">2012</a></li>
+          <li><a href="#">2013</a></li>
+          <li><a href="#">2014</a></li>
+        </ul>
       </div>
     </div>
 
