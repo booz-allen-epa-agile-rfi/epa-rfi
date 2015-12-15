@@ -19,7 +19,8 @@ angular
     'restangular',
     'ui.checkbox',
     'mgcrea.ngStrap',
-    'ui-rangeSlider'
+    'ui-rangeSlider',
+    'angularSpinner'
   ])
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider
