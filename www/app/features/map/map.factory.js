@@ -9,31 +9,49 @@
   function MapFactory(MapData, API_TOKEN) {
     var Map = {};
 
-    MapData.county.query({}).$promise.then(function(apiData) {
-      Map.tileLayers = initMapTiles();
-      Map.dataLayers = initData(apiData);
-      Map.map = initMap();
-      addToMap(Map.map);
-    });
+    Map.tileLayers = initMapTiles();
+    Map.dataLayers = initData() || {};
+
+    Map.update = update;
+    Map.map = initMap();
+    addToMap(Map.map);
+
+    Map.loaded = true;
 
     return Map;
 
     // Private
 
+    function update(queryParams) {
+      // debug
+      queryParams = {
+        reporting_year: [2014]
+      }
+
+      Map.loaded = false;
+      if(Map.dataLayers.geojson) Map.dataLayers.geojson.clearLayers();
+
+      MapData.search.save(queryParams).$promise.then(function(result) {
+        Map.dataLayers.geojson = L.geoJson(result, {});
+        Map.loaded = true;
+
+        Map.dataLayers.geojson.addTo(Map.map);
+      });
+    }
+
     function addToMap(mapInstance) {
       var baseMaps = {
-        'Grayscale': Map.tileLayers.grayScale,
+        // 'Grayscale': Map.tileLayers.grayScale,
         'Streets': Map.tileLayers.streets
       }
 
-      var overlayMaps = {
-        'Counties': Map.dataLayers.county,
-        'Air Quality': Map.dataLayers.air
-      }
+      // var overlayMaps = {
+      //   'Counties': Map.dataLayers.county,
+      //   'Air Quality': Map.dataLayers.air
+      // }
 
-      L.control.layers(baseMaps, overlayMaps).addTo(mapInstance);
-      Map.tileLayers.grayScale.addTo(mapInstance);
-      Map.dataLayers.county.addTo(mapInstance);
+      // L.control.layers(baseMaps, overlayMaps).addTo(mapInstance);
+      // Map.dataLayers.county.addTo(mapInstance);
     }
 
     function initMapTiles() {
@@ -63,37 +81,37 @@
       return L.map('map' , {
         center: [30.3669563, -97.7926704],
         zoom: 4,
-        layers: [Map.tileLayers.grayScale, Map.dataLayers.county]      // Renders the stuff
+        layers: [Map.tileLayers.streets]      // Renders the stuff
       });
     }
 
-    function initData(apiData) {
+    function initData() {
       // prepare the data
-      prepareData(mockCountiesData, apiData);
+      // prepareData(mockCountiesData, );
 
-      var countyLayer = initCountyLayer(apiData);
-      var airLayer = initAirLayer();
+      // var countyLayer = initCountyLayer();
+      // var airLayer = initAirLayer();
 
-      return {
-        county: countyLayer,
-        air: airLayer
-      }
+      // return {
+      //   county: countyLayer,
+      //   air: airLayer
+      // }
 
       // Private
 
-      function prepareData(mockCounty, apiData) {
-        apiData.forEach(function(apiRow){
-          mockCounty.features.forEach(function(county){
-            if(county.properties.STATE === apiRow.state && county.properties.NAME.toUpperCase() === apiRow.county){
-              county.properties.total_air_emissions = apiRow.total_air_emissions;
-              county.properties.total_on_site_land_releases = apiRow.total_on_site_land_releases;
-              county.properties.total_underground_injection = apiRow.total_underground_injection;
-              county.properties.total_surface_water_discharge = apiRow.total_surface_water_discharge;
-              county.properties.total = apiRow.total;
-            }
-          });
-        });
-      }
+      // function prepareData(mockCounty, ) {
+      //   apiData.forEach(function(apiRow){
+      //     mockCounty.features.forEach(function(county){
+      //       if(county.properties.STATE === apiRow.state && county.properties.NAME.toUpperCase() === apiRow.county){
+      //         county.properties.total_air_emissions = apiRow.total_air_emissions;
+      //         county.properties.total_on_site_land_releases = apiRow.total_on_site_land_releases;
+      //         county.properties.total_underground_injection = apiRow.total_underground_injection;
+      //         county.properties.total_surface_water_discharge = apiRow.total_surface_water_discharge;
+      //         county.properties.total = apiRow.total;
+      //       }
+      //     });
+      //   });
+      // }
 
       function initAirLayer() {
         return omnivore.csv('features/map/mockData/data1r_randomized2.csv')           // Air Quality Data
