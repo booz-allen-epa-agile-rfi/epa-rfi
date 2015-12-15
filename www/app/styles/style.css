@@ -5,10 +5,6 @@
   height: 650px;
 }
 
-.dropdown-menu {
-  z-index: 800;
-}
-
 /* JUMBOTRON */
 /*-------------------------------------------------- */
 
@@ -21,7 +17,7 @@
   color: white;
 }
 .jumbotron .container {
-  max-width: 800px !important;
+  max-width: 680px !important;
 }
 .jumbotron-text {
   font-size: 16px;
@@ -74,6 +70,9 @@
 .sm-margin-left {
   margin-left: 10px;
 }
+.xs-margin-right {
+  margin-right: 10px
+}
 .margin-right {
   margin-right: 20px;
 }
@@ -82,6 +81,9 @@
 }
 .margin-bottom {
   margin-bottom: 10px;
+}
+.lg-margin-bottom {
+  margin-bottom: 20px;
 }
 .pad-bottom {
   padding-bottom: 15px;
@@ -101,7 +103,7 @@
 .no-pad-r {
   padding-right: 0px;
 }
-.no-marg-b {
+.no-margin-b {
   margin-bottom: 0px;
 }
 .pad-l {
@@ -113,6 +115,9 @@
 .full-width {
   padding-left: 0px !important;
   padding-right: 0px !important;
+}
+.pad-icons {
+  padding: 10px 0 20px 10px;
 }
 
 /* BUTTONS */
@@ -140,17 +145,23 @@
 }
 .btn-maptype {
   padding-right: 140px !important;
-  margin: 5px 0px 12px !important;
-  margin-left: -15px !important;
+  margin: 5px 0px 12px -15px !important;
   border-radius: 0px !important;
 }
 .btn-drop {
   padding-right: 120px;
 }
-.caret {
+.btn-year {
+  margin: 5px 0px 12px !important;
+  border-radius: 0px !important;
+}
+.caret-maptype {
   position: absolute;
   left: 90%;
   top: 45%;
+}
+.caret-year {
+  margin-left: 15px !important;
 }
 
 /* TEXT */
@@ -169,6 +180,12 @@
 .icon-margin {
   margin: 0 10px 0 0;
 }
+.font-200 {
+  font-weight: 200;
+}
+.dropdown-text {
+  margin-top: 12px;
+}
 
 /* WELLS */
 /*-------------------------------------------------- */
@@ -181,9 +198,58 @@
 }
 
 /* COLORS */
+/*-------------------------------------------------- */
 
 .darkgray {
   background-color: darkgray;
 }
 
+/* RIGHT INFORMATION COLUMN */
+/*-------------------------------------------------- */
 
+.right-pane {
+  height: 600px;
+}
+.right-content {
+  height: 600px;
+  overflow: scroll;
+  border: 1px solid darkgray;
+}
+
+/* "HOW IT WORKS" MODAL */
+/*-------------------------------------------------- */
+
+.modal-content {
+  background-color: white;
+}
+.modal-title,
+.modal-header,
+.modal-body {
+  background-color: white;
+  color: #205493;
+}
+.modal-header {
+  background-color: white;
+  color: #205493;
+}
+
+/* "HOW IT WORKS" MODAL */
+/*-------------------------------------------------- */
+
+.footer {
+  background-color: #323a45;
+  color: #ffffff;
+  width: 102%;
+  overflow: hidden;
+  margin-top: 15px;
+  padding: 20px 10px;
+}
+.footer h4 {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 200;
+  margin: 10px 0 0;
+}
+.treeview-logo {
+  width: 70px;
+}

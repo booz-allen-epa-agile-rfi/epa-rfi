@@ -1,9 +1,11 @@
 db:
   image: 52.34.113.202:5000/devel_database
+  container_name: devel_database
   ports:
     - "5432:5432"
 backend:
   image: 52.34.113.202:5000/devel_backend
+  container_name: devel_backend
   ports:
     - "3000:3000"
   environment:

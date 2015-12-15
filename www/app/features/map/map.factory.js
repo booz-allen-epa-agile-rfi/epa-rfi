@@ -2,36 +2,67 @@
   angular.module('gapFront')
     .factory('Map', MapFactory)
     .constant('API_TOKEN', {
-      MAPBOX: MAP_ACCESS_TOKEN
+      MAPBOX: 'pk.eyJ1IjoiYmFodm9reiIsImEiOiJjaWkyNWllNnYwMGtpc3drcTFvdHV4NGs5In0.tXMxAmwb2f4JG12ELI6C3w'
     })
 
   /** @ngInject */
-  function MapFactory($resource, API_TOKEN) {
+  function MapFactory(MapData, API_TOKEN) {
     var Map = {};
-    Map.tileLayers = initMapTiles();
-    Map.dataLayers = initData();
-    Map.map = initMap();
 
+    Map.tileLayers = initMapTiles();
+    Map.dataLayers = initData() || {};
+
+    Map.update = update;
+    Map.map = initMap();
     addToMap(Map.map);
+
+    Map.loaded = true;
 
     return Map;
 
     // Private
 
+    function update(queryParams) {
+      Map.loaded = false;
+      if(Map.dataLayers.geojson) Map.dataLayers.geojson.clearLayers();
+
+      MapData.search.save(queryParams).$promise.then(function(result) {
+        Map.dataLayers.geojson = L.geoJson(result, {
+          onEachFeature: function(feature, layer) {
+            var popUpHtml = '<b>Facility Name : ' + feature.properties['facility_name'] + "</b><br/>" +
+                        'Air Emissions : ' + feature.properties['total_air_emissions'].toLocaleString() + ' lbs<br />' +
+                        'On Site Land Releases : ' + feature.properties['total_on_site_land_releases'].toLocaleString() + ' lbs<br />' +
+                        'Underground Injection : ' + feature.properties['total_underground_injection'].toLocaleString() + ' lbs<br />' +
+                        'Surface Water Discharge : ' + feature.properties['total_surface_water_discharge'].toLocaleString() + ' lbs'
+
+            layer.bindPopup(popUpHtml);
+          }
+        });
+        Map.loaded = true;
+
+        Map.dataLayers.geojson.addTo(Map.map);
+
+        if(queryParams.bounds && queryParams.bounds.length === 4) {
+          var sw = queryParams.bounds.slice(0,2);
+          var ne = queryParams.bounds.slice(2,4);
+          Map.map.fitBounds([sw,ne]);
+        }
+      });
+    }
+
     function addToMap(mapInstance) {
       var baseMaps = {
-        'Grayscale': Map.tileLayers.grayScale,
+        // 'Grayscale': Map.tileLayers.grayScale,
         'Streets': Map.tileLayers.streets
       }
 
-      var overlayMaps = {
-        'Counties': Map.dataLayers.county,
-        'Air Quality': Map.dataLayers.air
-      }
+      // var overlayMaps = {
+      //   'Counties': Map.dataLayers.county,
+      //   'Air Quality': Map.dataLayers.air
+      // }
 
-      L.control.layers(baseMaps, overlayMaps).addTo(mapInstance);
-      Map.tileLayers.grayScale.addTo(mapInstance);
-      Map.dataLayers.county.addTo(mapInstance);
+      // L.control.layers(baseMaps, overlayMaps).addTo(mapInstance);
+      // Map.dataLayers.county.addTo(mapInstance);
     }
 
     function initMapTiles() {
@@ -60,21 +91,39 @@
     function initMap(tileLayers) {
       return L.map('map' , {
         center: [30.3669563, -97.7926704],
-        zoom: 4,
-        layers: [Map.tileLayers.grayScale, Map.dataLayers.county]      // Renders the stuff
+        zoom: 5,
+        minZoom: 5,
+        layers: [Map.tileLayers.streets]      // Renders the stuff
       });
     }
 
     function initData() {
-      var countyLayer = initCountyLayer();
-      var airLayer = initAirLayer();
+      // prepare the data
+      // prepareData(mockCountiesData, );
 
-      return {
-        county: countyLayer,
-        air: airLayer
-      }
+      // var countyLayer = initCountyLayer();
+      // var airLayer = initAirLayer();
+
+      // return {
+      //   county: countyLayer,
+      //   air: airLayer
+      // }
 
       // Private
+
+      // function prepareData(mockCounty, ) {
+      //   apiData.forEach(function(apiRow){
+      //     mockCounty.features.forEach(function(county){
+      //       if(county.properties.STATE === apiRow.state && county.properties.NAME.toUpperCase() === apiRow.county){
+      //         county.properties.total_air_emissions = apiRow.total_air_emissions;
+      //         county.properties.total_on_site_land_releases = apiRow.total_on_site_land_releases;
+      //         county.properties.total_underground_injection = apiRow.total_underground_injection;
+      //         county.properties.total_surface_water_discharge = apiRow.total_surface_water_discharge;
+      //         county.properties.total = apiRow.total;
+      //       }
+      //     });
+      //   });
+      // }
 
       function initAirLayer() {
         return omnivore.csv('features/map/mockData/data1r_randomized2.csv')           // Air Quality Data
@@ -95,7 +144,7 @@
           });
       }
 
-      function initCountyLayer() {
+      function initCountyLayer(apiData) {
         return L.geoJson(mockCountiesData, {
           style: style,
           onEachFeature: function(feature, layer){
@@ -106,12 +155,20 @@
               mouseout: resetHighlight
             });
 
+            // debuggging
+            layer.on('click', function(e) {
+              console.log(e.target.feature.properties);
+            });
+
             // Private
 
             function createPop() {
               var countyPopUp = '<b>County Name : ' + feature.properties['NAME'] + "</b><br/>" +
                           'State : ' + feature.properties['STATE'] + '<br />' +
-                          'Census Area: ' + feature.properties['CENSUSAREA']
+                          'Air Emissions : ' + feature.properties['total_air_emissions'] + '<br />' +
+                          'On Site Land Releases : ' + feature.properties['total_on_site_land_releases'] + '<br />' +
+                          'Underground Injection : ' + feature.properties['total_underground_injection'] + '<br />' +
+                          'Surface Water Discharge : ' + feature.properties['total_surface_water_discharge']
 
               layer.bindPopup(countyPopUp);
             }
@@ -142,19 +199,19 @@
         });
 
         function getColor(d) {
-            return d > 10000 ? '#800026' :
-                   d > 5000  ? '#BD0026' :
-                   d > 2000 ? '#E31A1C' :
-                   d > 1000  ? '#FC4E2A' :
-                   d > 500   ? '#FD8D3C' :
-                   d > 200   ? '#FEB24C' :
-                   d > 10   ? '#FED976' :
-                              '#FFEDA0';
+            return d > 10000000 ? '#800026' :
+                   d > 490000  ? '#BD0026' :
+                   d > 350000 ? '#E31A1C' :
+                   d > 225000  ? '#FC4E2A' :
+                   d > 55000  ? '#FD8D3C' :
+                   d > 20000   ? '#FEB24C' :
+                   // d > 100   ? '#FED976' :
+                              '#FED976';
         }
 
         function style(feature) {
             return {
-                fillColor: getColor(feature.properties.CENSUSAREA),
+                fillColor: getColor(feature.properties.total),
                 weight: 2,
                 opacity: 1,
                 color: 'white',
