@@ -1,4 +1,6 @@
 class EpaRecordsController < ApplicationController
+  wrap_parameters false
+
   def index
     render json: geoJSONify(epa_records)
   end
@@ -37,7 +39,7 @@ class EpaRecordsController < ApplicationController
 
   def epa_record
     @_epa_record ||= begin
-       (EpaRecord.where(id: params[:id]).empty?) ? {} : EpaRecord.find(params[:id])
+      (EpaRecord.where(id: params[:id]).empty?) ? {} : EpaRecord.find(params[:id])
     end
   end
 
@@ -58,7 +60,29 @@ class EpaRecordsController < ApplicationController
       when 'state_counties'
         EpaRecord.state_counties(params[:state])
       when 'search'
-        query_with EpaRecord.where(epa_params)
+        if params[:bounds].nil?
+          query_with EpaRecord.where(epa_params)
+        else
+          # QUERY WITH BOUNDS
+          bounds = params[:bounds]
+
+          # GET SOUTH WEST COORDINATE
+          sx = bounds.first.to_f
+          sy = bounds.second.to_f
+
+          # GET NORTH EAST COORDINATE
+          nx = bounds.third.to_f
+          ny = bounds.fourth.to_f
+
+          # RECTANGLE CONDITIONS
+          select_conditions = []
+          select_conditions << "longitude <= #{ny}"
+          select_conditions << "longitude >= #{sy}"
+          select_conditions << "latitude <= #{nx}"
+          select_conditions << "latitude >= #{sx}"
+          epa_params.delete('bounds')
+          query_with EpaRecord.where(epa_params).where(select_conditions.join(' and '))
+        end
       else
         EpaRecord.all
       end
@@ -66,13 +90,13 @@ class EpaRecordsController < ApplicationController
   end
 
   def epa_params
-    @_epa_params ||= params.require(:epa_record).permit(:id, :state_id, :county_id, :facility_city, :facility_zip_code, :latitude, :longitude, :chemical_name, :facility_name, :reporting_year)
+    @_epa_params ||= params.permit(:chemical_name, reporting_year: [], emissions: [], bounds: [])
   end
 
   def geoJSONify(records)
     geoJSON = {type: "FeatureCollection", features: []}
     records.each do |r|
-      geoJSON[:features] << {type: "Feature", properties: r, geometry: {type: "Polygon", coordinates: []}}
+      geoJSON[:features] << {type: "Feature", properties: r }
     end
     geoJSON
   end

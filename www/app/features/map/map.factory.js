@@ -2,7 +2,7 @@
   angular.module('gapFront')
     .factory('Map', MapFactory)
     .constant('API_TOKEN', {
-      MAPBOX: MAP_ACCESS_TOKEN
+      MAPBOX: 'pk.eyJ1IjoiYmFodm9reiIsImEiOiJjaWkyNWllNnYwMGtpc3drcTFvdHV4NGs5In0.tXMxAmwb2f4JG12ELI6C3w'
     })
 
   /** @ngInject */

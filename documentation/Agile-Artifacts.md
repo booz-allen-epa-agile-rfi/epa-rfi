@@ -33,11 +33,18 @@ Day 1
 
 Day 2
 - Sprint 3 (8 hours)
-- The goal for this day was to end with a demonstrable slice of the application's functionality, connecting the user to the valuable data and visulizations
+- The goal for this day was to end with a demonstrable slice of the application's functionality, 
+connecting the user to the valuable data and visulizations
 
-Day 3 - Release 1 (Day 3)
+Day 3
 - Sprint 4 (8 hours)
-- The goal was to target the full-stack app, running in the production environment, with real data shown through the front-end 
+- The goal was to target the full-stack app, running in the production environment, 
+with real data shown through the front-end 
+
+Day 4 
+- Sprint 5 (8 hours)
+- The goal was to, without adding any new functionality, show the application fully integrated for the primary
+user scenario
 
 As we executed, we followed a simple pattern: 
  1. Release Planning - Plan each day as a release
@@ -172,4 +179,23 @@ User stories are archived on our wiki here - https://github.com/booz-allen-epa-a
 - Show backend testing (2)
 - Show frontend testing (2)
 
-28 pts forecast, 
+28 pts forecast, 14 pts delivered
+
+### Day 4 plans
+#### Sprint 5 Plan
+- Tie frontend to API (3)
+- Show two filters working on the map (2)
+- User-centered design evidence page (2)
+- Backend testing (2)
+- Frontend testing (3) 
+- API updates (2)
+- Incorporate mockup updates into frontend, includes copy (3)
+- README.md updates (1)
+
+18 pts forecast, 
+
+## Retrospectives
+The team used frequent retrospectives to inspect the way were working and refine our approach. 
+We took time to talk about what we did well, what we could improve, and to appreciate the efforts of our teammates.
+
+Retrospective output is captured on our wiki - https://github.com/booz-allen-epa-agile-rfi/epa-rfi/wiki/Retrospectives

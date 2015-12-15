@@ -1,6 +1,0 @@
-frontend:
-  image: 52.34.113.202:5000/<%= ENV['FRONTEND_IMAGE_NAME'] ||= 'devel_frontend' %>
-  ports:
-    - "9000:9000"
-  environment:
-    - RAILS_ENV=docker
