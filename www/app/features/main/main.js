@@ -26,7 +26,7 @@ function MainController($scope, $routeParams, $location, Map) {
   // Generate the current url map state
   function generateShareUrl() {
     var currentState = grabState();
-    var url = 'http://' + $location.host() + ':' + $location.port() + '/' +
+    var url = 'http://treeview.io:9000' + '/' +
       '?bounds=' + currentState.bounds.join('_') +
       '&emissions=' + currentState.emissions.join('_') +
       '&reporting_year=' + currentState.reporting_year.join('_')
