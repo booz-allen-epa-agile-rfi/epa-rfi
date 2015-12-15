@@ -8,6 +8,7 @@
   function MapDataFactory($resource) {
     var MapData = {} 
     MapData.county = $resource('http://52.10.159.127/county_totals', {});
+    MapData.search = $resource('http://localhost:3000/search', {});
 
     return MapData;
   }

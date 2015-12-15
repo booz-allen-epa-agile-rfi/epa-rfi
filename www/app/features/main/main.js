@@ -24,15 +24,22 @@ function MainController($scope, Map) {
       active_emissions = ['Total'];
     }
 
+    var bounds = formatBounds(Map.map.getBounds());
+
     Map.update({
       reporting_year: reporting_year,
-      emissions: active_emissions
+      emissions: active_emissions,
+      bounds: bounds
     });    
 
     // Private
 
     function allOptionsChosen(option) {
       return active_emissions.indexOf(option) >= 0;
+    }
+
+    function formatBounds(boundsData){
+      return [boundsData._southWest.lat, boundsData._southWest.lng, boundsData._northEast.lat, boundsData._northEast.lat]
     }
   }  
 }
