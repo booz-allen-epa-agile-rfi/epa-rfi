@@ -8,21 +8,19 @@ https://github.com/booz-allen-epa-agile-rfi/epa-rfi
 
 ## Prototype Overview - HOMAN EDIT
 
-[![Build Status](https://jenkins.labelcraft.io/buildStatus/icon?job=Development_FrontEnd_Builder)](https://jenkins.labelcraft.io/view/Development/job/Development_FrontEnd_Builder/)[![Build Status](https://jenkins.labelcraft.io/buildStatus/icon?job=Development_API_Builder)](https://jenkins.labelcraft.io/view/Development/job/Development_API_Builder/)Development Branch Server: https://dev.labelcraft.io
+[![Build Status](http://jenkins.treeview.io/buildStatus/icon?job=Development_FrontEnd_Builder)](http://jenkins.treeview.io/view/Development/job/Development_FrontEnd_Builder/)[![Build Status](http://jenkins.treeview.io/buildStatus/icon?job=Development_API_Builder)](http://jenkins.treeview.io/view/Development/job/Development_API_Builder/)Development Branch Server: http://dev.treeview.io
 
-[![Build Status](https://jenkins.labelcraft.io/buildStatus/icon?job=Release_FrontEnd_Builder)](https://jenkins.labelcraft.io/view/Release/job/Release_FrontEnd_Builder/)[![Build Status](https://jenkins.labelcraft.io/buildStatus/icon?job=Release_API_Builder)](https://jenkins.labelcraft.io/view/Release/job/Release_API_Builder/)Release Branch Server: https://release.labelcraft.io
+[![Build Status](http://jenkins.treeview.io/buildStatus/icon?job=Master_FrontEnd_Builder)](http://jenkins.treeview.io/view/Master/job/Master_FrontEnd_Builder/)[![Build Status](http://jenkins.treeview.io/buildStatus/icon?job=Master_API_Builder)](http://jenkins.treeview.io/view/Master/job/Master_API_Builder/)Master Branch Server: http://treeview.io
 
-[![Build Status](https://jenkins.labelcraft.io/buildStatus/icon?job=Master_FrontEnd_Builder)](https://jenkins.labelcraft.io/view/Master/job/Master_FrontEnd_Builder/)[![Build Status](https://jenkins.labelcraft.io/buildStatus/icon?job=Master_API_Builder)](https:/jenkins.labelcraft.io/view/Master/job/Master_API_Builder/)Master Branch Server: https://labelcraft.io
+TREEVIEW is a data-driven platform with the goal of helping the user discover where chemical emissions are coming from in their local community using the latest information from the EPA’s Toxics Release Inventory and Superfund Program.   Through TREEVIEW, a concerned citizen is able to filter through EPA information by chemical type, related health effects, and facilities to provide the data in a way that meets an individual need.   
 
-TREEVIEW is a data-driven platform with the goal of helping the user discover where chemical emissions are coming from in their local community using the latest information from the EPA’s Toxics Release Inventory and Superfund Program.   Through TREEVIEW, a concerned citizen is able to filter through EPA information by chemical type, related health effects, and facilities to provide the data through a lens that meets their individual need.   
+Booz Allen Digital offers key strengths to the EPA OEI:
 
-Booz Allen Digital offers key strengths to the EPA OEI RFI:
-
-- **Demonstrated Agile Delivery** – Our firm has strong experience with agile software development as demonstrated on this prototype as well as on GSA Integrated Award Environment (IAE), GSA 18F, numerous hackathons, and many other federal and commercial engagements.  For this engagement, we were able to pull together an agile team across three time zones and demonstrate a distributed DevOps approach.
+- **Demonstrated Agile Delivery** – Our firm has strong experience with agile software development as demonstrated on this prototype as well as on GSA Integrated Award Environment (IAE), GSA 18F, numerous hackathons, and many other federal and commercial engagements.  For this engagement, we were able to pull together an agile team across three time zones and demonstrate distributed DevOps.
 
 - **A Culture of Innovation** - Booz Allen's dedication to creating a culture of innovation resulted in the Strategic Innovation Group (SIG), a 1,800 team whose mission it is to ensure there is focus on agile, digital, next gen analytics and cyber security for all modern solutions.
 
-- **Cross-functional agile skilled staff with reach back to domain SME** – Booz Allen was able to quickly assemble a highly-skilled, cross-functional team for this effort. Booz Allen has deep knowledge of federal agencies missions. 
+- **Cross-functional agile skilled staff with reach back to domain SME** – Booz Allen was able to quickly assemble a highly-skilled, cross-functional team for this effort. Booz Allen has deep knowledge of federal agencies missions and a staff deeply familiar with the EPA.
 
 ### Digital Services Playbook
 
@@ -34,7 +32,7 @@ https://github.com/booz-allen-epa-agile-rfi/epa-rfi/blob/master/documentation/U.
 
 **(a) User-Centered Design**
 
-We assigned one leader, our Product Owner (PO), who had the authority, responsibility, and was held accountable for the quality of our TREEVIEW prototype submission. Our PO also had the authority to prioritize functionality as we were in development. The PO was responsible for defining the initial prototype concept and attended all sprint planning and demonstrations. The PO made the decisions about scope, priority, and usability.  From the beginning of our prototype development, we included ‘people’ throughout the process to understand their needs and get their feedback on our design and development. On day 1, we led an ideation session with “people” (2 Booz Allen EPA and Data SMEs), the PO and the EPA OEI RFI “agile team”. We developed multiple hypotheses about our target audiences and their needs along with sketches of personas which was validated and updated through in-person and phone-based user interviews and usability testing. 
+We assigned one leader, our Product Owner (PO), who had the authority, responsibility, and was held accountable for the quality of our TREEVIEW prototype submission.  The PO was responsible for defining the initial prototype concept and attended all sprint planning and demonstrations, making the decisions about scope, priority, and usability.  From the beginning of our prototype development, we included ‘people’ throughout the process to understand their needs and get their feedback on our design and development. 
 
 During this challenge, we used 8 core Human Centered Design (HCD) techniques: (1) Visioning exercise to brainstorm target groups, features/services to meet their needs; (2) Personas; (3) Journey Mapping; (4) User Stories; (5) Sketching screen designs; (6) Paper Prototyping with Wireframes; (7) Heuristic Reviews based on researched best practices and industry standards for designing for real, live people; (8) Usability testing in 2 small-scale iterative rounds of moderated in-person and remote testing. Here is an overview of our lean HCD process:
 
@@ -44,11 +42,15 @@ Our user stories:
 
 https://github.com/booz-allen-epa-agile-rfi/epa-rfi/blob/master/documentation/User-Stories.md
 
+Our personas: 
+
+(need link)
+
 **(b) DevOps Approach NEEDS LINK**
 
-We decided that we wanted to build a prototype that not only intuitively displayed data from 2 of the EPA datasets but also included a front end API to allow for a third party to pull data into thier application.   Given this scope, we assembled a multidisciplinary and collaborative distributed team consisting of a Product Owner, Agile Coach, Technical Architect, User Interface / User Experience Designer, Content Manager, DevOps Engineer, Front End Developers and Back End Developers. 
+We decided that we wanted to build a prototype that not only intuitively displayed data from 2 of the EPA datasets but also included a front end API to allow for a third party to pull data into their application.   Given this scope, we assembled a multidisciplinary and collaborative distributed team consisting of a Product Owner, Agile Coach, Technical Architect, User Interface / User Experience Designer, Content Manager, DevOps Engineer, Front End Developers and Back End Developers. 
 
-Our humans.txt file:
+Our humans.txt file:  NEED LINK
 
 Our DevOps workflow:
 
@@ -57,40 +59,32 @@ https://github.com/booz-allen-epa-agile-rfi/epa-rfi/blob/master/documentation/De
 
 **(c) Agile Software Development NEEDS COPY**
 
-We developed labelCRAFT using an iterative approach where feedback informed subsequent versions of the prototype. We had a Sprint ‘0’ followed by 9 Sprints. In Sprint 0, we tailored Booz Allen Digital’s existing agile development tools and environment which includes a continuous delivery infrastructure. We then delivered 6 releases over a period of 6 days. We conducted sprint planning at the beginning of each sprint and conducted a prototype demonstration and retrospective at the end of each sprint. The FDA SMEs and PO attended the planning sessions, the reviews, and provided feedback that informed subsequent work.
+We developed TREEVIEW using an iterative approach where feedback informed subsequent versions of the prototype through 6 sprints. In the first Sprint, we tailored Booz Allen Digital’s existing agile development tools and environment which includes a continuous delivery infrastructure.  We conducted sprint planning at the beginning of each sprint and conducted a prototype demonstration and retrospective at the end of each sprint. The EPA SMEs and PO attended the planning sessions, the reviews, and provided feedback that informed subsequent work.
 
 Our iterative agile process:
 
 https://github.com/booz-allen-agile-delivery/ads-final/blob/development/documentation/Agile-Artifacts.md
 
+Our Team structure:
+
+
 **(e) Agile Architecture NEEDS EDIT and COPY**
 
 We used all open source technologies and open sourced our TREEVIEW prototype.
 
-https://github.com/booz-allen-agile-delivery/ads-final/blob/development/documentation/Architecture-Diagrams.md
-
-Open source license:
-
-https://github.com/booz-allen-agile-delivery/ads-final/blob/development/LICENSE
+https://github.com/booz-allen-epa-agile-rfi/epa-rfi/blob/master/documentation/Architecture-Diagrams.md
 
 Licenses for open source technologies:
 
-https://github.com/booz-allen-agile-delivery/ads-final/blob/development/documentation/Licenses.md
-
-
-We used a bootstrap design style theme that mirrored our vision for the prototype. As we matured our wireframes, we used this design as a foundation but modified the styling to meet our UX needs. We developed a design style guide and provided the team with our core design specifications. We provided wireframes and a set of high fidelity mockups to the developers to implement iteratively.
-
-Our style guide, wireframes, and mockups:
-
-https://github.com/booz-allen-agile-delivery/ads-final/blob/development/documentation/Design-Documentation.md
+https://github.com/booz-allen-epa-agile-rfi/epa-rfi/blob/master/documentation/Licenses.md
 
 **(f) Modular Development**
 
-We developed TREEVIEW with xx modern, open source technologies most appropriate to implement the prototype.  The team utilized GitHub for distributed source control.  We leveraged the GitFlow model of propagating code from feature branches, to development, to release, and finally to production. The Docker tool suite allowed seamless containerization and configuration management of the front-end, back-end (API) and database applications.  We used Docker-engine to build Linux containers from custom Dockerfiles stored in our Git repository. We containerized all 3 tiers of our application stack. We wrote Dockerfiles using Docker’s recommended best practices to maximize the caching features of the Docker tool. This allows for quicker builds, which is important as the Docker image is rebuilt after every push.
+We developed TREEVIEW with 14 modern, open source technologies most appropriate to implement the prototype.  The team utilized GitHub for distributed source control.  We leveraged the GitFlow model of propagating code from feature branches, to development, to release, and finally to production. The Docker tool suite allowed seamless containerization and configuration management of the front-end, back-end (API) and database applications.  We used Docker-engine to build Linux containers from custom Dockerfiles stored in our Git repository. We containerized all 3 tiers of our application stack. We wrote Dockerfiles using Docker’s recommended best practices to maximize the caching features of the Docker tool. This allows for quicker builds, which is important as the Docker image is rebuilt after every push.
 
 https://github.com/booz-allen-agile-delivery/ads-final/blob/development/documentation/DevOps-Process.md
 
-- Front-End: Bootstrap, Angular.JS, Node.js, Karma, JS Hint, nvd3
+- Front-End: Bootstrap, Angular.JS, Node.js, Karma, JS Hint, nvd3, Leaflet
 - Backend: Ruby, Rails, RSpec, Rubocop, Brakeman 
 - Dev-Ops: Docker (Machine, Registry, Compose), Jenkins, cAdvisor
 
