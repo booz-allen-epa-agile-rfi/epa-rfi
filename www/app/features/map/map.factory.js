@@ -32,8 +32,6 @@
           features: formatData(results.features)
         }
         delete results;
-        console.log('filtered length is ', filteredResult.features.length);
-
 
         Map.dataLayers.geojson = L.geoJson(filteredResult, {
           onEachFeature: function(feature, layer) {
