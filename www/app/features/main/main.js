@@ -63,15 +63,15 @@ function MainController($scope, $routeParams, $location, Map) {
   // Grabs the state and returns it in an object format
   function grabState() {
     var emissions = $('#emission').find('.active').map(function(){
-      return this.textContent.trim();
+      return this.textContent.trim().toLowerCase();
     }).get() || {};
 
     var startYear = $('#start-year').val();
     var endYear = $('#end-year').val();
     var reporting_year = _.range(parseInt(startYear), parseInt(endYear)+1);
 
-    if(emissions.indexOf('Total') >= 0 || ['Land', 'Water', 'Air'].every(allOptionsChosen)){
-      emissions = ['Total'];
+    if(emissions.indexOf('total') >= 0 || ['land', 'water', 'air'].every(allOptionsChosen)){
+      emissions = ['total'];
     }
 
     var bounds = formatBounds(Map.map.getBounds()) || {};
