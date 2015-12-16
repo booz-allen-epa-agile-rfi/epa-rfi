@@ -23,12 +23,17 @@
     }
 
     /** @ngInject */
-    function MapDetailsController($scope) {
+    function MapDetailsController($scope, Map) {
       var vm = this;
 
       vm.activate = activate;
 
       function activate() {
+        $scope.data = {};
+        $scope.$watch(function(){ return Map.data }, function(newValue){
+          $scope.data = newValue;
+          console.log('Aggregate map data is : ', $scope.data);
+        });
       }
     }
   }

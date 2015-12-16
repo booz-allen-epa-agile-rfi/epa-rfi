@@ -9,7 +9,7 @@
   function MapFactory(MapData, API_TOKEN) {
     var Map = {};
 
-    Map.data = {};  // hash to properties
+    Map.data = initStorage();  // hash to properties
     Map.tileLayers = initMapTiles();
     Map.dataLayers = {};
     Map.update = update;
@@ -20,6 +20,69 @@
     return Map;
 
     // Private
+
+    function initStorage(){
+      var data = {};
+      clear.call(data);
+      data.clear = clear;
+
+      function clear() {
+        this.chemicals = {};
+        this.facilities = {};
+        this.healthEffects = {
+          cercla_chemicals: {},
+          haps: {},
+          priority_chemicals: {},
+          osha_chemicals: {},
+          body_weight: {},
+          cardiovascular: {},
+          dermal: {},
+          developmental: {},
+          endocrine: {},
+          gastrointestinal: {},
+          hematological: {},
+          hepatic: {},
+          immunological: {},
+          metabolic: {},
+          musculoskeletal: {},
+          neurological: {},
+          ocular: {},
+          other_systemic: {},
+          renal: {},
+          reproductive: {}
+        };
+      }
+
+      data.addFacility = function(properties) {
+        this.facilities[properties.facility_name] = properties;
+      }
+
+      data.addChemicals = function(properties) {
+        _.each(properties.chemicals, addInformation.bind(this));
+
+        function addInformation(chemical) {
+          if(!_.has(this.chemicals, chemical)){
+            this.chemicals[chemical] = {};
+            this.chemicals[chemical][properties.facility_name] = properties;
+          } else {
+            this.chemicals[chemical][properties.facility_name]
+          }
+        }
+      }
+
+      data.addHealthEffects = function(properties){
+        var healthEffects = Object.keys(this.healthEffects);
+        _.each(healthEffects, recordData.bind(this));
+
+        function recordData(effect){
+          if(properties[effect]){
+            this.healthEffects[properties.facility_name] = properties;
+          }
+        }
+      }
+
+      return data;
+    }
 
     function update(queryParams) {
       Map.loaded = false;
@@ -32,8 +95,8 @@
           type: "FeatureCollection",
           features: formatData(results.features)
         }
-        delete results; // Clear out the results after being formatted
-        Map.data = {};  // Clear out the data hash that links to each feature
+        delete results;       // Clear out the results after being formatted
+        Map.data.clear();     // Clear out the data hash that links to each feature
 
         Map.dataLayers.geojson = L.geoJson(filteredResult, {
           onEachFeature: function(feature, layer) {
@@ -46,7 +109,10 @@
             layer.bindPopup(popUpHtml);
 
             // Add to data hash
-            Map.data[layer.feature.properties.facility_name] = layer.feature.properties;
+            var props = layer.feature.properties;
+            Map.data.addFacility(props);
+            Map.data.addChemicals(props);
+            Map.data.addHealthEffects(props);
           }
         });
         Map.loaded = true;
