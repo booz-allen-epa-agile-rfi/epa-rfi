@@ -10,8 +10,7 @@
     var Map = {};
 
     Map.tileLayers = initMapTiles();
-    Map.dataLayers = initData() || {};
-
+    Map.dataLayers = {};
     Map.update = update;
     Map.map = initMap();
 
