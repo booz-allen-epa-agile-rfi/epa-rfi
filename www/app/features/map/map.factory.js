@@ -29,7 +29,10 @@
 
       function clear() {
         this.chemicals = {};
-        this.facilities = {};
+        this.facilities = {
+          names: [],
+          properties: {}
+        };
         this.healthEffects = {
           cercla_chemicals: initHealthEffectHash(),
           haps: initHealthEffectHash(),
@@ -62,7 +65,8 @@
       }
 
       data.populateFacilities = function(properties) {
-        this.facilities[properties.facility_name] = properties;
+        this.facilities.names.push(properties.facility_name);
+        this.facilities.properties[properties.facility_name] = properties;
         this.changed = true;
       }
 
@@ -71,9 +75,11 @@
 
         function addInformation(chemical) {
           if(!_.has(this.chemicals, chemical)){
-            this.chemicals[chemical] = {};
+            this.chemicals[chemical] = {
+              facilities: [],
+            };
           }
-          this.chemicals[chemical][properties.facility_name] = properties;
+          this.chemicals[chemical]['facilities'].push(properties);
           this.changed = true;
         }
       }
