@@ -41,6 +41,10 @@ class EpaRecordsController < ApplicationController
     render json: geoJSONify(epa_records)
   end
 
+  def years
+    render json: epa_records
+  end
+
   # INTENTIONALLY LEAVING OUT CREATE, UPDATE AND DESTROY SINCE WE ARE WORKING OFF STATIC DATA
 
   private
@@ -67,11 +71,14 @@ class EpaRecordsController < ApplicationController
         EpaRecord.county_totals
       when 'state_counties'
         EpaRecord.state_counties(params[:state])
+      when 'years'
+        EpaRecord.years
       when 'search'
+        params = epa_params
         emissions_conditions = search_emissions(params[:emissions]) unless params[:emissions].nil?
         bounds_conditions = search_bounds(params[:bounds]) unless params[:bounds].nil?
 
-        query_with EpaRecord.search(epa_params).emissions(emissions_conditions).bounds(bounds_conditions)
+        query_with EpaRecord.search.where(params).emissions(emissions_conditions).bounds(bounds_conditions)
       else
         EpaRecord.all
       end

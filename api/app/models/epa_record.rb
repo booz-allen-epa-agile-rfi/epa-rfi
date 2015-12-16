@@ -39,15 +39,10 @@ class EpaRecord < ActiveRecord::Base
     end
   }
 
-  scope :search, ->(*params) {
+  scope :search, -> {
     select('latitude, longitude, chemical_name, parent_company_name, reporting_year, facility_state, facility_county,
             total_air_emissions, total_on_site_land_releases, total_underground_injection,
             total_surface_water_discharge')
-    self.search_where(params[0])
-  }
-
-  scope :search_where, ->(*params) {
-    where(params[0]) unless params[0].empty?
   }
 
   scope :emissions, ->(emissions) {
@@ -56,5 +51,9 @@ class EpaRecord < ActiveRecord::Base
 
   scope :bounds, ->(bounds) {
     where(bounds.join(' AND ')) unless bounds.nil?
+  }
+
+  scope :years, -> {
+    select('reporting_year').distinct.order(:reporting_year).map do |x| { reporting_year: x.reporting_year } end
   }
 end
