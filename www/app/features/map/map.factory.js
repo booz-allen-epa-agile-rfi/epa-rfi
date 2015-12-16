@@ -128,9 +128,9 @@
 
     function initMap(tileLayers) {
       return L.map('map' , {
-        center: [30.3669563, -97.7926704],
+        center: [38.9338676, -77.1772604],
         zoom: 5,
-        minZoom: 5,
+        minZoom: 8,
         layers: [Map.tileLayers.streets]      // Renders the stuff
       });
     }
