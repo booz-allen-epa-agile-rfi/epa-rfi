@@ -68,20 +68,10 @@ class EpaRecordsController < ApplicationController
       when 'state_counties'
         EpaRecord.state_counties(params[:state])
       when 'search'
-        if params[:bounds].nil? && params[:emissions].nil?
-          query_with EpaRecord.search(epa_params)
-        elsif !params[:bounds].nil? && !params[:emissions].nil?
-          emissions_conditions = search_emissions(params[:emissions])
-          bounds_conditions = search_bounds(params[:bounds])
+        emissions_conditions = search_emissions(params[:emissions]) unless params[:emissions].nil?
+        bounds_conditions = search_bounds(params[:bounds]) unless params[:bounds].nil?
 
-          query_with EpaRecord.search(epa_params).emissions(emissions_conditions).bounds(bounds_conditions)
-        elsif params[:bounds].nil?
-          emissions_conditions = search_emissions(params[:emissions])
-          query_with EpaRecord.search(epa_params).emissions(emissions_conditions)
-        else
-          bounds_conditions = search_bounds(params[:bounds])
-          query_with EpaRecord.search(epa_params).bounds(bounds_conditions)
-        end
+        query_with EpaRecord.search(epa_params).emissions(emissions_conditions).bounds(bounds_conditions)
       else
         EpaRecord.all
       end
