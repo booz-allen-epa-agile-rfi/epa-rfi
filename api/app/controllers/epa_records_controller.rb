@@ -5,8 +5,10 @@ class EpaRecordsController < ApplicationController
     render json: geoJSONify(epa_records)
   end
 
+  error code: 404, desc: MissingRecordDetection::Messages.not_found
+
   def search
-    render json: geoJSONify(epa_records)
+    render json: geoJSONify(epa_records) || {status: 'error', data: [], message: 'No records found'}, status: 404
   end
 
   def states_list
@@ -61,7 +63,7 @@ class EpaRecordsController < ApplicationController
         EpaRecord.state_counties(params[:state])
       when 'search'
         if params[:bounds].nil?
-          query_with EpaRecord.where(epa_params)
+          query_with EpaRecord.where(epa_params.each { |k,v| epa_params[k] = v.upcase })
         else
           # QUERY WITH BOUNDS
           bounds = params[:bounds]
@@ -90,13 +92,16 @@ class EpaRecordsController < ApplicationController
   end
 
   def epa_params
-    @_epa_params ||= params.permit(:chemical_name, reporting_year: [], emissions: [], bounds: [])
+    ap params
+    @_epa_params ||= params.permit(:facility_county, :chemical_name, reporting_year: [], emissions: [], bounds: [])
   end
 
   def geoJSONify(records)
+    return if records.empty?
+
     geoJSON = {type: "FeatureCollection", features: []}
     records.each do |r|
-      coords = [r.longitude.to_f, r.latitude.to_f]
+      coords = [r.longitude.to_f || 0, r.latitude.to_f || 0]
       geoJSON[:features] << {type: "Feature", properties: r, geometry: {
         type: 'Point',
         coordinates: coords

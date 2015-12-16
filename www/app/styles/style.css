@@ -76,6 +76,12 @@
 .margin-right {
   margin-right: 20px;
 }
+.margin-left {
+  margin-left: 20px;
+}
+.margin-sides {
+  margin: 0px 20px;
+}
 .margin-top {
   margin-top: 15px;
 }
@@ -183,6 +189,12 @@
 .font-200 {
   font-weight: 200;
 }
+.sm-line-height {
+  line-height: 1.25;
+}
+.med-line-height {
+  line-height: 1.5;
+}
 .dropdown-text {
   margin-top: 12px;
 }
@@ -226,10 +238,17 @@
 .modal-header,
 .modal-body {
   background-color: white;
-  color: #205493;
+  color: black;
 }
 .modal-header {
-  background-color: white;
+  color: #205493;
+}
+.modal-column {
+  height: 300px;
+  padding: 0px 30px;
+  margin: 0 0 30px;
+}
+.modal-body .modal-column-title {
   color: #205493;
 }
 
