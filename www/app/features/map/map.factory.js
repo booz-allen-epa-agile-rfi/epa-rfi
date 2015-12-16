@@ -9,6 +9,7 @@
   function MapFactory(MapData, API_TOKEN) {
     var Map = {};
 
+    Map.data = {};  // hash to properties
     Map.tileLayers = initMapTiles();
     Map.dataLayers = {};
     Map.update = update;
@@ -22,14 +23,17 @@
 
     function update(queryParams) {
       Map.loaded = false;
-      if(Map.dataLayers.geojson) Map.dataLayers.geojson.clearLayers();
+      if(Map.dataLayers.geojson){
+        Map.dataLayers.geojson.clearLayers();
+      }
 
       MapData.search.save(queryParams).$promise.then(function(results) {
         var filteredResult = {
           type: "FeatureCollection",
           features: formatData(results.features)
         }
-        delete results;
+        delete results; // Clear out the results after being formatted
+        Map.data = {};  // Clear out the data hash that links to each feature
 
         Map.dataLayers.geojson = L.geoJson(filteredResult, {
           onEachFeature: function(feature, layer) {
@@ -40,6 +44,9 @@
                         'Surface Water Discharge : ' + feature.properties['total_surface_water_discharge'].toLocaleString() + ' lbs'
 
             layer.bindPopup(popUpHtml);
+
+            // Add to data hash
+            Map.data[layer.feature.properties.facility_name] = layer.feature.properties;
           }
         });
         Map.loaded = true;
@@ -104,7 +111,7 @@
         center: [38.9338676, -77.1772604],
         zoom: 5,
         minZoom: 8,
-        layers: [Map.tileLayers.streets]      // Renders the stuff
+        layers: [Map.tileLayers.streets]
       });
     }
   }
