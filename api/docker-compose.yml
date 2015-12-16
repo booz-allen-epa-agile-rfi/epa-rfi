@@ -23,12 +23,8 @@ cadvisor:
     - /sys:/sys:ro
     - /var/lib/docker/:/var/lib/docker:ro
 prometheus:
-  image: prom/prometheus:latest
+  image: 54.201.106.8:5000/prometheus
   container_name: 'prometheus'
   ports:
     - 9090:9090
-  volumes:
-    - prometheus.yml:/etc/prometheus/prometheus.yml
-    - alert.rules:/etc/prometheus/alert.rules
-    - alertmanager.conf:/etc/prometheus/alertmanager.conf
 

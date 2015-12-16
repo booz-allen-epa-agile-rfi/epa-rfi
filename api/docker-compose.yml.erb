@@ -23,10 +23,8 @@ cadvisor:
     - /sys:/sys:ro
     - /var/lib/docker/:/var/lib/docker:ro
 prometheus:
-  image: prom/prometheus:latest
+  image: <%= ENV['REGISTRY'] ||= '52.34.113.202' %>/prometheus
   container_name: 'prometheus'
   ports:
     - 9090:9090
-  volumes: 
-    - /tmp/prometheus.yml:/etc/prometheus/prometheus.yml
  
