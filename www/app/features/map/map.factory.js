@@ -62,7 +62,9 @@
           return results.reduce(function(total, feature){
             var name = feature.properties.facility_name;
             if(!_.has(storedFacilities, name)){
-              storedFacilities[name] = feature;  // store it
+              storedFacilities[name] = feature;  // store it in hash
+
+              feature.properties = _.omit(feature.properties, 'latitude', 'longitude')
               mapHealthEffectsToBoolean(feature.properties);
               feature.properties.chemicals = [feature.properties.chemical_name]; //  create the chemicals array
               total.push(feature);
