@@ -2,7 +2,12 @@
   'use strict';
 
   angular.module('gapFront')
-    .directive('mapDetails', MapDetailsDirective);
+    .filter('startCase', function(){
+      return function(str) {
+        return _.startCase(str);
+      }
+    })
+    .directive('mapDetails', MapDetailsDirective)
 
   /** @ngInject */
   function MapDetailsDirective() {
@@ -30,9 +35,14 @@
 
       function activate() {
         $scope.data = {};
+        $scope.healthEffects = [];
+
         $scope.$watch(function(){ return Map.data.changed }, function(newValue){
           $scope.data = Map.data;
+          $scope.healthEffects = ($scope.healthEffects.length === 0) ? 
+            Object.keys(Map.data.healthEffects).sort() : $scope.healthEffects;
           Map.data.changed = false;
+          console.log(Map.data);
         });
       }
     }

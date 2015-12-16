@@ -17,6 +17,8 @@
 
     Map.loaded = true;
 
+    window.allen = Map;
+
     return Map;
 
     // Private
@@ -113,6 +115,9 @@
         }
         delete results;       // Clear out the results after being formatted
         Map.data.clear();     // Clear out the data hash that links to each feature
+
+        console.log('data size: ', filteredResult.features.length);
+        console.log('filtered data: ', filteredResult.features);
 
         Map.dataLayers.geojson = L.geoJson(filteredResult, {
           onEachFeature: function(feature, layer) {
