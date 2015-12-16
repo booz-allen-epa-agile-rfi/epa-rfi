@@ -51,12 +51,10 @@ class EpaRecord < ActiveRecord::Base
   }
 
   scope :emissions, ->(emissions) {
-    ap emissions
-    where(emissions.join(' OR '))
+    where(emissions.join(' OR ')) unless emissions.nil?
   }
 
   scope :bounds, ->(bounds) {
-    ap bounds
-    where(bounds.join(' AND '))
+    where(bounds.join(' AND ')) unless bounds.nil?
   }
 end
