@@ -16,7 +16,7 @@
         </ul>
       </div>
     </div>
-    <div href="#" class="list-group-item pad-bottom" ng-repeat="effect in healthEffects track by $index">
+    <div href="#" class="list-group-item pad-bottom" ng-repeat="effect in healthEffects | orderBy:effect track by $index">
       <!-- <span class="xs-margin-right"><input type="radio" value="all-health-facilities" checked></span>All Health Effects -->
       <!-- <hr> -->
       <span class="xs-margin-right"><input type="radio" value="all-health-facilities"></span>{{ effect | startCase }}
@@ -50,13 +50,13 @@
       </p>
       <p class="well well-box darkgray">Associated Facilities: <span class="text-blue">5</span>
         <span class="btn-r">
-          <a data-toggle="collapse" data-target="#collapseFacilities" aria-expanded="false" aria-controls="collapseFacilities">
+          <a data-toggle="collapse" data-target="#collapseFacilities-{{$index}}" aria-expanded="false" aria-controls="collapseFacilities">
             <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
           </a>
-          <div class="collapse" id="collapseFacilities">
+          <div class="collapse" id="collapseFacilities-{{$index}}">
             <div class="well pad-10">
               <p class="text-sm">
-                <span ng-repeat="facility in data.healthEffects[effect].facilities">{{ facility.facility_name }} <br></span>
+                <span ng-repeat="facility in data.healthEffects[effect].facilities | orderBy:'facility_name'">{{ facility.facility_name }} <br></span>
               </p>
             </div>
           </div>

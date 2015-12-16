@@ -40,7 +40,8 @@
         $scope.$watch(function(){ return Map.data.changed }, function(newValue){
           $scope.data = Map.data;
           $scope.healthEffects = ($scope.healthEffects.length === 0) ? 
-            Object.keys(Map.data.healthEffects).sort() : $scope.healthEffects;
+            Object.keys(Map.data.healthEffects) : $scope.healthEffects;
+
           Map.data.changed = false;
           console.log(Map.data);
         });
