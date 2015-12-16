@@ -53,8 +53,8 @@
   <!-- Search by Zip Code or County -->
   <div class="form-group">
     <label for="searchInput">Search the Counties with the Most Chemical Exposure</label>
-    <input type="text" class="col-md-9 form-control" id="searchInput" placeholder="Enter Zip Code or County">
-    <button class="btn btn-blue col-md-1 btn-r" href="#" role="button">Search</button>
+    <input type="text" class="col-md-9 form-control" id="searchInput" placeholder="Enter Zip Code or County" ng-model="searchValue">
+    <button class="btn btn-blue col-md-1 btn-r" href="#" role="button" ng-click="searchSubmit(searchValue)">Search</button>
   </div>
 
   <!-- Recent Searches -->

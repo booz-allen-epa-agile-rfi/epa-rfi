@@ -11,18 +11,24 @@ angular.module('gapFront')
   .controller('MainCtrl', MainController);
 
 /** @ngInject */
-function MainController($scope, $routeParams, $location, Map) {
+function MainController($scope, $routeParams, $location, Map, Geocode) {
   $scope.state = {
     emissions: [],
     reporting_year: [],
     bounds: []
   }
+  $scope.searchValue = '';
 
   // Initialization 
 
   if(!_.isEmpty($routeParams)) initState();
   $scope.shareUrl = generateShareUrl($scope.state);
 
+
+  // Map Search
+  $scope.searchSubmit = function(searchVal) {
+    Geocode.search(searchVal, grabState());
+  }
 
   // On Submit of Filters
   $scope.submitMapFilters = function(e) {
