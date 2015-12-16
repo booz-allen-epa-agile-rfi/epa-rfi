@@ -24,12 +24,34 @@ namespace :db do
       if Rails.env.production?
         file3 = "#{Rails.root}/dbdata/epa_records_remaining1.txt"
         file4 = "#{Rails.root}/dbdata/epa_records_remaining2.txt"
+        file5 = "#{Rails.root}/dbdata/epa_records_remaining3.txt"
+        file6 = "#{Rails.root}/dbdata/epa_records_remaining4.txt"
+        file7 = "#{Rails.root}/dbdata/epa_records_remaining5.txt"
+        file8 = "#{Rails.root}/dbdata/epa_records_remaining6.txt"
+        file9 = "#{Rails.root}/dbdata/epa_records_remaining7.txt"
+        file10 = "#{Rails.root}/dbdata/epa_records_remaining8.txt"
+        file11 = "#{Rails.root}/dbdata/epa_records_remaining9.txt"
 
         file3 = '/usr/src/app/dbdata/epa_records_remaining1.txt' unless File.exists? file3
         file4 = '/usr/src/app/dbdata/epa_records_remaining2.txt' unless File.exists? file4
+        file5 = '/usr/src/app/dbdata/epa_records_remaining3.txt' unless File.exists? file5
+        file6 = '/usr/src/app/dbdata/epa_records_remaining4.txt' unless File.exists? file6
+        file7 = '/usr/src/app/dbdata/epa_records_remaining5.txt' unless File.exists? file7
+        file8 = '/usr/src/app/dbdata/epa_records_remaining6.txt' unless File.exists? file8
+        file9 = '/usr/src/app/dbdata/epa_records_remaining7.txt' unless File.exists? file9
+        file10 = '/usr/src/app/dbdata/epa_records_remaining8.txt' unless File.exists? file10
+        file11 = '/usr/src/app/dbdata/epa_records_remaining9.txt' unless File.exists? file11
+
 
         files << file3
         files << file4
+        files << file5
+        files << file6
+        files << file7
+        files << file8
+        files << file9
+        files << file10
+        files << file11
       end
 
       def copy_sql(file)
