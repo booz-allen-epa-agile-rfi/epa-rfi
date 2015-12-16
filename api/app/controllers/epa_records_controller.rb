@@ -8,7 +8,13 @@ class EpaRecordsController < ApplicationController
   error code: 404, desc: MissingRecordDetection::Messages.not_found
 
   def search
-    render json: geoJSONify(epa_records) || {status: 'error', data: [], message: 'No records found'}, status: 404
+    response = geoJSONify(epa_records)
+
+    if response
+      render json: response
+    else
+      render json: {status: 'error', data: [], message: 'No records found'}, status: 404
+    end
   end
 
   def states_list
@@ -62,8 +68,25 @@ class EpaRecordsController < ApplicationController
       when 'state_counties'
         EpaRecord.state_counties(params[:state])
       when 'search'
-        if params[:bounds].nil?
-          query_with EpaRecord.where(epa_params.each { |k,v| epa_params[k] = v.upcase })
+        if params[:bounds].nil? && params[:emissions].nil?
+          query_with EpaRecord.where(epa_params.each { |k, v| epa_params[k] = v.upcase })
+        elsif params[:bounds].nil?
+          # QUERY WITH EMISSIONS
+          emissions = params[:emissions]
+
+          select_conditions = []
+
+          if emissions.include? 'air'
+            select_conditions << 'total_air_emissions > 0'
+          end
+
+          if emissions.include? 'land'
+            select_conditions << 'total_underground_injection > 0'
+            select_conditions << 'total_on_site_land_releases > 0'
+          end
+
+          epa_params.delete('emissions')
+          query_with EpaRecord.where(epa_params).where(select_conditions.join(' OR '))
         else
           # QUERY WITH BOUNDS
           bounds = params[:bounds]
@@ -92,12 +115,11 @@ class EpaRecordsController < ApplicationController
   end
 
   def epa_params
-    ap params
     @_epa_params ||= params.permit(:facility_county, :chemical_name, reporting_year: [], emissions: [], bounds: [])
   end
 
   def geoJSONify(records)
-    return if records.empty?
+    return if records.blank?
 
     geoJSON = {type: "FeatureCollection", features: []}
     records.each do |r|

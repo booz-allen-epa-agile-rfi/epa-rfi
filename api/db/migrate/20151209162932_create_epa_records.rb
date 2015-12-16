@@ -33,12 +33,12 @@ class CreateEpaRecords < ActiveRecord::Migration
       t.string :as_a_manufacturing_aid, limit: 3
       t.string :ancillary_or_other_use, limit: 3
       # COUNTS OF STUFF
-      t.integer :total_air_emissions
-      t.integer :total_underground_injection
-      t.integer :total_on_site_land_releases
-      t.integer :total_transferred_off_site_to_disposal
+      t.integer :total_air_emissions, index: true
+      t.integer :total_underground_injection, index: true
+      t.integer :total_on_site_land_releases, index: true
+      t.integer :total_transferred_off_site_to_disposal, index: true
       t.integer :document_control_number, limit: 8
-      t.integer :total_surface_water_discharge
+      t.integer :total_surface_water_discharge, index: true
       t.string :transfers_to_potws_metals_and_metal_compounds, limit: 10
       t.string :naics_2, limit: 2
       t.string :naics_3, limit: 3
