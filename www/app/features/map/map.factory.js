@@ -31,27 +31,34 @@
         this.chemicals = {};
         this.facilities = {};
         this.healthEffects = {
-          cercla_chemicals: {},
-          haps: {},
-          priority_chemicals: {},
-          osha_chemicals: {},
-          body_weight: {},
-          cardiovascular: {},
-          dermal: {},
-          developmental: {},
-          endocrine: {},
-          gastrointestinal: {},
-          hematological: {},
-          hepatic: {},
-          immunological: {},
-          metabolic: {},
-          musculoskeletal: {},
-          neurological: {},
-          ocular: {},
-          other_systemic: {},
-          renal: {},
-          reproductive: {}
+          cercla_chemicals: initHealthEffectHash(),
+          haps: initHealthEffectHash(),
+          priority_chemicals: initHealthEffectHash(),
+          osha_chemicals: initHealthEffectHash(),
+          body_weight: initHealthEffectHash(),
+          cardiovascular: initHealthEffectHash(),
+          dermal: initHealthEffectHash(),
+          developmental: initHealthEffectHash(),
+          endocrine: initHealthEffectHash(),
+          gastrointestinal: initHealthEffectHash(),
+          hematological: initHealthEffectHash(),
+          hepatic: initHealthEffectHash(),
+          immunological: initHealthEffectHash(),
+          metabolic: initHealthEffectHash(),
+          musculoskeletal: initHealthEffectHash(),
+          neurological: initHealthEffectHash(),
+          ocular: initHealthEffectHash(),
+          other_systemic: initHealthEffectHash(),
+          renal: initHealthEffectHash(),
+          reproductive: initHealthEffectHash()
         };
+
+        function initHealthEffectHash() {
+          return {
+            chemicals: [],
+            facilities: []
+          }
+        }
       }
 
       data.populateFacilities = function(properties) {
@@ -77,7 +84,8 @@
 
         function recordData(effect){
           if(properties[effect]){
-            this.healthEffects[effect][properties.facility_name] = properties;
+            this.healthEffects[effect]['chemicals'] = _.union(this.healthEffects[effect]['chemicals'], properties.chemicals)  // record the chemicals
+            this.healthEffects[effect]['facilities'].push(properties);  // record the facilities
             this.changed = true;
           }
         }
