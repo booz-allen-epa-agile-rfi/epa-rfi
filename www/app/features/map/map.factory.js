@@ -53,11 +53,11 @@
         };
       }
 
-      data.addFacility = function(properties) {
+      data.populateFacilities = function(properties) {
         this.facilities[properties.facility_name] = properties;
       }
 
-      data.addChemicals = function(properties) {
+      data.populateChemicals = function(properties) {
         _.each(properties.chemicals, addInformation.bind(this));
 
         function addInformation(chemical) {
@@ -70,7 +70,7 @@
         }
       }
 
-      data.addHealthEffects = function(properties){
+      data.populateHealthEffects = function(properties){
         var healthEffects = Object.keys(this.healthEffects);
         _.each(healthEffects, recordData.bind(this));
 
@@ -110,9 +110,9 @@
 
             // Add to data hash
             var props = layer.feature.properties;
-            Map.data.addFacility(props);
-            Map.data.addChemicals(props);
-            Map.data.addHealthEffects(props);
+            Map.data.populateFacilities(props);
+            Map.data.populateChemicals(props);
+            Map.data.populateHealthEffects(props);
           }
         });
         Map.loaded = true;
