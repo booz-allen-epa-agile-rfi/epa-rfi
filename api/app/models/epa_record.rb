@@ -1,18 +1,19 @@
 class EpaRecord < ActiveRecord::Base
   # Scopes
-  scope :states_list, -> { select('facility_state').distinct.map do |x|
-    { facility_state: x.facility_state }
-  end
+  scope :states, -> {
+    select('facility_state').distinct.map do |x| { facility_state: x.facility_state } end
   }
-  scope :chemicals, -> { select('chemical_name').distinct.as_json }
 
-  scope :counties_list, -> {
+  scope :chemicals, -> { select('chemical_name').distinct.map do |x| { chemical_name: x.chemical_name } end }
+
+  scope :counties, -> {
     select('facility_county').distinct.map do |x| { facility_county: x.facility_county } end
   }
 
   scope :zip_codes, -> {
-    select('facility_zip_code').distinct.where('LENGTH(facility_zip_code::text) IN (?)', [5, 9]).map do |x|
-      { zip_code: x.facility_zip_code }
+    select('facility_zip_code, facility_county, facility_state').distinct
+        .where('LENGTH(facility_zip_code::text) IN (?)', [5, 9]).map do |x|
+      { facility_zip_code: x.facility_zip_code, facility_county: x.facility_county, facility_state: x.facility_state }
     end
   }
 
@@ -26,10 +27,11 @@ class EpaRecord < ActiveRecord::Base
     subquery = select('facility_state, facility_county, COUNT(*), SUM(total_air_emissions) AS total_air_emissions,
                        SUM(total_underground_injection) AS total_underground_injection,
                        SUM(total_on_site_land_releases) AS total_on_site_land_releases,
-                       SUM(total_surface_water_discharge) AS total_surface_water_discharge,
-                       SUM(total_pollutants) AS total_pollutants').group('facility_state, facility_county')
+                       SUM(total_surface_water_discharge) AS total_surface_water_discharge')
+                   .group('facility_state, facility_county')
     select('facility_state, facility_county, count, total_air_emissions, total_underground_injection,
-            total_on_site_land_releases, total_surface_water_discharge, total_pollutants')
+            total_on_site_land_releases, total_surface_water_discharge,
+            (total_underground_injection + total_on_site_land_releases + total_surface_water_discharge + total_air_emissions) AS total_pollutants')
         .from("(#{subquery.to_sql}) AS t1").map do |x|
       {
           state: x.facility_state, county: x.facility_county, count: x.count,
