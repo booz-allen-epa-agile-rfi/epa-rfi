@@ -8,11 +8,11 @@ https://github.com/booz-allen-agile-delivery/ads-final/tree/development
 
 ## Prototype Overview
 
-[![Build Status](https://jenkins.labelcraft.io/buildStatus/icon?job=Development_FrontEnd_Builder)](https://jenkins.labelcraft.io/view/Development/job/Development_FrontEnd_Builder/)[![Build Status](https://jenkins.labelcraft.io/buildStatus/icon?job=Development_API_Builder)](https://jenkins.labelcraft.io/view/Development/job/Development_API_Builder/)Development Branch Server: https://dev.labelcraft.io
+[![Build Status](http://jenkins.treeview.io:8080/buildStatus/icon?job=develop_frontend)](http://jenkins.treeview.io:8080/view/Development/job/develop_frontend/)[![Build Status](http://jenkins.treeview.io:8080/buildStatus/icon?job=develop_api)](http://jenkins.treeview.io:8080/view/Development/job/develop_api/)Development Branch Server: http://dev.treeview.io:9000
 
-[![Build Status](https://jenkins.labelcraft.io/buildStatus/icon?job=Release_FrontEnd_Builder)](https://jenkins.labelcraft.io/view/Release/job/Release_FrontEnd_Builder/)[![Build Status](https://jenkins.labelcraft.io/buildStatus/icon?job=Release_API_Builder)](https://jenkins.labelcraft.io/view/Release/job/Release_API_Builder/)Release Branch Server: https://release.labelcraft.io
+[![Build Status](http://jenkins.treeview.io:8080/buildStatus/icon?job=staging_frontend)](http://jenkins.treeview.io:8080/view/Staging/job/staging_frontend/)[![Build Status](http://jenkins.treeview.io/buildStatus/icon?job=staging_api)](http://jenkins.treeview.io:8080/view/Staging/job/staging_api/)Staging Branch Server: http://staging.treeview.io:9000
 
-[![Build Status](https://jenkins.labelcraft.io/buildStatus/icon?job=Master_FrontEnd_Builder)](https://jenkins.labelcraft.io/view/Master/job/Master_FrontEnd_Builder/)[![Build Status](https://jenkins.labelcraft.io/buildStatus/icon?job=Master_API_Builder)](https:/jenkins.labelcraft.io/view/Master/job/Master_API_Builder/)Master Branch Server: https://labelcraft.io
+[![Build Status](http://jenkins.treeview.io:8080/buildStatus/icon?job=master_frontend)](http://jenkins.treeview.io:8080/view/Master/job/master_frontend/)[![Build Status](http://jenkins.treeview.io:8080/buildStatus/icon?job=master_api)](http:/jenkins.treeview.io:8080/view/Master/job/master_api/)Master Branch Server: http://www.treeview.io:9000
 
 LabelCRAFT is a crowd-sourcing platform with the goal of improving drug labels. Through labelCRAFT, we are able to determine whether adverse effects reported by consumers are accurately described by the manufacturer on the drug label. By identifying the adverse effects that consumers have reported and are not currently listed on drug labels, we hope to reduce the time it takes for manufacturers to update their labels and better inform consumers.
 
