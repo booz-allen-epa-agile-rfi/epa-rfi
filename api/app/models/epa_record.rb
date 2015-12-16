@@ -40,9 +40,23 @@ class EpaRecord < ActiveRecord::Base
   }
 
   scope :search, ->(*params) {
-    select('latitude, longitude, chemical_name, parent_company_name, reporting_year, facility_state,
+    select('latitude, longitude, chemical_name, parent_company_name, reporting_year, facility_state, facility_county,
             total_air_emissions, total_on_site_land_releases, total_underground_injection,
-            total_surface_water_discharge, SUM(total_air_emissions, total_on_site_land_releases,
-            total_underground_injection, total_surface_water_discharge) AS total_pollutants').where(params).to_hash
+            total_surface_water_discharge')
+    self.search_where(params[0])
+  }
+
+  scope :search_where, ->(*params) {
+    where(params[0]) unless params[0].empty?
+  }
+
+  scope :emissions, ->(emissions) {
+    ap emissions
+    where(emissions.join(' OR '))
+  }
+
+  scope :bounds, ->(bounds) {
+    ap bounds
+    where(bounds.join(' AND '))
   }
 end
