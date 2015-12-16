@@ -95,5 +95,10 @@ ActiveRecord::Schema.define(version: 20151209162932) do
   add_index "epa_records", ["latitude"], name: "index_epa_records_on_latitude", using: :btree
   add_index "epa_records", ["longitude"], name: "index_epa_records_on_longitude", using: :btree
   add_index "epa_records", ["reporting_year"], name: "index_epa_records_on_reporting_year", using: :btree
+  add_index "epa_records", ["total_air_emissions"], name: "index_epa_records_on_total_air_emissions", using: :btree
+  add_index "epa_records", ["total_on_site_land_releases"], name: "index_epa_records_on_total_on_site_land_releases", using: :btree
+  add_index "epa_records", ["total_surface_water_discharge"], name: "index_epa_records_on_total_surface_water_discharge", using: :btree
+  add_index "epa_records", ["total_transferred_off_site_to_disposal"], name: "index_epa_records_on_total_transferred_off_site_to_disposal", using: :btree
+  add_index "epa_records", ["total_underground_injection"], name: "index_epa_records_on_total_underground_injection", using: :btree
 
 end
