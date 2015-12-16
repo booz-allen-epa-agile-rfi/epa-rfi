@@ -94,6 +94,8 @@ https://github.com/booz-allen-epa-agile-rfi/epa-rfi/blob/master/documentation/Ar
 
 **(g) Test Driven Development**
 
+The concept behind Test Driven Development (TDD) is that the test cases for the code to be developed should be created before the code is implemented. This way the test cases being developed for the code are based solely on the requirements and are not influenced by the implementation of the requirements in the code.  Keeping with this pattern, we implemented a number of our tests for the front-end and back-end APIs based on our user stories, use cases, and personas.  Once the tests were completed, we wrote our code to the tests. 
+
 We wrote unit tests for code, written with appropriate tooling for the technology stack. We used Karma for front-end code and used rSpec for the backend API. Our unit testing enabled a fluid development process while leveraging the respective language specific advantages of each testing technology. The unit tests were executed both locally and on the continuous integration server (Git push).
 
 We use Jenkins as our continuous integration system to automate the running of tests and continuously deploy our code. We established GitHub hooks for each branch to kickoff Jenkins jobs. Custom jobs for each branch ran automated tests in containerized environments. Once tests were completed, Jenkins CI updated the Docker registry and deployed the new build. All pushes to the development branch are automatically examined by static code analysis, security scans, unit tests, integration tests, and performance tests. Load testing was performed ad-hoc (developer’s discretion).
@@ -105,7 +107,9 @@ https://github.com/booz-allen-epa-agile-rfi/epa-rfi/blob/master/documentation/Au
 
 **(h) API First Design**
 
+The concept behind API First is that you design and develop your APIs first before developing your delivery channels such as mobile application or web.  The APIs are designed based on user stories and the available data sets, and iedally not influenced by any particular channel.
 
+For TREEVIEW we first reviewed and discussed our user stories and the chemical release data set to determine the required methods and functionality for our APIs.  Once we designed the API, we were then able to build out the tests and code for our front-end and back-end API.
 
 
 
