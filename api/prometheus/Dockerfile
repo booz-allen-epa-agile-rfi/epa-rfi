@@ -1,8 +1,8 @@
 FROM prom/prometheus:latest
 
-COPY prometheus.yml /etc/prometheus/prometheus.yml
-COPY alert.rules /etc/prometheus/alert.rules
-COPY alertmanager.conf /etc/prometheus/alertmanager.conf
+ADD prometheus.yml /etc/prometheus/
+ADD alert.rules /etc/prometheus/
+ADD alertmanager.conf /etc/prometheus/
 
 EXPOSE 9090
 CMD ["/bin/bash", "startup.sh"]
