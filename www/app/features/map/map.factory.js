@@ -55,9 +55,7 @@
         // }
 
         function formatData(results) {
-          var properties = "chemical_name, facility_name, parent_company_name, reporting_year, facility_state, facility_county, total_air_emissions, total_on_site_land_releases, total_underground_injection, total_surface_water_discharge".split(', ');
           var health_effects = 'cercla_chemicals haps priority_chemicals osha_chemicals body_weight cardiovascular dermal developmental endocrine gastrointestinal hematological hepatic immunological metabolic musculoskeletal neurological ocular other_systemic renal reproductive'.split(' ');
-          properties.push.apply(properties, health_effects);
 
           var storedFacilities = {};
 
@@ -65,8 +63,6 @@
             var name = feature.properties.facility_name;
             if(!_.has(storedFacilities, name)){
               storedFacilities[name] = feature;  // store it
-
-              feature.properties = _.pick(feature.properties, properties);   // filter out unneeded props
               mapHealthEffectsToBoolean(feature.properties);
               feature.properties.chemicals = [feature.properties.chemical_name]; //  create the chemicals array
               total.push(feature);
