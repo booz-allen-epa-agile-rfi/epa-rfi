@@ -91,6 +91,9 @@
 .lg-margin-bottom {
   margin-bottom: 20px;
 }
+.xl-margin-bottom {
+  margin-bottom: 60px;
+}
 .pad-bottom {
   padding-bottom: 15px;
 }
@@ -215,6 +218,10 @@
 .darkgray {
   background-color: darkgray;
 }
+.gray-section {
+  background: #f4f4f4;
+  margin-top: 60px;
+}
 
 /* RIGHT INFORMATION COLUMN */
 /*-------------------------------------------------- */
@@ -272,3 +279,29 @@
 .treeview-logo {
   width: 70px;
 }
+
+/* Team Page */
+/*-------------------------------------------------- */
+
+.team-member {
+  text-align: center;
+  margin: 0 0 40px;
+}
+.team-member img {
+  margin: auto;
+}
+.img-circle {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  width: 130px;
+  height: 130px;
+}
+.green-line {
+  width: 60px;
+  height: 1px;
+  margin: 40px auto 0;
+  border-bottom: 2px solid #1ab394;
+}
+
