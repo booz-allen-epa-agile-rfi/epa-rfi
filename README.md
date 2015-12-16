@@ -10,7 +10,7 @@ https://github.com/booz-allen-agile-delivery/ads-final/tree/development
 
 [![Build Status](http://jenkins.treeview.io:8080/buildStatus/icon?job=develop_frontend)](http://jenkins.treeview.io:8080/view/Development/job/develop_frontend/)[![Build Status](http://jenkins.treeview.io:8080/buildStatus/icon?job=develop_api)](http://jenkins.treeview.io:8080/view/Development/job/develop_api/)Development Branch Server: http://dev.treeview.io:9000
 
-[![Build Status](http://jenkins.treeview.io:8080/buildStatus/icon?job=staging_frontend)](http://jenkins.treeview.io:8080/view/Staging/job/staging_frontend/)[![Build Status](http://jenkins.treeview.io/buildStatus/icon?job=staging_api)](http://jenkins.treeview.io:8080/view/Staging/job/staging_api/)Staging Branch Server: http://staging.treeview.io:9000
+[![Build Status](http://jenkins.treeview.io:8080/buildStatus/icon?job=staging_frontend)](http://jenkins.treeview.io:8080/view/Staging/job/staging_frontend/)[![Build Status](http://jenkins.treeview.io:8080/buildStatus/icon?job=staging_api)](http://jenkins.treeview.io:8080/view/Staging/job/staging_api/)Staging Branch Server: http://staging.treeview.io:9000
 
 [![Build Status](http://jenkins.treeview.io:8080/buildStatus/icon?job=master_frontend)](http://jenkins.treeview.io:8080/view/Master/job/master_frontend/)[![Build Status](http://jenkins.treeview.io:8080/buildStatus/icon?job=master_api)](http:/jenkins.treeview.io:8080/view/Master/job/master_api/)Master Branch Server: http://www.treeview.io:9000
 
