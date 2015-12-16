@@ -41,6 +41,10 @@ class EpaRecordsController < ApplicationController
     render json: geoJSONify(epa_records)
   end
 
+  def years
+    render json: epa_records
+  end
+
   # INTENTIONALLY LEAVING OUT CREATE, UPDATE AND DESTROY SINCE WE ARE WORKING OFF STATIC DATA
 
   private
@@ -67,55 +71,65 @@ class EpaRecordsController < ApplicationController
         EpaRecord.county_totals
       when 'state_counties'
         EpaRecord.state_counties(params[:state])
+      when 'years'
+        EpaRecord.years
       when 'search'
-        if params[:bounds].nil? && params[:emissions].nil?
-          query_with EpaRecord.where(epa_params.each { |k, v| epa_params[k] = v.upcase })
-        elsif params[:bounds].nil?
-          # QUERY WITH EMISSIONS
-          emissions = params[:emissions]
+        params = epa_params
+        emissions_conditions = search_emissions(params[:emissions]) unless params[:emissions].nil?
+        bounds_conditions = search_bounds(params[:bounds]) unless params[:bounds].nil?
 
-          select_conditions = []
-
-          if emissions.include? 'air'
-            select_conditions << 'total_air_emissions > 0'
-          end
-
-          if emissions.include? 'land'
-            select_conditions << 'total_underground_injection > 0'
-            select_conditions << 'total_on_site_land_releases > 0'
-          end
-
-          epa_params.delete('emissions')
-          query_with EpaRecord.where(epa_params).where(select_conditions.join(' OR '))
-        else
-          # QUERY WITH BOUNDS
-          bounds = params[:bounds]
-
-          # GET SOUTH WEST COORDINATE
-          sx = bounds.first.to_f
-          sy = bounds.second.to_f
-
-          # GET NORTH EAST COORDINATE
-          nx = bounds.third.to_f
-          ny = bounds.fourth.to_f
-
-          # RECTANGLE CONDITIONS
-          select_conditions = []
-          select_conditions << "longitude <= #{ny}"
-          select_conditions << "longitude >= #{sy}"
-          select_conditions << "latitude <= #{nx}"
-          select_conditions << "latitude >= #{sx}"
-          epa_params.delete('bounds')
-          query_with EpaRecord.where(epa_params).where(select_conditions.join(' and '))
-        end
+        query_with EpaRecord.search.where(params).emissions(emissions_conditions).bounds(bounds_conditions)
       else
         EpaRecord.all
       end
     end
   end
 
+  private
+
+  def search_emissions(emissions)
+    # QUERY WITH EMISSIONS
+    emissions = emissions
+
+    select_conditions = []
+
+    if emissions.include? 'air'
+      select_conditions << 'total_air_emissions > 0'
+    end
+
+    if emissions.include? 'land'
+      select_conditions << 'total_underground_injection > 0'
+      select_conditions << 'total_on_site_land_releases > 0'
+    end
+
+    epa_params.delete('emissions')
+    select_conditions
+  end
+
+  def search_bounds(bounds)
+    # QUERY WITH BOUNDS
+    bounds = bounds
+
+    # GET SOUTH WEST COORDINATE
+    sx = bounds.first.to_f
+    sy = bounds.second.to_f
+
+    # GET NORTH EAST COORDINATE
+    nx = bounds.third.to_f
+    ny = bounds.fourth.to_f
+
+    # RECTANGLE CONDITIONS
+    select_conditions = []
+    select_conditions << "longitude <= #{ny}"
+    select_conditions << "longitude >= #{sy}"
+    select_conditions << "latitude <= #{nx}"
+    select_conditions << "latitude >= #{sx}"
+    epa_params.delete('bounds')
+    select_conditions
+  end
+
   def epa_params
-    @_epa_params ||= params.permit(:facility_county, :chemical_name, reporting_year: [], emissions: [], bounds: [])
+    @_epa_params ||= params.permit(:facility_county, :facility_state, :chemical_name, reporting_year: [], emissions: [], bounds: [])
   end
 
   def geoJSONify(records)

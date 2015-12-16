@@ -26,8 +26,14 @@
       Map.loaded = false;
       if(Map.dataLayers.geojson) Map.dataLayers.geojson.clearLayers();
 
-      MapData.search.save(queryParams).$promise.then(function(result) {
-        Map.dataLayers.geojson = L.geoJson(result, {
+      MapData.search.save(queryParams).$promise.then(function(results) {
+        var filteredResult = {
+          type: "FeatureCollection",
+          features: formatData(results.features)
+        }
+        delete results;
+
+        Map.dataLayers.geojson = L.geoJson(filteredResult, {
           onEachFeature: function(feature, layer) {
             var popUpHtml = '<b>Facility Name : ' + feature.properties['facility_name'] + "</b><br/>" +
                         'Air Emissions : ' + feature.properties['total_air_emissions'].toLocaleString() + ' lbs<br />' +
@@ -47,6 +53,36 @@
         //   var ne = queryParams.bounds.slice(2,4);
         //   Map.map.fitBounds([sw,ne]);
         // }
+
+        function formatData(results) {
+          var properties = "chemical_name, facility_name, parent_company_name, reporting_year, facility_state, facility_county, total_air_emissions, total_on_site_land_releases, total_underground_injection, total_surface_water_discharge".split(', ');
+          var health_effects = 'cercla_chemicals haps priority_chemicals osha_chemicals body_weight cardiovascular dermal developmental endocrine gastrointestinal hematological hepatic immunological metabolic musculoskeletal neurological ocular other_systemic renal reproductive'.split(' ');
+          properties.push.apply(properties, health_effects);
+
+          var storedFacilities = {};
+
+          return results.reduce(function(total, feature){
+            var name = feature.properties.facility_name;
+            if(!_.has(storedFacilities, name)){
+              storedFacilities[name] = feature;  // store it
+
+              feature.properties = _.pick(feature.properties, properties);   // filter out unneeded props
+              mapHealthEffectsToBoolean(feature.properties);
+              feature.properties.chemicals = [feature.properties.chemical_name]; //  create the chemicals array
+              total.push(feature);
+            } else { // already stored then don't re-create a marker
+              storedFacilities[name].properties.chemicals.push(feature.properties.chemical_name);
+            }
+
+            return total;
+          }, []);
+
+          function mapHealthEffectsToBoolean(properties){
+            _.each(health_effects, function(effect){
+              properties[effect] = properties[effect] === "YES" ? true : false;
+            });
+          }
+        }
       });
     }
 
@@ -90,9 +126,9 @@
 
     function initMap(tileLayers) {
       return L.map('map' , {
-        center: [30.3669563, -97.7926704],
+        center: [38.9338676, -77.1772604],
         zoom: 5,
-        minZoom: 5,
+        minZoom: 8,
         layers: [Map.tileLayers.streets]      // Renders the stuff
       });
     }
