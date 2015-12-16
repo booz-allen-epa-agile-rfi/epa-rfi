@@ -87,7 +87,7 @@ function MainController($scope, $routeParams, $location, Map) {
     }
 
     function formatBounds(boundsData){
-      return [boundsData._southWest.lat, boundsData._southWest.lng, boundsData._northEast.lat, boundsData._northEast.lat]
+      return [boundsData._southWest.lat, boundsData._southWest.lng, boundsData._northEast.lat, boundsData._northEast.lng]
     }
   }
 }
