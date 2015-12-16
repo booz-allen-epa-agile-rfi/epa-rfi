@@ -30,9 +30,9 @@
 
       function activate() {
         $scope.data = {};
-        $scope.$watch(function(){ return Map.data }, function(newValue){
-          $scope.data = newValue;
-          console.log('Aggregate map data is : ', $scope.data);
+        $scope.$watch(function(){ return Map.data.changed }, function(newValue){
+          $scope.data = Map.data;
+          Map.data.changed = false;
         });
       }
     }

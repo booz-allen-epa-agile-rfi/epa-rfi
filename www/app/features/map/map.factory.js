@@ -25,6 +25,7 @@
       var data = {};
       clear.call(data);
       data.clear = clear;
+      data.changed = false;
 
       function clear() {
         this.chemicals = {};
@@ -55,6 +56,7 @@
 
       data.populateFacilities = function(properties) {
         this.facilities[properties.facility_name] = properties;
+        this.changed = true;
       }
 
       data.populateChemicals = function(properties) {
@@ -63,10 +65,9 @@
         function addInformation(chemical) {
           if(!_.has(this.chemicals, chemical)){
             this.chemicals[chemical] = {};
-            this.chemicals[chemical][properties.facility_name] = properties;
-          } else {
-            this.chemicals[chemical][properties.facility_name]
           }
+          this.chemicals[chemical][properties.facility_name] = properties;
+          this.changed = true;
         }
       }
 
@@ -76,7 +77,8 @@
 
         function recordData(effect){
           if(properties[effect]){
-            this.healthEffects[properties.facility_name] = properties;
+            this.healthEffects[effect][properties.facility_name] = properties;
+            this.changed = true;
           }
         }
       }
