@@ -72,7 +72,7 @@ After confirming our initial design was consistent with our user stories and per
 ![paper proto 2](https://cloud.githubusercontent.com/assets/16209237/11874920/0a2a2934-a4b0-11e5-9fb7-617b3cdfbf2f.JPG)
 
 
-## Paper Prototyping Wireframes
+## Usability Testing
 
 We performed numerous small-scale, iterative rounds of usability testing both in-person and remotely through Google Hangout interviews. All of our usability testing was moderated because we were most interested in behavioral, qualitative feedback from our key target audiences. With our intense timeline, usability testing was important to validate and confirm our design assumptions. The results enabled us to provide more recommendations as we began to create higher-fidelity user interfaces for the TREEVIEW application.
 
