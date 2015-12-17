@@ -158,7 +158,6 @@ a.nav-red:hover{
 .btn-blue {
   background-color: #0071bc;
   color: white;
-  border-radius: 0px;
 }
 .btn-oval {
   padding: 4px 26px !important;
@@ -168,14 +167,12 @@ a.nav-red:hover{
 .btn-maptype {
   padding-right: 140px !important;
   margin: 5px 0px 12px -15px !important;
-  border-radius: 0px !important;
 }
 .btn-drop {
   padding-right: 120px;
 }
 .btn-year {
   margin: 5px 0px 12px !important;
-  border-radius: 0px !important;
 }
 .caret-maptype {
   position: absolute;
