@@ -14,14 +14,13 @@ General Development:
 Front-End:
 * Developers SHOULD review the Angular Style Guide - [Angular Style Guide](https://github.com/johnpapa/angular-styleguide)
 * Developers MUST write unit tests for angular code using Karma
-* Developers MUST fix JS HINT before committing code
 
 Continuous Integration:
 * Failed Builds MUST NOT be allowed to be deployed
 
 Continuous Monitoring:
 * Metrics MUST allow understanding of current system performance (i.e. CPU, Memory, Storage Space)
-* Alerts MUST be triggered upon the following security related events: Failed Login Attempts, etc.
+* Alerts MUST be triggered upon the following system-related events: Server Down, etc.
 
 Manual Testing:
 * Defects found SHOULD be reported as issues in GitHub

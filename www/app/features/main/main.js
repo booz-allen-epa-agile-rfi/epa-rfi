@@ -11,25 +11,39 @@ angular.module('gapFront')
   .controller('MainCtrl', MainController);
 
 /** @ngInject */
-function MainController($scope, $routeParams, $location, Map) {
-  $scope.state = $scope.state || {};
+function MainController($scope, $routeParams, $location, Map, Geocode) {
+  $scope.state = {
+    emissions: [],
+    reporting_year: [],
+    bounds: []
+  }
+  $scope.searchValue = '';
+
+  // Initialization
 
   if(!_.isEmpty($routeParams)) initState();
-  $scope.shareUrl = generateShareUrl();
+  $scope.shareUrl = generateShareUrl($scope.state);
 
+
+  // Map Search
+  $scope.searchSubmit = function(searchVal) {
+    Geocode.search(searchVal, grabState());
+  }
+
+  // On Submit of Filters
   $scope.submitMapFilters = function(e) {
     $scope.state = grabState();
     Map.update($scope.state);
-    $scope.shareUrl = generateShareUrl();
+    Map.clearHiddenFacilities();
+    $scope.shareUrl = generateShareUrl($scope.state);
   }
 
   // Generate the current url map state
-  function generateShareUrl() {
-    var currentState = grabState();
+  function generateShareUrl(state) {
     var url = 'http://treeview.io:9000' + '/' +
-      '?bounds=' + currentState.bounds.join('_') +
-      '&emissions=' + currentState.emissions.join('_') +
-      '&reporting_year=' + currentState.reporting_year.join('_')
+      '?bounds=' + state.bounds.join('_') +
+      '&emissions=' + state.emissions.join('_') +
+      '&reporting_year=' + state.reporting_year.join('_')
 
     return url;
   }
@@ -54,19 +68,17 @@ function MainController($scope, $routeParams, $location, Map) {
   }
 
   // Grabs the state and returns it in an object format
-
   function grabState() {
     var emissions = $('#emission').find('.active').map(function(){
-      return this.textContent.trim();
+      return this.textContent.trim().toLowerCase();
     }).get() || {};
 
-    // var startYear = $('#start-year').value();
-    // var endYear = $('#end-year').value();
-    // var reporting_year = _.range(startYear, endYear+1);
-    var reporting_year = [2014];
+    var startYear = $('#start-year').val();
+    var endYear = $('#end-year').val();
+    var reporting_year = _.range(parseInt(startYear), parseInt(endYear)+1);
 
-    if(emissions.indexOf('Total') >= 0 || ['Land', 'Water', 'Air'].every(allOptionsChosen)){
-      emissions = ['Total'];
+    if(emissions.indexOf('total') >= 0 || ['land', 'water', 'air'].every(allOptionsChosen)){
+      emissions = ['land', 'air', 'water'];
     }
 
     var bounds = formatBounds(Map.map.getBounds()) || {};
@@ -77,14 +89,12 @@ function MainController($scope, $routeParams, $location, Map) {
       bounds: bounds
     }
 
-    // Private
-
     function allOptionsChosen(option) {
       return emissions.indexOf(option) >= 0;
     }
 
     function formatBounds(boundsData){
-      return [boundsData._southWest.lat, boundsData._southWest.lng, boundsData._northEast.lat, boundsData._northEast.lat]
+      return [boundsData._southWest.lat, boundsData._southWest.lng, boundsData._northEast.lat, boundsData._northEast.lng]
     }
   }
 }

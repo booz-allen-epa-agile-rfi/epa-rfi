@@ -22,14 +22,18 @@ namespace :db do
       files << file2
 
       if Rails.env.production?
-        file3 = "#{Rails.root}/dbdata/epa_records_remaining1.txt"
-        file4 = "#{Rails.root}/dbdata/epa_records_remaining2.txt"
+        file3 = "#{Rails.root}/dbdata/epa_records_2012.txt"
+        file4 = "#{Rails.root}/dbdata/epa_records_2011.txt"
+        file5 = "#{Rails.root}/dbdata/epa_records_2010.txt"
 
-        file3 = '/usr/src/app/dbdata/epa_records_remaining1.txt' unless File.exists? file3
-        file4 = '/usr/src/app/dbdata/epa_records_remaining2.txt' unless File.exists? file4
+        file3 = '/usr/src/app/dbdata/epa_records_2012.txt' unless File.exists? file3
+        file4 = '/usr/src/app/dbdata/epa_records_2011.txt' unless File.exists? file4
+        file5 = '/usr/src/app/dbdata/epa_records_2010.txt' unless File.exists? file5
+
 
         files << file3
         files << file4
+        files << file5
       end
 
       def copy_sql(file)

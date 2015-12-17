@@ -28,8 +28,6 @@ This includes all documentation, including photographs, screenshots, drawings, a
 
 [Human Centered Design](./Human-Centered-Design.md)
 
-[Pivot or Persevere Decision](./Pivot-or-Persevere-Decision.md)
-
 [U.S. Digital Services Playbook Evidence](./U.S.-Digital-Services-Playbook-Evidence.md)
 
 [Usability Testing](./Usability-Testing.md)

@@ -27,8 +27,5 @@ Agile software development is not just a methodology for us. It's our engineerin
 ![git_flow_v1](https://cloud.githubusercontent.com/assets/12210910/8392524/11919d5e-1cb3-11e5-97ce-5cd08defcd9b.png)
 
 
-![how_to_be_agile_v1](https://cloud.githubusercontent.com/assets/12210910/8392523/11912bd0-1cb3-11e5-8650-48dfce76d320.png)
-
-
 ![human_centered_design_v1](https://cloud.githubusercontent.com/assets/12210910/8392525/11940b48-1cb3-11e5-8fe7-3f79af83f7c9.png)
 
