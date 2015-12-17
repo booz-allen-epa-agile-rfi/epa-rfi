@@ -89,21 +89,18 @@
       }
 
       data.populateHealthEffects = function(properties){
-        var healthEffects = Object.keys(this.healthEffects);
-        _.each(healthEffects, recordData.bind(this));
+        _.each(properties.healthEffects, recordData.bind(this));
 
         function recordData(effect){
-          if(properties[effect]){
-            _.each(properties.chemicals, updateChemicalCount.bind(this));
-            this.healthEffects[effect]['facilities'].push(properties);  // record the facilities
-            this.changed = true;
+          _.each(properties.chemicals, updateChemicalCount.bind(this)); // Make call to update all chemicals associated
+          this.healthEffects[effect]['facilities'].push(properties);  // record the facilities
+          this.changed = true;
 
-            function updateChemicalCount(chemical) {
-              if(_.has(this.healthEffects[effect]['chemicals'], chemical)) {
-                this.healthEffects[effect]['chemicals'][chemical]++;                
-              } else {
-                this.healthEffects[effect]['chemicals'][chemical] = 1;
-              }
+          function updateChemicalCount(chemical) {
+            if(_.has(this.healthEffects[effect]['chemicals'], chemical)) {
+              this.healthEffects[effect]['chemicals'][chemical]++;
+            } else {
+              this.healthEffects[effect]['chemicals'][chemical] = 1;
             }
           }
         }
@@ -166,7 +163,7 @@
               feature.properties.longitude = Number(feature.properties.longitude);
               feature.properties.healthEffects = mapHealthEffectsToBoolean(feature.properties);
               feature.properties.chemicals = [feature.properties.chemical_name]; //  create the chemicals array
-              
+
               total.push(feature);
             } else { // already stored then don't re-create a marker
               storedFacilities[name].properties.chemicals.push(feature.properties.chemical_name);
