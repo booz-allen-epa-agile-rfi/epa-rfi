@@ -57,7 +57,7 @@
 
       <div ng-switch-when="Facilities">
         <div href="#" class="list-group-item pad-bottom" ng-repeat="name in data.facilities.names | orderBy: name track by $index">
-          <span class="xs-margin-right"><input type="radio" name="filterGroup" value="{{ name }}"></span>{{ name | startCase }}
+          <span class="xs-margin-right"><input type="radio" name="filterGroup" value="{{ name }}" ng-click="applyFilter('facilities', name)"></span>{{ name | startCase }}
           <div class="pad-icons">
             <div class="col-md-3">
               <img ng-if="hasAirEmissions(name)" src="../../../assets/epa-icons/Icon_Air.png" alt="Air">
