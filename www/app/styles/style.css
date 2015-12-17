@@ -139,6 +139,11 @@
   background-color: black;
   color: white;
 }
+.btn-navy {
+  background-color: #112e51;
+  color: white;
+}
+
 .btn-white {
   background-color: white;
   color: #0071bc;
@@ -151,6 +156,7 @@
 .btn-oval {
   padding: 4px 26px !important;
   border-radius: 20px !important;
+  margin-top: 5px !important;
 }
 .btn-maptype {
   padding-right: 140px !important;
