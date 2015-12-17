@@ -2,7 +2,7 @@
 
 Prototype URL: https://treeview.io 
 
-Please evaluate our development branch :
+Please evaluate our development :
 
 https://github.com/booz-allen-epa-agile-rfi/epa-rfi
 
