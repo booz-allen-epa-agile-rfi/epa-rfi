@@ -59,6 +59,10 @@
   vertical-align: middle;
   margin-left: 5px !important;
 }
+a.nav-red:hover{
+  color: red;
+  text-decoration: none;
+}
 
 /* MARGINS & PADDINGS */
 /*-------------------------------------------------- */
@@ -85,11 +89,17 @@
 .margin-top {
   margin-top: 15px;
 }
+.lg-margin-top {
+  margin-top: 40px;
+}
 .margin-bottom {
   margin-bottom: 10px;
 }
 .lg-margin-bottom {
   margin-bottom: 20px;
+}
+.xl-margin-bottom {
+  margin-bottom: 60px;
 }
 .pad-bottom {
   padding-bottom: 15px;
@@ -136,6 +146,14 @@
   background-color: black;
   color: white;
 }
+.btn-navy {
+  background-color: #112e51;
+  color: white;
+}
+.btn-navy:hover {
+  background-color: #205493;
+  color: white;
+}
 .btn-white {
   background-color: white;
   color: #0071bc;
@@ -143,31 +161,40 @@
 .btn-blue {
   background-color: #0071bc;
   color: white;
-  border-radius: 0px;
 }
 .btn-oval {
   padding: 4px 26px !important;
   border-radius: 20px !important;
+  margin-top: 5px !important;
 }
 .btn-maptype {
   padding-right: 140px !important;
   margin: 5px 0px 12px -15px !important;
-  border-radius: 0px !important;
 }
 .btn-drop {
   padding-right: 120px;
 }
 .btn-year {
   margin: 5px 0px 12px !important;
-  border-radius: 0px !important;
 }
-.caret-maptype {
+.caret-maptype,
+.caret-details {
   position: absolute;
   left: 90%;
   top: 45%;
 }
 .caret-year {
   margin-left: 15px !important;
+}
+.info-style {
+  color: #205493;
+}
+.info-style:hover {
+  color: #0071bc;
+}
+.info-style + .tooltip > .tooltip-inner {
+  background-color: #205493;
+  color: white;
 }
 
 /* TEXT */
@@ -193,7 +220,7 @@
   line-height: 1.25;
 }
 .med-line-height {
-  line-height: 1.5;
+  line-height: 1.75;
 }
 .dropdown-text {
   margin-top: 12px;
@@ -212,8 +239,12 @@
 /* COLORS */
 /*-------------------------------------------------- */
 
-.darkgray {
-  background-color: darkgray;
+.lightgray {
+  background-color: #f1f1f1;
+}
+.gray-section {
+  background: #f4f4f4;
+  margin-top: 60px;
 }
 
 /* RIGHT INFORMATION COLUMN */
@@ -272,3 +303,29 @@
 .treeview-logo {
   width: 70px;
 }
+
+/* Team Page */
+/*-------------------------------------------------- */
+
+.team-member {
+  text-align: center;
+  margin: 0 0 40px;
+}
+.team-member img {
+  margin: auto;
+}
+.img-circle {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  width: 130px;
+  height: 130px;
+}
+.green-line {
+  width: 60px;
+  height: 1px;
+  margin: 40px auto 0;
+  border-bottom: 2px solid #1ab394;
+}
+

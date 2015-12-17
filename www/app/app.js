@@ -27,9 +27,9 @@ angular
         templateUrl: 'features/main/main.html',
         controller: 'MainCtrl'
       })
-      // .when('/about', {
-      //   templateUrl: 'features/routeView/routeView.html'
-      // })
+      .when('/about', {
+         templateUrl: 'features/about/about.html'
+      })
       .otherwise({
         redirectTo: '/'
       });
