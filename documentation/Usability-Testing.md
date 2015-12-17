@@ -1,6 +1,8 @@
 # Usability Testing
 
-The first question we asked in our design kick-off was very simple: "Who is this application for?". This customer focus started at the very beginning of our challenge, and became intertwined in the fabric of our development process. A great deal of our human centered design involved usability testing and market research. We spent a large portion of our time getting to know the users by creating personas that WILL be using the product. While this time allocation may have been different than other competitors, we believe that is crucial to designing a product that target audiences not only CAN use, but also WILL use.
+The first question we asked in our design kick-off was very simple: **"Who is this application for?"**
+
+This customer focus started at the very beginning of our challenge, and became intertwined in the fabric of our development process. A great deal of our human centered design involved usability testing and market research. We spent a large portion of our time getting to know the users by creating personas that WILL be using the product. While this time allocation may have been different than other competitors, we believe that is crucial to designing a product that target audiences not only CAN use, but also WILL use.
 
 The overall team had the opportunity to discuss the necessary data that will be focused for the User Stories and began thinking of the potential users who would be utilizing the application. After the meeting the team decided to target the “Concerned Citizen” that would be separated into four Personas: The Concerned Mother, The Environmentalist, The Academic and The Working Professional.
 
