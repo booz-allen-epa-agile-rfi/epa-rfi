@@ -20,5 +20,5 @@ Go to https://docs.docker.com/ and install docker on your computer.
 * Run `source build.sh`. This will run front end, api, and database containers. Once all containers are running, you can put localhost:3000 in the browser to see the website. 
 
 Since we are using the name flag, you may need to clear out the docker container on subsequent runs.  The following can be used to clean-up between runs:
-* Run `source cleanup.sh`. This will stop and remove the containers.
+* Run `source cleanup.sh`. This will stop and remove the containers. 
 
