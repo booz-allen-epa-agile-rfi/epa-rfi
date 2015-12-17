@@ -151,7 +151,7 @@
         // Private
 
         function formatData(results) {
-          var health_effects = 'cercla_chemicals haps priority_chemicals osha_chemicals body_weight cardiovascular dermal developmental endocrine gastrointestinal hematological hepatic immunological metabolic musculoskeletal neurological ocular other_systemic renal reproductive'.split(' ');
+          var HEALTH_EFFECTS = 'cercla_chemicals haps priority_chemicals osha_chemicals body_weight cardiovascular dermal developmental endocrine gastrointestinal hematological hepatic immunological metabolic musculoskeletal neurological ocular other_systemic renal reproductive'.split(' ');
 
           var storedFacilities = {};
 
@@ -161,7 +161,7 @@
               storedFacilities[name] = feature;  // store it in hash
 
               feature.properties = _.omit(feature.properties, 'latitude', 'longitude')
-              mapHealthEffectsToBoolean(feature.properties);
+              feature.properties.healthEffects = mapHealthEffectsToBoolean(feature.properties);
               feature.properties.chemicals = [feature.properties.chemical_name]; //  create the chemicals array
               total.push(feature);
             } else { // already stored then don't re-create a marker
@@ -172,9 +172,19 @@
           }, []);
 
           function mapHealthEffectsToBoolean(properties){
-            _.each(health_effects, function(effect){
-              properties[effect] = properties[effect] === "YES" ? true : false;
-            });
+            var healthEffects = [];
+
+            // Loop through each health effect and only keep relevant effects
+            // Store in health effects hash and delete other information
+            for(var i = 0; i < HEALTH_EFFECTS.length; i++){
+              var effect = HEALTH_EFFECTS[i];
+              if(properties[effect] === "YES"){
+                healthEffects.push(effect);
+              }
+              delete properties[effect]
+            }
+
+            return healthEffects;
           }
         }
       });
