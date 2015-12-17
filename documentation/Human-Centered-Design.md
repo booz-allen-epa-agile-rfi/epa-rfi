@@ -2,7 +2,7 @@
 
 During this challenge, we used 8 core Human Centered Design (HCD) techniques: (1) Visioning exercise to brainstorm target groups, features/services to meet their needs; (2) Personas; (3) Journey Mapping; (4) User Stories; (5) Sketching screen designs; (6) Paper Prototyping with Wireframes; (7) Heuristic Reviews based on researched best practices and industry standards for designing for real, live people; (8) Usability testing in 2 small-scale iterative rounds of moderated in-person and remote testing. Here is an overview of our lean HCD process:
 
-![human_centered_design_v2](https://cloud.githubusercontent.com/assets/13038047/8524024/756c6eac-23c6-11e5-9319-0fc5a4a6e278.png)
+![hcd_illustration updated](https://cloud.githubusercontent.com/assets/16209237/11879270/588c57e2-a4c8-11e5-976e-5f51d3eff43d.png)
 
 ## Learning about the Data
 We kicked off the first day with icebreakers and a data show-and-tell session from the product owners. The product owners went through the data by using Tableau, which displayed visualization on toxic releases, health effects and other data sets. The overall team had the opportunity to discuss the necessary data that will be focused for the User Stories and began to discuss potential users who would be utilizing the application. After the meeting the team decided to target the “Concerned Citizen” that would be separated into four Personas: The Concerned Mother, The Environmentalist, The Academic and The Working Professional.
