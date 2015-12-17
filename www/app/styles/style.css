@@ -59,6 +59,10 @@
   vertical-align: middle;
   margin-left: 5px !important;
 }
+a.nav-red:hover{
+  color: red;
+  text-decoration: none;
+}
 
 /* MARGINS & PADDINGS */
 /*-------------------------------------------------- */
@@ -84,6 +88,9 @@
 }
 .margin-top {
   margin-top: 15px;
+}
+.lg-margin-top {
+  margin-top: 40px;
 }
 .margin-bottom {
   margin-bottom: 10px;
@@ -139,6 +146,11 @@
   background-color: black;
   color: white;
 }
+.btn-navy {
+  background-color: #112e51;
+  color: white;
+}
+
 .btn-white {
   background-color: white;
   color: #0071bc;
@@ -151,6 +163,7 @@
 .btn-oval {
   padding: 4px 26px !important;
   border-radius: 20px !important;
+  margin-top: 5px !important;
 }
 .btn-maptype {
   padding-right: 140px !important;
@@ -196,7 +209,7 @@
   line-height: 1.25;
 }
 .med-line-height {
-  line-height: 1.5;
+  line-height: 1.75;
 }
 .dropdown-text {
   margin-top: 12px;

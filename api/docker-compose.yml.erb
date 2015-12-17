@@ -12,3 +12,21 @@ backend:
     - RAILS_ENV=docker
   links:
     - db
+cadvisor:
+  image: google/cadvisor:latest
+  container_name: 'cadvisor'
+  ports:
+    - 8080:8080
+  volumes: 
+    - /:/rootfs:ro
+    - /var/run:/var/run:rw
+    - /sys:/sys:ro
+    - /var/lib/docker/:/var/lib/docker:ro
+prometheus:
+  image: <%= ENV['REGISTRY'] ||= '52.34.113.202' %>/prometheus
+  container_name: 'prometheus'
+  entrypoint: /bin/prometheus -config.file=/etc/prometheus/prometheus.yml -log.level=debug
+  ports:
+    - 9090:9090
+  volumes:
+    - $PWD/prometheus/:/etc/prometheus/:ro
