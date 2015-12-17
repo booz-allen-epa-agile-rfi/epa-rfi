@@ -59,6 +59,10 @@
   vertical-align: middle;
   margin-left: 5px !important;
 }
+a.nav-red:hover{
+  color: red;
+  text-decoration: none;
+}
 
 /* MARGINS & PADDINGS */
 /*-------------------------------------------------- */
