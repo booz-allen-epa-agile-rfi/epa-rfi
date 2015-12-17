@@ -60,7 +60,7 @@
 
         function initHealthEffectHash() {
           return {
-            chemicals: [],
+            chemicals: {},
             facilities: []
           }
         }
@@ -92,9 +92,17 @@
 
         function recordData(effect){
           if(properties[effect]){
-            this.healthEffects[effect]['chemicals'] = _.union(this.healthEffects[effect]['chemicals'], properties.chemicals)  // record the chemicals
+            _.each(properties.chemicals, updateChemicalCount.bind(this));
             this.healthEffects[effect]['facilities'].push(properties);  // record the facilities
             this.changed = true;
+
+            function updateChemicalCount(chemical) {
+              if(_.has(this.healthEffects[effect]['chemicals'], chemical)) {
+                this.healthEffects[effect]['chemicals'][chemical]++;                
+              } else {
+                this.healthEffects[effect]['chemicals'][chemical] = 1;
+              }
+            }
           }
         }
       }
