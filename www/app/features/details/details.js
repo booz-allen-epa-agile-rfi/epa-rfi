@@ -67,6 +67,9 @@
           var choices = ['Health Effects', 'Facilities', 'Chemicals'];
           $scope.selectedResult = newResult;
           $scope.otherResults = _.without(choices, newResult);
+
+          // Show all the hidden facilities on switch
+          Map.showAll();
         }
 
         function createEmissionCheck(emissionType){
