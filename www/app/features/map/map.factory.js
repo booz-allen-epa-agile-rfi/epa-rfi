@@ -220,6 +220,13 @@
         zoom: 5,
         minZoom: 8,
         layers: [Map.tileLayers.streets]
+      }).on('layeradd', function(layerEvent){
+        // Only add ID if the layer is a marker (has a feature hash)
+        // Skips tileLayers, controls, etc
+        if(!_.isUndefined(layerEvent.layer.feature)){
+          var id = layerEvent.layer._leaflet_id;
+          layerEvent.layer.feature.properties.id = id;
+        }
       });
     }
   }
