@@ -38,9 +38,15 @@
         $scope.keys = getKeys;
 
         // Results toggling 
-        $scope.selectedResult = 'Health Effects';
+        $scope.selectedResult = 'Facilities';
         $scope.otherResults = ['Facilities', 'Chemicals'];
         $scope.toggleSelectedResult = toggleSelectedResult;
+
+        // Emission Toggling
+        $scope.hasAirEmissions = createEmissionCheck('total_air_emissions');
+        $scope.hasGroundEmissions = createEmissionCheck('total_on_site_land_releases');
+        $scope.hasUndergroundEmissions = createEmissionCheck('total_underground_injection');
+        $scope.hasWaterEmissions = createEmissionCheck('total_surface_water_discharge');
 
         // Watch function to update Scope's data when Map factory has new data
         $scope.$watch(function(){ return Map.data.changed }, function(newValue){
@@ -60,6 +66,12 @@
           var choices = ['Health Effects', 'Facilities', 'Chemicals'];
           $scope.selectedResult = newResult;
           $scope.otherResults = _.without(choices, newResult);
+        }
+
+        function createEmissionCheck(emissionType){
+          return function(facilityName) {
+            return Map.data.facilities.properties[facilityName][emissionType] > 0;
+          }
         }
       }
     }
