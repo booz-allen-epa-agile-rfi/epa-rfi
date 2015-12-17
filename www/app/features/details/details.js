@@ -48,9 +48,6 @@
         $scope.hasUndergroundEmissions = createEmissionCheck('total_underground_injection');
         $scope.hasWaterEmissions = createEmissionCheck('total_surface_water_discharge');
 
-        // Panel Filtering
-        $scope.selectedFilter = getSelectedFilter();
-
         // Watch function to update Scope's data when Map factory has new data
         $scope.$watch(function(){ return Map.data.changed }, function(newValue){
           $scope.data = Map.data;
@@ -75,10 +72,6 @@
           return function(facilityName) {
             return Map.data.facilities.properties[facilityName][emissionType] > 0;
           }
-        }
-
-        function getSelectedFilter(){
-          return $('input:radio[name="filterGroup"]:checked').val();
         }
       }
     }

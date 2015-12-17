@@ -15,9 +15,8 @@
     Map.update = update;
     Map.map = initMap();
 
+    Map.hideLayer = hideLayer;
     Map.loaded = true;
-
-    window.data = Map.data;
 
     return Map;
 
@@ -123,9 +122,6 @@
         delete results;       // Clear out the results after being formatted
         Map.data.clear();     // Clear out the data hash that links to each feature
 
-        console.log('data size: ', filteredResult.features.length);
-        console.log('filtered data: ', filteredResult.features);
-
         Map.dataLayers.geojson = L.geoJson(filteredResult, {
           onEachFeature: function(feature, layer) {
             var popUpHtml = '<b>Facility Name : ' + feature.properties['facility_name'] + "</b><br/>" +
@@ -228,6 +224,12 @@
           layerEvent.layer.feature.properties.id = id;
         }
       });
+    }
+
+    function hideLayer(facilityProps) {
+      var facilityId = facilityProps.id;
+      var targetLayer = Map.dataLayers.geojson.getLayer(''+facilityId);
+      targetLayer.setOpacity(0);
     }
   }
 })();
