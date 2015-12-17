@@ -28,7 +28,7 @@ In our first round of usability testing, we used the wireframes to get insight o
 
 ## Round 2 - High Fidelity Mockup Usability Testing
 
-Once the wireframes were finalized, we conducted our second round of usability testing on our mockups. We had the opportunity to do remote and in-person usability testing that provided us results that were used for recommendations on our designs. On this round of usability testing we had mix reviews on the application: Some users was overwhelmed at the application and wanted to click out. Two users wanted additional context before using the search feature and avoided the “How it Works” button. With these results, we provided recommendations to fix the design and utilized on our next iterations. At this point, the team was battling with data sets on the back-end development and was focused on that portion of the application. Finally, we drafted our proposed changes and documented 
+Once the wireframes were finalized, we conducted our second round of usability testing on our mockups. We had the opportunity to do remote and in-person usability testing that provided us results that were used for recommendations on our designs. On this round of usability testing we had mix reviews on the application: Some users was overwhelmed at the application and wanted to click out. Two users wanted additional context before using the search feature and avoided the “How it Works” button. With these results, we provided recommendations to fix the design and utilized on our next iterations. At this point, the team was battling with data sets on the back-end development and was focused on that portion of the application. 
 
 ![user test 1](https://cloud.githubusercontent.com/assets/16209237/11874638/c6d1b2fc-a4ae-11e5-913d-c23905b61e46.JPG)
 
@@ -38,5 +38,13 @@ Once the wireframes were finalized, we conducted our second round of usability t
 
 ![user test 4](https://cloud.githubusercontent.com/assets/16209237/11874628/bf1dd28e-a4ae-11e5-9bef-33133114b7a5.png)
 
+Finally, we reviewed our data and draft some potential features to address concerns uncovered in our usability testing:
 
+* Adjust the language of this action to indicate clicking a county affects the map. 
+* Provide a clear context on “Search Counties With The Most Chemical Exposures”
+* Place the “How it Works” button in the top navigation and in the footer. 
+* Change the language of the about page to “About The Team” 
+* Provide a tool tip pop up when first visiting the site to direct users to where they can learn how to use the web page. Store a cookie, so only first time visitors receive the pop up. 
+* Add description on why the user needs to put their Zip code.
+* Do another round of heuristics evalutations to make sure that it goes by industry standards.
 
