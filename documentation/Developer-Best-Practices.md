@@ -14,7 +14,6 @@ General Development:
 Front-End:
 * Developers SHOULD review the Angular Style Guide - [Angular Style Guide](https://github.com/johnpapa/angular-styleguide)
 * Developers MUST write unit tests for angular code using Karma
-* Developers MUST fix JS HINT before committing code
 
 Continuous Integration:
 * Failed Builds MUST NOT be allowed to be deployed
