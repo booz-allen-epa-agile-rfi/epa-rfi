@@ -50,6 +50,8 @@
           console.log(Map.data);
         });
 
+        // Private
+
         function getKeys(obj) {
           return !_.isUndefined(obj) ? Object.keys(obj) : [];
         }

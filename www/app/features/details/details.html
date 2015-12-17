@@ -16,45 +16,92 @@
         </ul>
       </div>
     </div>
-    <div class="list-group-item">
-      <span class="xs-margin-right"><input type="radio" value="all-health-facilities" checked></span>All Health Effects
-    </div>
-    <div href="#" class="list-group-item pad-bottom" ng-repeat="effect in keys(data.healthEffects) | orderBy: effect track by $index">
-      <span class="xs-margin-right"><input type="radio" value="{{ effect }}"></span>{{ effect | startCase }}
-<!--       <div class="pad-icons">
-        <div class="col-md-3"><img src="../../../assets/epa-icons/Icon_Air.png" alt="Air"></div>
-        <div class="col-md-3"><img src="../../../assets/epa-icons/Icon_Ground.png" alt="Ground"></div>
-        <div class="col-md-3"><img src="../../../assets/epa-icons/Icon_Underground.png" alt="Underground"></div>
-        <div class="col-md-3"><img src="../../../assets/epa-icons/Icon_Water.png" alt="Water"></div>
+
+    <div ng-switch="selectedResult">
+      <div ng-switch-when="Health Effects">
+        <div class="list-group-item" ng-show="selectedResult === 'Health Effects'">
+          <span class="xs-margin-right"><input type="radio" value="all-health-facilities" checked></span>All Health Effects
+        </div>
+        <div href="#" class="list-group-item pad-bottom" ng-repeat="effect in keys(data.healthEffects) | orderBy: effect track by $index">
+          <span class="xs-margin-right"><input type="radio" value="{{ effect }}"></span>{{ effect | startCase }}
+        <!--       <div class="pad-icons">
+            <div class="col-md-3"><img src="../../../assets/epa-icons/Icon_Air.png" alt="Air"></div>
+            <div class="col-md-3"><img src="../../../assets/epa-icons/Icon_Ground.png" alt="Ground"></div>
+            <div class="col-md-3"><img src="../../../assets/epa-icons/Icon_Underground.png" alt="Underground"></div>
+            <div class="col-md-3"><img src="../../../assets/epa-icons/Icon_Water.png" alt="Water"></div>
+          </div>
+        -->     <p class="well well-box darkgray">Associated Chemicals: <span class="text-blue">{{ keys(data.healthEffects[effect].chemicals).length }}</span>
+            <span class="btn-r">
+              <a data-toggle="collapse" data-target="#collapseChemicals-{{$index}}" aria-expanded="false" aria-controls="collapseChemicals">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+              </a>
+              <div class="collapse" id="collapseChemicals-{{$index}}">
+                <div class="well pad-10">
+                  <p class="text-sm">
+                    <span ng-repeat="chemical in keys(data.healthEffects[effect].chemicals) | orderBy: chemical">{{ chemical }} ({{ data.healthEffects[effect].chemicals[chemical] }})<br></span>
+                  </p>
+                </div>
+              </div>
+            </span>
+          </p>
+          <p class="well well-box darkgray">Associated Facilities: <span class="text-blue">{{ data.healthEffects[effect].facilities.length }}</span>
+            <span class="btn-r">
+              <a data-toggle="collapse" data-target="#collapseFacilities-{{$index}}" aria-expanded="false" aria-controls="collapseFacilities">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+              </a>
+              <div class="collapse" id="collapseFacilities-{{$index}}">
+                <div class="well pad-10">
+                  <p class="text-sm">
+                    <span ng-repeat="facility in data.healthEffects[effect].facilities | orderBy:'facility_name'">{{ facility.facility_name }} <br></span>
+                  </p>
+                </div>
+              </div>
+            </span>
+          </p>
+        </div>
       </div>
--->     <p class="well well-box darkgray">Associated Chemicals: <span class="text-blue">{{ keys(data.healthEffects[effect].chemicals).length }}</span>
-        <span class="btn-r">
-          <a data-toggle="collapse" data-target="#collapseChemicals-{{$index}}" aria-expanded="false" aria-controls="collapseChemicals">
-            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-          </a>
-          <div class="collapse" id="collapseChemicals-{{$index}}">
-            <div class="well pad-10">
-              <p class="text-sm">
-                <span ng-repeat="chemical in keys(data.healthEffects[effect].chemicals) | orderBy: chemical">{{ chemical }} ({{ data.healthEffects[effect].chemicals[chemical] }})<br></span>
-              </p>
-            </div>
+      <div ng-switch-when="Facilities">
+        <div href="#" class="list-group-item pad-bottom" ng-repeat="name in data.facilities.names | orderBy: name track by $index">
+          <span class="xs-margin-right"><input type="radio" value="{{ name }}"></span>{{ name | startCase }}
+        <!--       <div class="pad-icons">
+            <div class="col-md-3"><img src="../../../assets/epa-icons/Icon_Air.png" alt="Air"></div>
+            <div class="col-md-3"><img src="../../../assets/epa-icons/Icon_Ground.png" alt="Ground"></div>
+            <div class="col-md-3"><img src="../../../assets/epa-icons/Icon_Underground.png" alt="Underground"></div>
+            <div class="col-md-3"><img src="../../../assets/epa-icons/Icon_Water.png" alt="Water"></div>
           </div>
-        </span>
-      </p>
-      <p class="well well-box darkgray">Associated Facilities: <span class="text-blue">{{ data.healthEffects[effect].facilities.length }}</span>
-        <span class="btn-r">
-          <a data-toggle="collapse" data-target="#collapseFacilities-{{$index}}" aria-expanded="false" aria-controls="collapseFacilities">
-            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-          </a>
-          <div class="collapse" id="collapseFacilities-{{$index}}">
-            <div class="well pad-10">
-              <p class="text-sm">
-                <span ng-repeat="facility in data.healthEffects[effect].facilities | orderBy:'facility_name'">{{ facility.facility_name }} <br></span>
-              </p>
-            </div>
-          </div>
-        </span>
-      </p>
+        -->     <p class="well well-box darkgray">Associated Chemicals: <span class="text-blue">{{ data.facilities.properties[name].chemicals.length }}</span>
+            <span class="btn-r">
+              <a data-toggle="collapse" data-target="#collapseChemicals-{{$index}}" aria-expanded="false" aria-controls="collapseChemicals">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+              </a>
+              <div class="collapse" id="collapseChemicals-{{$index}}">
+                <div class="well pad-10">
+                  <p class="text-sm">
+                    <span ng-repeat="chemical in data.facilities.properties[name].chemicals | orderBy: chemical">{{ chemical }}<br></span>
+                  </p>
+                </div>
+              </div>
+            </span>
+          </p>
+          <p class="well well-box darkgray">Associated Health Effects: <span class="text-blue">{{ data.facilities.properties[name].healthEffects.length }}</span>
+            <span class="btn-r">
+              <a data-toggle="collapse" data-target="#collapseFacilities-{{$index}}" aria-expanded="false" aria-controls="collapseFacilities">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+              </a>
+              <div class="collapse" id="collapseFacilities-{{$index}}">
+                <div class="well pad-10">
+                  <p class="text-sm">
+                    <span ng-repeat="effect in data.facilities.properties[name].healthEffects | orderBy:'effect'">{{ effect | startCase }} <br></span>
+                  </p>
+                </div>
+              </div>
+            </span>
+          </p>
+        </div>
+      </div>
+      <div ng-switch-when="Chemicals">
+        <h3>Chemicals!</h3>
+      </div>
     </div>
   </div>
 </div> <!-- /column
