@@ -20,7 +20,7 @@ Continuous Integration:
 
 Continuous Monitoring:
 * Metrics MUST allow understanding of current system performance (i.e. CPU, Memory, Storage Space)
-* Alerts MUST be triggered upon the following security related events: Failed Login Attempts, etc.
+* Alerts MUST be triggered upon the following system-related events: Server Down, etc.
 
 Manual Testing:
 * Defects found SHOULD be reported as issues in GitHub
