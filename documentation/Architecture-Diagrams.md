@@ -34,8 +34,7 @@ The team selected Jenkins over other options for the following reasons:
 - Docker Integration - Jenkins allowed the construction of Docker images within the build server rather than having to leverage an external container build service. 
 
 In the interest of meeting maximizing the value of our open source Dev-Ops stack, all of our build scripts were contributed to the repository:
-https://github.com/booz-allen-agile-delivery/ads-final/tree/development/bin/jenkins
-
+https://github.com/booz-allen-epa-agile-rfi/epa-rfi/tree/master/bin/jenkins
 
 
 # Physical Deployment Model:
@@ -46,7 +45,7 @@ https://github.com/booz-allen-agile-delivery/ads-final/tree/development/bin/jenk
 
 #Licenses
 
-We used all open source technologies and open sourced our LabelCRAFT prototype.
+We used all open source technologies and open sourced our TREEVIEW prototype.
 
 https://github.com/booz-allen-epa-agile-rfi/epa-rfi/blob/master/LICENSE
 
