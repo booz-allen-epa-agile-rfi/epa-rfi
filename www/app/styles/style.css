@@ -85,6 +85,9 @@
 .margin-top {
   margin-top: 15px;
 }
+.lg-margin-top {
+  margin-top: 40px;
+}
 .margin-bottom {
   margin-bottom: 10px;
 }
@@ -196,7 +199,7 @@
   line-height: 1.25;
 }
 .med-line-height {
-  line-height: 1.5;
+  line-height: 1.75;
 }
 .dropdown-text {
   margin-top: 12px;
