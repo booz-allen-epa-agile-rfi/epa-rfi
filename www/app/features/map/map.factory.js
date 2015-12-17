@@ -9,27 +9,118 @@
   function MapFactory(MapData, API_TOKEN) {
     var Map = {};
 
+    Map.data = initStorage();  // hash to properties
     Map.tileLayers = initMapTiles();
     Map.dataLayers = {};
     Map.update = update;
     Map.map = initMap();
 
+    Map.hideLayer = hideLayer;
     Map.loaded = true;
 
     return Map;
 
     // Private
 
+    function initStorage(){
+      var data = {};
+      clear.call(data);
+      data.clear = clear;
+      data.changed = false;
+
+      function clear() {
+        this.chemicals = {};
+        this.facilities = {
+          names: [],
+          properties: {}
+        };
+        this.healthEffects = {
+          cercla_chemicals: initHealthEffectHash(),
+          haps: initHealthEffectHash(),
+          priority_chemicals: initHealthEffectHash(),
+          osha_chemicals: initHealthEffectHash(),
+          body_weight: initHealthEffectHash(),
+          cardiovascular: initHealthEffectHash(),
+          dermal: initHealthEffectHash(),
+          developmental: initHealthEffectHash(),
+          endocrine: initHealthEffectHash(),
+          gastrointestinal: initHealthEffectHash(),
+          hematological: initHealthEffectHash(),
+          hepatic: initHealthEffectHash(),
+          immunological: initHealthEffectHash(),
+          metabolic: initHealthEffectHash(),
+          musculoskeletal: initHealthEffectHash(),
+          neurological: initHealthEffectHash(),
+          ocular: initHealthEffectHash(),
+          other_systemic: initHealthEffectHash(),
+          renal: initHealthEffectHash(),
+          reproductive: initHealthEffectHash()
+        };
+
+        function initHealthEffectHash() {
+          return {
+            chemicals: {},
+            facilities: []
+          }
+        }
+      }
+
+      data.populateFacilities = function(properties) {
+        this.facilities.names.push(properties.facility_name);
+        this.facilities.properties[properties.facility_name] = properties;
+        this.changed = true;
+      }
+
+      data.populateChemicals = function(properties) {
+        _.each(properties.chemicals, addInformation.bind(this));
+
+        function addInformation(chemical) {
+          if(!_.has(this.chemicals, chemical)){
+            this.chemicals[chemical] = {
+              facilities: [],
+              healthEffects: []
+            };
+          }
+          this.chemicals[chemical]['facilities'].push(properties);
+          this.chemicals[chemical]['healthEffects'] = _.union(this.chemicals[chemical]['healthEffects'], properties.healthEffects);
+          this.changed = true;
+        }
+      }
+
+      data.populateHealthEffects = function(properties){
+        _.each(properties.healthEffects, recordData.bind(this));
+
+        function recordData(effect){
+          _.each(properties.chemicals, updateChemicalCount.bind(this)); // Make call to update all chemicals associated
+          this.healthEffects[effect]['facilities'].push(properties);  // record the facilities
+          this.changed = true;
+
+          function updateChemicalCount(chemical) {
+            if(_.has(this.healthEffects[effect]['chemicals'], chemical)) {
+              this.healthEffects[effect]['chemicals'][chemical]++;
+            } else {
+              this.healthEffects[effect]['chemicals'][chemical] = 1;
+            }
+          }
+        }
+      }
+
+      return data;
+    }
+
     function update(queryParams) {
       Map.loaded = false;
-      if(Map.dataLayers.geojson) Map.dataLayers.geojson.clearLayers();
+      if(Map.dataLayers.geojson){
+        Map.dataLayers.geojson.clearLayers();
+      }
 
       MapData.search.save(queryParams).$promise.then(function(results) {
         var filteredResult = {
           type: "FeatureCollection",
           features: formatData(results.features)
         }
-        delete results;
+        delete results;       // Clear out the results after being formatted
+        Map.data.clear();     // Clear out the data hash that links to each feature
 
         Map.dataLayers.geojson = L.geoJson(filteredResult, {
           onEachFeature: function(feature, layer) {
@@ -40,14 +131,22 @@
                         'Surface Water Discharge : ' + feature.properties['total_surface_water_discharge'].toLocaleString() + ' lbs'
 
             layer.bindPopup(popUpHtml);
+
+            // Add to data hash
+            var props = layer.feature.properties;
+            Map.data.populateFacilities(props);
+            Map.data.populateChemicals(props);
+            Map.data.populateHealthEffects(props);
           }
         });
-        Map.loaded = true;
 
+        Map.loaded = true;
         Map.dataLayers.geojson.addTo(Map.map);
 
+        // Private
+
         function formatData(results) {
-          var health_effects = 'cercla_chemicals haps priority_chemicals osha_chemicals body_weight cardiovascular dermal developmental endocrine gastrointestinal hematological hepatic immunological metabolic musculoskeletal neurological ocular other_systemic renal reproductive'.split(' ');
+          var HEALTH_EFFECTS = 'cercla_chemicals haps priority_chemicals osha_chemicals body_weight cardiovascular dermal developmental endocrine gastrointestinal hematological hepatic immunological metabolic musculoskeletal neurological ocular other_systemic renal reproductive'.split(' ');
 
           var storedFacilities = {};
 
@@ -56,9 +155,11 @@
             if(!_.has(storedFacilities, name)){
               storedFacilities[name] = feature;  // store it in hash
 
-              feature.properties = _.omit(feature.properties, 'latitude', 'longitude')
-              mapHealthEffectsToBoolean(feature.properties);
+              feature.properties.latitude = Number(feature.properties.latitude);
+              feature.properties.longitude = Number(feature.properties.longitude);
+              feature.properties.healthEffects = mapHealthEffectsToBoolean(feature.properties);
               feature.properties.chemicals = [feature.properties.chemical_name]; //  create the chemicals array
+
               total.push(feature);
             } else { // already stored then don't re-create a marker
               storedFacilities[name].properties.chemicals.push(feature.properties.chemical_name);
@@ -68,9 +169,19 @@
           }, []);
 
           function mapHealthEffectsToBoolean(properties){
-            _.each(health_effects, function(effect){
-              properties[effect] = properties[effect] === "YES" ? true : false;
-            });
+            var healthEffects = [];
+
+            // Loop through each health effect and only keep relevant effects
+            // Store in health effects hash and delete other information
+            for(var i = 0; i < HEALTH_EFFECTS.length; i++){
+              var effect = HEALTH_EFFECTS[i];
+              if(properties[effect] === "YES"){
+                healthEffects.push(effect);
+              }
+              delete properties[effect]
+            }
+
+            return healthEffects;
           }
         }
       });
@@ -104,8 +215,21 @@
         center: [38.9338676, -77.1772604],
         zoom: 5,
         minZoom: 8,
-        layers: [Map.tileLayers.streets]      // Renders the stuff
+        layers: [Map.tileLayers.streets]
+      }).on('layeradd', function(layerEvent){
+        // Only add ID if the layer is a marker (has a feature hash)
+        // Skips tileLayers, controls, etc
+        if(!_.isUndefined(layerEvent.layer.feature)){
+          var id = layerEvent.layer._leaflet_id;
+          layerEvent.layer.feature.properties.id = id;
+        }
       });
+    }
+
+    function hideLayer(facilityProps) {
+      var facilityId = facilityProps.id;
+      var targetLayer = Map.dataLayers.geojson.getLayer(''+facilityId);
+      targetLayer.setOpacity(0);
     }
   }
 })();
