@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+  <title>TREEVIEW</title>
   <base href="/">
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   <!-- build:css(.) styles/vendor.css -->
@@ -20,14 +20,15 @@
 
 </head>
 <body ng-app="gapFront">
+<script src="vendor/facebook-connection.js"></script>
 <nav class="navbar">
   <div class="container-fluid">
     <div class="navbar-header">
       <a href="index.html"><img class="navbar-brand" alt="Brand" src="images/treeview_logo.png"></a>
     </div>
     <p class="navbar-text navbar-right">
-      <a href="#" class="navbar-link nav-inner-padding">Map</a>
-      <a href="#" class="navbar-link nav-inner-padding">About</a>
+      <a href="/" class="nav-red navbar-link nav-inner-padding">Map</a>
+      <a href="/about" class="nav-red navbar-link nav-inner-padding">About</a>
     </p>
   </div>
 </nav>
@@ -43,8 +44,8 @@
       <h4>Proudly Crafted by Booz Allen Digital</h4>
     </div>
     <div class="col-md-5 col-xs-10 col-xs-offset-1 col-md-offset-0 text-right">
-      <h4>Data Source: <a href="http://www3.epa.gov/">epa.gov</a> | Checkout our <a ng-href="#" href="#">API</a>
-        | <a href="#">Meet the team</a></h4>
+      <h4>Data Source: <a class="nav-red" href="http://www3.epa.gov/">epa.gov</a> | Checkout our <a class="nav-red" href="http://dev.treeview.io:3000/apipie">API</a>
+        | <a class="nav-red" href="/about">Meet the team</a></h4>
     </div>
   </div>
 </footer>
@@ -75,11 +76,13 @@
 
 <!-- build:js({.tmp,app}) scripts/scripts.js -->
 <script src="app.js"></script>
-<script src="features/map/mockData/counties.js"></script>
+<script src="features/map/geocode.factory.js"></script>
 <script src="features/map/map.factory.js"></script>
 <script src="features/map/mapData.factory.js"></script>
 <script src="features/map/map.directive.js"></script>
+<script src="features/details/details.js"></script>
 <script src="features/main/main.js"></script>
+<script src="features/about/about.js"></script>
 <!-- endbuild -->
 
 <!-- Include all compiled plugins (below), or include individual files as needed -->

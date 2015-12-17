@@ -15,30 +15,31 @@
               <h4 class="modal-title text-left">How it Works</h4>
             </div>
             <div class="modal-body col-md-12">
-              <div class="col-md-4" style="height:300px; background: white">
+              <div class="col-md-4 modal-column">
                 <div class="text-center">
                   <img src="../../../assets/epa-icons/Icon_Stp1.png" alt="Step1">
-                  <h2 class="lg-margin-bottom">Step One</h2>
-                  <h4 class="font-200">Enter a zip code or county to see chemical emissions in that area.</h4>
+                  <h2 class="lg-margin-bottom modal-column-title">Step One</h2>
+                  <h4 class="font-200 med-line-height">Enter a zip code or county to see chemical releases in that area.</h4>
                 </div>
               </div>
-              <div class="col-md-4" style="height:300px; background: white">
+              <div class="col-md-4 modal-column">
                 <div class="text-center">
                   <img src="../../../assets/epa-icons/Icon_Stp2.png" alt="Step2">
-                  <h2 class="lg-margin-bottom">Step Two</h2>
-                  <h4 class="font-200">Filter your results by toggling between chemical types, health effects and facilities in the sidebar.</h4>
+                  <h2 class="lg-margin-bottom modal-column-title">Step Two</h2>
+                  <h4 class="font-200 med-line-height">Filter your results by toggling between chemical types, health effects, and facilities in the sidebar.</h4>
                 </div>
               </div>
-              <div class="col-md-4" style="height:300px; background: white">
+              <div class="col-md-4 modal-column">
                 <div class="text-center">
                   <img src="../../../assets/epa-icons/Icon_Stp3.png" alt="Step3">
-                  <h2 class="lg-margin-bottom">Step Three</h2>
-                  <h4 class="font-200">Share your experience by clicking the "Share" button!</h4>
+                  <h2 class="lg-margin-bottom modal-column-title">Step Three</h2>
+                  <h4 class="font-200 med-line-height">Share your findings by clicking the share button!</h4>
                 </div>
               </div>
               <div class="col-md-12 text-center">
-                <h5 class="font-200">TREEVIEW helps you discover where chemical emissions are coming from in your local community using the latest information from the EPA's Toxic Release Inventory and Superfund Program.</h5>
-                <h5 class="font-200">This tool is designed to let you filter by chemical type, related health effects, which facility the chemicals are coming from, and many other filtering options to optimize your results.</h5>
+                <h5 class="font-200 med-line-height margin-sides lg-margin-top">TREE View helps you discover where chemical releases are coming from in your local community by using the latest information from the EPA’s Toxics Release Inventory and Superfund Program.</h5>
+                <br>
+                <h5 class="font-200 med-line-height margin-sides lg-margin-bottom">This tool is designed to let you filter this information by chemical type, related health effects, which facility these chemicals are coming from, and many other filtering options to optimize your results.</h5>
               </div>
             </div>
           </div>
@@ -52,38 +53,38 @@
   <!-- Search by Zip Code or County -->
   <div class="form-group">
     <label for="searchInput">Search the Counties with the Most Chemical Exposure</label>
-    <input type="text" class="col-md-9 form-control" id="searchInput" placeholder="Enter Zip Code or County">
-    <button class="btn btn-blue col-md-1 btn-r" href="#" role="button">Search</button>
+    <input type="text" class="col-md-9 form-control" id="searchInput" placeholder="Enter Zip Code or County" ng-model="searchValue">
+    <button class="btn btn-blue col-md-1 btn-r" href="#" role="button" ng-click="searchSubmit(searchValue)">Search</button>
   </div>
 
   <!-- Recent Searches -->
   <div class="well well-lg col-md-12">
-    <p class="col-md-10">Search Counties with the Most Chemical Exposure</p>
-    <div class="col-md-10">
-      <button class="btn btn-oval btn-black sm-margin-left" href="#" role="button">Norfolk</button>
-      <button class="btn btn-oval btn-black sm-margin-left" href="#" role="button">Hillsborough</button>
-      <button class="btn btn-oval btn-black sm-margin-left" href="#" role="button">Delaware</button>
-      <button class="btn btn-oval btn-black sm-margin-left" href="#" role="button">Los Angeles</button>
-      <button class="btn btn-oval btn-black sm-margin-left" href="#" role="button">Harris</button>
-      <button class="btn btn-oval btn-black sm-margin-left" href="#" role="button">Benewah</button>
-      <button class="btn btn-oval btn-black sm-margin-left" href="#" role="button">Travis</button>
-      <button class="btn btn-oval btn-black sm-margin-left" href="#" role="button">James</button>
+    <p class="col-md-12">Search Counties with the Most Chemical Exposure</p>
+    <div class="col-md-12">
+      <button class="btn btn-oval btn-navy sm-margin-left" href="#" role="button" ng-click="searchSubmit('Madera')">Madera, CA</button>
+      <button class="btn btn-oval btn-navy sm-margin-left" href="#" role="button" ng-click="searchSubmit('Kern')">Kern, CA</button>
+      <button class="btn btn-oval btn-navy sm-margin-left" href="#" role="button" ng-click="searchSubmit('Tulare')">Tulare, CA</button>
+      <button class="btn btn-oval btn-navy sm-margin-left" href="#" role="button" ng-click="searchSubmit('Merced')">Merced, CA</button>
+      <button class="btn btn-oval btn-navy sm-margin-left" href="#" role="button" ng-click="searchSubmit('Santa Clara')">Santa Clara, CA</button>
+      <button class="btn btn-oval btn-navy sm-margin-left" href="#" role="button" ng-click="searchSubmit('Salt Lake')">Salt Lake, UT</button>
+      <button class="btn btn-oval btn-navy sm-margin-left" href="#" role="button" ng-click="searchSubmit('Cache')">Cache, UT</button>
+      <button class="btn btn-oval btn-navy sm-margin-left" href="#" role="button" ng-click="searchSubmit('Fairbanks North Star Borough')">Fairbanks North Star Borough, AK</button>
     </div>
   </div>
 
 
   <!-- Map toggle titles-->
   <div class="pad-bottom">
-    <div class="col-md-2 no-pad-l margin-bottom">Map Type   <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></div>
-    <div class="col-md-2 margin-bottom">Time Range   <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></div>
-    <div class="col-md-3 margin-bottom">County Onsite Release Types   <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></div>
-    <div class="col-md-5 margin-bottom">Share My Map   <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></div>
+    <div class="col-md-2 no-pad-l margin-bottom">Map Type   <span data-toggle="tooltip" data-placement="top" title="Show results on a county map or an air pollution map." class="glyphicon glyphicon-info-sign info-style" aria-hidden="true"></span></div>
+    <div class="col-md-3 margin-bottom">Time Range   <span data-toggle="tooltip" data-placement="top" title="Filter results to a specific range of years." class="glyphicon glyphicon-info-sign info-style" aria-hidden="true"></span></div>
+    <div class="col-md-3 margin-bottom">County Onsite Release Types   <span data-toggle="tooltip" data-placement="top" title="Filter results by how chemicals are released." class="glyphicon glyphicon-info-sign info-style" aria-hidden="true"></span></div>
+    <div class="col-md-3 margin-bottom">Share My Map   <span data-toggle="tooltip" data-placement="top" title="Get a link to share your filtered search results." class="glyphicon glyphicon-info-sign info-style" aria-hidden="true"></span></div>
   </div>
 
   <!-- Map toggle and Year Dropdowns-->
   <div>
-    <div class="col-md-2 btn-group">
-      <button type="button" class="btn btn-default dropdown-toggle btn-maptype" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <div class="col-md-2 btn-group dropup">
+      <button type="button" class="btn btn-default dropdown-toggle btn-maptype col-md-10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Counties <span class="caret caret-maptype"></span>
       </button>
       <ul class="dropdown-menu dropdown-maptype">
@@ -91,47 +92,23 @@
       </ul>
     </div>
 
-    <div class="col-md-2">
-      <div class="col-md-5">
-        <button type="button" id="start-year" class="btn btn-default dropdown-toggle btn-year" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Year <span class="caret caret-year"></span>
-        </button>
-        <ul class="dropdown-menu dropdown-mapyear">
-          <li><a href="#">2003</a></li>
-          <li><a href="#">2004</a></li>
-          <li><a href="#">2005</a></li>
-          <li><a href="#">2006</a></li>
-          <li><a href="#">2007</a></li>
-          <li><a href="#">2008</a></li>
-          <li><a href="#">2009</a></li>
-          <li><a href="#">2010</a></li>
-          <li><a href="#">2011</a></li>
-          <li><a href="#">2012</a></li>
-          <li><a href="#">2013</a></li>
-          <li><a href="#">2014</a></li>
-        </ul>
+    <div class="col-md-3">
+      <div class="col-md-5 no-pad-l no-pad-r">
+        <select class="form-control btn-year" id="start-year">
+          <option>2012</option>
+          <option>2013</option>
+          <option selected>2014</option>
+        </select>
       </div>
 
-      <div class="col-md-2 text-center dropdown-text">to</div>
+      <span class="col-md-1 dropdown-text no-pad-l">to</span>
 
-      <div class="col-md-5 no-pad-l">
-        <button type="button" id="end-year" class="btn btn-default dropdown-toggle btn-year" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Year <span class="caret caret-year"></span>
-        </button>
-        <ul class="dropdown-menu">
-          <li><a href="#">2003</a></li>
-          <li><a href="#">2004</a></li>
-          <li><a href="#">2005</a></li>
-          <li><a href="#">2006</a></li>
-          <li><a href="#">2007</a></li>
-          <li><a href="#">2008</a></li>
-          <li><a href="#">2009</a></li>
-          <li><a href="#">2010</a></li>
-          <li><a href="#">2011</a></li>
-          <li><a href="#">2012</a></li>
-          <li><a href="#">2013</a></li>
-          <li><a href="#">2014</a></li>
-        </ul>
+      <div class="col-md-5 no-pad-l no-pad-r">
+        <select class="form-control btn-year" id="end-year">
+          <option>2012</option>
+          <option>2013</option>
+          <option selected>2014</option>
+        </select>
       </div>
     </div>
 
@@ -152,10 +129,16 @@
       </div>
     </div>
 
-    <div class="col-md-4">
+    <div class="col-md-2">
       <i class="fa fa-2x fa-link icon-margin"></i>
-      <i class="fa fa-2x fa-facebook-official icon-margin"></i>
-      <i class="fa fa-2x fa-twitter icon-margin"></i>
+      <a href="https://www.facebook.com/sharer/sharer.php?u={{ shareUrl }}">
+        <i class="fa fa-2x fa-facebook-official icon-margin"></i>
+      </a>
+      <a class="twitter-share-button"
+        href="https://twitter.com/intent/tweet?url={{ shareUrl }}">
+        <i class="fa fa-2x fa-twitter icon-margin"></i>
+      </a>
+
     </div>
     <div>
       <button class="btn btn-blue col-md-1 btn-r" href="#" ng-click="submitMapFilters()" role="button">Refresh Map</button>
@@ -165,153 +148,11 @@
   <!-- Map -->
   <map></map>
 
-  <!-- County Information Column -->
-  <div class="col-md-3 no-pad-r right-pane">
-    <div class="list-group no-margin-b right-content">
-      <div class="list-group-item">
-        <h4 class="list-group-item-heading">Orange County, CA</h4>
-        <p class="list-group-item-text">Toggle Results
-          <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
-        </p>
-        <div class="btn-group">
-          <button type="button" class="btn btn-default dropdown-toggle margin-top btn-drop" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Health Effects <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu">
-            <li><a href="#">Facilities</a></li>
-            <li><a href="#">Chemicals</a></li>
-          </ul>
-        </div>
-      </div>
-      <div href="#" class="list-group-item pad-bottom">
-        <span class="xs-margin-right"><input type="radio" value="all-health-facilities" checked></span>All Health Effects
-        <hr>
-        <span class="xs-margin-right"><input type="radio" value="all-health-facilities" checked></span>Body Weight
-        <div class="pad-icons">
-          <div class="col-md-3"><img src="../../../assets/epa-icons/Icon_Air.png" alt="Air"></div>
-          <div class="col-md-3"><img src="../../../assets/epa-icons/Icon_Ground.png" alt="Ground"></div>
-          <div class="col-md-3"><img src="../../../assets/epa-icons/Icon_Underground.png" alt="Underground"></div>
-          <div class="col-md-3"><img src="../../../assets/epa-icons/Icon_Water.png" alt="Water"></div>
-        </div>
-        <p class="well well-box darkgray">Associated Chemicals: <span class="text-blue">10</span>
-          <span class="btn-r">
-            <a data-toggle="collapse" data-target="#collapseChemicals" aria-expanded="false" aria-controls="collapseChemicals">
-              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-            </a>
-            <div class="collapse" id="collapseChemicals">
-              <div class="well pad-10">
-                <p class="text-sm">Chemical 1 (5)<br>
-                  Chemical 2 (1)<br>
-                  Chemical 3 (7)<br>
-                  Chemical 4 (3)<br>
-                  Chemical 5 (13)<br>
-                  Chemical 6 (2)<br>
-                  Chemical 7 (9)<br>
-                  Chemical 8 (6)<br>
-                  Chemical 9 (2)<br>
-                  Chemical 10 (1)
-                </p>
-              </div>
-            </div>
-          </span>
-        </p>
-        <p class="well well-box darkgray">Associated Facilities: <span class="text-blue">5</span>
-          <span class="btn-r">
-            <a data-toggle="collapse" data-target="#collapseFacilities" aria-expanded="false" aria-controls="collapseFacilities">
-              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-            </a>
-            <div class="collapse" id="collapseFacilities">
-              <div class="well pad-10">
-                <p class="text-sm">Facility 1<br>
-                  Facility 2<br>
-                  Facility 3<br>
-                  Facility 4<br>
-                  Facility 5<br>
-                </p>
-              </div>
-            </div>
-          </span>
-        </p>
-      </div>
-      <div href="#" class="list-group-item pad-bottom">
-        <span class="xs-margin-right"><input type="radio" value="all-health-facilities" checked></span>Dermal
-        <div class="pad-icons">
-          <div class="col-md-3"><img src="../../../assets/epa-icons/Icon_Air.png" alt="Air"></div>
-          <div class="col-md-3"><img src="../../../assets/epa-icons/Icon_Ground.png" alt="Ground"></div>
-          <div class="col-md-3"><img src="../../../assets/epa-icons/Icon_Underground.png" alt="Underground"></div>
-          <div class="col-md-3"><img src="../../../assets/epa-icons/Icon_Water.png" alt="Water"></div>
-        </div>
-        <p class="well well-box darkgray">Associated Chemicals: <span class="text-blue">4</span>
-          <span class="btn-r">
-            <a data-toggle="collapse" data-target="#collapseChemicals" aria-expanded="false" aria-controls="collapseChemicals">
-              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-            </a>
-            <div class="collapse" id="collapseChemicals">
-              <div class="well pad-10">
-                <p class="text-sm">Chemical 1 (5)<br>
-                  Chemical 2 (1)<br>
-                  Chemical 3 (7)<br>
-                  Chemical 4 (3)
-                </p>
-              </div>
-            </div>
-          </span>
-        </p>
-        <p class="well well-box darkgray">Associated Facilities: <span class="text-blue">2</span>
-          <span class="btn-r">
-            <a data-toggle="collapse" data-target="#collapseFacilities" aria-expanded="false" aria-controls="collapseFacilities">
-              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-            </a>
-            <div class="collapse" id="collapseFacilities">
-              <div class="well pad-10">
-                <p class="text-sm">Facility 1<br>
-                  Facility 2
-                </p>
-              </div>
-            </div>
-          </span>
-        </p>
-      </div>
-      <div href="#" class="list-group-item pad-bottom">
-        <span class="xs-margin-right"><input type="radio" value="all-health-facilities" checked></span>Example 3
-        <div class="pad-icons">
-          <div class="col-md-3"><img src="../../../assets/epa-icons/Icon_Air.png" alt="Air"></div>
-          <div class="col-md-3"><img src="../../../assets/epa-icons/Icon_Ground.png" alt="Ground"></div>
-          <div class="col-md-3"><img src="../../../assets/epa-icons/Icon_Underground.png" alt="Underground"></div>
-          <div class="col-md-3"><img src="../../../assets/epa-icons/Icon_Water.png" alt="Water"></div>
-        </div>
-        <p class="well well-box darkgray">Associated Chemicals: <span class="text-blue">4</span>
-
-          <span class="btn-r">
-            <a data-toggle="collapse" data-target="#collapseChemicals" aria-expanded="false" aria-controls="collapseChemicals">
-              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-            </a>
-            <div class="collapse" id="collapseChemicals">
-              <div class="well pad-10">
-                <p class="text-sm">Chemical 1 (5)<br>
-                  Chemical 2 (1)<br>
-                  Chemical 3 (7)<br>
-                  Chemical 4 (3)
-                </p>
-              </div>
-            </div>
-          </span>
-        </p>
-        <p class="well well-box darkgray">Associated Facilities: <span class="text-blue">2</span>
-          <span class="btn-r">
-            <a data-toggle="collapse" data-target="#collapseFacilities" aria-expanded="false" aria-controls="collapseFacilities">
-              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-            </a>
-            <div class="collapse" id="collapseFacilities">
-              <div class="well pad-10">
-                <p class="text-sm">Facility 1<br>
-                  Facility 2
-                </p>
-              </div>
-            </div>
-          </span>
-        </p>
-      </div>
-    </div>
-  </div> <!-- /column -->
+  <map-details></map-details>
 </div> <!-- /container-fluid -->
+
+<script>
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>

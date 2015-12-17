@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   # Response Rending
   include RenderWithParams
   include MethodResolution
+  include MissingRecordDetection
 
   # Querying
   include AssociationResolution
