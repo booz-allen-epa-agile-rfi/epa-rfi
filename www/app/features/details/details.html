@@ -20,7 +20,7 @@
 
       <div ng-switch-when="Health Effects">
         <div class="list-group-item" ng-show="selectedResult === 'Health Effects'">
-          <span class="xs-margin-right"><input type="radio" name="filterGroup" value="all" checked></span>All Health Effects
+          <span class="xs-margin-right"><input type="radio" name="filterGroup" value="all" ng-click="applyFilter()" checked></span>All Health Effects
         </div>
         <div href="#" class="list-group-item pad-bottom" ng-repeat="effect in keys(data.healthEffects) | orderBy: effect track by $index">
           <span class="xs-margin-right"><input type="radio" name="filterGroup" value="{{ effect }}" ng-click="applyFilter('health', effect)"></span>{{ effect | startCase }}
