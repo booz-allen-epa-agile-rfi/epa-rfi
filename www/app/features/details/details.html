@@ -16,9 +16,10 @@
         </ul>
       </div>
     </div>
-    <div href="#" class="list-group-item pad-bottom" ng-repeat="effect in healthEffects | orderBy:effect track by $index">
-      <!-- <span class="xs-margin-right"><input type="radio" value="all-health-facilities" checked></span>All Health Effects -->
-      <!-- <hr> -->
+    <div class="list-group-item">
+      <span class="xs-margin-right"><input type="radio" value="all-health-facilities" checked></span>All Health Effects
+    </div>
+    <div href="#" class="list-group-item pad-bottom" ng-repeat="effect in keys(data.healthEffects) track by $index">
       <span class="xs-margin-right"><input type="radio" value="all-health-facilities"></span>{{ effect | startCase }}
 <!--       <div class="pad-icons">
         <div class="col-md-3"><img src="../../../assets/epa-icons/Icon_Air.png" alt="Air"></div>
@@ -26,29 +27,21 @@
         <div class="col-md-3"><img src="../../../assets/epa-icons/Icon_Underground.png" alt="Underground"></div>
         <div class="col-md-3"><img src="../../../assets/epa-icons/Icon_Water.png" alt="Water"></div>
       </div>
--->     <p class="well well-box darkgray">Associated Chemicals: <span class="text-blue">10</span>
+-->     <p class="well well-box darkgray">Associated Chemicals: <span class="text-blue">{{ data.healthEffects[effect].chemicals.length }}</span>
         <span class="btn-r">
-          <a data-toggle="collapse" data-target="#collapseChemicals" aria-expanded="false" aria-controls="collapseChemicals">
+          <a data-toggle="collapse" data-target="#collapseChemicals-{{$index}}" aria-expanded="false" aria-controls="collapseChemicals">
             <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
           </a>
-          <div class="collapse" id="collapseChemicals">
+          <div class="collapse" id="collapseChemicals-{{$index}}">
             <div class="well pad-10">
-              <p class="text-sm">Chemical 1 (5)<br>
-                Chemical 2 (1)<br>
-                Chemical 3 (7)<br>
-                Chemical 4 (3)<br>
-                Chemical 5 (13)<br>
-                Chemical 6 (2)<br>
-                Chemical 7 (9)<br>
-                Chemical 8 (6)<br>
-                Chemical 9 (2)<br>
-                Chemical 10 (1)
+              <p class="text-sm">
+                <span ng-repeat="chemical in data.healthEffects[effect].chemicals | orderBy:chemical track by $index">{{ chemical }}<br></span>
               </p>
             </div>
           </div>
         </span>
       </p>
-      <p class="well well-box darkgray">Associated Facilities: <span class="text-blue">5</span>
+      <p class="well well-box darkgray">Associated Facilities: <span class="text-blue">{{ data.healthEffects[effect].facilities.length }}</span>
         <span class="btn-r">
           <a data-toggle="collapse" data-target="#collapseFacilities-{{$index}}" aria-expanded="false" aria-controls="collapseFacilities">
             <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>

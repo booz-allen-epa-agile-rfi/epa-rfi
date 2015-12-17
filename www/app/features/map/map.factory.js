@@ -17,7 +17,7 @@
 
     Map.loaded = true;
 
-    window.allen = Map;
+    window.data = Map.data;
 
     return Map;
 

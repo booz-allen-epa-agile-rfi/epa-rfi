@@ -35,14 +35,14 @@
 
       function activate() {
         $scope.data = {};
-        $scope.healthEffects = [];
+        $scope.keys = function(obj){
+          return !_.isUndefined(obj) ? Object.keys(obj) : [];
+        }
 
         $scope.$watch(function(){ return Map.data.changed }, function(newValue){
           $scope.data = Map.data;
-          $scope.healthEffects = ($scope.healthEffects.length === 0) ? 
-            Object.keys(Map.data.healthEffects) : $scope.healthEffects;
-
           Map.data.changed = false;
+          
           console.log(Map.data);
         });
       }
