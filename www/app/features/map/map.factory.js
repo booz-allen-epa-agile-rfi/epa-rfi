@@ -124,13 +124,7 @@
 
         Map.dataLayers.geojson = L.geoJson(filteredResult, {
           onEachFeature: function(feature, layer) {
-            var popUpHtml = '<b>Facility Name : ' + feature.properties['facility_name'] + "</b><br/>" +
-                        'Air Emissions : ' + feature.properties['total_air_emissions'].toLocaleString() + ' lbs<br />' +
-                        'On Site Land Releases : ' + feature.properties['total_on_site_land_releases'].toLocaleString() + ' lbs<br />' +
-                        'Underground Injection : ' + feature.properties['total_underground_injection'].toLocaleString() + ' lbs<br />' +
-                        'Surface Water Discharge : ' + feature.properties['total_surface_water_discharge'].toLocaleString() + ' lbs'
-
-            layer.bindPopup(popUpHtml);
+            layer.bindPopup(popUpGenerator(feature.properties));
 
             // Add to data hash
             var props = layer.feature.properties;
@@ -230,6 +224,23 @@
       var facilityId = facilityProps.id;
       var targetLayer = Map.dataLayers.geojson.getLayer(''+facilityId);
       targetLayer.setOpacity(0);
+      targetLayer.unbindPopup();
+    }
+
+    function showLayer(facilityProps) {
+      var facilityId = facilityProps.id;
+      var targetLayer = Map.dataLayers.geojson.getLayer(''+facilityId);
+
+      targetLayer.setOpacity(100);
+      targetLayer.bindPopup(popUpGenerator(facilityProps));
+    }
+
+    function popUpGenerator(properties) {
+      return '<b>Facility Name : ' + properties['facility_name'] + "</b><br/>" +
+                  'Air Emissions : ' + properties['total_air_emissions'].toLocaleString() + ' lbs<br />' +
+                  'On Site Land Releases : ' + properties['total_on_site_land_releases'].toLocaleString() + ' lbs<br />' +
+                  'Underground Injection : ' + properties['total_underground_injection'].toLocaleString() + ' lbs<br />' +
+                  'Surface Water Discharge : ' + properties['total_surface_water_discharge'].toLocaleString() + ' lbs'
     }
   }
 })();
