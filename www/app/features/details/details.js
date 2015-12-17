@@ -79,10 +79,9 @@
         }
 
         function applyFilter(type, selector) {
-          if(type === 'facilities') {
-            Map.showAll();
+          Map.showAll();
 
-            // Hide the rest of the facilities
+          if(type === 'facilities') {
             var allFacilities = Map.data.facilities.properties;
             var allFacilitiesWithoutSelected = _.values(_.omit(allFacilities, selector));
             _.each(allFacilitiesWithoutSelected, Map.hideLayer);
@@ -90,6 +89,11 @@
             // Open popup
             var selectorProps = Map.data.facilities.properties[selector];
             Map.dataLayers.geojson.getLayer(selectorProps.id).openPopup();
+          } else if(type === 'health') {
+            var allFacilities = Map.data.facilities.properties;
+            var selected = _.map(Map.data.healthEffects[selector].facilities, 'facility_name');
+            var allFacilitiesWithoutSelected = _.values(_.omit(allFacilities, selected));
+            _.each(allFacilitiesWithoutSelected, Map.hideLayer);
           }
         }
       }
