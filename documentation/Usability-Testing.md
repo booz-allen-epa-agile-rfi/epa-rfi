@@ -38,7 +38,7 @@ Once the wireframes were finalized, we conducted our second round of usability t
 
 ![user test 4](https://cloud.githubusercontent.com/assets/16209237/11874628/bf1dd28e-a4ae-11e5-9bef-33133114b7a5.png)
 
-Finally, we reviewed our data and draft some potential features to address concerns uncovered in our usability testing:
+Finally, we reviewed our data and drafted some potential features to address concerns uncovered in our usability testing:
 
 * Adjust the language of this action to indicate clicking a county affects the map. 
 * Provide a clear context on “Search Counties With The Most Chemical Exposures”
