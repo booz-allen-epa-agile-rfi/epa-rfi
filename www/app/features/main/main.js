@@ -19,7 +19,7 @@ function MainController($scope, $routeParams, $location, Map, Geocode) {
   }
   $scope.searchValue = '';
 
-  // Initialization 
+  // Initialization
 
   if(!_.isEmpty($routeParams)) initState();
   $scope.shareUrl = generateShareUrl($scope.state);

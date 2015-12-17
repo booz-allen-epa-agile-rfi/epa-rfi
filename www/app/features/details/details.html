@@ -7,7 +7,7 @@
       </p>
       <div class="btn-group">
         <button type="button" class="btn btn-default dropdown-toggle margin-top btn-drop" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          {{ selectedResult }} <span class="caret"></span>
+          {{ selectedResult }} <span class="caret caret-details"></span>
         </button>
         <ul class="dropdown-menu">
           <li><a href="#" ng-click="toggleSelectedResult(otherResults[0])">{{ otherResults[0] }}</a></li>
@@ -24,7 +24,7 @@
         </div>
         <div href="#" class="list-group-item pad-bottom" ng-repeat="effect in keys(data.healthEffects) | orderBy: effect track by $index">
           <span class="xs-margin-right"><input type="radio" name="filterGroup" value="{{ effect }}"></span>{{ effect | startCase }}
-          <p class="well well-box darkgray">Associated Chemicals: <span class="text-blue">{{ keys(data.healthEffects[effect].chemicals).length }}</span>
+          <p class="well well-box lightgray">Associated Chemicals: <span class="text-blue">{{ keys(data.healthEffects[effect].chemicals).length }}</span>
             <span class="btn-r">
               <a data-toggle="collapse" data-target="#collapseChemicals-{{$index}}" aria-expanded="false" aria-controls="collapseChemicals">
                 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
@@ -38,7 +38,7 @@
               </div>
             </span>
           </p>
-          <p class="well well-box darkgray">Associated Facilities: <span class="text-blue">{{ data.healthEffects[effect].facilities.length }}</span>
+          <p class="well well-box lightgray">Associated Facilities: <span class="text-blue">{{ data.healthEffects[effect].facilities.length }}</span>
             <span class="btn-r">
               <a data-toggle="collapse" data-target="#collapseFacilities-{{$index}}" aria-expanded="false" aria-controls="collapseFacilities">
                 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
@@ -90,7 +90,7 @@
               </div>
             </span>
           </p>
-          <p class="well well-box darkgray">Associated Health Effects: <span class="text-blue">{{ data.facilities.properties[name].healthEffects.length }}</span>
+          <p class="well well-box lightgray">Associated Health Effects: <span class="text-blue">{{ data.facilities.properties[name].healthEffects.length }}</span>
             <span class="btn-r">
               <a data-toggle="collapse" data-target="#collapseFacilities-{{$index}}" aria-expanded="false" aria-controls="collapseFacilities">
                 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>

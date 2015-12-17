@@ -150,7 +150,10 @@ a.nav-red:hover{
   background-color: #112e51;
   color: white;
 }
-
+.btn-navy:hover {
+  background-color: #205493;
+  color: white;
+}
 .btn-white {
   background-color: white;
   color: #0071bc;
@@ -174,13 +177,24 @@ a.nav-red:hover{
 .btn-year {
   margin: 5px 0px 12px !important;
 }
-.caret-maptype {
+.caret-maptype,
+.caret-details {
   position: absolute;
   left: 90%;
   top: 45%;
 }
 .caret-year {
   margin-left: 15px !important;
+}
+.info-style {
+  color: #205493;
+}
+.info-style:hover {
+  color: #0071bc;
+}
+.info-style + .tooltip > .tooltip-inner {
+  background-color: #205493;
+  color: white;
 }
 
 /* TEXT */
@@ -225,8 +239,8 @@ a.nav-red:hover{
 /* COLORS */
 /*-------------------------------------------------- */
 
-.darkgray {
-  background-color: darkgray;
+.lightgray {
+  background-color: #f1f1f1;
 }
 .gray-section {
   background: #f4f4f4;
