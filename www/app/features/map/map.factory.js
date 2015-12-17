@@ -8,23 +8,26 @@
   /** @ngInject */
   function MapFactory(MapData, API_TOKEN) {
     var Map = {};
-
-    Map.data = initStorage();  // hash to properties
-    Map.tileLayers = initMapTiles();
-    Map.dataLayers = {};
-    Map.update = update;
-    Map.map = initMap();
-
-    var hiddenFacilities = {};
-    Map.showAll = showAll;
-    Map.hideLayer = hideLayer;
-    Map.showLayer = showLayer;
-    Map.clearHiddenFacilities = clearHiddenFacilities;
-    Map.loaded = true;
-
+    Map.init = init;
+    
     return Map;
 
     // Private
+
+    function init() {
+      Map.data = initStorage();  // hash to properties
+      Map.tileLayers = initMapTiles();
+      Map.dataLayers = {};
+      Map.update = update;
+      Map.map = initMap();
+
+      var hiddenFacilities = {};
+      Map.showAll = showAll;
+      Map.hideLayer = hideLayer;
+      Map.showLayer = showLayer;
+      Map.clearHiddenFacilities = clearHiddenFacilities;
+      Map.loaded = true;
+    }
 
     function initStorage(){
       var data = {};
