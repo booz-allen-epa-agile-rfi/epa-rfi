@@ -9,33 +9,6 @@ require 'csv'
 namespace :db do
   namespace :schema do
     task :load => :environment do
-      ActiveRecord::Base.connection.execute('TRUNCATE epa_records RESTART IDENTITY')
-
-      files = []
-      file1 = "#{Rails.root}/dbdata/epa_records_2013.txt"
-      file2 = "#{Rails.root}/dbdata/epa_records_2014.txt"
-
-      file1 = '/usr/src/app/dbdata/epa_records_2013.txt' unless File.exists? file1
-      file2 = '/usr/src/app/dbdata/epa_records_2014.txt' unless File.exists? file2
-
-      files << file1
-      files << file2
-
-      if Rails.env.production?
-        file3 = "#{Rails.root}/dbdata/epa_records_2012.txt"
-        file4 = "#{Rails.root}/dbdata/epa_records_2011.txt"
-        file5 = "#{Rails.root}/dbdata/epa_records_2010.txt"
-
-        file3 = '/usr/src/app/dbdata/epa_records_2012.txt' unless File.exists? file3
-        file4 = '/usr/src/app/dbdata/epa_records_2011.txt' unless File.exists? file4
-        file5 = '/usr/src/app/dbdata/epa_records_2010.txt' unless File.exists? file5
-
-
-        files << file3
-        files << file4
-        files << file5
-      end
-
       def copy_sql(file)
         sql = <<-SQL
         COPY epa_records
@@ -59,11 +32,24 @@ namespace :db do
         ActiveRecord::Base.connection.execute(sql)
       end
 
-      puts 'Copying EPA data...'
-      files.each do |file|
-        copy_sql(file)
+      if Rails.env.local?
+        ActiveRecord::Base.connection.execute('TRUNCATE epa_records RESTART IDENTITY')
+        files = []
+        file1 = "#{Rails.root}/dbdata/epa_records_2013.txt"
+        file2 = "#{Rails.root}/dbdata/epa_records_2014.txt"
+
+        file1 = '/usr/src/app/dbdata/epa_records_2013.txt' unless File.exists? file1
+        file2 = '/usr/src/app/dbdata/epa_records_2014.txt' unless File.exists? file2
+
+        files << file1
+        files << file2
+
+        puts 'Copying EPA data...'
+        files.each do |file|
+          copy_sql(file)
+        end
+        puts 'EPA data copied successfully!'
       end
-      puts 'EPA data copied successfully!'
     end
   end
 end

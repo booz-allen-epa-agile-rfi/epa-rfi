@@ -33,7 +33,7 @@ gem 'rack-cors'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Tests
-group :development, :test do
+group :local, :development, :test do
   gem 'spring'
   gem 'rubocop'
   gem 'brakeman'
