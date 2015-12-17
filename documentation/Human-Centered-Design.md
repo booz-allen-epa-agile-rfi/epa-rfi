@@ -23,8 +23,6 @@ As a group, we determined the top tasks a user would do and defined them in a ma
 
 **INSERT LINK TO USER STORIES**
 
-![new charter](https://cloud.githubusercontent.com/assets/13038047/8523875/cab6e78a-23c5-11e5-9ea9-da42d552f1e9.jpg)
-
 ## Journey Mapping/Task Analysis
 We drafted journey maps for each persona for the TREEVIEW experience to help shape our flows. Each of the following artifacts represent how our 4 indiviudal users would experience a loop on the site. 
 
