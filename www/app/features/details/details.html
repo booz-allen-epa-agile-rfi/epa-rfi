@@ -33,7 +33,7 @@
               <div class="collapse" id="collapseChemicals-{{$index}}">
                 <div class="well pad-10">
                   <p class="text-sm">
-                    <span ng-repeat="chemical in keys(data.healthEffects[effect].chemicals) | orderBy: chemical">{{ chemical }} ({{ data.healthEffects[effect].chemicals[chemical] }})<br></span>
+                    <span ng-repeat="chemical in keys(data.healthEffects[effect].chemicals) | orderBy: chemical">{{ chemical | startCase }} ({{ data.healthEffects[effect].chemicals[chemical] }})<br></span>
                   </p>
                 </div>
               </div>
@@ -47,7 +47,7 @@
               <div class="collapse" id="collapseFacilities-{{$index}}">
                 <div class="well pad-10">
                   <p class="text-sm">
-                    <span ng-repeat="facility in data.healthEffects[effect].facilities | orderBy:'facility_name'">{{ facility.facility_name }} <br></span>
+                    <span ng-repeat="facility in data.healthEffects[effect].facilities | orderBy:'facility_name'">{{ facility.facility_name | startCase }} <br></span>
                   </p>
                 </div>
               </div>
@@ -85,7 +85,7 @@
               <div class="collapse" id="collapseChemicals-{{$index}}">
                 <div class="well pad-10">
                   <p class="text-sm">
-                    <span ng-repeat="chemical in data.facilities.properties[name].chemicals | orderBy: chemical track by $index">{{ chemical }}<br></span>
+                    <span ng-repeat="chemical in data.facilities.properties[name].chemicals | orderBy: chemical track by $index">{{ chemical | startCase }}<br></span>
                   </p>
                 </div>
               </div>
@@ -119,7 +119,7 @@
               <div class="collapse" id="collapseChemicals-{{$index}}">
                 <div class="well pad-10">
                   <p class="text-sm">
-                    <span ng-repeat="facility in data.chemicals[name].facilities | orderBy: 'facility_name' track by $index">{{ facility.facility_name }}<br></span>
+                    <span ng-repeat="facility in data.chemicals[name].facilities | orderBy: 'facility_name' track by $index">{{ facility.facility_name | startCase }}<br></span>
                   </p>
                 </div>
               </div>

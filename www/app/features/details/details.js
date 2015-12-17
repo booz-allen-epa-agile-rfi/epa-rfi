@@ -4,7 +4,7 @@
   angular.module('gapFront')
     .filter('startCase', function(){
       return function(str) {
-        return _.startCase(str);
+        return _.startCase(str.toLowerCase());
       }
     })
     .directive('mapDetails', MapDetailsDirective)
