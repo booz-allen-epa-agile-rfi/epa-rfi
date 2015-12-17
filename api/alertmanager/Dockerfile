@@ -1,6 +1,6 @@
 FROM prom/alertmanager:latest
 
-ADD alertmanager.conf /etc/alertmanager/
+ADD alertmanager.conf /alertmanager/
 
 EXPOSE 9093
 
