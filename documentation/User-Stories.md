@@ -1,25 +1,48 @@
-User Story 001 - 
- * _As a Consumer, I want to search and select a drug, so that can see more information about a drug_
+User Story 01
 
-User Story 002 -
- * _As a Consumer, I want to see a list of reported adverse effects for a selected drug, so I can understand the risk of taking the drug_
- * Applicable Personas - Becca
+* As a Concerned Citizen, I want to be able to search my zip code and see what chemicals and facilities are being exposed in my area and the related health effects of the chemicals
 
-User Story 003 - 
- * _As a Consumer, I want to compare **reported** adverse effects with the **labeled** adverse effects, so that I can see if there are any unexpected effects I should be aware of_
+User Story 02 - CANCELLED
 
-User Story 004 - 
-* _As a Crowdsourcing User, I want to record adverse effects mentioned on the label (based upon a scan/preselection of suggested terms), using simple clicks, so that I can contribute to the value of the tool's database_
+* As a an Academic Researcher, I want to see social media links of news stories that are related to a chemical that I select from a list of chemicals in a given area, or that are environmental stories trending in an area I am researching
+* This story was cancelled due to lack of identified social media posts specific to chemicals that would make sense to include on a search of this site. Without relevant and timely information, this service would be less valuable to the end user.
 
-User Story 005 - **CANCELLED**
- * _As a Crowdsourcing User, I want to record a new adverse effect that I see on the label for a selected drug, by text entry, so that I can contribute to the value of the database_
+User Story 03
 
-User Story 006 - **CANCELLED - REWRITTEN AS 007**
-* _As a Crowdsourcing User, I want to see some statistics/visuals about the collected crowdsourced data when I submit, so that I understand more about the data that's been collected_
+* As an Biological Engineer I want to understand what the health impacts are of the chemicals in a particular region (acute, intermediate, chronic), the method of exposure (air, underground, land, water), and the hazard class of the chemicals in the area and be able to filter on the method of exposure in a given area
 
-User Story 007 -
-* _As a Crowdsourcing User, I want to see correlation between the reported side effects and the recorded labeled side effects on the reported-side-effects-chart. (See mockups)_
+User Story 04 - Low priority
 
+* As an Biological Engineer and Academic Researcher, I want to be able to search on a chemical and see the areas of the US where this chemical is most prevalent and the issues associated with each chemical
+* This would be great for future expansion of the tool for research purposes, but will not be available during the initial release
 
-User Story 008 -
-* _As a Crowdsourcing User, I want to see encouraging messages while I contribute to labeled effects so that I fell appreciated and enjoy my experience more.  (See mockups)_
+User Story 05 - CANCELLED
+
+* As a Concerned Citizen, I would like to report a suspected exposure in my area using a wizard to make reporting easier and then see if others in my area are also experiencing issues
+* Cancelled for this sprint as it will be difficult to validate the information collected from concerned citizens for the initial scope of work. If tied into the EPA and have someone available to triage and investigate suspected exposures, this could be a more valuable feature in the future.
+
+User Story 06 - CANCELLED
+
+* As an Academic Researcher, I would like to be notified when adverse incidents are reported
+* Cancelled as this is tied to User Story 05.
+
+User Story 07
+
+* As a Concerned Citizen, I want to see a list of counties with the most chemical exposures on the main page to get started
+
+User Story 08
+
+* As a Concerned Citizen, I would like to see the health effects associated with the chemicals in my area and be able to filter results by the health effects so that I can understand the potential impacts of these chemicals on my family.
+
+User Story 09 - Future priority
+
+* As a Biological Engineer I would like to see an overlay of Air Quality on top of the map results to see if there are linkages between the pollutants and the air quality for a particular area
+
+User Story 10
+
+* As an Environmental Activist, I want to be able to share a link to a map on Social Media so I can discuss with my fellow activists
+
+User Story 11
+
+* As a Concerned Citizen, I want to share a link to a map with my spouse about the pollutants in our area and areas we are looking to relocate to
+
