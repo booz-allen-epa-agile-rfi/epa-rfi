@@ -25,6 +25,8 @@ cadvisor:
 prometheus:
   image: 54.201.106.8:5000/prometheus
   container_name: 'prometheus'
+  entrypoint: /bin/prometheus -config.file=/etc/prometheus/prometheus.yml -log.level=debug
   ports:
     - 9090:9090
-
+  volumes:
+    - $PWD:/etc/prometheus/:ro
