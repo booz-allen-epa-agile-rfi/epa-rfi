@@ -52,8 +52,6 @@
         $scope.$watch(function(){ return Map.data.changed }, function(newValue){
           $scope.data = Map.data;
           Map.data.changed = false;
-
-          console.log(Map.data);
         });
 
         // Private

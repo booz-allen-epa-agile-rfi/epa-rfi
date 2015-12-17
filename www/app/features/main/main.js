@@ -77,7 +77,7 @@ function MainController($scope, $routeParams, $location, Map, Geocode) {
     var reporting_year = _.range(parseInt(startYear), parseInt(endYear)+1);
 
     if(emissions.indexOf('total') >= 0 || ['land', 'water', 'air'].every(allOptionsChosen)){
-      emissions = ['total'];
+      emissions = ['land', 'air', 'water'];
     }
 
     var bounds = formatBounds(Map.map.getBounds()) || {};
