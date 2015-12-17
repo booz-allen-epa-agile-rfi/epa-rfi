@@ -79,9 +79,11 @@
           if(!_.has(this.chemicals, chemical)){
             this.chemicals[chemical] = {
               facilities: [],
+              healthEffects: []
             };
           }
           this.chemicals[chemical]['facilities'].push(properties);
+          this.chemicals[chemical]['healthEffects'] = _.union(this.chemicals[chemical]['healthEffects'], properties.healthEffects);
           this.changed = true;
         }
       }
@@ -160,9 +162,11 @@
             if(!_.has(storedFacilities, name)){
               storedFacilities[name] = feature;  // store it in hash
 
-              feature.properties = _.omit(feature.properties, 'latitude', 'longitude')
+              feature.properties.latitude = Number(feature.properties.latitude);
+              feature.properties.longitude = Number(feature.properties.longitude);
               feature.properties.healthEffects = mapHealthEffectsToBoolean(feature.properties);
               feature.properties.chemicals = [feature.properties.chemical_name]; //  create the chemicals array
+              
               total.push(feature);
             } else { // already stored then don't re-create a marker
               storedFacilities[name].properties.chemicals.push(feature.properties.chemical_name);

@@ -38,7 +38,7 @@
         $scope.keys = getKeys;
 
         // Results toggling 
-        $scope.selectedResult = 'Facilities';
+        $scope.selectedResult = 'Health Effects';
         $scope.otherResults = ['Facilities', 'Chemicals'];
         $scope.toggleSelectedResult = toggleSelectedResult;
 
