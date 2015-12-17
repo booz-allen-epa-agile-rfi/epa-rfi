@@ -10,7 +10,7 @@ class EpaRecordsController < ApplicationController
   param :facility_state, String, required: false, desc: 'Facility two character state abbreviation.'
   param :chemical_name, String, required: false, desc: 'Chemical name.'
   param :reporting_year, Array, required: false, desc: 'An array of years reported on.'
-  param :emissions, Array, required: false, in: %w(land air), desc: 'An array of emissions contain either land or air'
+  param :emissions, Array, required: false, in: %w(land air water), desc: 'An array of emissions contain either land, air, or water'
   param :bounds, Array, required: false, desc: 'An array of longitude and latitude in the format of SX, SY, NX, NY'
   error code: 404, desc: MissingRecordDetection::Messages.not_found
 
@@ -121,6 +121,10 @@ class EpaRecordsController < ApplicationController
     if emissions.include? 'land'
       select_conditions << 'total_underground_injection > 0'
       select_conditions << 'total_on_site_land_releases > 0'
+    end
+
+    if emissions.include? 'water'
+      select_conditions << 'total_surface_water_discharge > 0'
     end
 
     epa_params.delete('emissions')
