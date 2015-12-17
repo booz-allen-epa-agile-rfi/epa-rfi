@@ -15,7 +15,10 @@
     Map.update = update;
     Map.map = initMap();
 
+    var hiddenFacilities = {};
+    Map.showAll = showAll;
     Map.hideLayer = hideLayer;
+    Map.showLayer = showLayer;
     Map.loaded = true;
 
     return Map;
@@ -222,17 +225,26 @@
 
     function hideLayer(facilityProps) {
       var facilityId = facilityProps.id;
-      var targetLayer = Map.dataLayers.geojson.getLayer(''+facilityId);
+      var targetLayer = Map.dataLayers.geojson.getLayer(facilityId);
+
       targetLayer.setOpacity(0);
       targetLayer.unbindPopup();
+
+      hiddenFacilities[facilityProps.facility_name] = facilityProps;
     }
 
     function showLayer(facilityProps) {
       var facilityId = facilityProps.id;
-      var targetLayer = Map.dataLayers.geojson.getLayer(''+facilityId);
+      var targetLayer = Map.dataLayers.geojson.getLayer(facilityId);
 
       targetLayer.setOpacity(100);
       targetLayer.bindPopup(popUpGenerator(facilityProps));
+
+      delete hiddenFacilities[facilityProps.facility_name];
+    }
+
+    function showAll(){
+      _.each(_.values(hiddenFacilities), showLayer);
     }
 
     function popUpGenerator(properties) {

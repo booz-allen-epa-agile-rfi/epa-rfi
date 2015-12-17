@@ -48,6 +48,9 @@
         $scope.hasUndergroundEmissions = createEmissionCheck('total_underground_injection');
         $scope.hasWaterEmissions = createEmissionCheck('total_surface_water_discharge');
 
+        // Filter toggling
+        $scope.applyFilter = applyFilter;
+
         // Watch function to update Scope's data when Map factory has new data
         $scope.$watch(function(){ return Map.data.changed }, function(newValue){
           $scope.data = Map.data;
@@ -69,6 +72,21 @@
         function createEmissionCheck(emissionType){
           return function(facilityName) {
             return Map.data.facilities.properties[facilityName][emissionType] > 0;
+          }
+        }
+
+        function applyFilter(type, selector) {
+          if(type === 'facilities') {
+            Map.showAll();
+
+            // Hide the rest of the facilities
+            var allFacilities = Map.data.facilities.properties;
+            var allFacilitiesWithoutSelected = _.values(_.omit(allFacilities, selector));
+            _.each(allFacilitiesWithoutSelected, Map.hideLayer);
+
+            // Open popup
+            var selectorProps = Map.data.facilities.properties[selector];
+            Map.dataLayers.geojson.getLayer(selectorProps.id).openPopup();
           }
         }
       }
