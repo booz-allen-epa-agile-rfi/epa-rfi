@@ -364,7 +364,7 @@ Our back-end design is API centered. Our Front-End calls the back-end functional
 
 The API documentation can we seen on each application server at the following URL:
 
-http://52.4.69.219:3000/documentation
+http://api.treeview.io
 
 _ - Ensure that data from the service is explicitly in the public domain, and that rights are waived globally via an international public domain dedication, such as the “Creative Commons Zero” waiver_
 
