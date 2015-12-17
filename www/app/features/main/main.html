@@ -75,10 +75,10 @@
 
   <!-- Map toggle titles-->
   <div class="pad-bottom">
-    <div class="col-md-2 no-pad-l margin-bottom">Map Type   <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></div>
-    <div class="col-md-3 margin-bottom">Time Range   <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></div>
-    <div class="col-md-3 margin-bottom">County Onsite Release Types   <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></div>
-    <div class="col-md-3 margin-bottom">Share My Map   <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></div>
+    <div class="col-md-2 no-pad-l margin-bottom">Map Type   <span data-toggle="tooltip" data-placement="top" title="Show results on a county map or an air pollution map." class="glyphicon glyphicon-info-sign info-style" aria-hidden="true"></span></div>
+    <div class="col-md-3 margin-bottom">Time Range   <span data-toggle="tooltip" data-placement="top" title="Filter results to a specific range of years." class="glyphicon glyphicon-info-sign info-style" aria-hidden="true"></span></div>
+    <div class="col-md-3 margin-bottom">County Onsite Release Types   <span data-toggle="tooltip" data-placement="top" title="Filter results by how chemicals are released." class="glyphicon glyphicon-info-sign info-style" aria-hidden="true"></span></div>
+    <div class="col-md-3 margin-bottom">Share My Map   <span data-toggle="tooltip" data-placement="top" title="Get a link to share your filtered search results." class="glyphicon glyphicon-info-sign info-style" aria-hidden="true"></span></div>
   </div>
 
   <!-- Map toggle and Year Dropdowns-->
@@ -150,3 +150,9 @@
 
   <map-details></map-details>
 </div> <!-- /container-fluid -->
+
+<script>
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>

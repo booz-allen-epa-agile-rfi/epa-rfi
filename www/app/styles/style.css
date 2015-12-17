@@ -182,6 +182,16 @@ a.nav-red:hover{
 .caret-year {
   margin-left: 15px !important;
 }
+.info-style {
+  color: #205493;
+}
+.info-style:hover {
+  color: #0071bc;
+}
+.info-style + .tooltip > .tooltip-inner {
+  background-color: #205493;
+  color: white;
+}
 
 /* TEXT */
 /*-------------------------------------------------- */
