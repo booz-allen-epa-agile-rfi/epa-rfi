@@ -29,6 +29,7 @@
       vm.activate = activate;
 
       function activate() {
+        Map.init();
         vm.mapLoaded = false;
         $scope.$watch(function(){ return Map.loaded }, function(newValue) {
           vm.mapLoaded = Map.loaded;

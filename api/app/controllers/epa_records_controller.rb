@@ -5,6 +5,13 @@ class EpaRecordsController < ApplicationController
     render json: geoJSONify(epa_records)
   end
 
+  api :POST, '/search', 'Searches EPA records by county, state, chemical, year, emissions or bounds.'
+  param :facility_county, String, required: false, desc: 'Facility county name.'
+  param :facility_state, String, required: false, desc: 'Facility two character state abbreviation.'
+  param :chemical_name, String, required: false, desc: 'Chemical name.'
+  param :reporting_year, Array, required: false, desc: 'An array of years reported on.'
+  param :emissions, Array, required: false, in: %w(land air water), desc: 'An array of emissions contain either land, air, or water'
+  param :bounds, Array, required: false, desc: 'An array of longitude and latitude in the format of SX, SY, NX, NY'
   error code: 404, desc: MissingRecordDetection::Messages.not_found
 
   def search
@@ -17,28 +24,47 @@ class EpaRecordsController < ApplicationController
     end
   end
 
-  def states_list
-    render json: geoJSONify(epa_records)
+  api :GET, '/states', 'Returns an array of objects with all states in the EPA records.'
+
+  def states
+    render json: epa_records
   end
+
+  api :GET, '/chemicals', 'Returns an array of objects with all chemicals in the EPA records.'
 
   def chemicals
-    render json: geoJSONify(epa_records)
+    render json: epa_records
   end
+
+  api :GET, '/zip_codes', 'Returns an array of objects with all zip codes, counties and states in the EPA records.'
 
   def zip_codes
-    render json: geoJSONify(epa_records)
+    render json: epa_records
   end
 
-  def counties_list
-    render json: geoJSONify(epa_records)
+  api :GET, '/counties', 'Returns an array of objects with all counties in the EPA records.'
+
+  def counties
+    render json: epa_records
   end
+
+  api :GET, '/county_totals', 'Returns an array of objects with the state, county, total number of records for that county, total pollutants and each pollutants value in the EPA records.'
 
   def county_totals
-    render json: geoJSONify(epa_records)
+    render json: epa_records
   end
 
+  api :GET, '/state_counties/:state', 'Returns an array of objects with all counties in the EPA records for a given :state.'
+  param :state, String, required: true, desc: 'Facility two character state abbreviation.'
+
   def state_counties
-    render json: geoJSONify(epa_records)
+    render json: epa_records
+  end
+
+  api :GET, '/years', 'Returns an array of objects with all years in the EPA records.'
+
+  def years
+    render json: epa_records
   end
 
   # INTENTIONALLY LEAVING OUT CREATE, UPDATE AND DESTROY SINCE WE ARE WORKING OFF STATIC DATA
@@ -54,34 +80,26 @@ class EpaRecordsController < ApplicationController
   def epa_records
     @_epa_records ||= begin
       case params['action']
-      when 'states_list'
-        EpaRecord.states_list
+      when 'states'
+        EpaRecord.states
       when 'chemicals'
         EpaRecord.chemicals
       when 'zip_codes'
         EpaRecord.zip_codes
-      when 'counties_list'
-        # EpaRecord.counties_list
-        Counties.includes(:states).all
+      when 'counties'
+        EpaRecord.counties
       when 'county_totals'
         EpaRecord.county_totals
       when 'state_counties'
         EpaRecord.state_counties(params[:state])
+      when 'years'
+        EpaRecord.years
       when 'search'
-        if params[:bounds].nil? && params[:emissions].nil?
-          query_with EpaRecord.search(epa_params)
-        elsif !params[:bounds].nil? && !params[:emissions].nil?
-          emissions_conditions = search_emissions(params[:emissions])
-          bounds_conditions = search_bounds(params[:bounds])
+        params = epa_params
+        emissions_conditions = search_emissions(params[:emissions]) unless params[:emissions].nil?
+        bounds_conditions = search_bounds(params[:bounds]) unless params[:bounds].nil?
 
-          query_with EpaRecord.search(epa_params).emissions(emissions_conditions).bounds(bounds_conditions)
-        elsif params[:bounds].nil?
-          emissions_conditions = search_emissions(params[:emissions])
-          query_with EpaRecord.search(epa_params).emissions(emissions_conditions)
-        else
-          bounds_conditions = search_bounds(params[:bounds])
-          query_with EpaRecord.search(epa_params).bounds(bounds_conditions)
-        end
+        query_with EpaRecord.search.where(params).emissions(emissions_conditions).bounds(bounds_conditions)
       else
         EpaRecord.all
       end
@@ -103,6 +121,10 @@ class EpaRecordsController < ApplicationController
     if emissions.include? 'land'
       select_conditions << 'total_underground_injection > 0'
       select_conditions << 'total_on_site_land_releases > 0'
+    end
+
+    if emissions.include? 'water'
+      select_conditions << 'total_surface_water_discharge > 0'
     end
 
     epa_params.delete('emissions')
@@ -140,7 +162,7 @@ class EpaRecordsController < ApplicationController
 
     geoJSON = {type: "FeatureCollection", features: []}
     records.each do |r|
-      coords = [r.longitude.to_f || 0, r.latitude.to_f || 0]
+      coords = [r.longitude.to_f, r.latitude.to_f]
       geoJSON[:features] << {type: "Feature", properties: r, geometry: {
         type: 'Point',
         coordinates: coords
