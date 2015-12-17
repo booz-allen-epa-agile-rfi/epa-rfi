@@ -109,21 +109,7 @@
 
       <div ng-switch-when="Chemicals">
         <div href="#" class="list-group-item pad-bottom" ng-repeat="name in keys(data.chemicals) | orderBy: name track by $index">
-          <span class="xs-margin-right"><input type="radio" name="filterGroup" value="{{ name }}"></span>{{ name | startCase }}
-          <p class="well well-box darkgray">Associated Facilities: <span class="text-blue">{{ data.chemicals[name].facilities.length }}</span>
-            <span class="btn-r">
-              <a data-toggle="collapse" data-target="#collapseChemicals-{{$index}}" aria-expanded="false" aria-controls="collapseChemicals">
-                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-              </a>
-              <div class="collapse" id="collapseChemicals-{{$index}}">
-                <div class="well pad-10">
-                  <p class="text-sm">
-                    <span ng-repeat="facility in data.chemicals[name].facilities | orderBy: 'facility_name' track by $index">{{ facility.facility_name | startCase }}<br></span>
-                  </p>
-                </div>
-              </div>
-            </span>
-          </p>
+          <span class="xs-margin-right"><input type="radio" name="filterGroup" value="{{ name }}" ng-click="applyFilter('chemical', name)"></span>{{ name | startCase }}
           <p class="well well-box darkgray">Associated Health Effects: <span class="text-blue">{{ data.chemicals[name].healthEffects.length }}</span>
             <span class="btn-r">
               <a data-toggle="collapse" data-target="#collapseFacilities-{{$index}}" aria-expanded="false" aria-controls="collapseFacilities">
@@ -133,6 +119,20 @@
                 <div class="well pad-10">
                   <p class="text-sm">
                     <span ng-repeat="effect in data.chemicals[name].healthEffects | orderBy:'effect' track by $index">{{ effect | startCase }} <br></span>
+                  </p>
+                </div>
+              </div>
+            </span>
+          </p>
+          <p class="well well-box darkgray">Associated Facilities: <span class="text-blue">{{ data.chemicals[name].facilities.length }}</span>
+            <span class="btn-r">
+              <a data-toggle="collapse" data-target="#collapseChemicals-{{$index}}" aria-expanded="false" aria-controls="collapseChemicals">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+              </a>
+              <div class="collapse" id="collapseChemicals-{{$index}}">
+                <div class="well pad-10">
+                  <p class="text-sm">
+                    <span ng-repeat="facility in data.chemicals[name].facilities | orderBy: 'facility_name' track by $index">{{ facility.facility_name | startCase }}<br></span>
                   </p>
                 </div>
               </div>
