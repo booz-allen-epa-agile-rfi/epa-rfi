@@ -29,4 +29,4 @@ prometheus:
   ports:
     - 9090:9090
   volumes:
-    - $PWD:/etc/prometheus/:ro
+    - $PWD/prometheus/:/etc/prometheus/:ro
