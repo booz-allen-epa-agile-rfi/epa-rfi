@@ -8,10 +8,11 @@ https://github.com/booz-allen-epa-agile-rfi/epa-rfi
 
 ## Prototype Overview 
 
-[![Build Status](http://jenkins.treeview.io/buildStatus/icon?job=Development_FrontEnd_Builder)](http://jenkins.treeview.io/view/Development/job/Development_FrontEnd_Builder/)[![Build Status](http://jenkins.treeview.io/buildStatus/icon?job=Development_API_Builder)](http://jenkins.treeview.io/view/Development/job/Development_API_Builder/)Development Branch Server: http://dev.treeview.io
+[![Build Status](http://jenkins.treeview.io:8080/buildStatus/icon?job=develop_frontend)](http://jenkins.treeview.io:8080/view/Development/job/develop_frontend/)[![Build Status](http://jenkins.treeview.io:8080/buildStatus/icon?job=develop_api)](http://jenkins.treeview.io:8080/view/Development/job/develop_api/)Development Branch Server: http://dev.treeview.io:9000
 
-[![Build Status](http://jenkins.treeview.io/buildStatus/icon?job=Master_FrontEnd_Builder)](http://jenkins.treeview.io/view/Master/job/Master_FrontEnd_Builder/)[![Build Status](http://jenkins.treeview.io/buildStatus/icon?job=Master_API_Builder)](http://jenkins.treeview.io/view/Master/job/Master_API_Builder/)Master Branch Server: http://treeview.io
+[![Build Status](http://jenkins.treeview.io:8080/buildStatus/icon?job=staging_frontend)](http://jenkins.treeview.io:8080/view/Staging/job/staging_frontend/)[![Build Status](http://jenkins.treeview.io:8080/buildStatus/icon?job=staging_api)](http://jenkins.treeview.io:8080/view/Staging/job/staging_api/)Staging Branch Server: http://staging.treeview.io:9000
 
+[![Build Status](http://jenkins.treeview.io:8080/buildStatus/icon?job=master_frontend)](http://jenkins.treeview.io:8080/view/Master/job/master_frontend/)[![Build Status](http://jenkins.treeview.io:8080/buildStatus/icon?job=master_api)](http:/jenkins.treeview.io:8080/view/Master/job/master_api/)Master Branch Server: http://www.treeview.io:9000
 TREEVIEW is a data-driven platform with the goal of helping the user discover where chemical emissions are coming from in their local community using the latest information from the EPA’s Toxics Release Inventory and Superfund Program.   Through TREEVIEW, a concerned citizen is able to filter through EPA information by chemical type, related health effects, and facilities to provide the data in a way that meets an individual need.   
 
 Booz Allen Digital offers key strengths to the EPA OEI:
