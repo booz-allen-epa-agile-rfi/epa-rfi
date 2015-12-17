@@ -6,7 +6,7 @@ Please evaluate our development branch :
 
 https://github.com/booz-allen-epa-agile-rfi/epa-rfi
 
-## Prototype Overview - HOMAN EDIT
+## Prototype Overview 
 
 [![Build Status](http://jenkins.treeview.io/buildStatus/icon?job=Development_FrontEnd_Builder)](http://jenkins.treeview.io/view/Development/job/Development_FrontEnd_Builder/)[![Build Status](http://jenkins.treeview.io/buildStatus/icon?job=Development_API_Builder)](http://jenkins.treeview.io/view/Development/job/Development_API_Builder/)Development Branch Server: http://dev.treeview.io
 
