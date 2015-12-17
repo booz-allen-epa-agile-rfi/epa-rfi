@@ -150,7 +150,10 @@ a.nav-red:hover{
   background-color: #112e51;
   color: white;
 }
-
+.btn-navy:hover {
+  background-color: #205493;
+  color: white;
+}
 .btn-white {
   background-color: white;
   color: #0071bc;
