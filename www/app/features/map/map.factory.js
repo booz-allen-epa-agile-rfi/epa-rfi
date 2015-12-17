@@ -19,6 +19,7 @@
     Map.showAll = showAll;
     Map.hideLayer = hideLayer;
     Map.showLayer = showLayer;
+    Map.clearHiddenFacilities = clearHiddenFacilities;
     Map.loaded = true;
 
     return Map;
@@ -245,6 +246,10 @@
 
     function showAll(){
       _.each(_.values(hiddenFacilities), showLayer);
+    }
+
+    function clearHiddenFacilities() {
+      hiddenFacilities = {};
     }
 
     function popUpGenerator(properties) {

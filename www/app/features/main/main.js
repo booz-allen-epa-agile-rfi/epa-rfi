@@ -34,6 +34,7 @@ function MainController($scope, $routeParams, $location, Map, Geocode) {
   $scope.submitMapFilters = function(e) {
     $scope.state = grabState();
     Map.update($scope.state);
+    Map.clearHiddenFacilities();
     $scope.shareUrl = generateShareUrl($scope.state);
   }
 
