@@ -13,5 +13,5 @@ Rails.application.routes.draw do
   # JUST WANT TO QUERY THIS DATA - DO NOT WANT TO APPLY OTHER CRUD TO IT
   # resources :epa_records, except: [:new, :edit, :update, :destroy]
 
-  root 'epa_records#index'
+  root to: 'apipie/apipies#index'
 end
