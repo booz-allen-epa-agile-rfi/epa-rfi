@@ -177,7 +177,8 @@ a.nav-red:hover{
 .btn-year {
   margin: 5px 0px 12px !important;
 }
-.caret-maptype {
+.caret-maptype,
+.caret-details {
   position: absolute;
   left: 90%;
   top: 45%;
