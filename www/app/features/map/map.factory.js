@@ -212,7 +212,7 @@
       return L.map('map' , {
         center: [38.9338676, -77.1772604],
         zoom: 5,
-        minZoom: 8,
+        minZoom: 9,
         layers: [Map.tileLayers.streets]
       }).on('layeradd', function(layerEvent){
         // Only add ID if the layer is a marker (has a feature hash)
