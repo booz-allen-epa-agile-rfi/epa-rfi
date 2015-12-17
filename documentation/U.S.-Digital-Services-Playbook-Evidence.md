@@ -6,7 +6,7 @@ This  page demonstrates how we used U.S. Digital Services Playbook to define our
 
 _- Early in the project, spend time with current and prospective users of the service:_
 
-Interviewed Subject Matter Experts (SME) who know the FDA data well (including the former CTO of FDA, Booz Allen leaders who work in the FDA market, data scientists building solutions on the FDA data), randomly selected end users, and team's Product Owner 
+Interviewed Subject Matter Experts (SME) who know the EPA data well (including Booz Allen leaders and supporting staff who work in the EPA market, randomly selected end users, and team's Product Owner)
 
 _- Use a range of qualitative and quantitative research methods to determine people’s goals, needs, and behaviors; be thoughtful about the time spent_
 
