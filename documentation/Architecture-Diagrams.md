@@ -40,7 +40,7 @@ https://github.com/booz-allen-agile-delivery/ads-final/tree/development/bin/jenk
 
 # Physical Deployment Model:
 
-##need to update to reflect lack of Sophos## 
+##need to update to reflect lack of Sophos
 
 ![Physical Deployment Model](https://cloud.githubusercontent.com/assets/8406690/8513155/a8c11102-232d-11e5-8cd5-9ea748f1e537.png)
 
