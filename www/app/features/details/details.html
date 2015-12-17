@@ -32,7 +32,7 @@
               <div class="collapse" id="collapseChemicals-{{$index}}">
                 <div class="well pad-10">
                   <p class="text-sm">
-                    <span ng-repeat="chemical in keys(data.healthEffects[effect].chemicals) | orderBy: chemical">{{ chemical | startCase }} ({{ data.healthEffects[effect].chemicals[chemical] }})<br></span>
+                    <span ng-repeat="chemical in keys(data.healthEffects[effect].chemicals) | orderBy: chemical"><a href="#" ng-click="applyFilter('chemical', chemical)">{{ chemical | startCase }} ({{ data.healthEffects[effect].chemicals[chemical] }})</a><br></span>
                   </p>
                 </div>
               </div>
@@ -46,7 +46,7 @@
               <div class="collapse" id="collapseFacilities-{{$index}}">
                 <div class="well pad-10">
                   <p class="text-sm">
-                    <span ng-repeat="facility in data.healthEffects[effect].facilities | orderBy:'facility_name'">{{ facility.facility_name | startCase }} <br></span>
+                    <span ng-repeat="facility in data.healthEffects[effect].facilities | orderBy:'facility_name'"><a href="#" ng-click="applyFilter('facilities', facility.facility_name)">{{ facility.facility_name | startCase }} </a><br></span>
                   </p>
                 </div>
               </div>
@@ -132,7 +132,7 @@
               <div class="collapse" id="collapseChemicals-{{$index}}">
                 <div class="well pad-10">
                   <p class="text-sm">
-                    <span ng-repeat="facility in data.chemicals[name].facilities | orderBy: 'facility_name' track by $index">{{ facility.facility_name | startCase }}<br></span>
+                    <span ng-repeat="facility in data.chemicals[name].facilities | orderBy: 'facility_name' track by $index"><a href="#" ng-click="applyFilter('facilities', facility.facility_name)">{{ facility.facility_name | startCase }}</a><br></span>
                   </p>
                 </div>
               </div>
