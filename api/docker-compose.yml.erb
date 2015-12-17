@@ -2,12 +2,12 @@ db:
   image: <%= ENV['REGISTRY'] ||= '52.34.113.202' %>/<%= ENV['DATABASE_IMAGE_NAME'] ||= 'devel_database' %>
   container_name: <%= ENV['DATABASE_IMAGE_NAME'] ||= 'devel_database' %>
   ports:
-    - "5432:5432"
+    - 5432:5432
 backend:
   image: <%= ENV['REGISTRY'] ||= '52.34.113.202' %>/<%= ENV['BACKEND_IMAGE_NAME'] ||= 'devel_backend' %>
   container_name: <%= ENV['BACKEND_IMAGE_NAME'] ||= 'devel_backend' %>
   ports:
-    - "3000:3000"
+    - 3000:3000
   environment:
     - RAILS_ENV=docker
   links:
@@ -22,6 +22,12 @@ cadvisor:
     - /var/run:/var/run:rw
     - /sys:/sys:ro
     - /var/lib/docker/:/var/lib/docker:ro
+alertmanager:
+  image: <%= ENV['REGISTRY'] ||= '52.34.113.202' %>/alertmanager
+  container_name: 'alertmanager'
+  entrypoint: /bin/alertmanager -config.file=/etc/alertmanager/alertmanager.conf -log.level=debug
+  ports:
+    - 9093:9093
 prometheus:
   image: <%= ENV['REGISTRY'] ||= '52.34.113.202' %>/prometheus
   container_name: 'prometheus'
