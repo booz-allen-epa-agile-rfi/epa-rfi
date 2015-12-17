@@ -19,3 +19,4 @@
 | [cAdvisor](https://github.com/google/cadvisor) | [Apache](https://github.com/google/cadvisor/blob/master/LICENSE) 
 | [Jenkins](https://jenkins-ci.org/)  | [MIT](https://github.com/jenkinsci/jenkins/blob/master/LICENSE.txt) |
 | [Leaflet](http://leafletjs.com/) | [License] (https://github.com/Leaflet/Leaflet/blob/master/LICENSE)
+| [Prometheus](http://leafletjs.com/) | [License] (https://github.com/prometheus/prometheus/blob/master/LICENSE)
