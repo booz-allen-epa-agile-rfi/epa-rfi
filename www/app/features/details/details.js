@@ -35,16 +35,30 @@
 
       function activate() {
         $scope.data = {};
-        $scope.keys = function(obj){
-          return !_.isUndefined(obj) ? Object.keys(obj) : [];
-        }
+        $scope.keys = getKeys;
 
+        // Results toggling 
+        $scope.selectedResult = 'Health Effects';
+        $scope.otherResults = ['Facilities', 'Chemicals'];
+        $scope.toggleSelectedResult = toggleSelectedResult;
+
+        // Watch function to update Scope's data when Map factory has new data
         $scope.$watch(function(){ return Map.data.changed }, function(newValue){
           $scope.data = Map.data;
           Map.data.changed = false;
-          
+
           console.log(Map.data);
         });
+
+        function getKeys(obj) {
+          return !_.isUndefined(obj) ? Object.keys(obj) : [];
+        }
+
+        function toggleSelectedResult(newResult){
+          var choices = ['Health Effects', 'Facilities', 'Chemicals'];
+          $scope.selectedResult = newResult;
+          $scope.otherResults = _.without(choices, newResult);
+        }
       }
     }
   }

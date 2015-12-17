@@ -8,11 +8,11 @@
       </p>
       <div class="btn-group">
         <button type="button" class="btn btn-default dropdown-toggle margin-top btn-drop" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Health Effects <span class="caret"></span>
+          {{ selectedResult }} <span class="caret"></span>
         </button>
         <ul class="dropdown-menu">
-          <li><a href="#">Facilities</a></li>
-          <li><a href="#">Chemicals</a></li>
+          <li><a href="#" ng-click="toggleSelectedResult(otherResults[0])">{{ otherResults[0] }}</a></li>
+          <li><a href="#" ng-click="toggleSelectedResult(otherResults[1])">{{ otherResults[1] }}</a></li>
         </ul>
       </div>
     </div>
