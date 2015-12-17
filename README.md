@@ -22,7 +22,7 @@ Booz Allen Digital offers key strengths to the EPA OEI:
 
 - **A Culture of Innovation** - Booz Allen's dedication to creating a culture of innovation resulted in the Strategic Innovation Group (SIG), a 1,800 team whose mission it is to ensure there is focus on agile, digital, next gen analytics and cyber security for all modern solutions.
 
-- **Cross-functional agile skilled staff with reach back to domain SME** – Booz Allen was able to quickly assemble a highly-skilled, cross-functional team for this effort. Booz Allen has deep knowledge of federal agencies missions and a staff deeply familiar with the EPA.
+- **Cross-functional agile skilled staff with reach back to domain SME** – Booz Allen was able to quickly assemble a highly-skilled, cross-functional team for this effort. Booz Allen has deep knowledge of federal agencies missions and a staff embedded with the EPA OEI.
 
 ### Digital Services Playbook
 
