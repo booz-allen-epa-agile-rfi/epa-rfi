@@ -28,5 +28,3 @@ prometheus:
   entrypoint: /bin/prometheus -config.file=/etc/prometheus/prometheus.yml -log.level=debug
   ports:
     - 9090:9090
-  volumes:
-    - $PWD/prometheus/:/etc/prometheus/:ro
