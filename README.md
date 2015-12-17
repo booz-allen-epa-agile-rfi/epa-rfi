@@ -20,7 +20,7 @@ Booz Allen Digital offers key strengths to the EPA OEI:
 
 - **Demonstrated Agile Delivery** – Our firm has strong experience with agile software development as demonstrated on this prototype as well as on GSA Integrated Award Environment (IAE), GSA 18F, numerous hackathons, and many other federal and commercial engagements.  For this engagement, we were able to pull together an agile team across three time zones and demonstrate distributed DevOps.
 
-- **A Culture of Innovation** - Booz Allen's dedication to creating a culture of innovation resulted in the Strategic Innovation Group (SIG), a 1,800 team whose mission it is to ensure there is focus on agile, digital, next gen analytics and cyber security for all modern solutions.
+- **A Culture of Innovation** - Booz Allen's dedication to creating a culture of innovation resulted in the Strategic Innovation Group (SIG), a 1,800 person division whose mission it is to ensure there is focus on agile, digital, next gen analytics and cyber security for all modern solutions.
 
 - **Cross-functional agile skilled staff with reach back to domain SME** – Booz Allen was able to quickly assemble a highly-skilled, cross-functional team for this effort. Booz Allen has deep knowledge of federal agencies missions and a staff embedded with the EPA OEI.
 
@@ -49,11 +49,12 @@ https://github.com/booz-allen-epa-agile-rfi/epa-rfi/blob/master/documentation/De
 **(c) Agile Software Development**
 
 We developed TREEVIEW using our iterative agile process:
+
 https://github.com/booz-allen-epa-agile-rfi/epa-rfi/blob/master/documentation/Agile-Artifacts.md
 
 **(d) Agile Architecture**
 
-We used all open source technologies and open sourced our TREEVIEW prototype.
+We only used open source technologies and open sourced our TREEVIEW prototype.
 
 https://github.com/booz-allen-epa-agile-rfi/epa-rfi/blob/master/documentation/Architecture-Diagrams.md
 
@@ -70,6 +71,7 @@ https://github.com/booz-allen-epa-agile-rfi/epa-rfi/blob/master/documentation/De
 **(f) Test Driven Development**
 
 To support agile development we took an automated testing approach:
+
 https://github.com/booz-allen-epa-agile-rfi/epa-rfi/blob/master/documentation/Automated-Testing.md
 
 **(g) API First Design**
