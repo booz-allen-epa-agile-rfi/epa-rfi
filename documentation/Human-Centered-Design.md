@@ -19,9 +19,9 @@ After completing research, we decided to flesh out each of the four Personas int
 **insert 4 personas**
 
 ## User Stories
-As a group, we determined the top tasks a user would do and defined them in a manner consistent with how each of our 4 unique personas would have stated them. 
+As a group, we determined the top tasks a user would do and defined them in a manner consistent with how each of our 4 unique personas would have stated them. We listed each of them, making sure to describe how we came about creating each of them in the [User Stories Documentation] (https://github.com/booz-allen-epa-agile-rfi/epa-rfi/blob/master/documentation/User-Stories.md) page
 
-**INSERT LINK TO USER STORIES**
+
 
 ## Journey Mapping/Task Analysis
 We drafted journey maps for each persona for the TREEVIEW experience to help shape our flows. Each of the following artifacts represent how our 4 indiviudal users would experience a loop on the site. 
