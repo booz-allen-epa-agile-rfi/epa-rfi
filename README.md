@@ -32,45 +32,26 @@ https://github.com/booz-allen-epa-agile-rfi/epa-rfi/blob/master/documentation/U.
 
 ### Technical Approach 
 
+We assigned one leader, our Product Owner (PO), who had the authority, responsibility, and was held accountable for the quality of our TREEVIEW prototype submission.
+
 **(a) User-Centered Design**
 
-We assigned one leader, our Product Owner (PO), who had the authority, responsibility, and was held accountable for the quality of our TREEVIEW prototype submission.  The PO was responsible for defining the initial prototype concept and attended all sprint planning and demonstrations, making the decisions about scope, priority, and usability.  From the beginning of our prototype development, we included ‘people’ throughout the process to understand their needs and get their feedback on our design and development. 
-
-During this challenge, we used 8 core Human Centered Design (HCD) techniques: (1) Visioning exercise to brainstorm target groups, features/services to meet their needs; (2) Personas; (3) Journey Mapping; (4) User Stories; (5) Sketching screen designs; (6) Paper Prototyping with Wireframes; (7) Heuristic Reviews based on researched best practices and industry standards for designing for real, live people; (8) Usability testing in 2 small-scale iterative rounds of moderated in-person and remote testing. Here is an overview of our lean HCD process:
+From the beginning of our prototype development, we included ‘people’ throughout the process to understand their needs and get their feedback on our design and development.  An overview of our lean HCD process:
 
 https://github.com/booz-allen-epa-agile-rfi/epa-rfi/blob/master/documentation/Human-Centered-Design.md
 
-Our user stories:
+**(b) DevOps Approach**
 
-https://github.com/booz-allen-epa-agile-rfi/epa-rfi/blob/master/documentation/User-Stories.md
-
-Our personas: 
-
-(need link)
-
-**(b) DevOps Approach NEEDS LINK**
-
-We decided that we wanted to build a prototype that not only intuitively displayed data from 2 of the EPA datasets but also included a front end API to allow for a third party to pull data into their application.   Given this scope, we assembled a multidisciplinary and collaborative distributed team consisting of a Product Owner, Agile Coach, Technical Architect, User Interface / User Experience Designer, Content Manager, DevOps Engineer, Front End Developers and Back End Developers. 
-
-Our humans.txt file:  NEED LINK
-
-Our DevOps workflow:
+We took a DevOps approach to the workflow for this prototype: 
 
 https://github.com/booz-allen-epa-agile-rfi/epa-rfi/blob/master/documentation/DevOps-Process.md
 
+**(c) Agile Software Development**
 
-**(c) Agile Software Development NEEDS COPY**
-
-We developed TREEVIEW using an iterative approach where feedback informed subsequent versions of the prototype through 6 sprints. In the first Sprint, we tailored Booz Allen Digital’s existing agile development tools and environment which includes a continuous delivery infrastructure.  We conducted sprint planning at the beginning of each sprint and conducted a prototype demonstration and retrospective at the end of each sprint. The EPA SMEs and PO attended the planning sessions, the reviews, and provided feedback that informed subsequent work.
-
-Our iterative agile process:
-
+We developed TREEVIEW using our iterative agile process:
 https://github.com/booz-allen-epa-agile-rfi/epa-rfi/blob/master/documentation/Agile-Artifacts.md
 
-Our Team structure:
-
-
-**(e) Agile Architecture NEEDS EDIT and COPY**
+**(d) Agile Architecture**
 
 We used all open source technologies and open sourced our TREEVIEW prototype.
 
@@ -80,38 +61,27 @@ Licenses for open source technologies:
 
 https://github.com/booz-allen-epa-agile-rfi/epa-rfi/blob/master/documentation/Licenses.md
 
-**(f) Modular Development**
+**(e) Modular Development**
 
-We developed TREEVIEW with 14 modern, open source technologies most appropriate to implement the prototype.  The team utilized GitHub for distributed source control.  We leveraged the GitFlow model of propagating code from feature branches, to development, to release, and finally to production. The Docker tool suite allowed seamless containerization and configuration management of the front-end, back-end (API) and database applications.  We used Docker-engine to build Linux containers from custom Dockerfiles stored in our Git repository. We containerized all 3 tiers of our application stack. We wrote Dockerfiles using Docker’s recommended best practices to maximize the caching features of the Docker tool. This allows for quicker builds, which is important as the Docker image is rebuilt after every push.
+We developed TREEVIEW with 14 modern, open source technologies most appropriate to implement the prototype.   Our approach:
 
 https://github.com/booz-allen-epa-agile-rfi/epa-rfi/blob/master/documentation/DevOps-Process.md
 
-- Front-End: Bootstrap, Angular.JS, Node.js, Karma, JS Hint, nvd3, Leaflet
-- Backend: Ruby, Rails, RSpec, Rubocop, Brakeman 
-- Dev-Ops: Docker (Machine, Registry, Compose), Jenkins, cAdvisor
+**(f) Test Driven Development**
 
-Our application stack:
-
-https://github.com/booz-allen-epa-agile-rfi/epa-rfi/blob/master/documentation/Architecture-Diagrams.md
-
-**(g) Test Driven Development**
-
-The concept behind Test Driven Development (TDD) is that the test cases for the code to be developed should be created before the code is implemented. This way the test cases being developed for the code are based solely on the requirements and are not influenced by the implementation of the requirements in the code.  Keeping with this pattern, we implemented a number of our tests for the front-end and back-end APIs based on our user stories, use cases, and personas.  Once the tests were completed, we wrote our code to the tests. 
-
-We wrote unit tests for code, written with appropriate tooling for the technology stack. We used Karma for front-end code and used rSpec for the backend API. Our unit testing enabled a fluid development process while leveraging the respective language specific advantages of each testing technology. The unit tests were executed both locally and on the continuous integration server (Git push).
-
-We use Jenkins as our continuous integration system to automate the running of tests and continuously deploy our code. We established GitHub hooks for each branch to kickoff Jenkins jobs. Custom jobs for each branch ran automated tests in containerized environments. Once tests were completed, Jenkins CI updated the Docker registry and deployed the new build. All pushes to the development branch are automatically examined by static code analysis, security scans, unit tests, integration tests, and performance tests. Load testing was performed ad-hoc (developer’s discretion).
-
-Our automated testing approach:
-
+To support agile development we took an automated testing approach:
 https://github.com/booz-allen-epa-agile-rfi/epa-rfi/blob/master/documentation/Automated-Testing.md
 
+**(g) API First Design**
 
-**(h) API First Design**
+We implemented API First Design by starting with our Human Centered Design: 
 
-The concept behind API First is that you design and develop your APIs first before developing your delivery channels such as mobile application or web.  The APIs are designed based on user stories and the available data sets, and iedally not influenced by any particular channel.
+https://github.com/booz-allen-epa-agile-rfi/epa-rfi/blob/master/documentation/Human-Centered-Design.md
 
-For TREEVIEW we first reviewed and discussed our user stories and the chemical release data set to determine the required methods and functionality for our APIs.  Once we designed the API, we were then able to build out the tests and code for our front-end and back-end API.
+and our DevOps process: 
+
+https://github.com/booz-allen-epa-agile-rfi/epa-rfi/blob/master/documentation/DevOps-Process.md
+
 
 
 
