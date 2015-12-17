@@ -1,1 +1,1 @@
-./alertmanager -config.file /usr/src/app/alertmanager.conf
+./alertmanager -config.file /etc/prometheus/alertmanager.conf
