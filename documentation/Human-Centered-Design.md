@@ -69,7 +69,7 @@ After confirming our initial design was consistent with our user stories and per
 
 ![paper proto 1](https://cloud.githubusercontent.com/assets/16209237/11874917/074509a0-a4b0-11e5-98ae-96dd45be0f66.JPG)
 
-![paper proto 2](https://cloud.githubusercontent.com/assets/16209237/11874308/028052b0-a4ad-11e5-9c70-0797abc0b9e9.JPG)
+![paper proto 2](https://cloud.githubusercontent.com/assets/16209237/11874920/0a2a2934-a4b0-11e5-9fb7-617b3cdfbf2f.JPG)
 
 
 ## Paper Prototyping Wireframes
