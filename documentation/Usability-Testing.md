@@ -1,58 +1,40 @@
-From day 1, even in the Ideation phase, the first question we asked was very simple: "Who is this for?"  This customer focus started at the very beginning of our challenge, and became intertwined in the fabric of our development process.  A great deal of our human centered design involved usability testing and user interviews. Our process entailed iterative, small-scale Lean UX and Lean Startup-style interviews.  We spent a large portion of our time conducting interviews, especially in-person interviews. While this time allocation may have been different than other competitors, we believe that is crucial to designing a prodcut that target audiences not only CAN use, but also WILL use.
+# Usability Testing
 
-We conducted user interviews with each of our hypothesized persona types (consumers, doctors, FDA administrators, senior citizens, advocacy groups) which were updated, expanded or removed based on the incoming user data. For instance, we originally hypothesized a doctor persona, which was removed after several phone interviews with doctors because user data showed that they were not, in reality, a target audience. 
+The first question we asked in our design kick-off was very simple: "Who is this application for?". This customer focus started at the very beginning of our challenge, and became intertwined in the fabric of our development process. A great deal of our human centered design involved usability testing and market research. We spent a large portion of our time getting to know the users by creating personas that WILL be using the product. While this time allocation may have been different than other competitors, we believe that is crucial to designing a product that target audiences not only CAN use, but also WILL use.
 
-We wanted to interviews medically-conscious consumers from varied backgrounds, so we sat in a LabCorp waiting room and chatted about medication and labels with everyone who came in and sat next to us. Everyone who walked in was happy to talk with us while they were waiting for their bloodwork. Here are the demographics of the people we spoke to in the waiting room during this round of user interviews:
+The overall team had the opportunity to discuss the necessary data that will be focused for the User Stories and began thinking of the potential users who would be utilizing the application. After the meeting the team decided to target the “Concerned Citizen” that would be separated into four Personas: The Concerned Mother, The Environmentalist, The Academic and The Working Professional.
 
-F 40s, latino, medical technician
-M 40s, white, construction worker
-M 20s, white, student 
-F 30s, white, works in an office
-M 40s, black
-F 30s, latino, stay-at-home mom
-F 60s latino, grandmother
-M 20s, white
-F 20s, black
-F 40s white, mother, receptionist at law firm
+![persona_all_epa_rfi_v3](https://cloud.githubusercontent.com/assets/16209237/11874019/7ce42556-a4ab-11e5-864c-8e6dd2e69d14.jpg)
 
-![usab testing labcorp front desk](https://cloud.githubusercontent.com/assets/13038047/8505393/fbc73c6e-21b1-11e5-9c84-61767058d0bc.jpg)
-![usab testing labcorp participants](https://cloud.githubusercontent.com/assets/13038047/8505394/fbd0f632-21b1-11e5-9089-dd816cc66fe7.jpg)
+![persona_all_epa_rfi_v32](https://cloud.githubusercontent.com/assets/16209237/11874023/83a652c4-a4ab-11e5-81f5-20dbb9da428b.jpg)
 
-Based on these in-person user interviews, our consumer persona was broken into two very different personas (Becca the label reader; Vic a non-reader):
+![persona_all_epa_rfi_v33](https://cloud.githubusercontent.com/assets/16209237/11874028/87f1c5f2-a4ab-11e5-94c7-b2672cf0e8f9.jpg)
 
-![becca label nut](https://cloud.githubusercontent.com/assets/13038047/8522319/c1953cc0-23ba-11e5-9e2a-36c0e720ba09.png)
-![vic label non-reader](https://cloud.githubusercontent.com/assets/13038047/8522322/c19e27fe-23ba-11e5-804f-661b16cf484d.png)
+![persona_all_epa_rfi_v34](https://cloud.githubusercontent.com/assets/16209237/11874030/8bd5b4f8-a4ab-11e5-855c-01cf4f08944e.jpg)
 
-While we had not considered geriatrics as a persona type to begin with, after speaking with users of all different demographics in the LapCorp waiting room, we also added a senior citizen persona. To validate this persona, we did another round of user interviews with two senior citizens by phone, and with two members of the Board of Directors of a local assisted living home, Vantage House:
+After we created our personas to find out exactly whom we were targeting, we moved on to conduct a total of four rounds of in-person and remotely-moderated usability testing on our wireframes and final developed mockups to determine qualitative behavioral data. We conducted these rounds with 4-6 people each, and after each round reviewed the results with the team, especially the designers who were working on the wireframes.
 
-![vantage house](https://cloud.githubusercontent.com/assets/13038047/8505405/7ac43ca6-21b2-11e5-835c-a2ff2307e5f5.jpg)
+## Round 1 - Wireframe Usability Testing
 
-This is the geriatric persona that came out of these:
+In our first round of usability testing, we used the wireframes to get insight on the overall application. With some content and images still in the process we wanted our users to get an overall feel of the application. We had the opportunity to test with 6 individuals that provided us quick and positive results on the application. Our results were: 
+* “I was able to recognize that this was a application that will be require me to put in a zip code”
+* “I’m confused…but if I click the “How It Works” button I know I will learn more about it”
+* “The large portion requires a map which will provide me information that I need on the right information bar”
 
-![geriatric](https://cloud.githubusercontent.com/assets/13038047/8522320/c1993e42-23ba-11e5-88b4-94807be1c9c2.png)
+![paper proto 1](https://cloud.githubusercontent.com/assets/16209237/11874917/074509a0-a4b0-11e5-98ae-96dd45be0f66.JPG) 
+![paper proto 2](https://cloud.githubusercontent.com/assets/16209237/11874920/0a2a2934-a4b0-11e5-9fb7-617b3cdfbf2f.JPG)
 
-We conducted two rounds of usability testing (4-5 participants in each round) on wireframes created in Axure with both Beccas and Vics. These were moderated, in-person usability test sessions where the participants pulled up our wireframes and walked through unstructured impressions on layout, navigation, content and interaction. We made significant changes based on both preference and behavioral data from each round of this small-scale usability testing.
+## Round 2 - High Fidelity Mockup Usability Testing
 
-We conducted phone-based user interviews with doctors we knew to understand their process in deciding on what medications to prescribe.  They told us about sites they were already using such as UpToDate which worked extremely well for their needs, and because of those interviews we decided that doctors were actually not our target audience, so we went back to the other audiences to refine them further. 
+Once the wireframes were finalized, we conducted our second round of usability testing on our mockups. We had the opportunity to do remote and in-person usability testing that provided us results that were used for recommendations on our designs. On this round of usability testing we had mix reviews on the application: Some users was overwhelmed at the application and wanted to click out. Two users wanted additional context before using the search feature and avoided the “How it Works” button. With these results, we provided recommendations to fix the design and utilized on our next iterations. At this point, the team was battling with data sets on the back-end development and was focused on that portion of the application. Finally, we drafted our proposed changes and documented 
 
-For the advocacy group persona, we phoned the founder of the Hashimoto’s 411 group (which one of our user interviews referenced), and also spoke to two members of the group. Here is the advocacy group persona:
+![user test 1](https://cloud.githubusercontent.com/assets/16209237/11874638/c6d1b2fc-a4ae-11e5-913d-c23905b61e46.JPG)
 
-![hashi group](https://cloud.githubusercontent.com/assets/13038047/8522321/c19a8022-23ba-11e5-8b98-be22488a3f93.png)
+![user test 2](https://cloud.githubusercontent.com/assets/16209237/11874622/b8dede22-a4ae-11e5-97db-98655c8e0733.JPG)
 
-Additionally, we spoke to three former FDA administrators, including the former FDA CTO to get their perspectives for our FDA administrator persona:
+![user test 3](https://cloud.githubusercontent.com/assets/16209237/11874624/bb6f0b76-a4ae-11e5-830f-812ce21279a9.png)
 
-![fda administrator](https://cloud.githubusercontent.com/assets/13038047/8522318/c1917acc-23ba-11e5-9ff1-42eeb098fd05.png)
-
-After our interviews to find out exactly who we were targeting, we moved on to conduct four (4) rounds of in-person, moderated usability testing on our wireframes, mockups, and final developed product to determine qualitative behavioral data. We condcuted these rounds with 5-6 people each, and after each round reviewed the results with the team, espeicaily the designers who were working on the wireframes. 
-
-Our user interviews and usability testing throughout the challenge impacted not only our personas, but also our user stories, journey maps, and wireframes. Ultimately these interviews guided what product we were building. We found out that about half of the people we spoke to read labels, and of those people nearly all of them feel mistrusting of the label alone, and for good reason!  Of the top adverse events reported, only a fraction makes it onto medicine labels. To do anything about this big honkin' problem, we needed better data.  And who better to help us with that than the people who need it -- health conscious general public, advocacy groups, etc. Everyone wants to know about side effects, and a small fraction of these people are willing to help make labels more accurate. With crowdsourcing, even a small fraction of do-gooders can make a big difference. Therefore, the goal of our website is ultimately to perform a gap analysis between adverse events data and label data, using crowdsourcing to help give us the proper data to help FDA administrators make drug labels more accurate. 
-
-This is when our major pivot occurred, and we continued usability testing after the pivot. At times, our user data conflicted with what the Prodcut Owner's key business goals entailed. At this point, discrepancies were brought to the attention of the PO who made the final decision about what would be implemented in the product. 
-
-
-
-
-
+![user test 4](https://cloud.githubusercontent.com/assets/16209237/11874628/bf1dd28e-a4ae-11e5-9bef-33133114b7a5.png)
 
 
 
