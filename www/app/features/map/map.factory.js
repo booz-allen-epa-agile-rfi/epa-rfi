@@ -8,6 +8,7 @@
   /** @ngInject */
   function MapFactory(MapData, API_TOKEN) {
     var Map = {};
+    var hiddenFacilities = {};
     Map.init = init;
     
     return Map;
@@ -21,7 +22,7 @@
       Map.update = update;
       Map.map = initMap();
 
-      var hiddenFacilities = {};
+      hiddenFacilities = {};
       Map.showAll = showAll;
       Map.hideLayer = hideLayer;
       Map.showLayer = showLayer;

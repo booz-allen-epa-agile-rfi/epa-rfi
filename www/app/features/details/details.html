@@ -98,7 +98,7 @@
               <div class="collapse" id="collapseFacilities-{{$index}}">
                 <div class="well pad-10">
                   <p class="text-sm">
-                    <span ng-repeat="effect in data.facilities.properties[name].healthEffects | orderBy:'effect' track by $index">{{ effect | startCase }} <br></span>
+                    <span ng-repeat="effect in data.facilities.properties[name].healthEffects | orderBy:effect track by $index">{{ effect | startCase }} <br></span>
                   </p>
                 </div>
               </div>
