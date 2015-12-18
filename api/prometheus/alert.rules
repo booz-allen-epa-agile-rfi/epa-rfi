@@ -1,7 +1,7 @@
 ### alert.rules ###
 
 # Alert for any instance that is unreachable for >5 minutes.
-ALERT pmx_down
+ALERT InstanceDown
   IF up == 0
   FOR 5m
   WITH {
@@ -9,3 +9,28 @@ ALERT pmx_down
   }
   SUMMARY "Instance {{$labels.instance}} down"
   DESCRIPTION "{{$labels.instance}} of job {{$labels.job}} has been down for more than 5 minutes."
+
+# Alert for high memory usage
+ALERT HighMemoryAlert
+  IF container_memory_usage_bytes{image="ubuntu:14.04"} > 1000000000
+  FOR 1m
+  WITH {}
+  SUMMARY "High Memory usage for Ubuntu container"
+  DESCRIPTION "High Memory usage for Ubuntu container on {{$labels.instance}} for container {{$labels.name}} (current value: {{$value}})"
+
+# Alert for any instance that has a disk that will fill up in about 4 hours
+ALERT DiskWillFillIn4Hours
+  IF predict_linear(node_filesystem_free{job='node'}[1h], 4*3600) < 0
+  FOR 5m
+  WITH {
+    severity="page"
+  }
+  SUMMARY "{{$labels.device}} on {{$labels.instance}} filling up"
+  DESCRIPTION "{{$labels.device}} mounted on {{$labels.mountpoint}} on {{$labels.instance}} will fill up within 4 hours."
+
+# Alert for any instance that have a median request latency >1s.
+ALERT ApiHighRequestLatency
+  IF api_http_request_latencies_ms{quantile="0.5"} > 1000
+  FOR 1m
+  SUMMARY "High request latency on {{$labels.instance}}"
+  DESCRIPTION "{{$labels.instance}} has a median request latency above 1s (current value: {{$value}})"
