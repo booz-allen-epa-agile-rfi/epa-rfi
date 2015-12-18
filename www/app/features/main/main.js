@@ -19,6 +19,8 @@ function MainController($scope, $routeParams, $location, Map, Geocode) {
   }
   $scope.searchValue = '';
 
+  $scope.subdomain = getSubDomain();
+
   // Initialization
 
   if(!_.isEmpty($routeParams)) initState();
@@ -28,7 +30,7 @@ function MainController($scope, $routeParams, $location, Map, Geocode) {
   // Map Search
   $scope.searchSubmit = function(searchVal) {
     Geocode.search(searchVal, grabState());
-  }
+  };
 
   // On Submit of Filters
   $scope.submitMapFilters = function(e) {
@@ -36,6 +38,16 @@ function MainController($scope, $routeParams, $location, Map, Geocode) {
     Map.update($scope.state);
     Map.clearHiddenFacilities();
     $scope.shareUrl = generateShareUrl($scope.state);
+  };
+
+  function getSubDomain() {
+    var host = $location.host();
+
+    var sub = (host.indexOf('.') < 0) ? null : host.split('.')[0];
+
+    console.log('getSubDomain');
+    console.log(sub);
+    return sub;
   }
 
   // Generate the current url map state
