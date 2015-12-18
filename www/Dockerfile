@@ -2,6 +2,7 @@ FROM ubuntu:14.04
  
 RUN mkdir /usr/src/app
 RUN mkdir /usr/src/app/client
+RUN mkdir /usr/src/app/client/tests
 WORKDIR /usr/src/app/client
 
 
