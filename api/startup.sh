@@ -16,7 +16,7 @@ else
         SERVER_PID = `cat /usr/src/app/tmp/pids/server.pid`
         PROCESS_ID = `ps -ef | grep rails | grep $SERVER_PID | awk '{print $2}'`
 
-        if [ "$SERVER_PID" == "$PROCESS_ID" ]
+        if [ "$SERVER_PID" == "$PROCESS_ID" ]; then
             kill -9 $PROCESS_ID 
         fi 
 
