@@ -27,6 +27,13 @@ describe('Controller: MainCtrl', function () {
     expect(scope.searchValue).toBe('');
   });
 
+  describe('scope.state', function(){
+    it('should be an array of strings', function() {
+      _.each(scope.emissions, function(emission) {
+        expect(typeof emission).toEqual('string');
+      });
+    });
+  });
 
   //it('should add to the list of adverse events if a drug searched', function(){
   //    scope.selectedDrug = 'advil';
