@@ -10,6 +10,5 @@ class ApplicationController < ActionController::Base
   include AssociationResolution
   include QueryBuilder
 
-
   extend Apipie::DSL::Concern
 end
