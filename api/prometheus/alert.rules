@@ -1,19 +1,29 @@
 ### alert.rules ###
 
-# Alert for any instance that is unreachable for >5 minutes.
-ALERT InstanceDown
-  IF up == 0
-  FOR 5m
-  WITH {
-    severity="page"
-  }
-  SUMMARY "Instance {{$labels.instance}} down"
-  DESCRIPTION "{{$labels.instance}} of job {{$labels.job}} has been down for more than 5 minutes."
+# Alert for the frontend contaner being down for 20 seconds
+ALERT FrontendContainerDown
+  IF absent(((time() - container_last_seen{name="develop_frontend"}) < 5)) FOR 15s
+  WITH {}
+  SUMMARY "Container {{$labels.instance}} down"
+  DESCRIPTION "{{$labels.instance}} container has been down for more than 20 seconds."
+
+# Alert for the backend contaner being down for 20 seconds
+ALERT BackendContainerDown
+  IF absent(((time() - container_last_seen{name="develop_backend"}) < 5)) FOR 15s
+  WITH {}
+  SUMMARY "Container {{$labels.instance}} down"
+  DESCRIPTION "{{$labels.instance}} container has been down for more than 20 seconds."
+
+# Alert for the database contaner being down for 20 seconds
+ALERT DatabaseContainerDown
+  IF absent(((time() - container_last_seen{name="develop_database"}) < 5)) FOR 15s
+  WITH {}
+  SUMMARY "Container {{$labels.instance}} down"
+  DESCRIPTION "{{$labels.instance}} container has been down for more than 20 seconds."
 
 # Alert for high memory usage
 ALERT HighMemoryAlert
-  IF container_memory_usage_bytes{image="ubuntu:14.04"} > 1000000000
-  FOR 1m
+  IF container_memory_usage_bytes{image="ubuntu:14.04"} > 1000000000 FOR 1m
   WITH {}
   SUMMARY "High Memory usage for Ubuntu container"
   DESCRIPTION "High Memory usage for Ubuntu container on {{$labels.instance}} for container {{$labels.name}} (current value: {{$value}})"
@@ -32,5 +42,6 @@ ALERT DiskWillFillIn4Hours
 ALERT ApiHighRequestLatency
   IF api_http_request_latencies_ms{quantile="0.5"} > 1000
   FOR 1m
+  WITH {}
   SUMMARY "High request latency on {{$labels.instance}}"
   DESCRIPTION "{{$labels.instance}} has a median request latency above 1s (current value: {{$value}})"
