@@ -1,5 +1,4 @@
 # Design Processs Documentation 
-## must update the PATH URL 
 
 ## Brainstorming 
 
@@ -50,11 +49,11 @@ The team reviewed these two logos with the client to be used in the application 
 
 ![epa_rfi_logo_final_press](https://cloud.githubusercontent.com/assets/16209237/11904271/0102f858-a58d-11e5-99c9-974f5a140381.png)
 
-The combination of a final logo and numerous iterations of the wireframes allowed us to dive deep on the design of the graphical user interface (GUI) for the application. This digital collaboration effort enabled us to quickly review and address any functional or design issues uncovered while working on the app. Constant communication between the front-end team and the design team over ZOOM conferencing and Google Hangouts facilitated design and decision-making, which quickly allowed us to produce a functioning landing page and higher-fidelity UI mockups. 
+The combination of a final logo and numerous iterations of the wireframes allowed us to dive deep on the design of the graphical user interface (GUI) for the application. This digital collaboration effort enabled us to quickly review and address any functional or design issues uncovered while working on the app. Constant communication between the front-end team and the design team over ZOOM conferencing and Google Hangouts facilitated design and decision-making, which quickly allowed us to produce a functioning landing page and higher-fidelity UI mockups.
 
-![front end demo day 3 copy](https://cloud.githubusercontent.com/assets/16209237/11904276/0c4a7f60-a58d-11e5-814d-71d893e3f43d.png)
+![front end screen grabs](https://cloud.githubusercontent.com/assets/16209237/11904361/9b86c170-a58d-11e5-9a7c-14a74b4816ca.png)
 
-![front end demo 2](https://cloud.githubusercontent.com/assets/16209237/11904273/0856808e-a58d-11e5-994d-19e8cc6cdaf0.PNG)
+![front end demo day 3 copy](https://cloud.githubusercontent.com/assets/16209237/11906098/3f20d938-a598-11e5-940a-5d49649873df.png)
 
 ## Mockups 
 
@@ -66,7 +65,7 @@ The design team moved forward on creating mockups that were consistent with the 
 
 ## Style Guide
 
-The ultimate product of our design process is a Style Guide that can be quickly referenced to make changes or updates to the overall user interface. We documented each individual aspect of this in the [Style Guide NEEDS LINK] (LINK HERE) page 
+The ultimate product of our design process is a Style Guide that can be quickly referenced to make changes or updates to the overall user interface. We documented each individual aspect of this in the [Style Guide] (https://github.com/booz-allen-epa-agile-rfi/epa-rfi/blob/master/documentation/Style-Guide.md) page 
 
 
 
