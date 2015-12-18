@@ -9,17 +9,9 @@ rake db:reset
 export SECRET_KEY_BASE='rake secret'
 
 # We want to make sure rails doesn't trip over any existing rails process and/or pid
-if [ ! -f /usr/src/app/tmp/pids/server.pid ]; then
+if [ -f /usr/src/app/tmp/pids/server.pid ]; then
 
-        echo "server.pid did not exist, so we can start up rails cleanly"
-else
-        SERVER_PID = `cat /usr/src/app/tmp/pids/server.pid`
-        PROCESS_ID = `ps -ef | grep rails | grep $SERVER_PID | awk '{print $2}'`
-
-        if [ "$SERVER_PID" == "$PROCESS_ID" ]; then
-            kill -9 $PROCESS_ID 
-        fi 
-
+        echo "server.pid exists, so let's get rid of it so rails won't complain and cause an exit."
         rm /usr/src/app/tmp/pids/server.pid
 fi
 
