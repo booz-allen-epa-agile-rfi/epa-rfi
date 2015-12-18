@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   apipie
   get 'states', to: 'epa_records#states'
   get 'chemicals', to: 'epa_records#chemicals'
