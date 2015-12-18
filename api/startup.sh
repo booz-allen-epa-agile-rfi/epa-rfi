@@ -19,7 +19,7 @@ else
 
         if [ "$SERVER_PID" == "$PROCESS_ID" ]
             kill -9 $PROCESS_ID 
-        else 
+        fi 
 
         rm /usr/src/app/tmp/pids/server.pid
 fi
