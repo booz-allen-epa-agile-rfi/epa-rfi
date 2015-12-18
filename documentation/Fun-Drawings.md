@@ -8,7 +8,7 @@ Agile software development is not just a methodology for us. It's our engineerin
 
 ![agile_process updated](https://cloud.githubusercontent.com/assets/16209237/11881944/cc73139e-a4d7-11e5-9147-04377069c9a6.png)
 
-![automated_testing_v1](https://cloud.githubusercontent.com/assets/12210910/8392520/1185a8be-1cb3-11e5-9533-865459510f9d.png)
+![updated auto testing process](https://cloud.githubusercontent.com/assets/16209237/11907406/939893b2-a5a1-11e5-9223-a751431c59f6.png)
 
 ![all](https://cloud.githubusercontent.com/assets/16209237/11881947/cedf4bf2-a4d7-11e5-9fa8-d6ca22ca120f.png)
 
