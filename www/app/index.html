@@ -35,7 +35,7 @@
 
 <div ng-view></div>
 
-<footer>
+<footer ng-app="app">
   <div class="footer">
     <div>
       <img class="col-md-1 col-md-offset-1 col-xs-offset-1 treeview-logo" src="../assets/treeview_logo_footer.png">
@@ -43,8 +43,8 @@
     <div class="col-md-5 col-xs-10 col-xs-offset-1 col-md-offset-0">
       <h4>Proudly Crafted by Booz Allen Digital</h4>
     </div>
-    <div class="col-md-5 col-xs-10 col-xs-offset-1 col-md-offset-0 text-right">
-      <h4>Data Source: <a class="nav-red" href="http://www3.epa.gov/">epa.gov</a> | Checkout our <a class="nav-red" href="http://dev.treeview.io:3000/apipie">API</a>
+    <div class="col-md-5 col-xs-10 col-xs-offset-1 col-md-offset-0 text-right" ng-controller="MainCtrl">
+      <h4>Data Source: <a class="nav-red" href="http://www3.epa.gov/">epa.gov</a> | Checkout our <a class="nav-red" ng-model="subdomain" ng-href="http://{{ subdomain }}.treeview.io:3000">API</a>
         | <a class="nav-red" href="/about">Meet the team</a></h4>
     </div>
   </div>
