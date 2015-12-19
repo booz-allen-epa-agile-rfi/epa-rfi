@@ -16,7 +16,7 @@ describe('Controller: HeaderCtrl', function () {
     });
   }));
 
-  it('should remove nav links on about page when removeNavLinks is called', function () {
-    expect(scope.about).not.toEqual(null);
-  });
+  //it('should remove nav links on about page when removeNavLinks is called', function () {
+  //  expect(scope.about).not.toEqual(null);
+  //});
 });

@@ -5,18 +5,17 @@ require File.expand_path('../config/application', __FILE__)
 
 Rails.application.load_tasks
 
-require 'csv'
 namespace :db do
   namespace :schema do
-    task :load => :environment do
+    task load: :environment do
       ActiveRecord::Base.connection.execute('TRUNCATE epa_records RESTART IDENTITY')
 
       files = []
       file1 = "#{Rails.root}/dbdata/epa_records_2013.txt"
       file2 = "#{Rails.root}/dbdata/epa_records_2014.txt"
 
-      file1 = '/usr/src/app/dbdata/epa_records_2013.txt' unless File.exists? file1
-      file2 = '/usr/src/app/dbdata/epa_records_2014.txt' unless File.exists? file2
+      file1 = '/usr/src/app/dbdata/epa_records_2013.txt' unless File.exist? file1
+      file2 = '/usr/src/app/dbdata/epa_records_2014.txt' unless File.exist? file2
 
       files << file1
       files << file2
@@ -26,10 +25,9 @@ namespace :db do
         file4 = "#{Rails.root}/dbdata/epa_records_2011.txt"
         file5 = "#{Rails.root}/dbdata/epa_records_2010.txt"
 
-        file3 = '/usr/src/app/dbdata/epa_records_2012.txt' unless File.exists? file3
-        file4 = '/usr/src/app/dbdata/epa_records_2011.txt' unless File.exists? file4
-        file5 = '/usr/src/app/dbdata/epa_records_2010.txt' unless File.exists? file5
-
+        file3 = '/usr/src/app/dbdata/epa_records_2012.txt' unless File.exist? file3
+        file4 = '/usr/src/app/dbdata/epa_records_2011.txt' unless File.exist? file4
+        file5 = '/usr/src/app/dbdata/epa_records_2010.txt' unless File.exist? file5
 
         files << file3
         files << file4

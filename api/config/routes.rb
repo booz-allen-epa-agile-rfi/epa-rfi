@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   apipie
   get 'states', to: 'epa_records#states'
   get 'chemicals', to: 'epa_records#chemicals'
@@ -13,5 +12,9 @@ Rails.application.routes.draw do
   # JUST WANT TO QUERY THIS DATA - DO NOT WANT TO APPLY OTHER CRUD TO IT
   # resources :epa_records, except: [:new, :edit, :update, :destroy]
 
-  root 'epa_records#index'
+  constraints subdomain: %w(local-api dev-api staging-api api) do
+    get '/', to: 'apipie/apipies#index'
+  end
+
+  root to: 'apipie/apipies#index'
 end
