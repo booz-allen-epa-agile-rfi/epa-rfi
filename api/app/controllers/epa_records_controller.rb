@@ -2,7 +2,7 @@ class EpaRecordsController < ApplicationController
   wrap_parameters false
 
   def index
-    render json: geoJSONify(epa_records)
+    render json: geo_jsonify(epa_records)
   end
 
   api :POST, '/search', 'Searches EPA records by county, state, chemical, year, emissions or bounds.'
@@ -15,56 +15,56 @@ class EpaRecordsController < ApplicationController
   error code: 404, desc: MissingRecordDetection::Messages.not_found
 
   def search
-    response = geoJSONify(epa_records)
+    response = geo_jsonify(epa_records)
 
     if response
       render json: response
     else
-      render json: {status: 'error', data: [], message: 'No records found'}, status: 404
+      render json: { status: 'error', data: [], message: 'No records found' }, status: 404
     end
   end
 
   api :GET, '/states', 'Returns an array of objects with all states in the EPA records.'
 
   def states
-    render json: epa_records
+    render json: EpaRecord.states
   end
 
   api :GET, '/chemicals', 'Returns an array of objects with all chemicals in the EPA records.'
 
   def chemicals
-    render json: epa_records
+    render json: EpaRecord.chemicals
   end
 
   api :GET, '/zip_codes', 'Returns an array of objects with all zip codes, counties and states in the EPA records.'
 
   def zip_codes
-    render json: epa_records
+    render json: EpaRecord.zip_codes
   end
 
   api :GET, '/counties', 'Returns an array of objects with all counties in the EPA records.'
 
   def counties
-    render json: epa_records
+    render json: EpaRecord.counties
   end
 
   api :GET, '/county_totals', 'Returns an array of objects with the state, county, total number of records for that county, total pollutants and each pollutants value in the EPA records.'
 
   def county_totals
-    render json: epa_records
+    render json: EpaRecord.county_totals
   end
 
   api :GET, '/state_counties/:state', 'Returns an array of objects with all counties in the EPA records for a given :state.'
   param :state, String, required: true, desc: 'Facility two character state abbreviation.'
 
   def state_counties
-    render json: epa_records
+    render json: EpaRecord.state_counties(params[:state])
   end
 
   api :GET, '/years', 'Returns an array of objects with all years in the EPA records.'
 
   def years
-    render json: epa_records
+    render json: EpaRecord.years
   end
 
   # INTENTIONALLY LEAVING OUT CREATE, UPDATE AND DESTROY SINCE WE ARE WORKING OFF STATIC DATA
@@ -80,20 +80,6 @@ class EpaRecordsController < ApplicationController
   def epa_records
     @_epa_records ||= begin
       case params['action']
-      when 'states'
-        EpaRecord.states
-      when 'chemicals'
-        EpaRecord.chemicals
-      when 'zip_codes'
-        EpaRecord.zip_codes
-      when 'counties'
-        EpaRecord.counties
-      when 'county_totals'
-        EpaRecord.county_totals
-      when 'state_counties'
-        EpaRecord.state_counties(params[:state])
-      when 'years'
-        EpaRecord.years
       when 'search'
         params = epa_params
         emissions_conditions = search_emissions(params[:emissions]) unless params[:emissions].nil?
@@ -157,17 +143,21 @@ class EpaRecordsController < ApplicationController
     @_epa_params ||= params.permit(:facility_county, :facility_state, :chemical_name, reporting_year: [], emissions: [], bounds: [])
   end
 
-  def geoJSONify(records)
+  def geo_jsonify(records)
     return if records.blank?
 
-    geoJSON = {type: "FeatureCollection", features: []}
+    geo_json = { type: 'FeatureCollection', features: [] }
     records.each do |r|
       coords = [r.longitude.to_f, r.latitude.to_f]
-      geoJSON[:features] << {type: "Feature", properties: r, geometry: {
-        type: 'Point',
-        coordinates: coords
-        } }
+      geo_json[:features] << {
+        type: 'Feature',
+        properties: r,
+        geometry: {
+          type: 'Point',
+          coordinates: coords
+        }
+      }
     end
-    geoJSON
+    geo_json
   end
 end
