@@ -1,13 +1,13 @@
 db:
-  image: 54.201.106.8:5000/devel_database
-  container_name: devel_database
+  image: 52.34.113.202:5000/devel_database
+  container_name: 'devel_database'
   ports:
-    - "5432:5432"
+    - 5432:5432
 backend:
-  image: 54.201.106.8:5000/devel_backend
-  container_name: devel_backend
+  image: 52.34.113.202:5000/devel_backend
+  container_name: 'devel_backend'
   ports:
-    - "3000:3000"
+    - 3000:3000
   environment:
     - RAILS_ENV=docker
   links:
@@ -23,8 +23,8 @@ cadvisor:
     - /sys:/sys:ro
     - /var/lib/docker/:/var/lib/docker:ro
 prometheus:
-  image: 54.201.106.8:5000/prometheus
+  image: 52.34.113.202:5000/prometheus
   container_name: 'prometheus'
-  entrypoint: /bin/prometheus -config.file=/etc/prometheus/prometheus.yml -log.level=debug
+  entrypoint: /bin/prometheus -config.file=/etc/prometheus/prometheus.yml -alertmanager.url=http://172.17.0.1:9093 -log.level=debug
   ports:
     - 9090:9090
