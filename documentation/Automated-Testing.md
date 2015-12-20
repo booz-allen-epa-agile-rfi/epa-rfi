@@ -2,7 +2,7 @@
 
 In order to maintain healthy code among the team, any team shared code was subjected to rigorous automated tests on various perspectives of quality, including code, security, performance, and functionality. Tests were executed automatically as developers submitted code to the repository. Feedback was made available to developers within minutes of the submission on a variety of criteria explained below. If all tests were successful a deployment was automatically initiated and available for review on the appropriate environment.
 
-![automated_testing_v2](https://cloud.githubusercontent.com/assets/12210910/8501116/7a70d5da-2170-11e5-96fc-ba16d2261bcb.png)
+![updated automated testing process](https://cloud.githubusercontent.com/assets/16209237/11907406/939893b2-a5a1-11e5-9223-a751431c59f6.png)
 
 
 For more information on how the tests were executed in the build process please refer to the [api](https://github.com/booz-allen-agile-delivery/ads-final/blob/development/bin/jenkins/api-test.sh) and [front end](https://github.com/booz-allen-agile-delivery/ads-final/blob/development/bin/jenkins/api-test.sh) shell scripts. 
@@ -26,7 +26,7 @@ These tests validate the user facing functionality of the site. PhantomJS is use
 ### Conduct load and performance tests at regular intervals, including before public launch
 ***
 - [bees with machineguns](https://github.com/newsapps/beeswithmachineguns)-
-distributed AWS load testing, run by one-click [Jenkins job](https://jenkins.labelcraft.io/view/Development/job/Run%20Bees%20With%20Machineguns%20Load%20Test/) on an ad-hoc basis by the developers discretion. This tool helps provision ec2 instances with agents that will generate load on identified endpoints.
+distributed AWS load testing, run by one-click [Jenkins job](https://jenkins.treeview.io/view/Development/job/Run%20Bees%20With%20Machineguns%20Load%20Test/) on an ad-hoc basis by the developers discretion. This tool helps provision ec2 instances with agents that will generate load on identified endpoints.
 
 - [grunt-devperf](https://github.com/gmetais/grunt-devperf)-
 Grunt task that uses phantomjs to launch areas of the site and review a variety of performance metrics that can be compared to budgeted performance goals. Warnings and other alerts will be presented to help identify areas of performance improvement. [example report from Jenkins](http://52.0.92.86:8080/view/Development/job/Development_FrontEnd_Builder/lastSuccessfulBuild/artifact/reports/tests/tests/results/index.html)
