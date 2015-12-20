@@ -22,9 +22,3 @@ cadvisor:
     - /var/run:/var/run:rw
     - /sys:/sys:ro
     - /var/lib/docker/:/var/lib/docker:ro
-prometheus:
-  image: 52.34.113.202:5000/prometheus
-  container_name: 'prometheus'
-  entrypoint: /bin/prometheus -config.file=/etc/prometheus/prometheus.yml -alertmanager.url=http://172.17.0.1:9093 -log.level=debug
-  ports:
-    - 9090:9090

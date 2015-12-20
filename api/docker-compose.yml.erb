@@ -22,9 +22,3 @@ cadvisor:
     - /var/run:/var/run:rw
     - /sys:/sys:ro
     - /var/lib/docker/:/var/lib/docker:ro
-prometheus:
-  image: <%= ENV['REGISTRY'] ||= '52.34.113.202' %>/prometheus
-  container_name: 'prometheus'
-  entrypoint: /bin/prometheus -config.file=/etc/prometheus/prometheus.yml -alertmanager.url=http://<%= ENV['ALERTMANAGER_IP'] ||= '52.34.113.202' %>:9093 -log.level=debug
-  ports:
-    - 9090:9090
