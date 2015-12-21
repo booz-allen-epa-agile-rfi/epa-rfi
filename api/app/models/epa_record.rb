@@ -39,9 +39,11 @@ class EpaRecord < ActiveRecord::Base
   }
 
   scope :search, lambda {
-    select('latitude, longitude, chemical_name, facility_name, parent_company_name, reporting_year, facility_state, facility_county,
-            total_air_emissions, total_on_site_land_releases, total_underground_injection,
-            total_surface_water_discharge, cercla_chemicals, haps, priority_chemicals, osha_chemicals, body_weight, cardiovascular, dermal, developmental, endocrine, gastrointestinal, hematological, hepatic, immunological, metabolic, musculoskeletal, neurological, ocular, other_systemic, renal, reproductive')
+    select('latitude, longitude, chemical_name, facility_name, parent_company_name, reporting_year, facility_state,
+            facility_county, total_air_emissions, total_on_site_land_releases, total_underground_injection,
+            total_surface_water_discharge, body_weight, cardiovascular, dermal, developmental, endocrine,
+            gastrointestinal, hematological, hepatic, immunological, metabolic, musculoskeletal, neurological, ocular,
+            other_systemic, renal, reproductive')
   }
 
   scope :emissions, ->(emissions) { where(emissions.join(' OR ')) unless emissions.nil? }
