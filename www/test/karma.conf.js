@@ -39,6 +39,7 @@ module.exports = function(config) {
       'bower_components/leaflet/dist/leaflet-src.js',
       'bower_components/spin.js/spin.js',
       'bower_components/angular-spinner/angular-spinner.js',
+      'bower_components/zeroclipboard/dist/ZeroClipboard.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/**/*.js',
