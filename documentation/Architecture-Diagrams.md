@@ -1,9 +1,7 @@
 
 # Our Application Stack and the Tools we used : 
 
-##*image needs to be updated*##
-![Application Stack](https://cloud.githubusercontent.com/assets/8406690/8513068/e3b2a558-232a-11e5-9eda-83a49d6839f7.png)
-
+![application_stack_updated](https://cloud.githubusercontent.com/assets/16209237/11934951/0503942e-a7d3-11e5-893b-cd4899a940c2.png)
 
 Our solution is comprised of more than five modern, open-source technologies.  Our selection of technologies was driven by several factors including the language, frameworks, and libraries most appropriate to solve the problem, the ability for the technology to conform to modern development best practices, and tools that best support the full end-to-end life cycle of development for maximum quality.  These factors were considered for the technologies selected for front-end, back-end, and dev-ops.
 
@@ -39,9 +37,7 @@ https://github.com/booz-allen-epa-agile-rfi/epa-rfi/tree/master/bin/jenkins
 
 # Physical Deployment Model:
 
-##need to update to reflect lack of Sophos
-
-![Physical Deployment Model](https://cloud.githubusercontent.com/assets/8406690/8513155/a8c11102-232d-11e5-8cd5-9ea748f1e537.png)
+![physical_deployment](https://cloud.githubusercontent.com/assets/16209237/11934954/06fd3b68-a7d3-11e5-8dbe-1b568917e655.png)
 
 #Licenses
 
