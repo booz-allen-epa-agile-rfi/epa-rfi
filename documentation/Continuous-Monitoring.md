@@ -4,7 +4,7 @@ To ensure system reliability, security, and normal operating procedure we implem
 
 ### [cAdvisor](https://github.com/google/cadvisor)
 
-See a live feed of our production cAdvisor monitoring -- https://cadvisor.labelcraft.io
+See a live feed of our production cAdvisor monitoring -- http://cadvisor.treeview.io:8080/
 
 ![cadvisor EPA](https://cloud.githubusercontent.com/assets/16209237/11935505/2d603a3c-a7d6-11e5-9ce9-dfa30b15107b.png)
 
