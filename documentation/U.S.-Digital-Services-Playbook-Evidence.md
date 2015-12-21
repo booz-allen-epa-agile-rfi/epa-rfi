@@ -11,7 +11,7 @@ Interviewed Subject Matter Experts (SME) who know the EPA data well (including B
 _- Use a range of qualitative and quantitative research methods to determine people’s goals, needs, and behaviors; be thoughtful about the time spent_
 
 Used Lean UX based research methods including visioning, dot voting, ideation sketching, persona sketching, and  Journey Maps.
-For more details :
+For more details:
  
 https://github.com/booz-allen-epa-agile-rfi/epa-rfi/blob/master/documentation/Human-Centered-Design.md
 
@@ -22,7 +22,7 @@ During and at the end of sprints (either in person or virtually using Zoom.us) ,
 _- Document the findings about user goals, needs, behaviors, and preferences_
 
 Finding documented as agile artifacts:
-User stories : https://github.com/booz-allen-epa-agile-rfi/epa-rfi/blob/master/documentation/User-Stories.md
+User stories: https://github.com/booz-allen-epa-agile-rfi/epa-rfi/blob/master/documentation/User-Stories.md
 
 Other agile artifacts: http://github.com/booz-allen-epa-agile-rfi/epa-rfi/blob/master/documentation/Agile-Artifacts.md
 
@@ -34,7 +34,7 @@ _- Create a prioritized list of tasks the user is trying to accomplish, also kno
 
 User stories: https://github.com/booz-allen-epa-agile-rfi/epa-rfi/blob/master/documentation/User-Stories.md
 
-Prioritization is done during the first sprint for the release plan. At the sprint planning meetings, we reviewed the plan and re-planned and prioritized based on what we have learned and achieved in the previous sprint. All of the sprint plan  :
+Prioritization is done during the first sprint for the release plan. At the sprint planning meetings, we reviewed the plan and re-planned and prioritized based on what we have learned and achieved in the previous sprint. All of the sprint plan:
 
 http://github.com/booz-allen-epa-agile-rfi/epa-rfi/blob/master/documentation/Agile-Artifacts.md
 
@@ -48,7 +48,7 @@ Yes. During every sprint feedback is received from a selection of SMEs, end user
 
 _- Understand the different points at which people will interact with the service – both online and in person_
 
-Currently, the data resides in a database and is accesible in some ways through a map, but not with the second level of data to identify effects, impacts, etc based on the data.
+Currently, the data resides in a database and is accessible in some ways through a map, but not with the second level of data to identify effects, impacts, etc. based on the data.
 
 _- Identify pain points in the current way users interact with the service, and prioritize these according to user needs_
 
@@ -78,7 +78,7 @@ Design Guide is in our repo and all of our developers are coding based on the st
 
 _- Give users clear information about where they are in each step of the process_
 
-We have a content strategist on the team. This person's role is  to to ensure that we provide the most impactful message to the user including letting the user know where they are in the process.
+We have a content strategist on the team. This person's role is to ensure that we provide the most impactful message to the user including letting the user know where they are in the process.
 
 _- Follow accessibility best practices to ensure all people can use the service_
 
@@ -114,11 +114,11 @@ We perform usability tests every iteration.
 
 _- Ensure the individuals building the service communicate closely using techniques such as launch meetings, war rooms, daily standups, and team chat tools_
 
-All of our agile practices like standups are in our agile documentation. Our sprints started at 3 hours long. We start a sprint with a sprint planning meeting with the whole team.  On Day 2, we identified that large work products take larger chunks of time and adjusted Sprints for the entire day with a closeout, retrospective, and planning in the morning.  The development team is distributed across 4 timezones and we use Slack as our internal persistent communication tool, Zoom.US as our persistent video chat tool, Google hangout for ad-hoc discussions, and waffle.io for Sprint Planning and tracking. 
+All of our agile practices like standups are in our agile documentation. Our sprints started at 3 hours long. We start a sprint with a sprint planning meeting with the whole team.  On Day 2, we identified that large work products take larger chunks of time and adjusted Sprints for the entire day with a closeout, retrospective, and planning in the morning.  The development team is distributed across 4 time zones and we use Slack as our internal persistent communication tool, Zoom.US as our persistent video chat tool, Google hangout for ad-hoc discussions, and waffle.io for Sprint Planning and tracking. 
 
 _- Keep delivery teams small and focused; limit organizational layers that separate these teams from the business owners_
 
-For this prototype, we have a small delivery team. Some times, for larger projects, we use multi-team agile practices so that the team could stay focused to the scope.
+For this prototype, we have a small delivery team. Sometimes, for larger projects, we use multi-team agile practices so that the team could stay focused to the scope.
 
 _- Release features and improvements multiple times each month_
 
@@ -137,7 +137,7 @@ We use GitHub.
 
 _ - Give the entire project team access to the issue tracker and version control system_
 
-Everyone on the team has access to GitHub and it's issue tracker.
+Everyone on the team has access to GitHub and its issue tracker.
 
 _ - Use code reviews to ensure quality_
 
@@ -163,7 +163,7 @@ George Patch (our product owner) has been in Software Development business for o
 
 _ - The product owner has a work plan that includes budget estimates and identifies funding sources_
 
-The budget for this prototype has been designed based on our previous experience. We have been attending hackathon's and tech challenges, which gave us insight how our multi-discipled team would be designed and what would the team velocity be. Based on this metrics and what we have learned, our product owner designed a work plan and budget for this prototyping effort. 
+The budget for this prototype has been designed based on our previous experience. We have been attending hackathon's and tech challenges, which gave us insight how our multi-disciplined team would be designed and what would the team velocity be. Based on this metrics and what we have learned, our product owner designed a work plan and budget for this prototyping effort. 
 
 _ - The product owner has a strong relationship with the contracting officer_
 
@@ -173,7 +173,7 @@ Not applicable. This is an RFI.
 
 ![p7](https://cloud.githubusercontent.com/assets/12210910/8525803/02847c4e-23d1-11e5-986d-015abae302e3.jpeg)
 
-Booz Allen software developers are part of our System Development Group (SDG), regardless which market or cross-cut they support. The advantage of this structure is to learn and continuously improve. We have reusable best practices, checklists, playbooks that help us to standup a self organizing teams quickly. 
+Booz Allen software developers are part of our System Development Group (SDG), regardless which market or cross-cut they support. The advantage of this structure is to learn and continuously improve. We have reusable best practices, checklists, playbooks that help us to standup a self-organizing teams quickly. 
 
 _ - Member(s) of the team have experience building popular, high-traffic digital services_
 
@@ -216,7 +216,7 @@ Not Applicable
 
 _ - The appropriate privacy, civil liberties, and/or legal advisor for the department or agency is a partner_
 
-Booz Allen does have legal team at the service of software development teams supporting teams for PII, other privacy, civil liberties and other topics require legal advise.  For the sake of the short turnaround prototype, we perform peer reviews on the content for this purpose.
+Booz Allen does have legal team at the service of software development teams supporting teams for PII, other privacy, civil liberties and other topics require legal advice.  For the sake of the short turnaround prototype, we perform peer reviews on the content for this purpose.
 
 **DIGITAL SERVICE PLAY 8. Choose a modern technology stack**
 
@@ -255,7 +255,7 @@ https://github.com/booz-allen-epa-agile-rfi/epa-rfi/blob/master/documentation/Ar
 _ - Resources are provisioned on demand_
 
 ![git_flow_v1](https://cloud.githubusercontent.com/assets/12210910/8392524/11919d5e-1cb3-11e5-97ce-5cd08defcd9b.png)
-We have 4 environments, which match to our git flow and GitHub branch structure. All resources on these environments can be provisioned on demand using our Docker Machine:
+We have 4 environments, which match to our Git flow and GitHub branch structure. All resources on these environments can be provisioned on demand using our Docker Machine:
 
 _ - Resources scale based on real-time user demand_
 
@@ -263,7 +263,7 @@ We setup the continuous monitoring with the capabilities that reads the server s
 
 _ - Resources are provisioned through an API_
 
-Yes. We use AWS cloudformation APIs
+Yes. We use AWS CloudFormation APIs
 
 _ - Resources are available in multiple regions_
 
