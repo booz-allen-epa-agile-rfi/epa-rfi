@@ -18,10 +18,10 @@ A small snippit of a report is shown below.
 
 ![prometheus_v2](https://cloud.githubusercontent.com/assets/16209237/11935668/1a9ed632-a7d7-11e5-96ab-56412accf422.png)
 
-All administrative access to the environment is performed over secure VPN tunnel.  A VPC provides isolation of the instances from neighboring environments in the AWS IaaS.  Docker instances are deployed into a separate subnet from the Sophos appliance in the DMZ.  We apply SSL-by-default, all servers are protected by a valid SSL certificate, and HTTP requests to the site are redirected to SSL automatically.
+All administrative access to the environment is performed over secure VPN tunnel.  A VPC provides isolation of the instances from neighboring environments in the AWS IaaS. We apply SSL-by-default, all servers are protected by a valid SSL certificate, and HTTP requests to the site are redirected to SSL automatically.
 
 ![physical_deployment](https://cloud.githubusercontent.com/assets/16209237/11934954/06fd3b68-a7d3-11e5-8dbe-1b568917e655.png)
 
 ### [slack](https://slack.com/)
 
-We used slack integrations to keep a consistent eye on any activity with Github and Jenkins. GitHub pushes and pull requests could be immediately observed in the slack app. Also, using a Jenkins plugin we were able to get immediate notifications on any deployments being orchestrated by the Jenkins CI. This monitoring kept the team in synch with what was being released to the different environments and if there were any build, test, or deployment failures. 
+We used slack integrations to keep a consistent eye on any activity with Github, Prometheus, and Jenkins. GitHub pushes and pull requests could be immediately observed in the slack app. Also, using a Jenkins plugin we were able to get immediate notifications on any deployments being orchestrated by the Jenkins CI. This monitoring kept the team in synch with what was being released to the different environments and if there were any build, test, or deployment failures. 
