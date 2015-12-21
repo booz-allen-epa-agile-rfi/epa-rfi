@@ -12,9 +12,9 @@ The cAdvisor tool allows us to seamlessly review and analyze our EC2 instance ma
 
 ### [Prometheus](http://prometheus.io/)
 
-Prometheus is used as an interface for querying and charting the real-time metrics provided by cAdvisor. We're also using its alerting functionality to publish alerts to its Alert Manager component, which then pushes the alerts to the a slack channel through a custom webhook.
+Prometheus is used as an interface for querying and charting the real-time metrics provided by cAdvisor. We're also using its alerting functionality to publish alerts to its Alert Manager component, which then pushes the alerts to a slack channel through a custom webhook.
 
-A small snippit of a report is shown below.
+A small snippet of a report is shown below.
 
 ![prometheus_v2](https://cloud.githubusercontent.com/assets/16209237/11935668/1a9ed632-a7d7-11e5-96ab-56412accf422.png)
 
@@ -24,4 +24,4 @@ All administrative access to the environment is performed over secure VPN tunnel
 
 ### [slack](https://slack.com/)
 
-We used slack integrations to keep a consistent eye on any activity with Github, Prometheus, and Jenkins. GitHub pushes and pull requests could be immediately observed in the slack app. Also, using a Jenkins plugin we were able to get immediate notifications on any deployments being orchestrated by the Jenkins CI. This monitoring kept the team in synch with what was being released to the different environments and if there were any build, test, or deployment failures. 
+We used slack integrations to keep a consistent eye on any activity with GitHub, Prometheus, and Jenkins. GitHub pushes and pull requests could be immediately observed in the slack app. Also, using a Jenkins plugin we were able to get immediate notifications on any deployments being orchestrated by the Jenkins CI. This monitoring kept the team in synch with what was being released to the different environments and if there were any build, test, or deployment failures. 
