@@ -18,6 +18,6 @@ scrape_configs:
     scrape_interval: 5s
     scrape_timeout: 10s
     target_groups:
-    - targets: ["cadvisor.treeview.io:8080"]
+    - targets: ["<%= ENV['DOCKER_MACHINE_NAME'] == 'master' ? 'cadvisor' : ENV['DOCKER_MACHINE_NAME'] == 'staging' ? 'staging-cadvisor' : 'dev-cadvisor' %>.treeview.io:8080"]
       labels:
-        group: 'master'
+        group: '<%= ENV['DOCKER_MACHINE_NAME'] == 'master' ? 'master' : ENV['DOCKER_MACHINE_NAME'] == 'staging' ? 'staging' : 'development' %>'
