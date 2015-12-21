@@ -1,7 +1,7 @@
 
-# Our Application Stack and the Tools we used : 
+## Our Application Stack and the Tools we used : 
 
-![application_stack_updated](https://cloud.githubusercontent.com/assets/16209237/11934951/0503942e-a7d3-11e5-893b-cd4899a940c2.png)
+![application_stack_v2_Crop](https://cloud.githubusercontent.com/assets/16209237/11935067/bbb9c2f6-a7d3-11e5-93d1-134779db3c09.png)
 
 Our solution is comprised of more than five modern, open-source technologies.  Our selection of technologies was driven by several factors including the language, frameworks, and libraries most appropriate to solve the problem, the ability for the technology to conform to modern development best practices, and tools that best support the full end-to-end life cycle of development for maximum quality.  These factors were considered for the technologies selected for front-end, back-end, and dev-ops.
 
