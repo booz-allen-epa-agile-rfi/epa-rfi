@@ -94,7 +94,8 @@ For a visualization of infrastructrue architecture please refer to [physical dep
 
 the flow is described in more detail in the following image :
 
-![devops](https://cloud.githubusercontent.com/assets/1631162/8362833/2edcfd06-1b49-11e5-93d2-85f44488e9b4.png)
+
+![infrastructure_diagram](https://cloud.githubusercontent.com/assets/16209237/11943759/4e255526-a80e-11e5-9d07-fb518e5a9f5a.png)
 
 
 1) After a change is pushed to a git branch, our CI server builds an updated Docker image for that specific branch and application tier.
