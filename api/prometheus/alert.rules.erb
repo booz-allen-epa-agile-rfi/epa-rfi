@@ -4,22 +4,22 @@
 ALERT FrontendContainerDown
 IF absent(((time() - container_last_seen{name="<%= ENV['DOCKER_MACHINE_NAME'] == 'master' ? 'master_frontend' : ENV['DOCKER_MACHINE_NAME'] == 'staging' ? 'staging_frontend' : 'develop_frontend' %>"}) < 60)) FOR 60s
 WITH {}
-  SUMMARY "Container {{$labels.instance}} down"
-  DESCRIPTION "{{$labels.instance}} container has been down for more than 60 seconds."
+  SUMMARY "Container <strong><%= ENV['DOCKER_MACHINE_NAME'] == 'master' ? 'master_frontend' : ENV['DOCKER_MACHINE_NAME'] == 'staging' ? 'staging_frontend' : 'develop_frontend' %></strong> is down"
+  DESCRIPTION "The <strong><%= ENV['DOCKER_MACHINE_NAME'] == 'master' ? 'master_frontend' : ENV['DOCKER_MACHINE_NAME'] == 'staging' ? 'staging_frontend' : 'develop_frontend' %></strong> container has been down for more than 60 seconds."
 
 # If down for 60s then trigger is pending.  After another 60s, the alert will fire.
 ALERT BackendContainerDown
   IF absent(((time() - container_last_seen{name="<%= ENV['DOCKER_MACHINE_NAME'] == 'master' ? 'master_backend' : ENV['DOCKER_MACHINE_NAME'] == 'staging' ? 'staging_backend' : 'develop_backend' %>"}) < 60)) FOR 60s
   WITH {}
-  SUMMARY "Container {{$labels.instance}} down"
-  DESCRIPTION "{{$labels.instance}} container has been down for more than 60 seconds."
+  SUMMARY "Container <strong><%= ENV['DOCKER_MACHINE_NAME'] == 'master' ? 'master_backend' : ENV['DOCKER_MACHINE_NAME'] == 'staging' ? 'staging_backend' : 'develop_backend' %></strong> is down"
+  DESCRIPTION "The <strong><%= ENV['DOCKER_MACHINE_NAME'] == 'master' ? 'master_backend' : ENV['DOCKER_MACHINE_NAME'] == 'staging' ? 'staging_backend' : 'develop_backend' %></strong> container has been down for more than 60 seconds."
 
 # If down for 60s then trigger is pending.  After another 60s, the alert will fire.
 ALERT DatabaseContainerDown
   IF absent(((time() - container_last_seen{name="<%= ENV['DOCKER_MACHINE_NAME'] == 'master' ? 'master_database' : ENV['DOCKER_MACHINE_NAME'] == 'staging' ? 'staging_database' : 'develop_database' %>"}) < 60)) FOR 60s
   WITH {}
-  SUMMARY "Container {{$labels.instance}} down"
-  DESCRIPTION "{{$labels.instance}} container has been down for more than 60 seconds."
+  SUMMARY "Container <strong><%= ENV['DOCKER_MACHINE_NAME'] == 'master' ? 'master_database' : ENV['DOCKER_MACHINE_NAME'] == 'staging' ? 'staging_database' : 'develop_database' %></strong> is down"
+  DESCRIPTION "The <strong><%= ENV['DOCKER_MACHINE_NAME'] == 'master' ? 'master_database' : ENV['DOCKER_MACHINE_NAME'] == 'staging' ? 'staging_database' : 'develop_database' %></strong> container has been down for more than 60 seconds."
 
 # Alert for high memory usage
 ALERT HighMemoryAlert
