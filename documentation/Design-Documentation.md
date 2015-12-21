@@ -4,7 +4,7 @@
 
 As the team began working on the project, the aggressive delivery timeline prompted all hands-on deck to begin working together and thinking about ideas.
 
-The team initialized a group-wide brainstorming session through a conference call and began reviewing the provided data sets together. Our initial review of the data started to bring out potential user stories [LINK?] and we created four Personas [LINK?] to design this application around
+The team initialized a group-wide brainstorming session through a conference call and began reviewing the provided data sets together. Our initial review of the data started to bring out potential user stories [https://github.com/booz-allen-epa-agile-rfi/epa-rfi/blob/1e68301df78f893ff26e7cb21333af1c404a023a/documentation/User-Stories.md] and we created four Personas [LINK?] to design this application around
 
 * The Concerned Mother
 * The Environmentalist
