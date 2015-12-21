@@ -1,8 +1,8 @@
-# EPA Office of Environmental Information (OEI) – Booz Allen Digital– Prototype: TREEVIEW
+# EPA Office of Environmental Information (OEI) – Booz Allen Digital– Prototype: TREEView
 
 Prototype URL: https://treeview.io 
 
-Please evaluate our development :
+Please evaluate our development:
 
 https://github.com/booz-allen-epa-agile-rfi/epa-rfi
 
@@ -14,7 +14,7 @@ https://github.com/booz-allen-epa-agile-rfi/epa-rfi
 
 [![Build Status](http://jenkins.treeview.io:8080/buildStatus/icon?job=master_frontend)](http://jenkins.treeview.io:8080/view/Master/job/master_frontend/)[![Build Status](http://jenkins.treeview.io:8080/buildStatus/icon?job=master_api)](http:/jenkins.treeview.io:8080/view/Master/job/master_api/)  Master Branch Server: http://www.treeview.io:9000
 
-TREEVIEW is a data-driven platform with the goal of helping the user discover where chemical emissions are coming from in their local community using the latest information from the EPA’s Toxics Release Inventory and Superfund Program.   Through TREEVIEW, a concerned citizen is able to filter through EPA information by chemical type, related health effects, and facilities to provide the data in a way that meets an individual need.   
+TREEView is a data-driven platform with the goal of helping the user discover where chemical emissions are coming from in their local community using the latest information from the [EPA’s Toxics Release Inventory](http://www.epa.gov/toxics-release-inventory-tri-program/tri-basic-plus-data-files-calendar-years-1987-2014) and Superfund Program.   Through TREEView, a concerned citizen is able to filter through EPA information by chemical type, related health effects, and facilities to provide the data in a way that meets an individual need.   
 
 Booz Allen Digital offers key strengths to the EPA OEI:
 
@@ -32,7 +32,7 @@ https://github.com/booz-allen-epa-agile-rfi/epa-rfi/blob/master/documentation/U.
 
 ### Technical Approach 
 
-We assigned one leader, our Product Owner (PO), who had the authority, responsibility, and was held accountable for the quality of our TREEVIEW prototype submission.
+We assigned one leader, our Product Owner (PO), who had the authority, responsibility, and was held accountable for the quality of our TREEView prototype submission.
 
 **(a) User-Centered Design**
 
@@ -48,13 +48,13 @@ https://github.com/booz-allen-epa-agile-rfi/epa-rfi/blob/master/documentation/De
 
 **(c) Agile Software Development**
 
-We developed TREEVIEW using our iterative agile process:
+We developed TREEView using our iterative agile process:
 
 https://github.com/booz-allen-epa-agile-rfi/epa-rfi/blob/master/documentation/Agile-Artifacts.md
 
 **(d) Agile Architecture**
 
-We only used open source technologies and open sourced our TREEVIEW prototype.
+We only used open source technologies and open sourced our TREEView prototype.
 
 https://github.com/booz-allen-epa-agile-rfi/epa-rfi/blob/master/documentation/Architecture-Diagrams.md
 
@@ -64,7 +64,7 @@ https://github.com/booz-allen-epa-agile-rfi/epa-rfi/blob/master/documentation/Li
 
 **(e) Modular Development**
 
-We developed TREEVIEW with 14 modern, open source technologies most appropriate to implement the prototype.   Our approach:
+We developed TREEView with 14 modern, open source technologies most appropriate to implement the prototype.   Our approach:
 
 https://github.com/booz-allen-epa-agile-rfi/epa-rfi/blob/master/documentation/DevOps-Process.md
 
