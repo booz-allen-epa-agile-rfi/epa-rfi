@@ -16,11 +16,11 @@ Node.JS was used to host the front-end code and manages the resolution of front-
 We selected Bootstrap as the framework to support the responsive web design.
 Karma provides static code analysis and code quality metrics for JavaScript applications.
 
-**b.) Backend:** Ruby, Rails, RSpec, Rubocop, Brakeman
+**b.) Backend:** Ruby, Rails, RSpec, RuboCop, Brakeman
 
 Ruby/Rails was determined to be the most effective backend for the project given the ability to reuse code and complete the project in a short timeframe.  Rails provides many features such as scaffolding of controllers and views, built-in support for database migrations, and out-of-the-box input validation.  There are a large number of gems available that we were able to incorporate, such as Rubocop and Brakeman.
 
-To support unit testing, code quality, and code security we selected RSpec, Rubocop, and Brakeman respectively.
+To support unit testing, code quality, and code security we selected RSpec, RuboCop, and Brakeman respectively.
 
 **c.) Dev-Ops:** Docker (Machine, Registry, Compose), Jenkins, cAdvisor
 
@@ -41,7 +41,7 @@ https://github.com/booz-allen-epa-agile-rfi/epa-rfi/tree/master/bin/jenkins
 
 #Licenses
 
-We used all open source technologies and open sourced our TREEVIEW prototype.
+We used all open source technologies and open sourced our TREEView prototype.
 
 https://github.com/booz-allen-epa-agile-rfi/epa-rfi/blob/master/LICENSE
 
