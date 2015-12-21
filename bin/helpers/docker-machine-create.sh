@@ -17,6 +17,7 @@ EC2_INSTANCE_NAME=development # staging or master
 
 # Create the EC2 instance and generate all the necessary keys and stuff
 docker-machine create \
+--debug \
 -d $DRIVER \
 --amazonec2-access-key $AWS_ACCESS_KEY_ID \
 --amazonec2-secret-key $AWS_SECRET_ACCESS_KEY \
@@ -26,4 +27,5 @@ docker-machine create \
 --amazonec2-instance-type $AWS_INSTANCE_TYPE \
 --amazonec2-root-size $AWS_ROOT_SIZE \
 --engine-insecure-registry $REGISTRY \
+--amazonec2-use-private-addres \ 
 $EC2_INSTANCE_NAME

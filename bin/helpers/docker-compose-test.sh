@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DIRECTORY="../api"
+DIRECTORY="../../api"
 MACHINE_NAME="development" # staging or master
 
 
