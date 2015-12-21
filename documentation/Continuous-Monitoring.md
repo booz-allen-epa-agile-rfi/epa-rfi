@@ -12,9 +12,7 @@ The cAdvisor tool allows us to seamlessly review and analyze our EC2 instance ma
 
 ### [Prometheus](http://prometheus.io/)
 
-### need to update text to reflect prometheus ###
-
-The sophos security appliance allows us to visualize and react to security threats.  The sophos appliance provides intrusion detection / intrusion prevention (IDS/IPS) and web application firewall to reverse proxy requests to the Docker hosts.  Incoming requests are analyzed for security concerns and then dealth with according to our solutions security posture.  Notifications of login attempts and other security events notify administrators immediately.  Relevant metrics are reported to appropriate individuals on a daily basis.
+Prometheus is used as an interface for querying and charting the real-time metrics provided by cAdvisor. We're also using its alerting functionality to publish alerts to its Alert Manager component, which then pushes the alerts to the a slack channel through a custom webhook.
 
 A small snippit of a report is shown below.
 
