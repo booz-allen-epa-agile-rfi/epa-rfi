@@ -10,7 +10,7 @@ Our definition of DevOps is, it is a set of practices intended to reduce the tim
 
 https://github.com/booz-allen-epa-agile-rfi/epa-rfi/tree/master/bin/jenkins
 
-Check out the live jenkins server at https://jenkins.labelcraft.io/
+Check out the live jenkins server at https://jenkins.treeview.io/
 
 * Continuous Development
 * Configuration Management
