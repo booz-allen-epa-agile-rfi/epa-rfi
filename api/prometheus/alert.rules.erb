@@ -1,0 +1,47 @@
+### alert.rules ###
+
+# If down for 60s then trigger is pending.  After another 60s, the alert will fire.
+ALERT FrontendContainerDown
+IF absent(((time() - container_last_seen{name="<%= ENV['DOCKER_MACHINE_NAME'] == 'master' ? 'master_frontend' : ENV['DOCKER_MACHINE_NAME'] == 'staging' ? 'staging_frontend' : 'develop_frontend' %>"}) < 60)) FOR 60s
+WITH {}
+  SUMMARY "Container <strong><%= ENV['DOCKER_MACHINE_NAME'] == 'master' ? 'master_frontend' : ENV['DOCKER_MACHINE_NAME'] == 'staging' ? 'staging_frontend' : 'develop_frontend' %></strong> is down"
+  DESCRIPTION "The <strong><%= ENV['DOCKER_MACHINE_NAME'] == 'master' ? 'master_frontend' : ENV['DOCKER_MACHINE_NAME'] == 'staging' ? 'staging_frontend' : 'develop_frontend' %></strong> container has been down for more than 60 seconds."
+
+# If down for 60s then trigger is pending.  After another 60s, the alert will fire.
+ALERT BackendContainerDown
+  IF absent(((time() - container_last_seen{name="<%= ENV['DOCKER_MACHINE_NAME'] == 'master' ? 'master_backend' : ENV['DOCKER_MACHINE_NAME'] == 'staging' ? 'staging_backend' : 'develop_backend' %>"}) < 60)) FOR 60s
+  WITH {}
+  SUMMARY "Container <strong><%= ENV['DOCKER_MACHINE_NAME'] == 'master' ? 'master_backend' : ENV['DOCKER_MACHINE_NAME'] == 'staging' ? 'staging_backend' : 'develop_backend' %></strong> is down"
+  DESCRIPTION "The <strong><%= ENV['DOCKER_MACHINE_NAME'] == 'master' ? 'master_backend' : ENV['DOCKER_MACHINE_NAME'] == 'staging' ? 'staging_backend' : 'develop_backend' %></strong> container has been down for more than 60 seconds."
+
+# If down for 60s then trigger is pending.  After another 60s, the alert will fire.
+ALERT DatabaseContainerDown
+  IF absent(((time() - container_last_seen{name="<%= ENV['DOCKER_MACHINE_NAME'] == 'master' ? 'master_database' : ENV['DOCKER_MACHINE_NAME'] == 'staging' ? 'staging_database' : 'develop_database' %>"}) < 60)) FOR 60s
+  WITH {}
+  SUMMARY "Container <strong><%= ENV['DOCKER_MACHINE_NAME'] == 'master' ? 'master_database' : ENV['DOCKER_MACHINE_NAME'] == 'staging' ? 'staging_database' : 'develop_database' %></strong> is down"
+  DESCRIPTION "The <strong><%= ENV['DOCKER_MACHINE_NAME'] == 'master' ? 'master_database' : ENV['DOCKER_MACHINE_NAME'] == 'staging' ? 'staging_database' : 'develop_database' %></strong> container has been down for more than 60 seconds."
+
+# Alert for high memory usage
+ALERT HighMemoryAlert
+  IF container_memory_usage_bytes{image="ubuntu:14.04"} > 1000000000 FOR 1m
+  WITH {}
+  SUMMARY "High Memory usage for Ubuntu container"
+  DESCRIPTION "High Memory usage for Ubuntu container on {{$labels.instance}} for container {{$labels.name}} (current value: {{$value}})"
+
+# Alert for any instance that has a disk that will fill up in about 4 hours
+ALERT DiskWillBeFullIn4Hours
+  IF predict_linear(node_filesystem_free{job='node'}[1h], 4*3600) < 0
+  FOR 5m
+  WITH {
+    severity="page"
+  }
+  SUMMARY "{{$labels.device}} on {{$labels.instance}} filling up"
+  DESCRIPTION "{{$labels.device}} mounted on {{$labels.mountpoint}} on {{$labels.instance}} will fill up within 4 hours."
+
+# Alert for any instance that have a median request latency >1s.
+ALERT ApiHighRequestLatency
+  IF api_http_request_latencies_ms{quantile="0.5"} > 1000
+  FOR 1m
+  WITH {}
+  SUMMARY "High request latency on {{$labels.instance}}"
+  DESCRIPTION "{{$labels.instance}} has a median request latency above 1s (current value: {{$value}})"
