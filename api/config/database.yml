@@ -10,7 +10,7 @@ development: &default
 local:
   <<: *default
   adapter: postgresql
-  database: epa_rfi_development
+  database: epa_rfi_local
 
 development:
   <<: *default

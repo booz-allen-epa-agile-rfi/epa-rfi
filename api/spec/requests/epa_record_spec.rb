@@ -10,7 +10,7 @@ RSpec.describe 'EPA RFI API', type: :request do
       epa_record = create(:epa_record)
       epa_record = epa_record.attributes
 
-      columns = %w(old_id cas_number trifid facility_city facility_zip_code primary_naics_code classification unit_of_measure produce_the_chemical import_the_chemical on_site_use sale_or_distribution as_a_byproduct as_a_manufactured_impurity as_a_reactant as_a_formulation_component as_an_article_component repackaging as_a_process_impurity as_a_chemical_processing_aid as_a_manufacturing_aid ancillary_or_other_use total_transferred_off_site_to_disposal document_control_number transfers_to_potws_metals_and_metal_compounds naics_2 naics_3 chemical metals_and_metal_compounds pbt_chemicals other_health_effects respiratory human_health_effects_information_not_identified acute intermediate chronic)
+      columns = %w(old_id haps cercla_chemicals priority_chemicals osha_chemicals cas_number trifid facility_city facility_zip_code primary_naics_code classification unit_of_measure produce_the_chemical import_the_chemical on_site_use sale_or_distribution as_a_byproduct as_a_manufactured_impurity as_a_reactant as_a_formulation_component as_an_article_component repackaging as_a_process_impurity as_a_chemical_processing_aid as_a_manufacturing_aid ancillary_or_other_use total_transferred_off_site_to_disposal document_control_number transfers_to_potws_metals_and_metal_compounds naics_2 naics_3 chemical metals_and_metal_compounds pbt_chemicals other_health_effects respiratory human_health_effects_information_not_identified acute intermediate chronic)
       columns.each { |k| epa_record.delete(k) }
 
       epa_record['id'] = nil
