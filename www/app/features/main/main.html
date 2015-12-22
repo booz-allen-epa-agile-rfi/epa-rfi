@@ -52,13 +52,17 @@
 <div class="container-fluid">
   <!-- Search by Zip Code or County -->
   <div class="form-group">
-    <label for="searchInput">Search the Counties with the Most Chemical Exposure</label>
-    <input type="text" class="col-md-9 form-control" id="searchInput" placeholder="Enter Zip Code or County" ng-model="searchValue">
-    <button class="btn btn-blue col-md-1 btn-r" href="#" role="button" ng-click="searchSubmit(searchValue)">Search</button>
+    <label for="searchInput" class="col-xs-12 col-md-12">Search the Counties with the Most Chemical Exposure</label>
+    <input type="text" class="col-xs-12 col-md-11 form-control-custom" id="searchInput" placeholder="Enter Zip Code or County" ng-model="searchValue">
+    <div class="col-xs-12 col-md-1 btn-r">
+      <button class="col-xs-12 btn btn-blue" href="#" role="button" ng-click="searchSubmit(searchValue)">Search</button>
+    </div>
   </div>
 
+
+
   <!-- Recent Searches -->
-  <div class="well well-lg col-md-12">
+  <div class="well well-lg col-xs-12 col-md-12">
     <p class="col-md-12">Search Counties with the Most Chemical Exposure</p>
     <div class="col-md-12">
       <button class="btn btn-oval btn-navy sm-margin-left" href="#" role="button" ng-click="searchSubmit('Madera, CA')">Madera, CA</button>
@@ -74,15 +78,18 @@
 
 
   <!-- Map toggle titles-->
-  <div class="pad-bottom">
-    <div class="col-md-2 no-pad-l margin-bottom">Map Type   <span data-toggle="tooltip" data-placement="top" title="Show results on a county map or an air pollution map." class="glyphicon glyphicon-info-sign info-style" aria-hidden="true"></span></div>
+  <div class="col-md-12 no-pad-l">
+    <div class="col-md-2 margin-bottom">
+      <div class="col-md-12 no-pad-l no-pad-r">
+        Map Type   <span data-toggle="tooltip" data-placement="top" title="Show results on a county map or an air pollution map." class="glyphicon glyphicon-info-sign info-style" aria-hidden="true"></span>
+      </div>
     <div class="col-md-3 margin-bottom">Time Range   <span data-toggle="tooltip" data-placement="top" title="Filter results to a specific range of years." class="glyphicon glyphicon-info-sign info-style" aria-hidden="true"></span></div>
     <div class="col-md-3 margin-bottom">County Onsite Release Types   <span data-toggle="tooltip" data-placement="top" title="Filter results by how chemicals are released." class="glyphicon glyphicon-info-sign info-style" aria-hidden="true"></span></div>
     <div class="col-md-3 margin-bottom">Share My Map   <span data-toggle="tooltip" data-placement="top" title="Get a link to share your filtered search results." class="glyphicon glyphicon-info-sign info-style" aria-hidden="true"></span></div>
   </div>
 
   <!-- Map toggle and Year Dropdowns-->
-  <div>
+  <div class="col-md-12 no-pad-l no-pad-r">
     <div class="col-md-2 btn-group dropup">
       <button type="button" class="btn btn-default dropdown-toggle btn-maptype col-md-10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Street View<span class="caret caret-maptype"></span>
@@ -93,8 +100,8 @@
       </ul>
     </div>
 
-    <div class="col-md-3">
-      <div class="col-md-5 no-pad-l no-pad-r">
+    <div class="col-md-3 no-pad-l">
+      <div class="col-md-5 no-pad-l">
         <select class="form-control btn-year" id="start-year">
           <option>2012</option>
           <option>2013</option>
@@ -104,7 +111,7 @@
 
       <span class="col-md-1 dropdown-text no-pad-l">to</span>
 
-      <div class="col-md-5 no-pad-l no-pad-r">
+      <div class="col-md-5 no-pad-l">
         <select class="form-control btn-year" id="end-year">
           <option>2012</option>
           <option>2013</option>
@@ -113,7 +120,7 @@
       </div>
     </div>
 
-    <div class="col-md-3">
+    <div class="col-md-3 no-pad-l">
       <div class="btn-group" data-toggle="buttons" id="emission">
         <label id="emission-total" class="btn btn-primary active">
           <input type="checkbox" autocomplete="off" checked> Total
@@ -143,8 +150,8 @@
       </a>
 
     </div>
-    <div>
-      <button class="btn btn-blue col-md-1 btn-r" href="#" ng-click="submitMapFilters()" role="button">Refresh Map</button>
+    <div class="col-xs-12 col-md-2 btn-r">
+      <button class="col-xs-12 btn btn-blue" href="#" ng-click="submitMapFilters()" role="button">Refresh Map</button>
     </div>
   </div>
 
