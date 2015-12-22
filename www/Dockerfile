@@ -1,7 +1,6 @@
 FROM ubuntu:14.04
  
-RUN mkdir /usr/src/app
-RUN mkdir /usr/src/app/client
+RUN mkdir -p /usr/src/app/client/tests
 WORKDIR /usr/src/app/client
 
 RUN apt-get update && apt-get install -y git npm nodejs && \ 
