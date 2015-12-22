@@ -18,6 +18,7 @@
     "angular-rangeslider": "~0.0.14",
     "jquery-highlight": "~3.2.2",
     "leaflet": "~0.7.7",
+    "zeroclipboard": "~2.2.0",
     "angular-spinner": "~0.8.0"
   },
   "devDependencies": {

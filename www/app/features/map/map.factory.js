@@ -43,10 +43,6 @@
           properties: {}
         };
         this.healthEffects = {
-          cercla_chemicals: initHealthEffectHash(),
-          haps: initHealthEffectHash(),
-          priority_chemicals: initHealthEffectHash(),
-          osha_chemicals: initHealthEffectHash(),
           body_weight: initHealthEffectHash(),
           cardiovascular: initHealthEffectHash(),
           dermal: initHealthEffectHash(),
@@ -148,7 +144,7 @@
         // Private
 
         function formatData(results) {
-          var HEALTH_EFFECTS = 'cercla_chemicals haps priority_chemicals osha_chemicals body_weight cardiovascular dermal developmental endocrine gastrointestinal hematological hepatic immunological metabolic musculoskeletal neurological ocular other_systemic renal reproductive'.split(' ');
+          var HEALTH_EFFECTS = 'body_weight cardiovascular dermal developmental endocrine gastrointestinal hematological hepatic immunological metabolic musculoskeletal neurological ocular other_systemic renal reproductive'.split(' ');
 
           var storedFacilities = {};
 

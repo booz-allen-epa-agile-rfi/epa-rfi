@@ -25,7 +25,7 @@ function MainController($scope, $routeParams, $location, Map, Geocode) {
 
   if(!_.isEmpty($routeParams)) initState();
   $scope.shareUrl = generateShareUrl($scope.state);
-
+  initClipboard();
 
   // Map Search
   $scope.searchSubmit = function(searchVal) {
@@ -104,5 +104,9 @@ function MainController($scope, $routeParams, $location, Map, Geocode) {
     function formatBounds(boundsData){
       return [boundsData._southWest.lat, boundsData._southWest.lng, boundsData._northEast.lat, boundsData._northEast.lng]
     }
+  }
+
+  function initClipboard(){
+    var client = new ZeroClipboard(document.getElementById("copy-button"));
   }
 }

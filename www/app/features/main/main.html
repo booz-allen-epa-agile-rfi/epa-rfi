@@ -2,10 +2,10 @@
 <div class="jumbotron">
   <div class="container text-center">
     <h2 class="title-margin">How it Works</h2>
-    <div class="jumbotron-text">TREEVIEW helps you discover where chemical releases are coming from in your local community by using the latest information from the EPA’s Toxics Release Inventory and Superfund Program.</div>
+    <div class="jumbotron-text">TREEview helps you discover where chemicals are released in your community by using the latest information from the EPA’s Toxics Release Inventory and Superfund Program.</div>
     <p>
       <button type="button" class="btn btn-white jumbotron-btn-text btn-lg" data-toggle="modal" data-target=".bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-        How it Works
+        Learn More
       </button>
       <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
         <div class="modal-dialog modal-lg">
@@ -52,97 +52,115 @@
 <div class="container-fluid">
   <!-- Search by Zip Code or County -->
   <div class="form-group">
-    <label for="searchInput">Search the Counties with the Most Chemical Exposure</label>
-    <input type="text" class="col-md-9 form-control" id="searchInput" placeholder="Enter Zip Code or County" ng-model="searchValue">
-    <button class="btn btn-blue col-md-1 btn-r" href="#" role="button" ng-click="searchSubmit(searchValue)">Search</button>
+    <label for="searchInput" class="col-xs-12 col-md-12">Search the Counties with the Most Chemical Exposure</label>
+    <div class="col-md-12">
+      <input type="text" class="col-xs-12 col-md-11 form-control-custom margin-bottom" id="searchInput" placeholder="Enter Zip Code or County" ng-model="searchValue">
+      <div class="btn-r">
+        <button class="col-xs-12 col-md-12 btn btn-blue" href="#" role="button" ng-click="searchSubmit(searchValue)">Search</button>
+      </div>
+    </div>
   </div>
 
   <!-- Recent Searches -->
-  <div class="well well-lg col-md-12">
+  <div class="well well-lg col-xs-12 col-md-12">
     <p class="col-md-12">Search Counties with the Most Chemical Exposure</p>
     <div class="col-md-12">
-      <button class="btn btn-oval btn-navy sm-margin-left" href="#" role="button" ng-click="searchSubmit('Madera')">Madera, CA</button>
-      <button class="btn btn-oval btn-navy sm-margin-left" href="#" role="button" ng-click="searchSubmit('Kern')">Kern, CA</button>
-      <button class="btn btn-oval btn-navy sm-margin-left" href="#" role="button" ng-click="searchSubmit('Tulare')">Tulare, CA</button>
-      <button class="btn btn-oval btn-navy sm-margin-left" href="#" role="button" ng-click="searchSubmit('Merced')">Merced, CA</button>
-      <button class="btn btn-oval btn-navy sm-margin-left" href="#" role="button" ng-click="searchSubmit('Santa Clara')">Santa Clara, CA</button>
-      <button class="btn btn-oval btn-navy sm-margin-left" href="#" role="button" ng-click="searchSubmit('Salt Lake')">Salt Lake, UT</button>
-      <button class="btn btn-oval btn-navy sm-margin-left" href="#" role="button" ng-click="searchSubmit('Cache')">Cache, UT</button>
-      <button class="btn btn-oval btn-navy sm-margin-left" href="#" role="button" ng-click="searchSubmit('Fairbanks North Star Borough')">Fairbanks North Star Borough, AK</button>
+      <button class="btn btn-oval btn-navy xs-margin-left" href="#" role="button" ng-click="searchSubmit('Madera, CA')">Madera, CA</button>
+      <button class="btn btn-oval btn-navy xs-margin-left" href="#" role="button" ng-click="searchSubmit('Kern, CA')">Kern, CA</button>
+      <button class="btn btn-oval btn-navy xs-margin-left" href="#" role="button" ng-click="searchSubmit('Tulare, CA')">Tulare, CA</button>
+      <button class="btn btn-oval btn-navy xs-margin-left" href="#" role="button" ng-click="searchSubmit('Merced, CA')">Merced, CA</button>
+      <button class="btn btn-oval btn-navy xs-margin-left" href="#" role="button" ng-click="searchSubmit('Santa Clara, CA')">Santa Clara, CA</button>
+      <button class="btn btn-oval btn-navy xs-margin-left" href="#" role="button" ng-click="searchSubmit('Salt Lake, UT')">Salt Lake, UT</button>
+      <button class="btn btn-oval btn-navy xs-margin-left" href="#" role="button" ng-click="searchSubmit('Cache, UT')">Cache, UT</button>
+      <button class="btn btn-oval btn-navy xs-margin-left" href="#" role="button" ng-click="searchSubmit('Fairbanks North Star Borough, AK')">Fairbanks North Star Borough, AK</button>
     </div>
   </div>
 
 
   <!-- Map toggle titles-->
-  <div class="pad-bottom">
-    <div class="col-md-2 no-pad-l margin-bottom">Map Type   <span data-toggle="tooltip" data-placement="top" title="Show results on a county map or an air pollution map." class="glyphicon glyphicon-info-sign info-style" aria-hidden="true"></span></div>
-    <div class="col-md-3 margin-bottom">Time Range   <span data-toggle="tooltip" data-placement="top" title="Filter results to a specific range of years." class="glyphicon glyphicon-info-sign info-style" aria-hidden="true"></span></div>
-    <div class="col-md-3 margin-bottom">County Onsite Release Types   <span data-toggle="tooltip" data-placement="top" title="Filter results by how chemicals are released." class="glyphicon glyphicon-info-sign info-style" aria-hidden="true"></span></div>
-    <div class="col-md-3 margin-bottom">Share My Map   <span data-toggle="tooltip" data-placement="top" title="Get a link to share your filtered search results." class="glyphicon glyphicon-info-sign info-style" aria-hidden="true"></span></div>
-  </div>
-
-  <!-- Map toggle and Year Dropdowns-->
-  <div>
-    <div class="col-md-2 btn-group dropup">
-      <button type="button" class="btn btn-default dropdown-toggle btn-maptype col-md-10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Street View<span class="caret caret-maptype"></span>
-      </button>
-      <ul class="dropdown-menu dropdown-maptype">
-        <li><a href="#">
-          Counties</a></li>
-      </ul>
-    </div>
-
-    <div class="col-md-3">
-      <div class="col-md-5 no-pad-l no-pad-r">
-        <select class="form-control btn-year" id="start-year">
-          <option>2012</option>
-          <option>2013</option>
-          <option selected>2014</option>
-        </select>
+  <div class="col-xs-12 col-md-12 no-pad-l">
+    <div class="col-md-2 margin-bottom">
+      <div class="col-xs-12 col-md-12 no-pad-l no-pad-r">
+        Map Type
+        <span data-toggle="tooltip" data-placement="top" title="Show results on a county map or an air pollution map." class="glyphicon glyphicon-info-sign info-style" aria-hidden="true"></span>
       </div>
-
-      <span class="col-md-1 dropdown-text no-pad-l">to</span>
-
-      <div class="col-md-5 no-pad-l no-pad-r">
-        <select class="form-control btn-year" id="end-year">
-          <option>2012</option>
-          <option>2013</option>
-          <option selected>2014</option>
-        </select>
+      <div class="col-xs-12 col-md-12 btn-group dropup">
+        <button type="button" class="col-xs-12 col-md-10 btn btn-default dropdown-toggle btn-maptype" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Street View<span class="caret caret-maptype"></span>
+        </button>
+        <ul class="dropdown-menu dropdown-maptype">
+          <li><a href="#">
+            Counties</a></li>
+        </ul>
       </div>
     </div>
+    <div class="col-xs-12 col-md-3 margin-bottom">
+      <div class="col-xs-12 col-md-12 no-pad-l no-pad-r">
+        Time Range
+        <span data-toggle="tooltip" data-placement="top" title="Filter results to a specific range of years." class="glyphicon glyphicon-info-sign info-style" aria-hidden="true"></span>
+      </div>
+      <div class="col-xs-12 col-md-12 no-pad-l">
+        <div class="col-xs-5 col-md-5 no-pad-l">
+          <select class="form-control btn-year" id="start-year">
+            <option>2012</option>
+            <option>2013</option>
+            <option selected>2014</option>
+          </select>
+        </div>
 
-    <div class="col-md-3">
-      <div class="btn-group" data-toggle="buttons" id="emission">
-        <label id="emission-total" class="btn btn-primary active">
-          <input type="checkbox" autocomplete="off" checked> Total
-        </label>
-        <label id="emission-land" class="btn btn-primary">
-          <input type="checkbox" autocomplete="off"> Land
-        </label>
-        <label id="emission-air" class="btn btn-primary">
-          <input type="checkbox" autocomplete="off"> Air
-        </label>
-        <label id="emission-water" class="btn btn-primary">
-          <input type="checkbox" autocomplete="off"> Water
-        </label>
+        <span class="col-xs-1 col-md-1 dropdown-text no-pad-l">to</span>
+
+        <div class="col-xs-5 col-md-5 no-pad-l">
+          <select class="form-control btn-year" id="end-year">
+            <option>2012</option>
+            <option>2013</option>
+            <option selected>2014</option>
+          </select>
+        </div>
       </div>
     </div>
-
-    <div class="col-md-2">
-      <i class="fa fa-2x fa-link icon-margin"></i>
-      <a href="https://www.facebook.com/sharer/sharer.php?u={{ shareUrl }}">
-        <i class="fa fa-2x fa-facebook-official icon-margin"></i>
-      </a>
-      <a class="twitter-share-button"
-        href="https://twitter.com/intent/tweet?url={{ shareUrl }}">
-        <i class="fa fa-2x fa-twitter icon-margin"></i>
-      </a>
-
+    <div class="col-xs-4 col-md-3">
+      <div class="col-md-12 no-pad-l no-pad-r">
+        County Onsite Release Types
+        <span data-toggle="tooltip" data-placement="top" title="Filter results by how chemicals are released." class="glyphicon glyphicon-info-sign info-style" aria-hidden="true"></span>
+      </div>
+      <div class="col-xs-12 col-md-12 xs-margin-top lg-margin-bottom no-pad-l">
+        <div class="btn-group" data-toggle="buttons" id="emission">
+          <label id="emission-total" class="btn btn-primary active">
+            <input type="checkbox" autocomplete="off" checked> Total
+          </label>
+          <label id="emission-land" class="btn btn-primary">
+            <input type="checkbox" autocomplete="off"> Land
+          </label>
+          <label id="emission-air" class="btn btn-primary">
+            <input type="checkbox" autocomplete="off"> Air
+          </label>
+          <label id="emission-water" class="btn btn-primary">
+            <input type="checkbox" autocomplete="off"> Water
+          </label>
+        </div>
+      </div>
     </div>
-    <div>
-      <button class="btn btn-blue col-md-1 btn-r" href="#" ng-click="submitMapFilters()" role="button">Refresh Map</button>
+    <div class="col-xs-4 col-md-2 lg-margin-bottom">
+      <div class="col-xs-12 col-md-12 no-pad-l no-pad-r">
+        Share My Map
+        <span data-toggle="tooltip" data-placement="top" title="Get a link to share your filtered search results." class="glyphicon glyphicon-info-sign info-style" aria-hidden="true"></span>
+      </div>
+      <div class="col-xs-6 col-md-12 xs-margin-top no-pad-l">
+        <a id="copy-button" href="#" data-clipboard-text="{{ shareUrl }}">
+          <i class="fa fa-2x fa-link icon-margin"></i>
+        </a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u={{ shareUrl }}">
+          <i class="fa fa-2x fa-facebook-official icon-margin"></i>
+        </a>
+        <a class="twitter-share-button"
+           href="https://twitter.com/intent/tweet?url={{ shareUrl }}">
+          <i class="fa fa-2x fa-twitter icon-margin"></i>
+        </a>
+      </div>
+    </div>
+    <div class="col-xs-2 col-xs-offset-2 col-md-offset-1 col-md-1 margin-top lg-margin-bottom">
+      <button class="btn btn-blue" href="#" ng-click="submitMapFilters()" role="button">Refresh Map</button>
     </div>
   </div>
 
