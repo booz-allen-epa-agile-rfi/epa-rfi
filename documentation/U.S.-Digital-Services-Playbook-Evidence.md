@@ -203,8 +203,7 @@ All members of the team work on Government contracts that require securing digit
 
 https://github.com/booz-allen-epa-agile-rfi/epa-rfi/blob/master/documentation/DevOps-Process.md
 
-![securitytesting](https://cloud.githubusercontent.com/assets/12210910/8392847/f38714fa-1cbd-11e5-889f-48ffb34c5a07.png)
-
+![agile_diagram_3_with_arrow](https://cloud.githubusercontent.com/assets/16209237/11942409/4ae4e66a-a804-11e5-80e6-91415ab3f112.png)
 
 _ - A Federal contracting officer is on the internal team if a third party will be used for development work_
 
@@ -254,7 +253,8 @@ https://github.com/booz-allen-epa-agile-rfi/epa-rfi/blob/master/documentation/Ar
 
 _ - Resources are provisioned on demand_
 
-![git_flow_v1](https://cloud.githubusercontent.com/assets/12210910/8392524/11919d5e-1cb3-11e5-97ce-5cd08defcd9b.png)
+![git flow v2](https://cloud.githubusercontent.com/assets/16209237/11942528/377e5182-a805-11e5-949f-8ab495829876.png)
+
 We have 4 environments, which match to our git flow and GitHub branch structure. All resources on these environments can be provisioned on demand using our Docker Machine:
 
 _ - Resources scale based on real-time user demand_
