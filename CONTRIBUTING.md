@@ -1,4 +1,4 @@
-## The below GIT process will help to keep the branches clean and in sync.
+## GIT process to help keep the branches clean and synchronized.
 
 First, create your own fork of this repo by clicking the 'Fork' button in the top right-hand corner of the landing page.
 
