@@ -11,9 +11,9 @@ User Story 02 - CANCELLED
 
 User Story 03
 
-* As an Biological Engineer I want to understand what the health impacts are of the chemicals in a particular region (acute, intermediate, chronic), the method of exposure (air, underground, land, water), and the hazard class of the chemicals in the area and be able to filter on the method of exposure in a given area.
+* As an Biological Engineer I want to understand the method of exposure (air, underground, land, water), and the facilities distributing the chemicals in the area and be able to filter on the method of exposure in a given area.
 
-User Story 04 - Low priority
+User Story 04 - FUTURE PRIORITY
 
 * As an Biological Engineer and Academic Researcher, I want to be able to search on a chemical and see the areas of the US where this chemical is most prevalent and the issues associated with each chemical.
 * This would be great for future expansion of the tool for research purposes, but will not be available during the initial release.
