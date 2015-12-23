@@ -28,6 +28,7 @@ module.exports = function (grunt) {
 
   // Define the configuration for all the tasks
   grunt.initConfig({
+    pkg: grunt.file.readJSON('package.json'),
     devperf: {
       options: {
         urls: [
