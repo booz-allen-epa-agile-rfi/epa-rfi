@@ -22,5 +22,3 @@ In addition that that we tested on multiple devices including the iPhone, iPad a
 ![responsive design 3](https://cloud.githubusercontent.com/assets/16209237/11983131/0dfc76ba-a97f-11e5-84fd-493e6be9c1cb.JPG)
 
 ![responsive design 4](https://cloud.githubusercontent.com/assets/16209237/11983157/5dcfb986-a97f-11e5-8bc7-81a9ac1b88c1.JPG)
-
-iPhone
