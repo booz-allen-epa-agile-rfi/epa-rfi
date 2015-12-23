@@ -1,9 +1,7 @@
 
 # Our Application Stack and the Tools we used : 
 
-##*image needs to be updated*##
-![Application Stack](https://cloud.githubusercontent.com/assets/8406690/8513068/e3b2a558-232a-11e5-9eda-83a49d6839f7.png)
-
+![application_stack_v2_Crop](https://cloud.githubusercontent.com/assets/16209237/11935067/bbb9c2f6-a7d3-11e5-93d1-134779db3c09.png)
 
 Our solution is comprised of more than five modern, open-source technologies.  Our selection of technologies was driven by several factors including the language, frameworks, and libraries most appropriate to solve the problem, the ability for the technology to conform to modern development best practices, and tools that best support the full end-to-end life cycle of development for maximum quality.  These factors were considered for the technologies selected for front-end, back-end, and dev-ops.
 
@@ -24,7 +22,7 @@ Ruby/Rais was determined to be the most effective backend for the project given 
 
 To support unit testing, code quality, and code security we selected RSpec, Rubocop, and Brakeman respectively.
 
-**c.) Dev-Ops:** Docker (Machine, Registry, Compose), Jenkins, cAdvisor
+**c.) Dev-Ops:** Docker (Machine, Registry, Compose), Jenkins, cAdvisor, Prometheus
 
 Our motivations for the Dev Ops stack was to leverage open source technologies that would enable rapid creation and deployment of containers.  We also feel that an important aspect to achieving the maximum developer experience (DX) is to provide end-to-end solutions to include the components of the dev ops stack as part of the open source solution.   Therefore we selected Jenkins and Docker solutions that could run on-premise or in-cloud as opposed to SaaS based solutions.  This will help to ensure the greatest probablity of adoption in the solution within the open source community.
 
@@ -39,9 +37,7 @@ https://github.com/booz-allen-epa-agile-rfi/epa-rfi/tree/master/bin/jenkins
 
 # Physical Deployment Model:
 
-##need to update to reflect lack of Sophos
-
-![Physical Deployment Model](https://cloud.githubusercontent.com/assets/8406690/8513155/a8c11102-232d-11e5-8cd5-9ea748f1e537.png)
+![physical_deployment](https://cloud.githubusercontent.com/assets/16209237/11934954/06fd3b68-a7d3-11e5-8dbe-1b568917e655.png)
 
 #Licenses
 
