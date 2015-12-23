@@ -41,9 +41,11 @@ function MainController($scope, $routeParams, $location, Map, Geocode) {
   };
 
   function getSubDomain() {
-    var host = $location.host();
+    var regexParse = new RegExp('[a-z\-0-9]{2,63}\.[a-z\.]{2,5}$');
+    var urlParts = regexParse.exec(window.location.hostname);
+    var subdomain = window.location.hostname.replace(urlParts[0],'').slice(0, -1);
 
-    return (host.indexOf('.') < 0) ? 'api' : host.split('.')[0] + '-api';
+    return (subdomain == '') ? 'api' : subdomain + '-api';
   }
 
   // Generate the current url map state
