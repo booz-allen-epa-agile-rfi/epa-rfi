@@ -41,7 +41,7 @@ https://github.com/booz-allen-epa-agile-rfi/epa-rfi/tree/master/bin/jenkins
 
 #Licenses
 
-We used all open source technologies and open sourced our TREEView prototype.
+We used all open source technologies and open sourced our TREEview prototype.
 
 https://github.com/booz-allen-epa-agile-rfi/epa-rfi/blob/master/LICENSE
 
