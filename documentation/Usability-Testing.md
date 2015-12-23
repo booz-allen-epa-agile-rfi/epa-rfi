@@ -41,9 +41,9 @@ Once the wireframes were finalized, we conducted our second round of usability t
 Finally, we reviewed our data and drafted some potential features to address concerns uncovered in our usability testing:
 
 * Adjust the language of this action to indicate clicking a county affects the map. 
-* Provide a clear context on “Search Counties With The Most Chemical Exposures”
+* Provide a clear context on “Search Counties With The Most Chemical Exposures.”
 * Place the “How it Works” button in the top navigation and in the footer. 
-* Change the language of the about page to “About The Team” 
+* Change the language of the about page to “About The Team.” 
 * Provide a tool tip pop up when first visiting the site to direct users to where they can learn how to use the web page. Store a cookie, so only first time visitors receive the pop up. 
 * Add description on why the user needs to put their Zip code.
 * Do another round of heuristics evalutations to make sure that it goes by industry standards.
