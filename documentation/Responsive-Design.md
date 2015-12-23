@@ -4,14 +4,15 @@ Our front-end application was implemented with the Bootstrap framework to provid
 
 In addition that that we tested on multiple devices including the iphone, ipad and andriod.
 
-![andriod](https://cloud.githubusercontent.com/assets/12210285/8511915/ca7ac37c-22f8-11e5-852b-97cfd0af443d.jpeg)
+![responsive design 1 android](https://cloud.githubusercontent.com/assets/16209237/11982781/3d5cf1c6-a97c-11e5-82a5-ce587d331999.jpg)
 
 Andriod Device
 
 
-![ipad](https://cloud.githubusercontent.com/assets/12210285/8511916/ca7c3072-22f8-11e5-9199-16248df23ede.jpeg)
+![responsive design 2](https://cloud.githubusercontent.com/assets/16209237/11982894/3e2c1536-a97d-11e5-97a9-97c3142ab213.jpg)
 
 IPad
+
 
 ![iphone1](https://cloud.githubusercontent.com/assets/12210285/8511914/ca796054-22f8-11e5-9198-b056da1dd2fb.jpeg)
 
