@@ -23,4 +23,6 @@ RUN bower install --allow-root && \
 
 COPY . /usr/src/app/client
 
+CMD grunt dev
+
 EXPOSE 9000
