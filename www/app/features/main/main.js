@@ -45,7 +45,7 @@ function MainController($scope, $routeParams, $location, Map, Geocode) {
     var urlParts = regexParse.exec(window.location.hostname);
     var subdomain = window.location.hostname.replace(urlParts[0],'').slice(0, -1);
 
-    return (subdomain == '') ? 'api' : subdomain + '-api';
+    return (subdomain == '' || subdomain == 'www') ? 'api' : subdomain + '-api';
   }
 
   // Generate the current url map state
