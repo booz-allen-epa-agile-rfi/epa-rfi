@@ -1,8 +1,7 @@
 This  page demonstrates how we used U.S. Digital Services Playbook to define our process for this prototype.
 
-**DIGITAL SERVICE PLAY 1: Understand what people need**
+### **[DIGITAL SERVICE PLAY 1: Understand what people need](https://playbook.cio.gov/#play1)** ###
 
-![p1](https://cloud.githubusercontent.com/assets/12210910/8335273/af9e7fa8-1a6a-11e5-928f-75799107c861.jpeg)
 
 _- Early in the project, spend time with current and prospective users of the service:_
 
@@ -42,9 +41,8 @@ _ - As the digital service is being built, regularly test it with potential user
 
 Yes. During every sprint feedback is received from a selection of SMEs, end users and Product Owner
 
-**DIGITAL SERVICE PLAY 2:  Address the whole experience, from start to finish**
+### **[DIGITAL SERVICE PLAY 2: Address the whole experience, from start to finish](https://playbook.cio.gov/#play2)** ###
 
-![p2](https://cloud.githubusercontent.com/assets/12210910/8335878/70a73e94-1a6e-11e5-9739-16f53ec5ea5b.jpeg)
 
 _- Understand the different points at which people will interact with the service – both online and in person_
 
@@ -62,15 +60,13 @@ _- Develop metrics that will measure how well the service is meeting user needs 
 
 Not scoped for the prototype (the MVP), but included in the product roadmap.
 
-**DIGITAL SERVICE PLAY 3. Make it simple and intuitive**
-
-![p3](https://cloud.githubusercontent.com/assets/12210910/8335879/73b07092-1a6e-11e5-80c5-8ca1ba704e1e.jpeg)
+###**[DIGITAL SERVICE PLAY 3. Make it simple and intuitive](https://playbook.cio.gov/#play3)**###
 
 _- Create or use an existing, simple, and flexible design style guide for the service_
 
 **Our design guide:**
 
-https://github.com/booz-allen-agile-delivery/ads-final/blob/master/www/app/styles/labelcraft_styleguide_final.pdf
+https://github.com/booz-allen-epa-agile-rfi/epa-rfi/blob/master/documentation/Style-Guide.md
 
 _- Use the design style guide consistently for related digital services_
 
@@ -96,9 +92,7 @@ _- Use language and design consistently throughout the service, including online
 
 Consistency check was part of our usability test.
 
-**DIGITAL SERVICE PLAY 4. Build the service using agile and iterative practices**
-
-![p4](https://cloud.githubusercontent.com/assets/12210910/8335886/766a0ece-1a6e-11e5-8372-cee1382ef36b.jpeg)
+###**[DIGITAL SERVICE PLAY 4. Build the service using agile and iterative practices](https://playbook.cio.gov/#play4)**###
 
 Our agile practices that we used on this prototype can be seen at the following URL:
 
@@ -141,13 +135,11 @@ Everyone on the team has access to GitHub and its issue tracker.
 
 _ - Use code reviews to ensure quality_
 
-**DIGITAL SERVICE PLAY 5. Structure budgets and contracts to support delivery**
+###**[DIGITAL SERVICE PLAY 5. Structure budgets and contracts to support delivery](https://playbook.cio.gov/#play5)**###
 
 Not applicable. This prototype effort is our response to EPA OEI RFI. 
 
-**DIGITAL SERVICE PLAY 6. Assign one leader and hold that person accountable**
-
-![p6](https://cloud.githubusercontent.com/assets/12210910/8335889/78a2a9ee-1a6e-11e5-944b-ddc88b921df7.jpeg)
+###**[DIGITAL SERVICE PLAY 6. Assign one leader and hold that person accountable](https://playbook.cio.gov/#play6)**###
 
 _ - A product owner has been identified_
 
@@ -169,9 +161,7 @@ _ - The product owner has a strong relationship with the contracting officer_
 
 Not applicable. This is an RFI.
 
-**DIGITAL SERVICE PLAY 7. Bring in experienced teams**
-
-![p7](https://cloud.githubusercontent.com/assets/12210910/8525803/02847c4e-23d1-11e5-986d-015abae302e3.jpeg)
+###**[DIGITAL SERVICE PLAY 7. Bring in experienced teams](https://playbook.cio.gov/#play7)**###
 
 Booz Allen software developers are part of our System Development Group (SDG), regardless which market or cross-cut they support. The advantage of this structure is to learn and continuously improve. We have reusable best practices, checklists, playbooks that help us to standup a self-organizing teams quickly. 
 
@@ -203,7 +193,7 @@ All members of the team work on Government contracts that require securing digit
 
 https://github.com/booz-allen-epa-agile-rfi/epa-rfi/blob/master/documentation/DevOps-Process.md
 
-![securitytesting](https://cloud.githubusercontent.com/assets/12210910/8392847/f38714fa-1cbd-11e5-889f-48ffb34c5a07.png)
+![agile_diagram_2_with_arrow](https://cloud.githubusercontent.com/assets/16209237/11965865/aa23a7da-a8c5-11e5-892b-f6aa65c7337a.png)
 
 
 _ - A Federal contracting officer is on the internal team if a third party will be used for development work_
@@ -218,9 +208,7 @@ _ - The appropriate privacy, civil liberties, and/or legal advisor for the depar
 
 Booz Allen does have legal team at the service of software development teams supporting teams for PII, other privacy, civil liberties and other topics require legal advice.  For the sake of the short turnaround prototype, we perform peer reviews on the content for this purpose.
 
-**DIGITAL SERVICE PLAY 8. Choose a modern technology stack**
-
-![p8](https://cloud.githubusercontent.com/assets/12210910/8359016/c06dba70-1b31-11e5-8029-ec80c796af64.jpeg)
+###**[DIGITAL SERVICE PLAY 8. Choose a modern technology stack](https://playbook.cio.gov/#play8)**###
 
 _- Choose software frameworks that are commonly used by private-sector companies creating similar services_
 
@@ -244,9 +232,7 @@ Our full stack is open source:
 
 https://github.com/booz-allen-epa-agile-rfi/epa-rfi/blob/master/documentation/Architecture-Diagrams.md
 
-**DIGITAL SERVICE PLAY 9. Deploy in a flexible hosting environment**
-
-![p9](https://cloud.githubusercontent.com/assets/12210910/8397620/dd51b55c-1d97-11e5-9e39-069a5a489aff.jpeg)
+###**[DIGITAL SERVICE PLAY 9. Deploy in a flexible hosting environment](https://playbook.cio.gov/#play9)**###
 
 Our hosting environment is Amazon Web Services (AWS) public cloud. The infrastructure diagram which includes our security can be seen below:
 
@@ -254,8 +240,8 @@ https://github.com/booz-allen-epa-agile-rfi/epa-rfi/blob/master/documentation/Ar
 
 _ - Resources are provisioned on demand_
 
-![git_flow_v1](https://cloud.githubusercontent.com/assets/12210910/8392524/11919d5e-1cb3-11e5-97ce-5cd08defcd9b.png)
-We have 4 environments, which match to our Git flow and GitHub branch structure. All resources on these environments can be provisioned on demand using our Docker Machine:
+![git flow diagram](https://cloud.githubusercontent.com/assets/16209237/11966053/2a63580e-a8c7-11e5-9ae1-9c73e212b2bf.png)
+We have 4 environments, which match to our git flow and GitHub branch structure. All resources on these environments can be provisioned on demand using our Docker Machine:
 
 _ - Resources scale based on real-time user demand_
 
@@ -281,9 +267,7 @@ _ - Application is hosted on commodity hardware_
 
 Yes, AWS.
 
-**DIGITAL SERVICE PLAY 10. Automate testing and deployments**
-
-![p10](https://cloud.githubusercontent.com/assets/12210910/8397639/39d3b596-1d98-11e5-8bc3-4310766287f9.jpeg)
+###**[DIGITAL SERVICE PLAY 10. Automate testing and deployments](https://playbook.cio.gov/#play10)**###
 
 See the following page for our test automation:
 
@@ -311,9 +295,7 @@ _ - Conduct load and performance tests at regular intervals, including before pu
 
 Yes. See : https://github.com/booz-allen-epa-agile-rfi/epa-rfi/blob/master/documentation/Automated-Testing.md
 
-**DIGITAL SERVICE PLAY 11. Manage security and privacy through reusable processes**
-
-![p11](https://cloud.githubusercontent.com/assets/12210910/8397640/39f06cfe-1d98-11e5-9d72-5de098da9f0c.jpeg)
+###**[DIGITAL SERVICE PLAY 11. Manage security and privacy through reusable processes](https://playbook.cio.gov/#play11)**###
 
 _ - Contact the appropriate privacy or legal officer of the department or agency to determine whether a System of Records Notice (SORN), Privacy Impact Assessment, or other review should be conducted_
  _- Determine, in consultation with a records officer, what data is collected and why, how it is used or shared, how it is stored and secured, and how long it is kept_
@@ -330,9 +312,7 @@ _ - Use deployment scripts to ensure configuration of production environment rem
 
 The configuration of all of the environments are the same, designed using Docker technologies
 
-**DIGITAL SERVICE PLAY 12. Use data to drive decisions**
-
-![p12](https://cloud.githubusercontent.com/assets/12210910/8397641/3a7338d2-1d98-11e5-8dca-2a28bc4c62bf.jpeg)
+###**[DIGITAL SERVICE PLAY 12. Use data to drive decisions](https://playbook.cio.gov/#play12)**###
 
 Yes. See below page:
 
@@ -347,10 +327,7 @@ _ - Monitor system-level resource utilization in real time_
  _- Publish metrics externally_
  _- Use an experimentation tool that supports multivariate testing in production_
 
-**DIGITAL SERVICE PLAY 13. Default to open**
-
-
-![p13](https://cloud.githubusercontent.com/assets/12210910/8525768/d675469c-23d0-11e5-8261-a7bf6b04068d.jpeg)
+###**[DIGITAL SERVICE PLAY 13. Default to open](https://playbook.cio.gov/#play13)**###
 
 _ - Offer users a mechanism to report bugs and issues, and be responsive to these reports_
 

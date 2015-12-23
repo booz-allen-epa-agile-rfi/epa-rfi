@@ -22,7 +22,7 @@ Ruby/Rails was determined to be the most effective backend for the project given
 
 To support unit testing, code quality, and code security we selected RSpec, RuboCop, and Brakeman respectively.
 
-**c.) Dev-Ops:** Docker (Machine, Registry, Compose), Jenkins, cAdvisor
+**c.) Dev-Ops:** Docker (Machine, Registry, Compose), Jenkins, cAdvisor, Prometheus
 
 Our motivations for the Dev Ops stack was to leverage open source technologies that would enable rapid creation and deployment of containers.  We also feel that an important aspect to achieving the maximum developer experience (DX) is to provide end-to-end solutions to include the components of the dev ops stack as part of the open source solution.   Therefore we selected Jenkins and Docker solutions that could run on-premise or in-cloud as opposed to SaaS based solutions.  This will help to ensure the greatest probability of adoption in the solution within the open source community.
 

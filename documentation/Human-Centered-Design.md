@@ -25,7 +25,7 @@ To get an understanding of our users, a survey was sent out to understand if our
 
 
 ## Creating Personas
-After completing research, we decided to flesh out each of the four Personas into more detail to guide the use-cases and design of the TREEView application. Our Personas were living documents that were updated as we learned more about our users. These documents also provided us a empathetic approach when we are going through user flows and user stories. They all had faces and names, and we spoke about them as if they were team members through the process. We got to know them as we designed and coded the application. Our wireframes were moved into usability testing and would be used to provide feedback on the design. 
+After completing research, we decided to flesh out each of the four Personas into more detail to guide the use-cases and design of the TREEview application. Our Personas were living documents that were updated as we learned more about our users. These documents also provided us a empathetic approach when we are going through user flows and user stories. They all had faces and names, and we spoke about them as if they were team members through the process. We got to know them as we designed and coded the application. Our wireframes were moved into usability testing and would be used to provide feedback on the design. 
 
 ![persona_all_epa_rfi_v3](https://cloud.githubusercontent.com/assets/16209237/11874019/7ce42556-a4ab-11e5-864c-8e6dd2e69d14.jpg)
 
@@ -42,7 +42,7 @@ As a group, we determined the top tasks a user would do and defined them in a ma
 
 
 ## Journey Mapping/Task Analysis
-We drafted journey maps for each persona for the TREEView experience to help shape our flows. Each of the following artifacts represent how our 4 indiviudal users would experience a loop on the site. 
+We drafted journey maps for each persona for the TREEview experience to help shape our flows. Each of the following artifacts represent how our 4 indiviudal users would experience a loop on the site. 
 
 ![user journey_page_1](https://cloud.githubusercontent.com/assets/16209237/11874040/97bf81ea-a4ab-11e5-8c73-e524186a3950.jpg)
 
@@ -65,7 +65,7 @@ Our next step brought us to basic sketches on what the front-end could look like
 
 ## Paper Prototyping Wireframes
 
-After confirming our initial design was consistent with our user stories and personas, we drafted a few more iterations of the wireframes and illustrated them digitally. Our goal was to get the opinions of some actual people to perform usability testing on our wireframe design. We printed them out, sought out some nearby colleagues, and conducted a heuristic review based on industry best practices and recommended enhancements to the navigation, presentation, content and interaction represented in the wireframe. As the developers began building the basic front-end and backend functionality, the design team worked in parallel to continue usability testing and updated the design of TREEView with new recommendations for the look, layout, and various copy elements. 
+After confirming our initial design was consistent with our user stories and personas, we drafted a few more iterations of the wireframes and illustrated them digitally. Our goal was to get the opinions of some actual people to perform usability testing on our wireframe design. We printed them out, sought out some nearby colleagues, and conducted a heuristic review based on industry best practices and recommended enhancements to the navigation, presentation, content and interaction represented in the wireframe. As the developers began building the basic front-end and backend functionality, the design team worked in parallel to continue usability testing and updated the design of TREEview with new recommendations for the look, layout, and various copy elements. 
 
 ![paper proto 1](https://cloud.githubusercontent.com/assets/16209237/11874917/074509a0-a4b0-11e5-98ae-96dd45be0f66.JPG)
 
@@ -74,7 +74,7 @@ After confirming our initial design was consistent with our user stories and per
 
 ## Usability Testing
 
-We performed numerous small-scale, iterative rounds of usability testing both in-person and remotely through Google Hangout interviews. All of our usability testing was moderated because we were most interested in behavioral, qualitative feedback from our key target audiences. With our intense timeline, usability testing was important to validate and confirm our design assumptions. The results enabled us to provide more recommendations as we began to create higher-fidelity user interfaces for the TREEView application.
+We performed numerous small-scale, iterative rounds of usability testing both in-person and remotely through Google Hangout interviews. All of our usability testing was moderated because we were most interested in behavioral, qualitative feedback from our key target audiences. With our intense timeline, usability testing was important to validate and confirm our design assumptions. The results enabled us to provide more recommendations as we began to create higher-fidelity user interfaces for the TREEview application.
 
 
 ![user test 1](https://cloud.githubusercontent.com/assets/16209237/11874638/c6d1b2fc-a4ae-11e5-913d-c23905b61e46.JPG)

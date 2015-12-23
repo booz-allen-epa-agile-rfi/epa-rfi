@@ -1,97 +1,90 @@
 /* TEAM */
 	
-	Name: Haluk Saker
-	Role: Product Manager
-	Contact: saker_haluk [at] bah.com
+	Name: Alexander Giraldez
+	Role: UX/UI Designer
+	Contact: giraldez_alexander [at] bah.com
 	From: Herndon, VA, USA
-
-	Name: Wyatt Chaffee
-	Role: Tech Architect
-	Contact: chaffee_wyatt [at] bah.com
-	From: Herndon, VA, USA
-
-	Name: Sarah Weise
-	Role: Interaction Designer / User Researcher / Usability Tester
-	Contact: weise_sarah [at] bah.com
-	From: Herndon, VA, USA
-
-	Name: Matt Rice
-	Role: Visual Designer
-	Contact: Rice_Matthew [at] bah.com
-	From: Vienna, VA, USA
-
-	Name: Destin Frasier
-	Role: Visual Designer 
-	Contact: Frasier_Eugene [at] bah.com
-	From: Vienna, VA, USA
-
-	Name: Sami Mirimiri
-	Role: Front-End Developer 
-	Contact: mirimiri_sami [at] bah.com
-	Twitter: @_kaiega
-	From: Manassas, VA
-
-	Name: Sameer Dhar
-	Role: Front-End Developer 
-	Contact: dhar_sameer [at] bah.com
-	From: Richmond, VA
-
-	Name: Chris Kacerguis
-	Role: Back-End Developer
-	Contact: kacerguis_chris [at] bah.com
-	From: San Antonio, TX
-
-	Name: Michael Stack
-	Role: Back-End Developer 
-	Contact: stack_michael [at] bah.com
-	From: San Antonio, TX
-
-	Name: Debanjan Dasgupta
-	Role: Backend Developer
-	Contact: Dasgupta_Debanjan [at] bah.com
-	From: Fairfax, VA
-
-	Name: Martin Folkoff
-	Role: DevOps Engineer 
-	Contact: folkoff_martin [at] bah.com
-	From: Herndon, VA, USA
-
-	Name: Eugene Raether
-	Role: DevOps Engineer
-	Contact: raether_eugene [at] bah.com
-	From: Herndon, VA, USA	
 	
-	Name: Saurab Joshi
-	Role: DevOps Engineer
-	Contact: joshi_saurab [at] bah.com
-	From: Herndon, VA
-
-	Name: Will Jackson
-	Role: DevOps Engineer
-	Contact: jackson_william [at] bah.com
-	From: Herndon, VA
-
-	Name: Delivery Manager
-	Role: Nico Botha
-	Contact: Botha_Nico [at] bah.com
-	From: Herndon, VA
-
-	Name: Luke Lackrone
-	Role: Agile Coach
-	Contact: Lackrone_Luke [at] bah.com
-	Twitter: @lackrone
-	From: Fulton, MD, USA
+	Name: Kristian Dela Cruz
+	Role: UX/UI Designer
+	Contact: delacruz_kristian@bah.com
+	From: Herndon, VA, USA
+	
+	Name: Allen Chang
+	Role: Front End Developer
+	Contact: chang_allen2@bah.com
+	From: San Antonio, TX, USA
 	
 	Name: Sonja Hall
-	Role: Writer/Content Designer/Content
-Strategist
-  Contact: Hall_Sonja [at] bah.com
-  From: Mclean, VA
+	Role: Front End Developer
+	Contact: hall_sonja@bah.com
+	From: McLean, VA, USA
+	
+	Name: Michael Ender
+	Role: Tech Ninja
+	Contact: ender_michael@bah.com
+	From: San Antonio, TX, USA
+	
+	Name: Jeremiah Milton
+	Role: Back End Developer
+	Contact: milton_jeremiah@bah.com
+	From: San Antonio, TX, USA
+	
+	Name: Dave Carrithers
+	Role: DevOps Engineer
+	Contact: carrithers_david@bah.com
+	From: Herndon, VA, USA
+	
+	Name: Will Jackson
+	Role: DevOps Engineer
+	Contact: jackson_william@bah.com
+	From: McLean, VA, USA
+	
+	Name: Ivan Kuo
+	Role: Documentation Lead
+	Contact: kuo_ivan@bah.com
+	From: McLean, VA, USA
+	
+	Name: Luke Lackrone
+	Role: Agile Coach
+	Contact: lackrone_luke@bah.com
+	From: Rockville, MD, USA
+	
+	Name: Chase Levinson
+	Role: Domain Knolwedge Support
+	Contact: levinson_chase@bah.com
+	From: Washington, DC, USA
+	
+	Name: Rebecca Allegar
+	Role: UX/UI Design Lead
+	Contact: allegar_rebecca@bah.com
+	From: McLean, VA, USA
+	
+	Name: Homan Iman
+	Role: Tech Lead
+	Contact: iman_homan@bah.com
+	From: McLean, VA, USA
+	
+	Name: Megan Montanez
+	Role: Digital Vanguard 
+	Contact: montanez_megan@bah.com
+	From: Norfolk, VA, USA
+	
+	Name: George Patch
+	Role: Product Owner 
+	Contact: patch_george@bah.com
+	From: Herndon, VA, USA
+	
+	Name: Amy Norgren-Salfi
+	Role: Product Owner 
+	Contact: norgren_salfi_amy@bah.com
+	From: Washington, DC, USA
+
 	
 /* THANKS */
-	Name: Bill Ott
-	Role: Product Owner 
-	From: McLean, VA, USA
+	Name: Melissa Sutherland
+	Role: Digital Vanguard
+	From: Norfolk, VA, USA
 
 /* SITE */
 	Language: English
