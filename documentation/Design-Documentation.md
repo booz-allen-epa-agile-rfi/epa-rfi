@@ -31,7 +31,7 @@ The wireframes underwent three iterations, which provided the entire team a view
 
 We determined that our application needed appropriate branding in order to have a big impact on our target personas. After careful consideration of the client’s needs, the team brainstormed on numerous naming conventions that could cater to the EPA. 
 
-TREEView (Toxics Release & Emissions Environment View) was the final name the team settled on. We felt this name was appropriate because of the environmental agenda the application was representing and how the application shows data ‘branching’ into different health effects in the United States. 
+TREEview (Toxics Release & Emissions Environment View) was the final name the team settled on. We felt this name was appropriate because of the environmental agenda the application was representing and how the application shows data ‘branching’ into different health effects in the United States. 
 
 ![logo sketching](https://cloud.githubusercontent.com/assets/16209237/11904252/e4b4cdde-a58c-11e5-9ccb-bb9eac5610bd.png)
 

@@ -43,7 +43,7 @@ function MainController($scope, $routeParams, $location, Map, Geocode) {
   function getSubDomain() {
     var host = $location.host();
 
-    return (host.indexOf('.') < 0) ? null : host.split('.')[0];
+    return (host.indexOf('.') < 0) ? 'api' : host.split('.')[0] + '-api';
   }
 
   // Generate the current url map state
