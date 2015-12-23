@@ -4,7 +4,7 @@
 
 As the team began working on the project, the aggressive delivery timeline prompted all hands-on deck to begin working together and thinking about ideas.
 
-The team initialized a group-wide brainstorming session through a conference call and began reviewing the provided data sets together. Our initial review of the data started to bring out potential user stories [LINK?] and we created four Personas [LINK?] to design this application around
+The team initialized a group-wide brainstorming session through a conference call and began reviewing the provided data sets together. Our initial review of the data started to bring out potential [User Stories](https://github.com/booz-allen-epa-agile-rfi/epa-rfi/blob/master/documentation/User-Stories.md) and we created four [Personas] (https://github.com/booz-allen-epa-agile-rfi/epa-rfi/blob/master/documentation/Human-Centered-Design.md#creating-personas) to design this application around
 
 * The Concerned Mother
 * The Environmentalist
@@ -31,7 +31,7 @@ The wireframes underwent three iterations, which provided the entire team a view
 
 We determined that our application needed appropriate branding in order to have a big impact on our target personas. After careful consideration of the client’s needs, the team brainstormed on numerous naming conventions that could cater to the EPA. 
 
-TREEVIEW (Toxics Release & Emissions Environment View) was the final name the team settled on. We felt this name was appropriate because of the environmental agenda the application was representing and how the application shows data ‘branching’ into different health effects in the United States. 
+TREEView (Toxics Release & Emissions Environment View) was the final name the team settled on. We felt this name was appropriate because of the environmental agenda the application was representing and how the application shows data ‘branching’ into different health effects in the United States. 
 
 ![logo sketching](https://cloud.githubusercontent.com/assets/16209237/11904252/e4b4cdde-a58c-11e5-9ccb-bb9eac5610bd.png)
 
