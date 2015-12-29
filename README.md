@@ -1,6 +1,6 @@
 # EPA Office of Environmental Information (OEI) – Booz Allen Digital– Prototype: TREEView
 
-Prototype URL: https://treeview.io 
+Prototype URL: http://treeview.io 
 
 Please evaluate our development:
 
