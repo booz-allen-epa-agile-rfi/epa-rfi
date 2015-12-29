@@ -1,4 +1,4 @@
-![agile_process_v1](https://cloud.githubusercontent.com/assets/12210910/8392521/1186de50-1cb3-11e5-8be1-594f4bc00538.png)
+![agile_process](https://cloud.githubusercontent.com/assets/11546190/12042460/4ed8a72a-ae49-11e5-873a-25a5ca9e0d48.jpg)
 
 **Our Agile Process**
 
@@ -193,6 +193,11 @@ User stories are archived on our wiki here - https://github.com/booz-allen-epa-a
 - README.md updates (1)
 
 18 pts forecast, 
+
+### Following days
+With the core of development complete in the first four days and some team members returning to their home teams,
+we relaxed our firm cadence, and let the remaining members self-organize over Slack and phone to finish up 
+remaining tasks.
 
 ## Retrospectives
 The team used frequent retrospectives to inspect the way were working and refine our approach. 
