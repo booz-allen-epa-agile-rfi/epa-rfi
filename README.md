@@ -14,7 +14,7 @@ https://github.com/booz-allen-epa-agile-rfi/epa-rfi
 
 [![Build Status](http://jenkins.treeview.io:8080/buildStatus/icon?job=master_frontend)](http://jenkins.treeview.io:8080/view/Master/job/master_frontend/)[![Build Status](http://jenkins.treeview.io:8080/buildStatus/icon?job=master_api)](http:/jenkins.treeview.io:8080/view/Master/job/master_api/)  Master Branch Server: http://www.treeview.io:9000
 
-TREEView is a data-driven platform with the goal of helping the user discover where chemical emissions are coming from in their local community using the latest information from the [EPA’s Toxics Release Inventory](http://www.epa.gov/toxics-release-inventory-tri-program/tri-basic-plus-data-files-calendar-years-1987-2014) and Superfund Program.   Through TREEView, a concerned citizen is able to filter through EPA information by chemical type, related health effects, and facilities to provide the data in a way that meets an individual need.   
+TREEView is a data-driven platform with the goal of helping the user discover where chemical emissions are coming from in their local community using the latest information from the [EPA’s Toxics Release Inventory](http://www.epa.gov/toxics-release-inventory-tri-program/tri-basic-plus-data-files-calendar-years-1987-2014).   Through TREEView, a concerned citizen is able to filter through EPA information by chemical type, related health effects, and facilities to provide the data in a way that meets an individual need.   
 
 Booz Allen Digital offers key strengths to the EPA OEI:
 
