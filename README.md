@@ -1,8 +1,8 @@
 # EPA Office of Environmental Information (OEI) – Booz Allen Digital– Prototype: TREEView
 
-Prototype URL: https://treeview.io 
+Prototype URL: http://treeview.io 
 
-Please evaluate our development:
+Our development:
 
 https://github.com/booz-allen-epa-agile-rfi/epa-rfi
 
@@ -14,13 +14,13 @@ https://github.com/booz-allen-epa-agile-rfi/epa-rfi
 
 [![Build Status](http://jenkins.treeview.io:8080/buildStatus/icon?job=master_frontend)](http://jenkins.treeview.io:8080/view/Master/job/master_frontend/)[![Build Status](http://jenkins.treeview.io:8080/buildStatus/icon?job=master_api)](http:/jenkins.treeview.io:8080/view/Master/job/master_api/)  Master Branch Server: http://www.treeview.io:9000
 
-TREEView is a data-driven platform with the goal of helping the user discover where chemical emissions are coming from in their local community using the latest information from the [EPA’s Toxics Release Inventory](http://www.epa.gov/toxics-release-inventory-tri-program/tri-basic-plus-data-files-calendar-years-1987-2014) and Superfund Program.   Through TREEView, a concerned citizen is able to filter through EPA information by chemical type, related health effects, and facilities to provide the data in a way that meets an individual need.   
+TREEView is a data-driven platform with the goal of helping the user discover where chemical emissions are coming from in their local community using the latest information from the [EPA’s Toxics Release Inventory](http://www.epa.gov/toxics-release-inventory-tri-program/tri-basic-plus-data-files-calendar-years-1987-2014).   Through TREEView, a concerned citizen is able to filter through EPA information by chemical type, related health effects, and facilities to provide the data in a way that meets an individual need.   
 
 Booz Allen Digital offers key strengths to the EPA OEI:
 
-- **Demonstrated Agile Delivery** – Our firm has strong experience with agile software development as demonstrated on this prototype as well as on GSA Integrated Award Environment (IAE), GSA 18F, numerous hackathons, and many other federal and commercial engagements.  For this engagement, we were able to pull together an agile team across three time zones and demonstrate distributed DevOps.
+- **Demonstrated Agile Delivery** – Our firm has strong experience with agile software development as demonstrated on this prototype as well as on GSA Integrated Award Environment (IAE), GSA 18F, numerous hackathons, and many other federal and commercial engagements.  For this engagement, we were able to pull together an agile team across three time zones and demonstrate a distributed DevOps approach, which can decrease time and cost for delivery to the government.
 
-- **A Culture of Innovation** - Booz Allen's dedication to creating a culture of innovation resulted in the Strategic Innovation Group (SIG), a 1,800 person division whose mission it is to ensure there is focus on agile, digital, next gen analytics and cyber security for all modern solutions.
+- **A Culture of Innovation** - Booz Allen's dedication to creating a culture of innovation resulted in the Strategic Innovation Group (SIG), a 1,800 person division whose mission it is to ensure there is focus on agile, digital, next gen analytics and cyber security for  modern solutions.
 
 - **Cross-functional agile skilled staff with reach back to domain SME** – Booz Allen was able to quickly assemble a highly-skilled, cross-functional team for this effort. Booz Allen has deep knowledge of federal agencies missions and a staff embedded with the EPA OEI.
 
@@ -32,7 +32,7 @@ https://github.com/booz-allen-epa-agile-rfi/epa-rfi/blob/master/documentation/U.
 
 ### Technical Approach 
 
-We assigned one leader, our Product Owner (PO), who had the authority, responsibility, and was held accountable for the quality of our TREEView prototype submission.
+We assigned one leader, our Product Owner (PO), who had the authority and responsibility for the quality of our TREEView prototype submission. We first took specific categories from the TRI Data Plus files for 2012-2014 (link: http://www.epa.gov/toxics-release-inventory-tri-program/tri-basic-plus-data-files-calendar-years-1987-2014) detailing chemical, facility name and location, and release type (air, water, land, off-site) to create the data table for the application. Additional data tables from EPA (link: http://www.epa.gov/sites/production/files/documents/hazard_categories.pdf and http://www.epa.gov/sites/production/files/2015-03/documents/osha_carcinogen_basis_march_2015_0.pdf) were matched to the main TRI data set to analyze health effects.
 
 **(a) User-Centered Design**
 

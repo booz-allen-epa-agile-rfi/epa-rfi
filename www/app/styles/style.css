@@ -92,6 +92,9 @@ a.nav-red:hover{
 .xs-margin-top {
   margin-top: 5px;
 }
+.margin-right-sm {
+  margin-right: 10px;
+}
 .margin-right {
   margin-right: 20px;
 }
@@ -100,6 +103,9 @@ a.nav-red:hover{
 }
 .margin-sides {
   margin: 0px 20px;
+}
+.margin-top-xs {
+  margin-top: 5px;
 }
 .margin-top {
   margin-top: 15px;
@@ -139,6 +145,9 @@ a.nav-red:hover{
 }
 .pad-l {
   padding-left: -10px;
+}
+.pad-r {
+  padding-left: 15px;
 }
 .pad-10 {
   padding: 10px;
@@ -218,6 +227,9 @@ a.nav-red:hover{
 .text-bold {
   font-weight: 800;
   font-size: 12px;
+}
+.text-xs {
+  font-size: 10px;
 }
 .text-sm {
   font-size: 14px;
