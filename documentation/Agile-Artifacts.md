@@ -192,11 +192,11 @@ User stories are archived on our wiki here - https://github.com/booz-allen-epa-a
 - Incorporate mockup updates into frontend, includes copy (3)
 - README.md updates (1)
 
-18 pts forecast, 
+18 pts forecast, 18 pts delivered
 
 ### Following days
 With the core of development complete in the first four days and some team members returning to their home teams,
-we relaxed our firm cadence, and let the remaining members self-organize over Slack and phone to finish up 
+we relaxed our cadence, and had remaining members self-organize over Slack and phone to finish up 
 remaining tasks.
 
 ## Retrospectives
