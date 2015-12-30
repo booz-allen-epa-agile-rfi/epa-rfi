@@ -12,7 +12,7 @@ For more information on how builds were created and deployed please refer to the
 ### Create unit and integration tests to verify modules and components
 ***
 - [rSpec](https://github.com/rspec)-
-Ruby unit and integration testing, check out our [api tests](https://github.com/booz-allen-epa-agile-rfi/epa-rfi/tree/master/api/spec). 
+Ruby unit and integration testing, check out our [api tests](https://github.com/booz-allen-epa-agile-rfi/epa-rfi/tree/master/api/spec) 
 
 These tests were used to validate business logic in the backend that was serving up useful information to our front end through a RESTful interface. Integration is accomplished through associating a database service with rails and executing only transactional events. Test execution is done using the `rspec` command.
 
