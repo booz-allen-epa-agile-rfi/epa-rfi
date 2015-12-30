@@ -1,8 +1,8 @@
 # EPA Office of Environmental Information (OEI) – Booz Allen Digital– Prototype: TREEView
 
-Prototype URL: http://treeview.io 
+Prototype: http://treeview.io 
 
-Our development:
+Development:
 
 https://github.com/booz-allen-epa-agile-rfi/epa-rfi
 
@@ -26,13 +26,13 @@ Booz Allen Digital offers key strengths to the EPA OEI:
 
 ### Digital Services Playbook
 
-We closely followed the Digital Services playbook guidelines as detailed in the link below: 
+We followed the Digital Services playbook guidelines as detailed in the link below: 
 
 https://github.com/booz-allen-epa-agile-rfi/epa-rfi/blob/master/documentation/U.S.-Digital-Services-Playbook-Evidence.md
 
 ### Technical Approach 
 
-We assigned one leader, our Product Owner (PO), who had the authority and responsibility for the quality of our TREEView prototype submission. We first took specific categories from the TRI Data Plus files for 2012-2014 (link: http://www.epa.gov/toxics-release-inventory-tri-program/tri-basic-plus-data-files-calendar-years-1987-2014) detailing chemical, facility name and location, and release type (air, water, land, off-site) to create the data table for the application. Additional data tables from EPA (link: http://www.epa.gov/sites/production/files/documents/hazard_categories.pdf and http://www.epa.gov/sites/production/files/2015-03/documents/osha_carcinogen_basis_march_2015_0.pdf) were matched to the main TRI data set to analyze health effects.
+We assigned one leader, our Product Owner (PO), who had responsibility for the quality of our TREEView prototype submission. We first took specific categories from the TRI Data Plus files for 2012-2014 (link: http://www.epa.gov/toxics-release-inventory-tri-program/tri-basic-plus-data-files-calendar-years-1987-2014) detailing chemical, facility name and location, and release type to create the data table for the application. Additional data tables from EPA (link: http://www.epa.gov/sites/production/files/documents/hazard_categories.pdf and http://www.epa.gov/sites/production/files/2015-03/documents/osha_carcinogen_basis_march_2015_0.pdf) were matched to the main TRI data set to analyze health effects.
 
 **(a) User-Centered Design**
 
