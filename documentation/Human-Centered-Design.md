@@ -27,14 +27,13 @@ To get an understanding of our users, a survey was sent out to understand if our
 ## Creating Personas
 After completing research, we decided to flesh out each of the four Personas into more detail to guide the use-cases and design of the TREEview application. Our Personas were living documents that were updated as we learned more about our users. These documents also provided us a empathetic approach when we are going through user flows and user stories. They all had faces and names, and we spoke about them as if they were team members through the process. We got to know them as we designed and coded the application. Our wireframes were moved into usability testing and would be used to provide feedback on the design. 
 
-![persona_all_epa_rfi_v3](https://cloud.githubusercontent.com/assets/16209237/11874019/7ce42556-a4ab-11e5-864c-8e6dd2e69d14.jpg)
+![persona_all_epa_rfi_v4](https://cloud.githubusercontent.com/assets/11546190/12052352/151f1ff8-aedc-11e5-8286-fd33b2fb2e31.jpg)
 
-![persona_all_epa_rfi_v32](https://cloud.githubusercontent.com/assets/16209237/11874023/83a652c4-a4ab-11e5-81f5-20dbb9da428b.jpg)
+![persona_all_epa_rfi_v42](https://cloud.githubusercontent.com/assets/11546190/12052351/151c8fae-aedc-11e5-9539-d30bd5372bd6.jpg)
 
-![persona_all_epa_rfi_v33](https://cloud.githubusercontent.com/assets/16209237/11874028/87f1c5f2-a4ab-11e5-94c7-b2672cf0e8f9.jpg)
+![persona_all_epa_rfi_v43](https://cloud.githubusercontent.com/assets/11546190/12052353/151ff194-aedc-11e5-95ca-1558182e090f.jpg)
 
-![persona_all_epa_rfi_v34](https://cloud.githubusercontent.com/assets/16209237/11874030/8bd5b4f8-a4ab-11e5-855c-01cf4f08944e.jpg)
-
+![persona_all_epa_rfi_v44](https://cloud.githubusercontent.com/assets/11546190/12052350/151474b8-aedc-11e5-826c-49f0709ef4fa.jpg)
 
 ## User Stories
 As a group, we determined the top tasks a user would do and defined them in a manner consistent with how each of our 4 unique personas would have stated them. We listed each of them, making sure to describe how we came about creating each of them in the [User Stories Documentation] (https://github.com/booz-allen-epa-agile-rfi/epa-rfi/blob/master/documentation/User-Stories.md) page

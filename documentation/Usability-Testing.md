@@ -6,13 +6,13 @@ This customer focus started at the very beginning of our challenge, and became i
 
 The overall team had the opportunity to discuss the necessary data that will be focused for the User Stories and began thinking of the potential users who would be utilizing the application. After the meeting the team decided to target the “Concerned Citizen” that would be separated into four Personas: The Concerned Mother, The Environmentalist, The Academic and The Working Professional.
 
-![persona_all_epa_rfi_v3](https://cloud.githubusercontent.com/assets/16209237/11874019/7ce42556-a4ab-11e5-864c-8e6dd2e69d14.jpg)
+![persona_all_epa_rfi_v4](https://cloud.githubusercontent.com/assets/11546190/12052352/151f1ff8-aedc-11e5-8286-fd33b2fb2e31.jpg)
 
-![persona_all_epa_rfi_v32](https://cloud.githubusercontent.com/assets/16209237/11874023/83a652c4-a4ab-11e5-81f5-20dbb9da428b.jpg)
+![persona_all_epa_rfi_v42](https://cloud.githubusercontent.com/assets/11546190/12052351/151c8fae-aedc-11e5-9539-d30bd5372bd6.jpg)
 
-![persona_all_epa_rfi_v33](https://cloud.githubusercontent.com/assets/16209237/11874028/87f1c5f2-a4ab-11e5-94c7-b2672cf0e8f9.jpg)
+![persona_all_epa_rfi_v43](https://cloud.githubusercontent.com/assets/11546190/12052353/151ff194-aedc-11e5-95ca-1558182e090f.jpg)
 
-![persona_all_epa_rfi_v34](https://cloud.githubusercontent.com/assets/16209237/11874030/8bd5b4f8-a4ab-11e5-855c-01cf4f08944e.jpg)
+![persona_all_epa_rfi_v44](https://cloud.githubusercontent.com/assets/11546190/12052350/151474b8-aedc-11e5-826c-49f0709ef4fa.jpg)
 
 After we created our personas to find out exactly whom we were targeting, we moved on to conduct a total of four rounds of in-person and remotely-moderated usability testing on our wireframes and final developed mockups to determine qualitative behavioral data. We conducted these rounds with 4-6 people each, and after each round reviewed the results with the team, especially the designers who were working on the wireframes.
 
